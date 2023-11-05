@@ -2,5 +2,5 @@
 
 Članovi tima:
 
-* ...
-* ...
+* Katarina Petrović
+* Milena-Mima Šekarić
