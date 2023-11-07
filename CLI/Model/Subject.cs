@@ -8,6 +8,7 @@ namespace CLI.Model
 {
     public class Subject
     {
+        enum Semester { Summer, Winter };
         public int Id { get; set; }
         public string Name { get; set; }
         public int SYear {  get; set; }
