@@ -9,16 +9,18 @@ namespace CLI.Model
     public class Student
     {
         enum Status {B, S};
-        public string name { get; set; }
-        public string surname { get; set; }
 
-        public string birthdate { get; set; }
-        public string adress {  get; set; }
-        public int phoneNumber { get; set; }
-        public string email { get; set; }
-        public string indexNm { get; set; }
-        public int stYear { get; set; }
-        public double avGrade { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+
+        public string Birthdate { get; set; }
+        public string Adress {  get; set; }
+        public int PhoneNumber { get; set; }
+        public string Email { get; set; }
+        public string IndexNm { get; set; }
+        public int StYear { get; set; }
+        public double AvGrade { get; set; }
 
 
     }
