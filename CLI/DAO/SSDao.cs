@@ -10,30 +10,37 @@ namespace CLI.DAO;
 
 public class SSDao
 {
-    /*
-    private readonly Storage<T> _storage;
-
-
-    public VehiclesDAO()
+/*
+    public void doStudent()
     {
-        _storage = new Storage<Student>("read_me.txt");
-        _students = _storage.Load();
+         private readonly Storage<Student> _storage;
+
+
+         public SSDao()
+        {
+              _storage = new Storage<Student>("read_me.txt");
+             _students = _storage.Load();
+         }
+
+        public List<Student> GetAllVehicles()
+         {
+              return _students;
+            }
+
     }
 
-    public List<Student> GetAllVehicles()
+    public void doSubject()
     {
-        return _students;
+
     }
 
-    public List<Student> GetAllSubjects()
+    public void doProfessor()
     {
-        return _subjects;
+     
     }
+   
 
-    public List<Student> GetAllProfessors()
-    {
-        return _professors;
-    }
+ */ 
 
-    */
+    
 }
