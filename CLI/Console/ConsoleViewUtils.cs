@@ -1,6 +1,6 @@
 ﻿namespace CLI.Console;
 
-static class ConsoleViewUtils
+static class ConsoleViewUtils //klasa sluzi da bi se uspesno preveo iz string u int kad unesemo sa konzole
 {
     public static int SafeInputInt()
     {
