@@ -4,10 +4,11 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CLI.Storage.Serialization;
 
 namespace CLI.Model
 {
-    public class Professor
+    public class Professor : ISerializable
     {
         public int Id { get; set; } //broj licne karte
         public string Name { get; set; }
@@ -19,6 +20,9 @@ namespace CLI.Model
         public string Title { get; set; }
         public int YearS { get; set; } // godine staza
 
+      //public  List<Subject>subjects { get; set; }
+
+        public Professor() { }
         public Professor(int id, string name, string surname, string birthdate, int adress, int phonenumber, string email, string title, int styear)
         {
             Id = id;
@@ -30,7 +34,7 @@ namespace CLI.Model
             Email = email;
             Title = title;
             YearS = styear;
-            
+          //  subjects = new List<Subject>();
 
         }
 
