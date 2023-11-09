@@ -11,6 +11,16 @@ namespace CLI.Model
         public int Id_Cat { get; set; }
         public string CatName { get; set; }
         // sef
-        //spisak profesora na katedri
+
+        public List<Professor> Professors { get; set; }
+
+        public Cathedra(int id, string name)
+        {
+            Id_Cat = id;
+            CatName = name;
+            Professors= new List<Professor>();
+        }
+
+       
     }
 }
