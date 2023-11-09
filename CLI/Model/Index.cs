@@ -8,7 +8,7 @@ namespace CLI.Model
 {
     public class Index
     {
-        //fali smer
+        public string Course { get; set; }
         public int Number { get; set; }
         public int YearE { get; set; } //godina upisa
 
