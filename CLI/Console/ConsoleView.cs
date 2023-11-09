@@ -25,6 +25,32 @@ public class ConsoleView
                 break;
         }
     }
+    private void Show()
+    {
+        System.Console.WriteLine("\nChoose an option to work with : ");
+        System.Console.WriteLine("1: Student ");
+        System.Console.WriteLine("2: Professor ");
+        System.Console.WriteLine("3: Subject ");
+        System.Console.WriteLine("0: Close");
+    }
+
+    public void Run()
+    {
+        while (true)
+        {
+            Show();
+            string userInput = System.Console.ReadLine() ?? "0";
+            if (userInput == "0") break;
+            if (userInput != "1" && userInput != "2" && userInput != "3")
+                System.Console.WriteLine("Choose an option again ");
+            else
+                HandleMenuInput(userInput);
+        }
+    }
+
+
+
+    /// STUDENT 
     private void HandleMenu(string input)
     {
         switch (input)
@@ -58,19 +84,7 @@ public class ConsoleView
         }
     }
 
-    public void Run()
-    {
-        while (true)
-        {
-            ShowMenu();
-            string userInput = System.Console.ReadLine() ?? "0";
-            if (userInput == "0") break;
-            if (userInput != "1" && userInput != "2" && userInput != "3")
-                System.Console.WriteLine("Choose an option again ");
-            else
-                HandleMenuInput(userInput);
-        }
-    }
+    
 
     private void ShowMenu()
     {
@@ -82,14 +96,7 @@ public class ConsoleView
         System.Console.WriteLine("0: Close");
     }
 
-    private void Show()
-    {
-        System.Console.WriteLine("\nChoose an option to work with : ");
-        System.Console.WriteLine("1: Student ");
-        System.Console.WriteLine("2: Professor ");
-        System.Console.WriteLine("3: Subject ");
-        System.Console.WriteLine("0: Close");
-    }
+    
 
 
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CLI.DAO
 {
-    internal class Professor
+    internal class ProfessorDao
     {
     }
 }

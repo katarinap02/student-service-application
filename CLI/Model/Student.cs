@@ -26,6 +26,9 @@ namespace CLI.Model
        // List<int> Grades = new List<int>();
        // List<string> Subjects = new List<string>();
 
+        public Student ()
+        { }
+
         public Student ( int id,  string name, string surname, string birthdate, int adress, int phonenumber, string email,string indexnm, int styear, double avgrade  )
         {
             Id = id;

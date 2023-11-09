@@ -5,42 +5,73 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace CLI.DAO;
 
-public class SSDao
+public class StudentDao
 {
-/*
-    public void doStudent()
+    private readonly List<Student> students;
+    private readonly Storage<Student> _storage;
+
+
+    public StudentDao()
     {
-         private readonly Storage<Student> _storage;
-
-
-         public SSDao()
-        {
-              _storage = new Storage<Student>("read_me.txt");
-             _students = _storage.Load();
-         }
-
-        public List<Student> GetAllVehicles()
-         {
-              return _students;
-            }
-
+        _storage = new Storage<Student>("student.txt");
+        students = _storage.Load();
     }
 
-    public void doSubject()
+    private int GenerateId()
     {
-
+        if (students.Count == 0) return 0;
+        return students[^1].Id + 1;
     }
 
-    public void doProfessor()
+    public Student AddStudent(Student st)
     {
-     
+        st.Id = GenerateId(); //generisi id za svakog studenta
+        students.Add(st);
+        _storage.Save(students);
+        return st;
     }
-   
 
- */ 
+    public Student? UpdateStudent(Student st)
+    {
+        Student? oldst = GetStudentById(st.Id); // sa istim id treba da unesemo nove podatke koji su u st
+        if (oldst is null) return null;
 
-    
+        oldst.Name = st.Name;
+        oldst.Surname = st.Surname;
+        oldst.Birthdate = st.Birthdate;
+        oldst.Email = st.Email;
+        oldst.Adress = st.Adress;
+        oldst.PhoneNumber = st.PhoneNumber;
+        oldst.IndexNm = st.IndexNm;
+        oldst.StYear = st.StYear;
+
+        _storage.Save(students);
+        return oldst;
+    }
+
+    public Student? RemoveVehicle(int id)
+    {
+        Student? student = GetStudentById(id);
+        if (student == null) return null;
+
+        students.Remove(student);
+        _storage.Save(students);
+        return student;
+    }
+
+    private Student? GetStudentById(int id)
+    {
+        return students.Find(v => v.Id == id);
+    }
+
+    public List<Student> GetAllStudents()
+    {
+        return students;
+    }
+
+
 }
