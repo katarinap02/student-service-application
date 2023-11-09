@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CLI.Storage.Serialization;
 
 namespace CLI.Model
 {
-    public class Student
+    public class Student : ISerializable
     {
         enum Status {B, S};
 
@@ -40,7 +41,14 @@ namespace CLI.Model
 
         }
 
+        public string[] ToCSV()
+        {
+            throw new NotImplementedException();
+        }
 
-
+        public void FromCSV(string[] values)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
