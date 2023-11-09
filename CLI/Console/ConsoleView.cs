@@ -43,4 +43,53 @@ public class ConsoleView
                 break;
         }
     }
+
+    public void RunMenu()
+    {
+        while (true)
+        {
+            ShowMenu();
+            string userInput = System.Console.ReadLine() ?? "0";
+            if (userInput == "0") break;
+            if (userInput != "1" && userInput != "2" && userInput != "3" && userInput != "4")
+                System.Console.WriteLine("Choose an option again ");
+            else
+            HandleMenu(userInput);
+        }
+    }
+
+    public void Run()
+    {
+        while (true)
+        {
+            ShowMenu();
+            string userInput = System.Console.ReadLine() ?? "0";
+            if (userInput == "0") break;
+            if (userInput != "1" && userInput != "2" && userInput != "3")
+                System.Console.WriteLine("Choose an option again ");
+            else
+                HandleMenuInput(userInput);
+        }
+    }
+
+    private void ShowMenu()
+    {
+        System.Console.WriteLine("\nChoose an option: ");
+        System.Console.WriteLine("1: Show All ");
+        System.Console.WriteLine("2: Add ");
+        System.Console.WriteLine("3: Update ");
+        System.Console.WriteLine("4: Remove ");
+        System.Console.WriteLine("0: Close");
+    }
+
+    private void Show()
+    {
+        System.Console.WriteLine("\nChoose an option to work with : ");
+        System.Console.WriteLine("1: Student ");
+        System.Console.WriteLine("2: Professor ");
+        System.Console.WriteLine("3: Subject ");
+        System.Console.WriteLine("0: Close");
+    }
+
+
 }
