@@ -39,10 +39,10 @@ namespace CLI.DAO
             oldpr.Name = pr.Name;
             oldpr.Surname = pr.Surname;
             oldpr.Adress = pr.Adress;
+            oldpr.Birthdate = pr.Birthdate;
             oldpr.PhoneNumber= pr.PhoneNumber;
             oldpr.Email = pr.Email; 
             oldpr.Title= pr.Title;
-            oldpr.Birthdate = pr.Birthdate; 
             oldpr.YearS=pr.YearS;   
           
             _storage.Save(professors);
@@ -62,6 +62,11 @@ namespace CLI.DAO
         private Professor? GetProfessorById(int id)
         {
             return professors.Find(v => v.Id == id);
+        }
+
+        public List<Professor> GetAllProfessors()
+        {
+            return professors;
         }
 
     }

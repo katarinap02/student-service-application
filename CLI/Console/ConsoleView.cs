@@ -15,15 +15,14 @@ public class ConsoleView
 {
 
     private readonly StudentDao _studentsDao;
-   // private readonly ProfessorDao _professorsDao;
+    private readonly ProfessorDao _professorsDao;
    // private readonly SubjectDao _subjectsDao;
 
-    public ConsoleView(StudentDao studentsDao) //konstruktor sa parametrima
+    public ConsoleView(StudentDao studentsDao, ProfessorDao professorsDao) //konstruktor sa parametrima
     {
         _studentsDao = studentsDao;
+        _professorsDao = professorsDao;
     }
-
-
 
 
     // System.Console.WriteLine("Enter a number ");
@@ -36,7 +35,7 @@ public class ConsoleView
                RunMenuStudent();
                 break;
             case "2":
-              //  RunMenuProfessor();
+               RunMenuProfessor();
                 break;
             case "3":
               //  RunMenuSubject();
@@ -66,12 +65,6 @@ public class ConsoleView
                 HandleMenuInput(userInput);
         }
     }
-  /**  private void DoStudent()
-    {
-        ShowMenu();
-        string option = System.Console.ReadLine() ?? "0";
-        HandleMenuStudent(option);
-    }**/
 
 
     ///****** STUDENT *******
@@ -131,7 +124,7 @@ public class ConsoleView
     private void PrintStudents(List<Student> students) //ispisi studente/studenta
     {
         System.Console.WriteLine("STUDENTS: ");
-        string header = $"ID {"",6} | Name {"",21} | Surname {"",21} | Birthdate {"",21} | Adress {"", 21} | Phone number{"",21} | Email{"",30} | Index {"", 21} | Current school year {"", 4} |";
+        string header = $"ID {"",6} | Name {"",21} | Surname {"",21} | Birthdate {"",10} | Adress {"", 21} | Phone number{"",12} | Email{"",30} | Index {"", 21} | Current school year {"", 4} |";
         System.Console.WriteLine(header);
         foreach (Student v in students)
         {
@@ -141,9 +134,9 @@ public class ConsoleView
 
     private void AddStudents() //dodaj studenta
     {
-        Student student = InputStudent();
-        _studentsDao.AddStudent(student);
-        System.Console.WriteLine("Vehicle added");
+        Student student1 = InputStudent();
+        _studentsDao.AddStudent(student1);
+        System.Console.WriteLine("Student added");
     }
 
     private Student InputStudent()
@@ -202,7 +195,7 @@ public class ConsoleView
     private void RemoveStudent() //ukloni studenta
     {
         int id = InputId();
-        Student? removedStudent = _studentsDao.RemoveVehicle(id);
+        Student? removedStudent = _studentsDao.RemoveStudent(id);
         if (removedStudent is null)
         {
             System.Console.WriteLine("Student not found");
@@ -213,6 +206,143 @@ public class ConsoleView
     }
 
     //***********************************************************************
-    
+
+
+
+    //****************************PROFESSOR***********************************
+
+    private void HandleMenuProfessor(string input)
+    {
+        switch (input)
+        {
+            case "21":
+                ShowAllProfessors();
+                break;
+            case "22":
+                AddProfessors();
+                break;
+            case "23":
+                UpdateProfessor();
+                break;
+            case "24":
+                RemoveProfessor();
+                break;
+        }
+    }
+    public void RunMenuProfessor()
+    {
+        while (true)
+        {
+            ShowMenuP();
+            string userInput = System.Console.ReadLine() ?? "0";
+            if (userInput == "0") break;
+            if (userInput != "21" && userInput != "22" && userInput != "23" && userInput != "24")
+                System.Console.WriteLine("Choose an option again ");
+            else
+                HandleMenuProfessor(userInput);
+        }
+    }
+
+    private void ShowMenuP() 
+    {
+        System.Console.WriteLine("\nChoose an option: ");
+        System.Console.WriteLine("21: Show All ");
+        System.Console.WriteLine("22: Add ");
+        System.Console.WriteLine("23: Update ");
+        System.Console.WriteLine("24: Remove ");
+        System.Console.WriteLine("0: Close");
+    }
+
+    private void ShowAllProfessors() //ispisi profesore
+    {
+        PrintProfessors(_professorsDao.GetAllProfessors());
+    }
+
+    private void PrintProfessors(List<Professor> professors) //ispisi studente/studenta
+    {
+        System.Console.WriteLine("PROFESSOR: ");
+        string header = $"ID {"",6} | Name {"",21} | Surname {"",21} | Birthdate {"",10} | Adress {"",21} | Phone number{"",12} | Email{"",30} | Title {"",14} | Years of service {"",3} |";
+        System.Console.WriteLine(header);
+        foreach (Professor v1 in professors)
+        {
+            System.Console.WriteLine(v1);
+        }
+    }
+
+    private void AddProfessors() //dodaj profesora
+    {
+        Professor professor1 = InputProfessor();
+        _professorsDao.AddProfessor(professor1);
+        System.Console.WriteLine("Professor added");
+    }
+
+    private Professor InputProfessor()
+    {
+        System.Console.WriteLine("Enter professor's name: ");
+        string name = System.Console.ReadLine() ?? string.Empty;
+
+        System.Console.WriteLine("Enter professor's surname: ");
+        string surname = System.Console.ReadLine() ?? string.Empty;
+
+        System.Console.WriteLine("Enter professor's birthdate: ");
+        string birthdate = System.Console.ReadLine() ?? string.Empty;
+
+        System.Console.WriteLine("Enter professor's adress: ");
+        int adress = ConsoleViewUtils.SafeInputInt();
+
+        System.Console.WriteLine("Enter professor's phone numer: ");
+        int phonenumber = ConsoleViewUtils.SafeInputInt();
+
+        System.Console.WriteLine("Enter professor's email: ");
+        string email = System.Console.ReadLine() ?? string.Empty;
+
+        System.Console.WriteLine("Enter professor's title: ");
+        string title = System.Console.ReadLine() ?? string.Empty;
+
+        System.Console.WriteLine("Enter professor's years of service: ");
+        int year = ConsoleViewUtils.SafeInputInt();
+
+
+
+
+        return new Professor(name, surname, birthdate, adress, phonenumber, email, title, year);
+    }
+
+    private void UpdateProfessor() //azuriraj profesore
+    {
+        int id = InputIdP();
+        Professor professor = InputProfessor();
+        professor.Id = id;
+        Professor? updatedProfessor = _professorsDao.UpdateProfessor(professor);
+        if (updatedProfessor == null)
+        {
+            System.Console.WriteLine("Professor not found");
+            return;
+        }
+
+        System.Console.WriteLine("Professor updated");
+    }
+
+    private int InputIdP()
+    {
+        System.Console.WriteLine("Enter professor's id: ");
+        return ConsoleViewUtils.SafeInputInt();
+    }
+
+    private void RemoveProfessor() //ukloni profesora
+    {
+        int id = InputIdP();
+        Professor? removedProfessor = _professorsDao.RemoveProfessor(id);
+        if (removedProfessor is null)
+        {
+            System.Console.WriteLine("Professor not found");
+            return;
+        }
+
+        System.Console.WriteLine("Professor removed");
+    }
+
+    //***********************************************************************
+
 
 }

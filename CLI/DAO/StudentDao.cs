@@ -53,7 +53,7 @@ public class StudentDao
         return oldst;
     }
 
-    public Student? RemoveVehicle(int id)
+    public Student? RemoveStudent(int id)
     {
         Student? student = GetStudentById(id);
         if (student == null) return null;

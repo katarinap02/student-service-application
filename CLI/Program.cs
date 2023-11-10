@@ -9,7 +9,8 @@ class Program
     static void Main()
     {
         StudentDao students = new StudentDao();
-        ConsoleView view = new ConsoleView(students);
+        ProfessorDao professors = new ProfessorDao();
+        ConsoleView view = new ConsoleView(students, professors);
         view.Run();
     }
 }
