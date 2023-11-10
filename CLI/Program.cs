@@ -1,5 +1,6 @@
-﻿using CLI.Console;
-//using CRUDExample.DAO;
+﻿
+using CLI.Console;
+using CLI.DAO;
 
 namespace CLIExample;
 
@@ -7,8 +8,8 @@ class Program
 {
     static void Main()
     {
-       // VehiclesDAO vehicles = new VehiclesDAO();
-      //  ConsoleView view = new ConsoleView();
-        //view.RunMenu();
+        StudentDao students = new StudentDao();
+        ConsoleView view = new ConsoleView(students);
+        view.Run();
     }
 }

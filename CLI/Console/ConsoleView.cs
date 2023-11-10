@@ -18,7 +18,7 @@ public class ConsoleView
    // private readonly ProfessorDao _professorsDao;
    // private readonly SubjectDao _subjectsDao;
 
-    public ConsoleView(StudentDao studentsDao)
+    public ConsoleView(StudentDao studentsDao) //konstruktor sa parametrima
     {
         _studentsDao = studentsDao;
     }
@@ -79,16 +79,16 @@ public class ConsoleView
     {
         switch (input)
         {
-            case "1":
+            case "11":
                 ShowAllStudents();
                 break;
-            case "2":
+            case "12":
                 AddStudents();
                 break;
-            case "3":
+            case "13":
                 UpdateStudent();
                 break;
-            case "4":
+            case "14":
                 RemoveStudent();
                 break;
         }
@@ -101,7 +101,7 @@ public class ConsoleView
             ShowMenu();
             string userInput = System.Console.ReadLine() ?? "0";
             if (userInput == "0") break;
-            if (userInput != "1" && userInput != "2" && userInput != "3" && userInput != "4")
+            if (userInput != "11" && userInput != "12" && userInput != "13" && userInput != "14")
                 System.Console.WriteLine("Choose an option again ");
             else
             HandleMenuStudent(userInput);
@@ -114,10 +114,10 @@ public class ConsoleView
     private void ShowMenu() //bice pozvana u RunMenuStudent
     {
         System.Console.WriteLine("\nChoose an option: ");
-        System.Console.WriteLine("1: Show All ");
-        System.Console.WriteLine("2: Add ");
-        System.Console.WriteLine("3: Update ");
-        System.Console.WriteLine("4: Remove ");
+        System.Console.WriteLine("11: Show All ");
+        System.Console.WriteLine("12: Add ");
+        System.Console.WriteLine("13: Update ");
+        System.Console.WriteLine("14: Remove ");
         System.Console.WriteLine("0: Close");
     }
 
@@ -211,6 +211,8 @@ public class ConsoleView
 
         System.Console.WriteLine("Student removed");
     }
+
     //***********************************************************************
+    
 
 }
