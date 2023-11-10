@@ -29,7 +29,7 @@ namespace CLI.Model
         public Student ()
         { }
 
-        public Student ( int id,  string name, string surname, string birthdate, int adress, int phonenumber, string email,string indexnm, int styear, double avgrade  )
+        public Student ( int id,  string name, string surname, string birthdate, int adress, int phonenumber, string email,string indexnm, int styear ) //fali avggrade parametar
         {
             Id = id;
             Name = name;
@@ -44,7 +44,7 @@ namespace CLI.Model
 
         }
 
-        public Student(string name, string surname, string birthdate, int adress, int phonenumber, string email, string indexnm, int styear, double avgrade)
+        public Student(string name, string surname, string birthdate, int adress, int phonenumber, string email, string indexnm, int styear) //fali avggrade parametar
         {
             Name = name;
             Surname = surname;
