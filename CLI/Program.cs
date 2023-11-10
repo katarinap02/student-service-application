@@ -1,6 +1,7 @@
 ﻿
 using CLI.Console;
 using CLI.DAO;
+using CLI.Model;
 
 namespace CLIExample;
 
@@ -10,7 +11,8 @@ class Program
     {
         StudentDao students = new StudentDao();
         ProfessorDao professors = new ProfessorDao();
-        ConsoleView view = new ConsoleView(students, professors);
+        SubjectDao subjects = new SubjectDao();
+        ConsoleView view = new ConsoleView(students, professors, subjects);
         view.Run();
     }
 }

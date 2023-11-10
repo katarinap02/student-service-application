@@ -16,12 +16,13 @@ public class ConsoleView
 
     private readonly StudentDao _studentsDao;
     private readonly ProfessorDao _professorsDao;
-   // private readonly SubjectDao _subjectsDao;
+    private readonly SubjectDao _subjectsDao;
 
-    public ConsoleView(StudentDao studentsDao, ProfessorDao professorsDao) //konstruktor sa parametrima
+    public ConsoleView(StudentDao studentsDao, ProfessorDao professorsDao, SubjectDao subjectsDao) //konstruktor sa parametrima
     {
         _studentsDao = studentsDao;
         _professorsDao = professorsDao;
+        _subjectsDao = subjectsDao;
     }
 
 
@@ -38,7 +39,7 @@ public class ConsoleView
                RunMenuProfessor();
                 break;
             case "3":
-              //  RunMenuSubject();
+               RunMenuSubject();
                 break;
         }
     }
@@ -100,10 +101,6 @@ public class ConsoleView
             HandleMenuStudent(userInput);
         }
     }
-
-    
-   
-
     private void ShowMenu() //bice pozvana u RunMenuStudent
     {
         System.Console.WriteLine("\nChoose an option: ");
@@ -207,8 +204,6 @@ public class ConsoleView
 
     //***********************************************************************
 
-
-
     //****************************PROFESSOR***********************************
 
     private void HandleMenuProfessor(string input)
@@ -302,9 +297,6 @@ public class ConsoleView
         System.Console.WriteLine("Enter professor's years of service: ");
         int year = ConsoleViewUtils.SafeInputInt();
 
-
-
-
         return new Professor(name, surname, birthdate, adress, phonenumber, email, title, year);
     }
 
@@ -340,6 +332,127 @@ public class ConsoleView
         }
 
         System.Console.WriteLine("Professor removed");
+    }
+
+    //***********************************************************************
+
+
+    //****************************SUBJECT***********************************
+
+    private void HandleMenuSubject(string input)
+    {
+        switch (input)
+        {
+            case "31":
+                ShowAllSubjects();
+                break;
+            case "32":
+                AddSubjects();
+                break;
+            case "33":
+                UpdateSubject();
+                break;
+            case "34":
+                RemoveSubject();
+                break;
+        }
+    }
+    public void RunMenuSubject()
+    {
+        while (true)
+        {
+            ShowMenuS();
+            string userInput = System.Console.ReadLine() ?? "0";
+            if (userInput == "0") break;
+            if (userInput != "31" && userInput != "32" && userInput != "33" && userInput != "34")
+                System.Console.WriteLine("Choose an option again ");
+            else
+                HandleMenuSubject(userInput);
+        }
+    }
+
+    private void ShowMenuS()
+    {
+        System.Console.WriteLine("\nChoose an option: ");
+        System.Console.WriteLine("31: Show All ");
+        System.Console.WriteLine("32: Add ");
+        System.Console.WriteLine("33: Update ");
+        System.Console.WriteLine("34: Remove ");
+        System.Console.WriteLine("0: Close");
+    }
+
+    private void ShowAllSubjects() 
+    {
+        PrintSubjects(_subjectsDao.GetAllSubjects());
+    }
+
+    private void PrintSubjects(List<Subject> subjects) 
+    {
+        System.Console.WriteLine("SUBJECT: ");
+        string header = $"ID {"",6} | Name {"",21} | Semester {"",21} | Year {"",10} | ESPB {"",5}";
+        System.Console.WriteLine(header);
+        foreach (Subject v2 in subjects)
+        {
+            System.Console.WriteLine(v2);
+        }
+    }
+
+    private void AddSubjects() //dodaj profesora
+    {
+        Subject subject1 = InputSubject();
+        _subjectsDao.AddSubject(subject1);
+        System.Console.WriteLine("Subject added");
+    }
+
+    private Subject InputSubject()
+    {
+        System.Console.WriteLine("Enter subject's name: ");
+        string name = System.Console.ReadLine() ?? string.Empty;
+
+        System.Console.WriteLine("Enter subject's semester: S for Summer or W for Winter ");
+        Subject.Semester semester = 0; // ovo treba ispraviti
+
+        System.Console.WriteLine("Enter subject's year: ");
+        int year = ConsoleViewUtils.SafeInputInt();
+
+        System.Console.WriteLine("Enter subject's espb: ");
+        int espb = ConsoleViewUtils.SafeInputInt();
+
+        return new Subject(name, semester, year, espb);
+    }
+
+    private void UpdateSubject() //azuriraj profesore
+    {
+        int id = InputIdS();
+        Subject subject = InputSubject();
+        subject.Id = id;
+        Subject? updatedSubject = _subjectsDao.UpdateSubject(subject);
+        if (updatedSubject == null)
+        {
+            System.Console.WriteLine("Subject not found");
+            return;
+        }
+
+        System.Console.WriteLine("Subject updated");
+    }
+
+    private int InputIdS()
+    {
+        System.Console.WriteLine("Enter subject's id: ");
+        return ConsoleViewUtils.SafeInputInt();
+    }
+
+    private void RemoveSubject() //ukloni profesora
+    {
+        int id = InputIdP();
+        Subject? removedSubject = _subjectsDao.RemoveSubject(id);
+        if (removedSubject is null)
+        {
+            System.Console.WriteLine("Subject not found");
+            return;
+        }
+
+        System.Console.WriteLine("Subject removed");
     }
 
     //***********************************************************************

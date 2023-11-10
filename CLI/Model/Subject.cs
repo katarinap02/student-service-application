@@ -11,9 +11,11 @@ namespace CLI.Model
 {
     public class Subject : ISerializable
     {
-        enum Semester { Summer, Winter };
+        public enum Semester { Summer, Winter };
         public int Id { get; set; }
         public string Name { get; set; }
+
+        public Semester Semester1 { get; set; }
         public int SYear {  get; set; }
         public int NumEspb { get; set; }
         
@@ -28,15 +30,29 @@ namespace CLI.Model
 
         public Subject() { }
 
-        public Subject( int id, string name, int syear, int numespb )
+        public Subject( int id, string name, Semester s, int syear,  int numespb)
         {
        
             Id = id; 
             Name = name;
+            Semester1 = s; //postavljen je inicijalno na letnji
             SYear = syear;
             NumEspb = numespb;
             //StudentsP = new List<Student>();
            // StudentsF = new List<Student>();
+
+
+
+        }
+
+        public Subject(string name, Semester s, int syear,  int numespb)
+        {
+            Name = name;
+            Semester1 = s; //postavljen je inicijalno na letnji
+            SYear = syear;
+            NumEspb = numespb;
+            //StudentsP = new List<Student>();
+            // StudentsF = new List<Student>();
 
 
 

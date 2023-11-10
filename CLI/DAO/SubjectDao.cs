@@ -61,5 +61,10 @@ namespace CLI.DAO
         {
             return subjects.Find(v => v.Id == id);
         }
+
+        public List<Subject> GetAllSubjects()
+        {
+            return subjects;
+        }
     }
 }
