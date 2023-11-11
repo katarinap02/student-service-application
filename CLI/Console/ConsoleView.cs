@@ -17,12 +17,14 @@ public class ConsoleView
     private readonly StudentDao _studentsDao;
     private readonly ProfessorDao _professorsDao;
     private readonly SubjectDao _subjectsDao;
-
-    public ConsoleView(StudentDao studentsDao, ProfessorDao professorsDao, SubjectDao subjectsDao) //konstruktor sa parametrima
+    private readonly CathedraDao _cathedrasDao;
+  
+    public ConsoleView(StudentDao studentsDao, ProfessorDao professorsDao, SubjectDao subjectsDao, CathedraDao cathedrasDao) //konstruktor sa parametrima
     {
         _studentsDao = studentsDao;
         _professorsDao = professorsDao;
         _subjectsDao = subjectsDao;
+        _cathedrasDao = cathedrasDao;
     }
 
 
@@ -41,6 +43,12 @@ public class ConsoleView
             case "3":
                RunMenuSubject();
                 break;
+            case "4":
+                RunMenuCathedra();
+                break;
+            case "5":
+                // RunMenuGrade();
+                break;
         }
     }
     
@@ -50,6 +58,8 @@ public class ConsoleView
         System.Console.WriteLine("1: Student ");
         System.Console.WriteLine("2: Professor ");
         System.Console.WriteLine("3: Subject ");
+        System.Console.WriteLine("4: Cathedra ");
+        System.Console.WriteLine("5: Grade ");
         System.Console.WriteLine("0: Close");
     }
     // 1) prvo se poziva ova metoda:
@@ -60,7 +70,7 @@ public class ConsoleView
             Show();
             string userInput = System.Console.ReadLine() ?? "0";
             if (userInput == "0") break;
-            if (userInput != "1" && userInput != "2" && userInput != "3")
+            if (userInput != "1" && userInput != "2" && userInput != "3" && userInput!="4" && userInput!="5")
                 System.Console.WriteLine("Choose an option again ");
             else
                 HandleMenuInput(userInput);
@@ -456,6 +466,127 @@ public class ConsoleView
     }
 
     //***********************************************************************
+
+    //********************CATHEDRAS******************************************
+
+    private void HandleMenuCathedra(string input)
+    {
+        switch (input)
+        {
+            case "41":
+                ShowAllCathedras();
+                break;
+            case "42":
+                AddCathedras();
+                break;
+            case "43":
+               UpdateCathedras();
+                break;
+            case "44":
+                RemoveCathedras();
+                break;
+        }
+    }
+
+    private void RemoveCathedras()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void RunMenuCathedra()
+    {
+        while (true)
+        {
+            ShowMenuC();
+            string userInput = System.Console.ReadLine() ?? "0";
+            if (userInput == "0") break;
+            if (userInput != "41" && userInput != "42" && userInput != "43" && userInput != "44")
+                System.Console.WriteLine("Choose an option again ");
+            else
+                HandleMenuCathedra(userInput);
+        }
+    }
+
+    private void ShowMenuC()
+    {
+        System.Console.WriteLine("\nChoose an option: ");
+        System.Console.WriteLine("41: Show All ");
+        System.Console.WriteLine("42: Add ");
+        System.Console.WriteLine("43: Update ");
+        System.Console.WriteLine("44: Remove ");
+        System.Console.WriteLine("0: Close");
+    }
+
+    private void ShowAllCathedras()
+    {
+        PrintCathedras(_cathedrasDao.GetAllCathedras());
+    }
+
+    private void PrintCathedras(List<Cathedra> chairs)
+    {
+        System.Console.WriteLine("CATHEDRA: ");
+        string header = $"ID {"",6} | Name {"",21} "; //ZA SADA mi ispisuje samo ovo 
+        System.Console.WriteLine(header);
+        foreach (Cathedra v2 in chairs)
+        {
+            System.Console.WriteLine(v2);
+        }
+    }
+
+    private void AddCathedras() //dodaj katedru
+    {
+        Cathedra chair1 = InputCathedra();
+        _cathedrasDao.AddCathedra(chair1);
+        System.Console.WriteLine("Cathedra added");
+    }
+
+    private Cathedra InputCathedra()
+    {
+        System.Console.WriteLine("Enter cathedra's name: ");
+        string name = System.Console.ReadLine() ?? string.Empty;
+
+       // System.Console.WriteLine("Enter subject's semester: S for Summer or W for Winter ");
+        //Subject.Semester semester = 0; // ovo treba ispraviti
+
+        //treba popuniti
+
+
+        return new Cathedra(name);
+    }
+
+    private void UpdateCathedras() //azuriraj katedru (promijeni ime)
+    {
+        int id = InputIdC();
+        Cathedra cathedra = InputCathedra();
+        cathedra.Id = id;
+        Cathedra? updatedCathedra = _cathedrasDao.UpdateCathedra(cathedra);
+        if (updatedCathedra == null)
+        {
+            System.Console.WriteLine("Cathedra not found");
+            return;
+        }
+
+        System.Console.WriteLine("Cathedra updated");
+    }
+
+    private int InputIdC()
+    {
+        System.Console.WriteLine("Enter cathedra's id: ");
+        return ConsoleViewUtils.SafeInputInt();
+    }
+
+    private void RemoveCathedra() //ukloni katedra
+    {
+        int id = InputIdC();
+        Cathedra? removedCathedra = _cathedrasDao.RemoveCathedra(id);
+        if (removedCathedra is null)
+        {
+            System.Console.WriteLine("Cathedra not found");
+            return;
+        }
+
+        System.Console.WriteLine("Cathedra removed");
+    }
 
 
 }

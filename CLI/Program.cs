@@ -12,7 +12,8 @@ class Program
         StudentDao students = new StudentDao();
         ProfessorDao professors = new ProfessorDao();
         SubjectDao subjects = new SubjectDao();
-        ConsoleView view = new ConsoleView(students, professors, subjects);
+        CathedraDao cathedras = new  CathedraDao();
+        ConsoleView view = new ConsoleView(students, professors, subjects, cathedras);
         view.Run();
     }
 }

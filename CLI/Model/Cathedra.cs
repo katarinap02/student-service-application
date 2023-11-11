@@ -25,6 +25,13 @@ namespace CLI.Model
             Professors= new List<Professor>();
         }
 
+        public Cathedra( string name)
+        {
+           
+            CatName = name;
+            Professors = new List<Professor>();
+        }
+
         public string[] ToCSV()
         {
             string[] csvValues =
