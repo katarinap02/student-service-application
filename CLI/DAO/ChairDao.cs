@@ -9,15 +9,15 @@ using System.Xml.Linq;
 
 namespace CLI.DAO
 {
-    public class CathedraDao
+    public class ChairDao
     {
-        private readonly List<Cathedra> chairs;
-        private readonly Storage<Cathedra> _storage;
+        private readonly List<Chair> chairs;
+        private readonly Storage<Chair> _storage;
 
     
-        public CathedraDao()
+        public ChairDao()
         {
-            _storage = new Storage<Cathedra>("cathedra.txt");
+            _storage = new Storage<Chair>("chair.txt");
             chairs = _storage.Load();
         }
 
@@ -29,7 +29,7 @@ namespace CLI.DAO
             return chairs[^1].Id + 1;
         }
 
-        public Cathedra AddCathedra(Cathedra ca)
+        public Chair AddChair(Chair ca)
         {
             ca.Id = GenerateId(); //generisi id za svaku katedru
             chairs.Add(ca);
@@ -37,21 +37,21 @@ namespace CLI.DAO
             return ca;
         }
 
-        public Cathedra? UpdateCathedra(Cathedra ca)
+        public Chair? UpdateChair(Chair ca)
         {
-            Cathedra? oldca = GetCathedraById(ca.Id); // sa istim id treba da unesemo nove podatke koji su u st
+            Chair? oldca = GetChairById(ca.Id); // sa istim id treba da unesemo nove podatke koji su u st
             if (oldca is null) return null;
 
-            oldca.CatName = ca.CatName; //apdejtuje se samo ime
+            oldca.CName = ca.CName; //apdejtuje se samo ime
            
 
             _storage.Save(chairs);
             return oldca;
         }
 
-        public Cathedra? RemoveCathedra(int id)
+        public Chair? RemoveChair(int id)
         {
-            Cathedra? chair = GetCathedraById(id);
+            Chair? chair = GetChairById(id);
             if (chair == null) return null;
 
             chairs.Remove(chair);
@@ -59,12 +59,12 @@ namespace CLI.DAO
             return chair;
         }
 
-        private Cathedra? GetCathedraById(int id)
+        private Chair? GetChairById(int id)
         {
             return chairs.Find(v => v.Id == id);
         }
 
-        public List<Cathedra> GetAllCathedras()
+        public List<Chair> GetAllChairs()
         {
             return chairs;
         }

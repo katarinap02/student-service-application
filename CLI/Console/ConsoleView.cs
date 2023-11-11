@@ -17,14 +17,14 @@ public class ConsoleView
     private readonly StudentDao _studentsDao;
     private readonly ProfessorDao _professorsDao;
     private readonly SubjectDao _subjectsDao;
-    private readonly CathedraDao _cathedrasDao;
+    private readonly ChairDao _chairsDao;
   
-    public ConsoleView(StudentDao studentsDao, ProfessorDao professorsDao, SubjectDao subjectsDao, CathedraDao cathedrasDao) //konstruktor sa parametrima
+    public ConsoleView(StudentDao studentsDao, ProfessorDao professorsDao, SubjectDao subjectsDao, ChairDao chairsDao) //konstruktor sa parametrima
     {
         _studentsDao = studentsDao;
         _professorsDao = professorsDao;
         _subjectsDao = subjectsDao;
-        _cathedrasDao = cathedrasDao;
+        _chairsDao = chairsDao;
     }
 
 
@@ -44,7 +44,7 @@ public class ConsoleView
                RunMenuSubject();
                 break;
             case "4":
-                RunMenuCathedra();
+                RunMenuChair();
                 break;
             case "5":
                 // RunMenuGrade();
@@ -467,33 +467,33 @@ public class ConsoleView
 
     //***********************************************************************
 
-    //********************CATHEDRAS******************************************
+    //********************CHAIRS******************************************
 
-    private void HandleMenuCathedra(string input)
+    private void HandleMenuChair(string input)
     {
         switch (input)
         {
             case "41":
-                ShowAllCathedras();
+                ShowAllChairs();
                 break;
             case "42":
-                AddCathedras();
+                AddChairs();
                 break;
             case "43":
-               UpdateCathedras();
+                UpdateChair();
                 break;
             case "44":
-                RemoveCathedras();
+                RemoveChairs();
                 break;
         }
     }
 
-    private void RemoveCathedras()
+    private void RemoveChairs()
     {
         throw new NotImplementedException();
     }
 
-    public void RunMenuCathedra()
+    public void RunMenuChair()
     {
         while (true)
         {
@@ -503,7 +503,7 @@ public class ConsoleView
             if (userInput != "41" && userInput != "42" && userInput != "43" && userInput != "44")
                 System.Console.WriteLine("Choose an option again ");
             else
-                HandleMenuCathedra(userInput);
+                HandleMenuChair(userInput);
         }
     }
 
@@ -517,75 +517,72 @@ public class ConsoleView
         System.Console.WriteLine("0: Close");
     }
 
-    private void ShowAllCathedras()
+    private void ShowAllChairs()
     {
-        PrintCathedras(_cathedrasDao.GetAllCathedras());
+        PrintChairs(_chairsDao.GetAllChairs());
     }
 
-    private void PrintCathedras(List<Cathedra> chairs)
+    private void PrintChairs(List<Chair> chairs)
     {
-        System.Console.WriteLine("CATHEDRA: ");
+        System.Console.WriteLine("CHAIR: ");
         string header = $"ID {"",6} | Name {"",21} "; //ZA SADA mi ispisuje samo ovo 
         System.Console.WriteLine(header);
-        foreach (Cathedra v2 in chairs)
+        foreach (Chair v2 in chairs)
         {
             System.Console.WriteLine(v2);
         }
     }
 
-    private void AddCathedras() //dodaj katedru
+    private void AddChairs() //dodaj katedru
     {
-        Cathedra chair1 = InputCathedra();
-        _cathedrasDao.AddCathedra(chair1);
-        System.Console.WriteLine("Cathedra added");
+        Chair chair1 = InputChair();
+        _chairsDao.AddChair(chair1);
+        System.Console.WriteLine("Chair added");
     }
 
-    private Cathedra InputCathedra()
+    private Chair InputChair()
     {
-        System.Console.WriteLine("Enter cathedra's name: ");
+        System.Console.WriteLine("Enter Chair's name: ");
         string name = System.Console.ReadLine() ?? string.Empty;
-
-       // System.Console.WriteLine("Enter subject's semester: S for Summer or W for Winter ");
-        //Subject.Semester semester = 0; // ovo treba ispraviti
 
         //treba popuniti
 
 
-        return new Cathedra(name);
+        return new Chair(name);
     }
 
-    private void UpdateCathedras() //azuriraj katedru (promijeni ime)
+    private void UpdateChair() //azuriraj katedru (promijeni ime)
     {
         int id = InputIdC();
-        Cathedra cathedra = InputCathedra();
-        cathedra.Id = id;
-        Cathedra? updatedCathedra = _cathedrasDao.UpdateCathedra(cathedra);
-        if (updatedCathedra == null)
+        Chair chair = InputChair();
+        chair.Id = id;
+        Chair? updatedChair = _chairsDao.UpdateChair(chair);
+        if (updatedChair == null)
         {
-            System.Console.WriteLine("Cathedra not found");
+            System.Console.WriteLine("Chair not found");
             return;
         }
 
-        System.Console.WriteLine("Cathedra updated");
+        System.Console.WriteLine("Chair updated");
     }
 
     private int InputIdC()
     {
-        System.Console.WriteLine("Enter cathedra's id: ");
+        System.Console.WriteLine("Enter chair's id: ");
         return ConsoleViewUtils.SafeInputInt();
     }
 
-    private void RemoveCathedra() //ukloni katedra
+    private void RemoveChair() //ukloni katedra
     {
         int id = InputIdC();
-        Cathedra? removedCathedra = _cathedrasDao.RemoveCathedra(id);
-        if (removedCathedra is null)
+        Chair? removedChair = _chairsDao.RemoveChair(id);
+        if (removedChair is null)
         {
-            System.Console.WriteLine("Cathedra not found");
+            System.Console.WriteLine("Chair not found");
             return;
         }
 
-        System.Console.WriteLine("Cathedra removed");
+        System.Console.WriteLine("Chair removed");
     }
 
 

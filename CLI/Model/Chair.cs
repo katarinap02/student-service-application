@@ -9,26 +9,26 @@ using CLI.Storage.Serialization;
 
 namespace CLI.Model
 {
-    public class Cathedra: ISerializable
+    public class Chair: ISerializable
     {
         public int Id { get; set; }
-        public string CatName { get; set; }
+        public string CName { get; set; }
         // sef
 
         public List<Professor> Professors { get; set; }
 
-        public Cathedra() { }
-        public Cathedra(int id, string name)
+        public Chair() { }
+        public Chair(int id, string name)
         {
             Id = id;
-            CatName = name;
+            CName = name;
             Professors= new List<Professor>();
         }
 
-        public Cathedra( string name)
+        public Chair( string name)
         {
            
-            CatName = name;
+            CName = name;
             Professors = new List<Professor>();
         }
 
@@ -37,7 +37,7 @@ namespace CLI.Model
             string[] csvValues =
             {
             Id.ToString(),
-            CatName
+            CName
             
 
         };
@@ -47,7 +47,7 @@ namespace CLI.Model
         public void FromCSV(string[] values)
         {
             Id = int.Parse(values[0]);
-            CatName = values[1];
+            CName = values[1];
             
         }
     }

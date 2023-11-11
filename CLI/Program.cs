@@ -2,6 +2,7 @@
 using CLI.Console;
 using CLI.DAO;
 using CLI.Model;
+using System;
 
 namespace CLIExample;
 
@@ -12,8 +13,8 @@ class Program
         StudentDao students = new StudentDao();
         ProfessorDao professors = new ProfessorDao();
         SubjectDao subjects = new SubjectDao();
-        CathedraDao cathedras = new  CathedraDao();
-        ConsoleView view = new ConsoleView(students, professors, subjects, cathedras);
+        ChairDao chairs = new ChairDao();
+        ConsoleView view = new ConsoleView(students, professors, subjects, chairs);
         view.Run();
     }
 }
