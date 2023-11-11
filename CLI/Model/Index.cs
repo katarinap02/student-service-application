@@ -24,6 +24,11 @@ namespace CLI.Model
 
         }
 
+        public override string ToString()
+        {
+            return $"{Course}{Number}-{YearE}";
+        }
+
         public string[] ToCSV() //ucitava u fajl
         {
             string[] csvValues =

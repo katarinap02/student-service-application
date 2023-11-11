@@ -58,6 +58,11 @@ namespace CLI.Model
 
         } //trebace nam jer se id generise
 
+        public override string ToString()
+        {
+            return $"ID: {Id,5} | Name: {Name,20} | Surname: {Surname,21} | Birthdate: {Birthdate,10} | Adress: {Adress, 21} | Phone number: {PhoneNumber, 12} | Email: {Email,30} | Index: {IndexNm, 12} | Current school year: {StYear, 4} |";
+        }
+        //
         public string[] ToCSV() //ucitava u fajl
         {
             string[] csvValues =
