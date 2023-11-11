@@ -70,6 +70,8 @@ namespace CLI.Model
             PhoneNumber.ToString(),
             Email.ToString(),
             IndexNm.ToCSV()[0],
+            IndexNm.ToCSV()[1],
+            IndexNm.ToCSV()[2],
             StYear.ToString()
 
         };

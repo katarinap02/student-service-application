@@ -426,8 +426,8 @@ public class ConsoleView
         System.Console.WriteLine("Enter subject's name: ");
         string name = ConsoleViewEmpty.SafeInputEmpty();
 
-        System.Console.WriteLine("Enter subject's semester: S for Summer or W for Winter ");
-        Subject.Semester semester = 0; // ovo treba ispraviti
+        System.Console.WriteLine("Enter subject's semester: Summer or Winter ");
+        Subject.Semester semester = Console.ConsoleViewEnum.SafeInputEnum();
 
         System.Console.WriteLine("Enter subject's year: ");
         int year = ConsoleViewUtils.SafeInputInt();
