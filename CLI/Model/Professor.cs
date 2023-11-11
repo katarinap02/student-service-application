@@ -13,7 +13,7 @@ namespace CLI.Model
         public int Id { get; set; } //broj licne karte
         public string Name { get; set; }
         public string Surname { get; set; }
-        public string Birthdate { get; set; }
+        public DateTime Birthdate { get; set; }
         public int Adress { get; set; }
         public int PhoneNumber { get; set; }
         public string Email{ get; set; }
@@ -23,7 +23,7 @@ namespace CLI.Model
       //public  List<Subject>subjects { get; set; }
 
         public Professor() { }
-        public Professor(int id, string name, string surname, string birthdate, int adress, int phonenumber, string email, string title, int styear)
+        public Professor(int id, string name, string surname, DateTime birthdate, int adress, int phonenumber, string email, string title, int styear)
         {
             Id = id;
             Name = name;
@@ -38,7 +38,7 @@ namespace CLI.Model
 
         }
 
-        public Professor(string name, string surname, string birthdate, int adress, int phonenumber, string email, string title, int styear)
+        public Professor(string name, string surname, DateTime birthdate, int adress, int phonenumber, string email, string title, int styear)
         {
             Name = name;
             Surname = surname;
@@ -59,7 +59,7 @@ namespace CLI.Model
             Id.ToString(),
             Name,
             Surname,
-            Birthdate,
+            Birthdate.ToString(),
             Adress.ToString(),
             PhoneNumber.ToString(),
             Email.ToString(),
@@ -75,7 +75,7 @@ namespace CLI.Model
             Id = int.Parse(values[0]);
             Name = values[1];
             Surname = values[2];
-            Birthdate = values[3];
+            Birthdate = DateTime.Parse(values[3]);
             Adress = int.Parse(values[4]);
             PhoneNumber = int.Parse(values[5]);
             Email = values[6];

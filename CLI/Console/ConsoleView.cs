@@ -149,10 +149,10 @@ public class ConsoleView
     private Student InputStudent()
     {
         System.Console.WriteLine("Enter student's name: ");
-        string name = System.Console.ReadLine() ?? string.Empty;
+        string name = ConsoleViewEmpty.SafeInputEmpty();
 
         System.Console.WriteLine("Enter student's surname: ");
-        string surname = System.Console.ReadLine() ?? string.Empty;
+        string surname = ConsoleViewEmpty.SafeInputEmpty();
 
         System.Console.WriteLine("Enter student's birthdate: ");
         DateTime birthdate = ConsoleViewDate.SafeInputDate();
@@ -164,10 +164,10 @@ public class ConsoleView
         int phonenumber = ConsoleViewUtils.SafeInputInt();
 
         System.Console.WriteLine("Enter student' s email: ");
-        string email = System.Console.ReadLine() ?? string.Empty;
+        string email = ConsoleViewEmpty.SafeInputEmpty();
 
         System.Console.WriteLine("Enter student's index: ");
-        string index = System.Console.ReadLine() ?? string.Empty;
+        string index = ConsoleViewEmpty.SafeInputEmpty();
 
         System.Console.WriteLine("Enter current school year: ");
         int year = ConsoleViewUtils.SafeInputInt();
@@ -284,13 +284,13 @@ public class ConsoleView
     private Professor InputProfessor()
     {
         System.Console.WriteLine("Enter professor's name: ");
-        string name = System.Console.ReadLine() ?? string.Empty;
+        string name = ConsoleViewEmpty.SafeInputEmpty();
 
         System.Console.WriteLine("Enter professor's surname: ");
-        string surname = System.Console.ReadLine() ?? string.Empty;
+        string surname = ConsoleViewEmpty.SafeInputEmpty();
 
         System.Console.WriteLine("Enter professor's birthdate: ");
-        string birthdate = System.Console.ReadLine() ?? string.Empty;
+        DateTime birthdate = ConsoleViewDate.SafeInputDate();
 
         System.Console.WriteLine("Enter professor's adress: ");
         int adress = ConsoleViewUtils.SafeInputInt();
@@ -299,10 +299,10 @@ public class ConsoleView
         int phonenumber = ConsoleViewUtils.SafeInputInt();
 
         System.Console.WriteLine("Enter professor's email: ");
-        string email = System.Console.ReadLine() ?? string.Empty;
+        string email = ConsoleViewEmpty.SafeInputEmpty();
 
         System.Console.WriteLine("Enter professor's title: ");
-        string title = System.Console.ReadLine() ?? string.Empty;
+        string title = ConsoleViewEmpty.SafeInputEmpty();
 
         System.Console.WriteLine("Enter professor's years of service: ");
         int year = ConsoleViewUtils.SafeInputInt();
@@ -417,7 +417,7 @@ public class ConsoleView
     private Subject InputSubject()
     {
         System.Console.WriteLine("Enter subject's name: ");
-        string name = System.Console.ReadLine() ?? string.Empty;
+        string name = ConsoleViewEmpty.SafeInputEmpty();
 
         System.Console.WriteLine("Enter subject's semester: S for Summer or W for Winter ");
         Subject.Semester semester = 0; // ovo treba ispraviti
@@ -543,7 +543,7 @@ public class ConsoleView
     private Chair InputChair()
     {
         System.Console.WriteLine("Enter Chair's name: ");
-        string name = System.Console.ReadLine() ?? string.Empty;
+        string name = ConsoleViewEmpty.SafeInputEmpty();
 
         //treba popuniti
 
