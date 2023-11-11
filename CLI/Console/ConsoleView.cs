@@ -58,7 +58,7 @@ public class ConsoleView
         System.Console.WriteLine("1: Student ");
         System.Console.WriteLine("2: Professor ");
         System.Console.WriteLine("3: Subject ");
-        System.Console.WriteLine("4: Cathedra ");
+        System.Console.WriteLine("4: Chair ");
         System.Console.WriteLine("5: Grade ");
         System.Console.WriteLine("0: Close");
     }
@@ -155,7 +155,7 @@ public class ConsoleView
         string surname = System.Console.ReadLine() ?? string.Empty;
 
         System.Console.WriteLine("Enter student's birthdate: ");
-        string birthdate = System.Console.ReadLine() ?? string.Empty;
+        DateTime birthdate = ConsoleViewDate.SafeInputDate();
 
         System.Console.WriteLine("Enter student's adress: ");
         int adress = ConsoleViewUtils.SafeInputInt();
