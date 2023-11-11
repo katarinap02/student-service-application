@@ -131,7 +131,7 @@ public class ConsoleView
     private void PrintStudents(List<Student> students) //ispisi studente/studenta
     {
         System.Console.WriteLine("STUDENTS: ");
-        string header = $"ID {"",6} | Name {"",21} | Surname {"",21} | Birthdate {"",10} | Adress {"", 21} | Phone number{"",12} | Email{"",30} | Index {"", 21} | Current school year {"", 4} |";
+        string header = $"ID {"",6} | Name {"",21} | Surname {"",21} | Birthdate {"",10} | Adress {"", 21} | Phone number{"",12} | Email{"",30} | Index course (2 or 3 letters) {"", 3} | Index number (2 or 3 numbers)  | Index year {"",4} {"",3}| Current school year {"", 4} |";
         System.Console.WriteLine(header);
         foreach (Student v in students)
         {
@@ -166,14 +166,21 @@ public class ConsoleView
         System.Console.WriteLine("Enter student' s email: ");
         string email = ConsoleViewEmpty.SafeInputEmpty();
 
-        System.Console.WriteLine("Enter student's index: ");
-        string index = ConsoleViewEmpty.SafeInputEmpty();
+        System.Console.WriteLine("Enter student's index course: ");
+        string indexc = ConsoleViewEmpty.SafeInputEmpty();
+
+        System.Console.WriteLine("Enter student's index number: ");
+        int indexn = ConsoleViewUtils.SafeInputInt();
+
+        System.Console.WriteLine("Enter student's index year: ");
+        int indexy = ConsoleViewUtils.SafeInputInt();
 
         System.Console.WriteLine("Enter current school year: ");
         int year = ConsoleViewUtils.SafeInputInt();
 
 
-
+        Model.Index index = new Model.Index(indexc, indexn, indexy);
+        
 
         return new Student(name, surname, birthdate, adress, phonenumber,email, index, year );
     }

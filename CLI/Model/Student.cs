@@ -19,7 +19,7 @@ namespace CLI.Model
         public int  Adress {  get; set; } //povezacemo kasnije preko id
         public int PhoneNumber { get; set; }
         public string Email { get; set; }
-        public string IndexNm { get; set; }
+        public Index IndexNm { get; set; }
         public int StYear { get; set; }
        // public double AvGrade { get; set; }
 
@@ -29,7 +29,7 @@ namespace CLI.Model
         public Student ()
         { }
 
-        public Student ( int id,  string name, string surname, DateTime birthdate, int adress, int phonenumber, string email,string indexnm, int styear ) //fali avggrade parametar
+        public Student ( int id,  string name, string surname, DateTime birthdate, int adress, int phonenumber, string email,Index indexnm, int styear ) //fali avggrade parametar
         {
             Id = id;
             Name = name;
@@ -44,7 +44,7 @@ namespace CLI.Model
 
         }
 
-        public Student(string name, string surname, DateTime birthdate, int adress, int phonenumber, string email, string indexnm, int styear) //fali avggrade parametar
+        public Student(string name, string surname, DateTime birthdate, int adress, int phonenumber, string email, Index indexnm, int styear) //fali avggrade parametar
         {
             Name = name;
             Surname = surname;
@@ -69,7 +69,7 @@ namespace CLI.Model
             Adress.ToString(),
             PhoneNumber.ToString(),
             Email.ToString(),
-            IndexNm.ToString(),
+            IndexNm.ToCSV()[0],
             StYear.ToString()
 
         };
@@ -85,8 +85,9 @@ namespace CLI.Model
             Adress = int.Parse(values[4]);
             PhoneNumber = int.Parse(values[5]);
             Email = values[6];
-            IndexNm = values[7];
-            StYear = int.Parse(values[8]);  
+            IndexNm = new Index();
+            IndexNm.FromCSV(new string[] {  values[7], values[8], values[9] });
+            StYear = int.Parse(values[10]);  
         }
     }
 }
