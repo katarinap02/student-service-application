@@ -14,7 +14,8 @@ class Program
         ProfessorDao professors = new ProfessorDao();
         SubjectDao subjects = new SubjectDao();
         ChairDao chairs = new ChairDao();
-        ConsoleView view = new ConsoleView(students, professors, subjects, chairs);
+        GradeDao grades = new GradeDao();
+        ConsoleView view = new ConsoleView(students, professors, subjects, chairs, grades );
         view.Run();
     }
 }

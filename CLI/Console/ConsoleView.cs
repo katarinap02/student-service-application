@@ -18,13 +18,15 @@ public class ConsoleView
     private readonly ProfessorDao _professorsDao;
     private readonly SubjectDao _subjectsDao;
     private readonly ChairDao _chairsDao;
+    private readonly GradeDao _gradesDao;
   
-    public ConsoleView(StudentDao studentsDao, ProfessorDao professorsDao, SubjectDao subjectsDao, ChairDao chairsDao) //konstruktor sa parametrima
+    public ConsoleView(StudentDao studentsDao, ProfessorDao professorsDao, SubjectDao subjectsDao, ChairDao chairsDao, GradeDao gradesDao) //konstruktor sa parametrima
     {
         _studentsDao = studentsDao;
         _professorsDao = professorsDao;
         _subjectsDao = subjectsDao;
         _chairsDao = chairsDao;
+        _gradesDao = gradesDao;
     }
 
 
@@ -603,6 +605,128 @@ public class ConsoleView
         }
 
         System.Console.WriteLine("Chair removed");
+    }
+
+
+
+//********************GRADE******************************************
+
+    private void HandleMenuGrade(string input)
+    {
+        switch (input)
+        {
+            case "51":
+                ShowAllGrades();
+                break;
+            case "52":
+                AddGrades();
+                break;
+            case "53":
+                UpdateGrade();
+                break;
+            case "54":
+                RemoveGrade();
+                break;
+        }
+    }
+
+   
+
+    public void RunMenuGrade()
+    {
+        while (true)
+        {
+            ShowMenuG();
+            string userInput = System.Console.ReadLine() ?? "0";
+            if (userInput == "0") break;
+            if (userInput != "51" && userInput != "52" && userInput != "53" && userInput != "54")
+                System.Console.WriteLine("Choose an option again ");
+            else
+                HandleMenuGrade(userInput);
+        }
+    }
+
+    private void ShowMenuG()
+    {
+        System.Console.WriteLine("\nChoose an option: ");
+        System.Console.WriteLine("51: Show All ");
+        System.Console.WriteLine("52: Add ");
+        System.Console.WriteLine("53: Update ");
+        System.Console.WriteLine("54: Remove ");
+        System.Console.WriteLine("0: Close");
+    }
+
+    private void ShowAllGrades()
+    {
+        PrintGrades(_gradesDao.GetAllGrades());
+    }
+
+    private void PrintGrades(List<Grade> grades)
+    {
+        System.Console.WriteLine("GRADE: ");
+        string header = $"ID: {"",6} | Grade: {"",2} | Date: {"", 12}| "; //ZA SADA mi ispisuje samo ovo 
+        System.Console.WriteLine(header);
+        foreach (Grade v2 in grades)
+        {
+            System.Console.WriteLine(v2);
+        }
+    }
+
+    private void AddGrades() //dodaj katedru
+    {
+        Grade grade1 = InputGrade();
+        _gradesDao.AddGrade(grade1);
+        System.Console.WriteLine("Grade added");
+    }
+
+    private Grade InputGrade()
+    {
+        System.Console.WriteLine("Enter Grade's ID: ");
+        int Id= ConsoleViewUtils.SafeInputInt();
+
+        System.Console.WriteLine("Enter Grade's value: ");
+        int grade = ConsoleViewGrade.SafeInputGrade();
+
+        System.Console.WriteLine("Enter Grade's date: ");
+        DateOnly date = ConsoleViewDate.SafeInputDate();
+        //treba popuniti
+
+
+        return new Grade(Id,grade,date);
+    }
+
+    private void UpdateGrade() //azuriraj katedru (promijeni ime)
+    {
+        int id = InputIdG();
+       Grade grade= InputGrade();
+        grade.Id = id;
+        Grade? updatedGrade = _gradesDao.UpdateGrade(grade);
+        if (updatedGrade == null)
+        {
+            System.Console.WriteLine("Grade not found");
+            return;
+        }
+
+        System.Console.WriteLine("Grade updated");
+    }
+
+    private int InputIdG()
+    {
+        System.Console.WriteLine("Enter grades's id: ");
+        return ConsoleViewUtils.SafeInputInt();
+    }
+
+    private void RemoveGrade() //ukloni katedra
+    {
+        int id = InputIdG();
+        Grade? removedGrade = _gradesDao.RemoveGrade(id);
+        if (removedGrade is null)
+        {
+            System.Console.WriteLine("Grade not found");
+            return;
+        }
+
+        System.Console.WriteLine("Grade removed");
     }
 
 

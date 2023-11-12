@@ -30,7 +30,12 @@ namespace CLI.Model
             grade = gr;
             date = d;
         }
-
+        public Grade(int id, int gr, DateOnly d)
+        {
+            Id = id;
+            grade = gr;
+            date = d;
+        }
         public Grade( Student st, Subject subj, int gr, DateOnly d)
         {
             
