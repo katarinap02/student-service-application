@@ -20,10 +20,11 @@ namespace CLI.Model
         public int NumEspb { get; set; }
         
         public Professor Professor { get; set; }
+       
 
-      //  public List<Student> StudentsP { get; set; }//spisak onih koji su polozili
+        //  public List<Student> StudentsP { get; set; }//spisak onih koji su polozili
 
-       // public List<Student> StudentsF { get; set; } //spisak onih koji nisu polozili
+        // public List<Student> StudentsF { get; set; } //spisak onih koji nisu polozili
 
 
 
@@ -65,6 +66,7 @@ namespace CLI.Model
             Id.ToString(),
             Name,
             SYear.ToString(),
+            Semester1.ToString(),
             NumEspb.ToString()
 
 
@@ -78,7 +80,8 @@ namespace CLI.Model
             Id = int.Parse(values[0]);
             Name = values[1];
             SYear = int.Parse(values[2]);
-            NumEspb = int.Parse(values[3]);
+            Semester1 = Enum.Parse<Semester>(values[3]);
+            NumEspb = int.Parse(values[4]);
 
         }
     }

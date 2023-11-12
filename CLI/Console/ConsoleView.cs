@@ -180,9 +180,11 @@ public class ConsoleView
 
 
         Model.Index index = new Model.Index(indexc, indexn, indexy);
-        
 
-        return new Student(name, surname, birthdate, adress, phonenumber,email, index, year );
+        /* System.Console.WriteLine("Enter student's current school status: ");
+         Student.Status status = ConsoleViewEnum.SafeInputEnum1();*/
+
+        return new Student(name, surname, birthdate, adress, phonenumber, email, index, year);
     }
 
     private void UpdateStudent() //azuriraj studente
@@ -427,7 +429,7 @@ public class ConsoleView
         string name = ConsoleViewEmpty.SafeInputEmpty();
 
         System.Console.WriteLine("Enter subject's semester: Summer or Winter ");
-        Subject.Semester semester = Console.ConsoleViewEnum.SafeInputEnum();
+        Subject.Semester semester = Console.ConsoleViewEnum.SafeInputEnum1();
 
         System.Console.WriteLine("Enter subject's year: ");
         int year = ConsoleViewUtils.SafeInputInt();

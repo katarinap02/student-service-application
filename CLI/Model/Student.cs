@@ -9,7 +9,7 @@ namespace CLI.Model
 {
     public class Student : ISerializable
     {
-        enum Status {B, S};
+        public enum Status { B, S };
 
         public int Id { get;  set; }
         public string Name { get; set; }
@@ -21,6 +21,8 @@ namespace CLI.Model
         public string Email { get; set; }
         public Index IndexNm { get; set; }
         public int StYear { get; set; }
+
+        public Status Status1 { get; set; }
        // public double AvGrade { get; set; }
 
        // List<int> Grades = new List<int>();
@@ -40,6 +42,7 @@ namespace CLI.Model
             Email = email;
             IndexNm = indexnm;
             StYear = styear;
+            //Status1 = S;
            // AvGrade = avgrade;
 
         }
@@ -54,6 +57,7 @@ namespace CLI.Model
             Email = email;
             IndexNm = indexnm;
             StYear = styear;
+           // Status1 = s;
             // AvGrade = avgrade;
 
         } //trebace nam jer se id generise
