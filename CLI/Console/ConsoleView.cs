@@ -131,7 +131,7 @@ public class ConsoleView
     private void PrintStudents(List<Student> students) //ispisi studente/studenta
     {
         System.Console.WriteLine("STUDENTS: ");
-        string header = $"ID {"",6} | Name {"",21} | Surname {"",21} | Birthdate {"",10} | Adress {"", 21} | Phone number{"",12} | Email{"",30} | Index course (2 or 3 letters) {"", 3} | Index number (2 or 3 numbers)  | Index year {"",4} {"",3}| Current school year {"", 4} |";
+        string header = $"ID {"",6} | Name {"",21} | Surname {"",21} | Birthdate {"",10} | Adress {"", 21} | Phone number{"",12} | Email{"",30} | Index course (2 or 3 letters) {"", 3} | Index number (2 or 3 numbers)  | Index year {"",4} {"",3}| Current school year {"", 4} | Current student's status {"", 2} |";
         System.Console.WriteLine(header);
         foreach (Student v in students)
         {
@@ -181,10 +181,10 @@ public class ConsoleView
 
         Model.Index index = new Model.Index(indexc, indexn, indexy);
 
-        /* System.Console.WriteLine("Enter student's current school status: ");
-         Student.Status status = ConsoleViewEnum.SafeInputEnum1();*/
+         System.Console.WriteLine("Enter student's current school status: ");
+         Student.Status status = ConsoleViewEnum.SafeInputEnum2();
 
-        return new Student(name, surname, birthdate, adress, phonenumber, email, index, year);
+        return new Student(name, surname, birthdate, adress, phonenumber, email, index, year, status);
     }
 
     private void UpdateStudent() //azuriraj studente

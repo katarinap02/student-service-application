@@ -31,7 +31,7 @@ namespace CLI.Model
         public Student ()
         { }
 
-        public Student ( int id,  string name, string surname, DateTime birthdate, int adress, int phonenumber, string email,Index indexnm, int styear ) //fali avggrade parametar
+        public Student ( int id,  string name, string surname, DateTime birthdate, int adress, int phonenumber, string email,Index indexnm, int styear, Status s ) //fali avggrade parametar
         {
             Id = id;
             Name = name;
@@ -42,12 +42,12 @@ namespace CLI.Model
             Email = email;
             IndexNm = indexnm;
             StYear = styear;
-            //Status1 = S;
+            Status1 = s;
            // AvGrade = avgrade;
 
         }
 
-        public Student(string name, string surname, DateTime birthdate, int adress, int phonenumber, string email, Index indexnm, int styear) //fali avggrade parametar
+        public Student(string name, string surname, DateTime birthdate, int adress, int phonenumber, string email, Index indexnm, int styear, Status s) //fali avggrade parametar
         {
             Name = name;
             Surname = surname;
@@ -57,16 +57,16 @@ namespace CLI.Model
             Email = email;
             IndexNm = indexnm;
             StYear = styear;
-           // Status1 = s;
+            Status1 = s;
             // AvGrade = avgrade;
 
         } //trebace nam jer se id generise
 
         public override string ToString()
         {
-            return $"ID: {Id,5} | Name: {Name,20} | Surname: {Surname,21} | Birthdate: {Birthdate,10} | Adress: {Adress, 21} | Phone number: {PhoneNumber, 12} | Email: {Email,30} | Index: {IndexNm, 12} | Current school year: {StYear, 4} |";
+            return $"ID: {Id,5} | Name: {Name,20} | Surname: {Surname,21} | Birthdate: {Birthdate,10} | Adress: {Adress, 21} | Phone number: {PhoneNumber, 12} | Email: {Email,30} | Index: {IndexNm, 12} | Current school year: {StYear, 4} | Current student's status: {Status1, 2} |";
         }
-        //
+        
         public string[] ToCSV() //ucitava u fajl
         {
             string[] csvValues =
@@ -81,7 +81,8 @@ namespace CLI.Model
             IndexNm.ToCSV()[0],
             IndexNm.ToCSV()[1],
             IndexNm.ToCSV()[2],
-            StYear.ToString()
+            StYear.ToString(),
+            Status1.ToString()
 
         };
             return csvValues;
@@ -98,7 +99,9 @@ namespace CLI.Model
             Email = values[6];
             IndexNm = new Index();
             IndexNm.FromCSV(new string[] {  values[7], values[8], values[9] });
-            StYear = int.Parse(values[10]);  
+            StYear = int.Parse(values[10]);
+            Status1= Enum.Parse<Status>(values[11]);   
+           
         }
     }
 }
