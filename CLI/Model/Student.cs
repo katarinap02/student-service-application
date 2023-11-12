@@ -64,7 +64,7 @@ namespace CLI.Model
 
         public override string ToString()
         {
-            return $"ID: {Id,5} | Name: {Name,20} | Surname: {Surname,21} | Birthdate: {Birthdate,10} | Adress: {Adress1, 21} | Phone number: {PhoneNumber, 12} | Email: {Email,30} | Index: {IndexNm, 12} | Current school year: {StYear, 4} | Current student's status: {Status1, 2} |";
+            return $"ID: {Id,5} | Name: {Name,15} | Surname: {Surname,15} | Birthdate: {Birthdate,10} | Adress: {Adress1, 30} | Phone number: {PhoneNumber, 12} | Email: {Email,20} | Index: {IndexNm, 12} | Current school year: {StYear, 4} | Current student's status: {Status1, 2} |";
         }
         
         public string[] ToCSV() //ucitava u fajl
@@ -74,7 +74,7 @@ namespace CLI.Model
             Id.ToString(),
             Name,
             Surname,
-            Birthdate.ToString(),
+            Birthdate.ToString("yyyy-MM-dd"),
             Adress1.ToCSV()[0],
             Adress1.ToCSV()[1],
             Adress1.ToCSV()[2],

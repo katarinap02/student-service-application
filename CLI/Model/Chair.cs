@@ -32,10 +32,10 @@ namespace CLI.Model
             CName = name;
             Professors = new List<Professor>();
         }
-        /*public override string ToString()
+        public override string ToString()
         {
-            return $"ID: {"",6} | Name: {"",21} |";
-        }*/
+            return $"ID: {Id,6} | Name: {CName,21} |";
+        }
 
         public string[] ToCSV()
         {

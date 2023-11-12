@@ -62,7 +62,7 @@ namespace CLI.Model
         }
         public override string ToString()
         {
-            return $"ID: {"",6} | Name: {"",21} | Semester: {"",21} | Year: {"",10} | ESPB: {"",5} |";
+            return $"ID: {Id,6} | Name: {Name,21} | Semester: {Semester1,21} | Year: {SYear,10} | ESPB: {NumEspb,5} |";
         }
         public string[] ToCSV()
         {

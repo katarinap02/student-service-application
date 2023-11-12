@@ -131,7 +131,7 @@ public class ConsoleView
     private void PrintStudents(List<Student> students) //ispisi studente/studenta
     {
         System.Console.WriteLine("STUDENTS: ");
-        string header = $"ID {"",6} | Name {"",21} | Surname {"",21} | Birthdate {"",10} | Adress {"", 21} | Phone number{"",12} | Email{"",30} | Index course (2 or 3 letters) {"", 3} | Index number (2 or 3 numbers)  | Index year {"",4} {"",3}| Current school year {"", 4} | Current student's status {"", 2} |";
+        string header = $"ID {"",6} | Name {"",15} | Surname {"",15} | Birthdate {"",10} | Adress {"", 30} | Phone number{"",12} | Email{"",20} | Index {"", 12}| Current school year {"", 4} | Current student's status {"", 2} |";
         System.Console.WriteLine(header);
         foreach (Student v in students)
         {
@@ -158,16 +158,16 @@ public class ConsoleView
         DateTime birthdate = ConsoleViewDate.SafeInputDate();
 
         System.Console.WriteLine("Enter student's name of street: ");
-        string adressA = ConsoleViewUtils.SafeInputEmpty();
+        string adressA = ConsoleViewEmpty.SafeInputEmpty();
 
         System.Console.WriteLine("Enter student's number of street: ");
         int adressB = ConsoleViewUtils.SafeInputInt();
 
         System.Console.WriteLine("Enter student's city: ");
-        string adressC = ConsoleViewUtils.SafeInputEmpty();
+        string adressC = ConsoleViewEmpty.SafeInputEmpty();
 
         System.Console.WriteLine("Enter student's country: ");
-        string adressD = ConsoleViewUtils.SafeInputEmpty();
+        string adressD = ConsoleViewEmpty.SafeInputEmpty();
 
         Model.Adress adress = new Model.Adress(adressA, adressB, adressC, adressD);
 
@@ -192,7 +192,7 @@ public class ConsoleView
 
         Model.Index index = new Model.Index(indexc, indexn, indexy);
 
-         System.Console.WriteLine("Enter student's current school status: ");
+         System.Console.WriteLine("Enter student's current school status (S or B): ");
          Student.Status status = ConsoleViewEnum.SafeInputEnum2();
 
         return new Student(name, surname, birthdate, adress, phonenumber, email, index, year, status);
