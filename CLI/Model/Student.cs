@@ -22,6 +22,8 @@ namespace CLI.Model
         public Index IndexNm { get; set; }
         public int StYear { get; set; }
 
+        public List<Subject> Subjects { get; set; } // lista nepolozenih predmeta
+
         public Status Status1 { get; set; }
        // public double AvGrade { get; set; }
 
@@ -29,7 +31,9 @@ namespace CLI.Model
        // List<string> Subjects = new List<string>();
 
         public Student ()
-        { }
+        {
+            Subjects = new List<Subject>();
+        }
 
         public Student ( int id,  string name, string surname, DateTime birthdate, Adress adress, int phonenumber, string email,Index indexnm, int styear, Status s ) //fali avggrade parametar
         {
@@ -43,7 +47,8 @@ namespace CLI.Model
             IndexNm = indexnm;
             StYear = styear;
             Status1 = s;
-           // AvGrade = avgrade;
+            Subjects = new List<Subject>();
+            
 
         }
 
@@ -58,7 +63,8 @@ namespace CLI.Model
             IndexNm = indexnm;
             StYear = styear;
             Status1 = s;
-            // AvGrade = avgrade;
+            Subjects = new List<Subject>();
+            
 
         } //trebace nam jer se id generise
 
