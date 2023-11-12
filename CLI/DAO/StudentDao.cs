@@ -73,5 +73,10 @@ public class StudentDao
         return students;
     }
 
+    public Model.Student FindStudentById(List<Student> students, int targetId)
+    {
+        return students.Find(student => student.Id == targetId);
+    }
+
 
 }

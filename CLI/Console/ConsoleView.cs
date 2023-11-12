@@ -49,7 +49,7 @@ public class ConsoleView
                 RunMenuChair();
                 break;
             case "5":
-                // RunMenuGrade();
+                 RunMenuGrade();
                 break;
         }
     }
@@ -664,7 +664,7 @@ public class ConsoleView
     private void PrintGrades(List<Grade> grades)
     {
         System.Console.WriteLine("GRADE: ");
-        string header = $"ID: {"",6} | Grade: {"",2} | Date: {"", 12}| "; //ZA SADA mi ispisuje samo ovo 
+        string header = $"ID: {"",6}| Students Id {"",2} | Subjects Id {"",2} | Grade: {"",2} | Date: {"", 12}| "; //ZA SADA mi ispisuje samo ovo 
         System.Console.WriteLine(header);
         foreach (Grade v2 in grades)
         {
@@ -681,8 +681,24 @@ public class ConsoleView
 
     private Grade InputGrade()
     {
-        System.Console.WriteLine("Enter Grade's ID: ");
-        int Id= ConsoleViewUtils.SafeInputInt();
+
+        System.Console.WriteLine("Enter Student's ID: ");
+        int Idst = ConsoleViewUtils.SafeInputInt();
+        
+        while ((_studentsDao.FindStudentById(_studentsDao.GetAllStudents(), Idst)) == null)
+        {
+            System.Console.WriteLine("Student not found, try again ");
+             Idst = ConsoleViewUtils.SafeInputInt();
+        }
+
+        System.Console.WriteLine("Enter Subjects's ID: ");
+        int Idsu = ConsoleViewUtils.SafeInputInt();
+
+        while ((_subjectsDao.FindSubjectById(_subjectsDao.GetAllSubjects(), Idsu)) == null)
+        {
+            System.Console.WriteLine("Subject not found, try again ");
+            Idsu = ConsoleViewUtils.SafeInputInt();
+        }
 
         System.Console.WriteLine("Enter Grade's value: ");
         int grade = ConsoleViewGrade.SafeInputGrade();
@@ -691,8 +707,15 @@ public class ConsoleView
         DateOnly date = ConsoleViewDate.SafeInputDate();
         //treba popuniti
 
+        Model.Student student = _studentsDao.FindStudentById(_studentsDao.GetAllStudents(), Idst);
+        Model.Subject subject = _subjectsDao.FindSubjectById(_subjectsDao.GetAllSubjects(), Idsu);
 
-        return new Grade(Id,grade,date);
+            return new Grade(student, subject, grade, date);
+        
+        
+        
+
+        
     }
 
     private void UpdateGrade() //azuriraj katedru (promijeni ime)
