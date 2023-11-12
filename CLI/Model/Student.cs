@@ -15,7 +15,7 @@ namespace CLI.Model
         public string Name { get; set; }
         public string Surname { get; set; }
 
-        public DateTime Birthdate { get; set; } 
+        public DateOnly Birthdate { get; set; } 
         public Adress  Adress1 {  get; set; } //povezacemo kasnije preko id
         public int PhoneNumber { get; set; }
         public string Email { get; set; }
@@ -35,7 +35,7 @@ namespace CLI.Model
             Subjects = new List<Subject>();
         }
 
-        public Student ( int id,  string name, string surname, DateTime birthdate, Adress adress, int phonenumber, string email,Index indexnm, int styear, Status s ) //fali avggrade parametar
+        public Student ( int id,  string name, string surname, DateOnly birthdate, Adress adress, int phonenumber, string email,Index indexnm, int styear, Status s ) //fali avggrade parametar
         {
             Id = id;
             Name = name;
@@ -52,7 +52,7 @@ namespace CLI.Model
 
         }
 
-        public Student(string name, string surname, DateTime birthdate, Adress adress, int phonenumber, string email, Index indexnm, int styear, Status s) //fali avggrade parametar
+        public Student(string name, string surname, DateOnly birthdate, Adress adress, int phonenumber, string email, Index indexnm, int styear, Status s) //fali avggrade parametar
         {
             Name = name;
             Surname = surname;
@@ -103,7 +103,7 @@ namespace CLI.Model
             Id = int.Parse(values[0]);
             Name = values[1];
             Surname = values[2];
-            Birthdate = DateTime.Parse(values[3]);
+            Birthdate = DateOnly.Parse(values[3]);
             Adress1 = new Adress();
             Adress1.FromCSV(new string[] { values[4], values[5], values[6], values[7], values[8] });
             PhoneNumber = int.Parse(values[9]);

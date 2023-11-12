@@ -1,1 +1,2 @@
-1|IME|PREZIME|12/12/1970 12:00:00 AM|3|3333|fdsf|title|10|
+1|IME|PREZIME|12/12/1970 |3|3333|fdsf|title|10
+2|Rale|Ralevic|12/12/1960|3|333|rale|dr|20

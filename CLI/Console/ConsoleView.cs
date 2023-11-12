@@ -155,7 +155,7 @@ public class ConsoleView
         string surname = ConsoleViewEmpty.SafeInputEmpty();
 
         System.Console.WriteLine("Enter student's birthdate: ");
-        DateTime birthdate = ConsoleViewDate.SafeInputDate();
+        DateOnly birthdate = ConsoleViewDate.SafeInputDate();
 
         System.Console.WriteLine("Enter student's name of street: ");
         string adressA = ConsoleViewEmpty.SafeInputEmpty();
@@ -310,7 +310,7 @@ public class ConsoleView
         string surname = ConsoleViewEmpty.SafeInputEmpty();
 
         System.Console.WriteLine("Enter professor's birthdate: ");
-        DateTime birthdate = ConsoleViewDate.SafeInputDate();
+        DateOnly birthdate = ConsoleViewDate.SafeInputDate();
 
         System.Console.WriteLine("Enter professor's adress: ");
         int adress = ConsoleViewUtils.SafeInputInt();
