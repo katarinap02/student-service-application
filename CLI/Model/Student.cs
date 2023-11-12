@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,12 +12,12 @@ namespace CLI.Model
     {
         public enum Status { B, S };
 
-        public int Id { get;  set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
 
-        public DateOnly Birthdate { get; set; } 
-        public Adress  Adress1 {  get; set; } //povezacemo kasnije preko id
+        public DateOnly Birthdate { get; set; }
+        public Adress Adress1 { get; set; } //povezacemo kasnije preko id
         public int PhoneNumber { get; set; }
         public string Email { get; set; }
         public Index IndexNm { get; set; }
@@ -25,15 +26,44 @@ namespace CLI.Model
         public List<Subject> Subjects { get; set; } // lista nepolozenih predmeta
 
         public Status Status1 { get; set; }
-       // public double AvGrade { get; set; }
+        // public double AvGrade { get; set; }
 
-       // List<int> Grades = new List<int>();
-       // List<string> Subjects = new List<string>();
-
-        public Student ()
+        List<int> Grades = new List<int>();
+        //List<string> Subjects = new List<string>();
+        public Student()
         {
-            Subjects = new List<Subject>();
+            Grades = new List<int>();
+            // Subjects = new List<Subject>();
         }
+
+        // Method to add an element to the list
+        public void AddElementToGrades(int element)
+        {
+            Grades.Add(element);
+        }
+
+        public double Average(List<int> Grades)
+        {
+            if (Grades == null || Grades.Count == 0)
+            {
+                
+                return 0;
+            }
+
+            int sum = 0;
+
+            foreach (int grade in Grades)
+            {
+                sum += grade;
+            }
+
+            double average = (double)sum / Grades.Count;
+            return average;
+            
+
+        }
+
+        
 
         public Student ( int id,  string name, string surname, DateOnly birthdate, Adress adress, int phonenumber, string email,Index indexnm, int styear, Status s ) //fali avggrade parametar
         {
@@ -72,7 +102,7 @@ namespace CLI.Model
 
         public override string ToString()
         {
-            return $"ID: {Id,5} | Name: {Name,15} | Surname: {Surname,15} | Birthdate: {Birthdate,10} | Adress: {Adress1, 30} | Phone number: {PhoneNumber, 12} | Email: {Email,20} | Index: {IndexNm, 12} | Current school year: {StYear, 4} | Current student's status: {Status1, 2} |";
+            return $"ID: {Id,5} | Name: {Name,15} | Surname: {Surname,15} | Birthdate: {Birthdate,10} | Adress: {Adress1, 30} | Phone number: {PhoneNumber, 12} | Email: {Email,20} | Index: {IndexNm, 12} | Current school year: {StYear, 4} | Current student's status: {Status1, 2} | Average Grade {Average(Grades)}";
         
         }
         public string[] ToCSV() //ucitava u fajl
