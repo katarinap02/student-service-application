@@ -157,8 +157,19 @@ public class ConsoleView
         System.Console.WriteLine("Enter student's birthdate: ");
         DateTime birthdate = ConsoleViewDate.SafeInputDate();
 
-        System.Console.WriteLine("Enter student's adress: ");
-        int adress = ConsoleViewUtils.SafeInputInt();
+        System.Console.WriteLine("Enter student's name of street: ");
+        string adressA = ConsoleViewUtils.SafeInputEmpty();
+
+        System.Console.WriteLine("Enter student's number of street: ");
+        int adressB = ConsoleViewUtils.SafeInputInt();
+
+        System.Console.WriteLine("Enter student's city: ");
+        string adressC = ConsoleViewUtils.SafeInputEmpty();
+
+        System.Console.WriteLine("Enter student's country: ");
+        string adressD = ConsoleViewUtils.SafeInputEmpty();
+
+        Model.Adress adress = new Model.Adress(adressA, adressB, adressC, adressD);
 
         System.Console.WriteLine("Enter student's phone numer: ");
         int phonenumber = ConsoleViewUtils.SafeInputInt();
@@ -275,7 +286,7 @@ public class ConsoleView
     private void PrintProfessors(List<Professor> professors) //ispisi studente/studenta
     {
         System.Console.WriteLine("PROFESSOR: ");
-        string header = $"ID {"",6} | Name {"",21} | Surname {"",21} | Birthdate {"",10} | Adress {"",21} | Phone number{"",12} | Email{"",30} | Title {"",14} | Years of service {"",3} |";
+        string header = $"ID: {"",6} | Name: {"",21} | Surname: {"",21} | Birthdate: {"",10} | Adress: {"",21} | Phone number: {"",12} | Email: {"",30} | Title: {"",14} | Years of service: {"",3} |";
         System.Console.WriteLine(header);
         foreach (Professor v1 in professors)
         {
@@ -408,7 +419,7 @@ public class ConsoleView
     private void PrintSubjects(List<Subject> subjects) 
     {
         System.Console.WriteLine("SUBJECT: ");
-        string header = $"ID {"",6} | Name {"",21} | Semester {"",21} | Year {"",10} | ESPB {"",5}";
+        string header = $"ID: {"",6} | Name: {"",21} | Semester: {"",21} | Year: {"",10} | ESPB: {"",5} |";
         System.Console.WriteLine(header);
         foreach (Subject v2 in subjects)
         {
@@ -534,7 +545,7 @@ public class ConsoleView
     private void PrintChairs(List<Chair> chairs)
     {
         System.Console.WriteLine("CHAIR: ");
-        string header = $"ID {"",6} | Name {"",21} "; //ZA SADA mi ispisuje samo ovo 
+        string header = $"ID: {"",6} | Name: {"",21} |"; //ZA SADA mi ispisuje samo ovo 
         System.Console.WriteLine(header);
         foreach (Chair v2 in chairs)
         {

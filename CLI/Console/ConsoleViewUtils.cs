@@ -17,4 +17,9 @@ static class ConsoleViewUtils //klasa sluzi da bi se uspesno preveo iz string u 
 
         return input;
     }
+
+    internal static string SafeInputEmpty()
+    {
+        throw new NotImplementedException();
+    }
 }

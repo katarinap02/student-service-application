@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CLI.Storage.Serialization;
+using static CLI.Model.Student;
 
 namespace CLI.Model
 {
@@ -50,8 +51,12 @@ namespace CLI.Model
             YearS = styear;
 
 
-        }
 
+        }
+        public override string ToString()
+        {
+            return $"ID: {"",6} | Name: {"",21} | Surname: {"",21} | Birthdate: {"",10} | Adress: {"",21} | Phone number: {"",12} | Email: {"",30} | Title: {"",14} | Years of service: {"",3} |";
+        }
         public string[] ToCSV() //ucitava u fajl
         {
             string[] csvValues =

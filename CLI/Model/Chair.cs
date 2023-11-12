@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using CLI.Storage.Serialization;
+using static CLI.Model.Student;
 
 namespace CLI.Model
 {
@@ -31,6 +32,10 @@ namespace CLI.Model
             CName = name;
             Professors = new List<Professor>();
         }
+        /*public override string ToString()
+        {
+            return $"ID: {"",6} | Name: {"",21} |";
+        }*/
 
         public string[] ToCSV()
         {

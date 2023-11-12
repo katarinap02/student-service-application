@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CLI.Storage.Serialization;
+using static CLI.Model.Student;
 
 
 namespace CLI.Model
@@ -58,16 +60,19 @@ namespace CLI.Model
 
 
         }
-
+        public override string ToString()
+        {
+            return $"ID: {"",6} | Name: {"",21} | Semester: {"",21} | Year: {"",10} | ESPB: {"",5} |";
+        }
         public string[] ToCSV()
         {
             string[] csvValues =
             {
-            Id.ToString(),
-            Name,
-            SYear.ToString(),
-            Semester1.ToString(),
-            NumEspb.ToString()
+                Id.ToString(),
+                Name,
+                Semester1.ToString(),
+                SYear.ToString(),
+                NumEspb.ToString()
 
 
         };
@@ -79,8 +84,8 @@ namespace CLI.Model
         {
             Id = int.Parse(values[0]);
             Name = values[1];
-            SYear = int.Parse(values[2]);
-            Semester1 = Enum.Parse<Semester>(values[3]);
+            Semester1 = Enum.Parse<Semester>(values[2]);
+            SYear = int.Parse(values[3]);
             NumEspb = int.Parse(values[4]);
 
         }

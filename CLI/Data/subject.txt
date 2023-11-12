@@ -1,1 +1,3 @@
-0|ttt|1111|1
+0|ttt|Winter|2023|9
+1|predmet|Summer|2023|9
+2|oisisi|Summer|2023|8

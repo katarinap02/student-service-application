@@ -16,7 +16,7 @@ namespace CLI.Model
         public string Surname { get; set; }
 
         public DateTime Birthdate { get; set; } 
-        public int  Adress {  get; set; } //povezacemo kasnije preko id
+        public Adress  Adress1 {  get; set; } //povezacemo kasnije preko id
         public int PhoneNumber { get; set; }
         public string Email { get; set; }
         public Index IndexNm { get; set; }
@@ -31,13 +31,13 @@ namespace CLI.Model
         public Student ()
         { }
 
-        public Student ( int id,  string name, string surname, DateTime birthdate, int adress, int phonenumber, string email,Index indexnm, int styear, Status s ) //fali avggrade parametar
+        public Student ( int id,  string name, string surname, DateTime birthdate, Adress adress, int phonenumber, string email,Index indexnm, int styear, Status s ) //fali avggrade parametar
         {
             Id = id;
             Name = name;
             Surname = surname;
             Birthdate = birthdate;
-            Adress = adress;
+            Adress1 = adress;
             PhoneNumber = phonenumber;
             Email = email;
             IndexNm = indexnm;
@@ -47,12 +47,12 @@ namespace CLI.Model
 
         }
 
-        public Student(string name, string surname, DateTime birthdate, int adress, int phonenumber, string email, Index indexnm, int styear, Status s) //fali avggrade parametar
+        public Student(string name, string surname, DateTime birthdate, Adress adress, int phonenumber, string email, Index indexnm, int styear, Status s) //fali avggrade parametar
         {
             Name = name;
             Surname = surname;
             Birthdate = birthdate;
-            Adress = adress;
+            Adress1 = adress;
             PhoneNumber = phonenumber;
             Email = email;
             IndexNm = indexnm;
@@ -64,7 +64,7 @@ namespace CLI.Model
 
         public override string ToString()
         {
-            return $"ID: {Id,5} | Name: {Name,20} | Surname: {Surname,21} | Birthdate: {Birthdate,10} | Adress: {Adress, 21} | Phone number: {PhoneNumber, 12} | Email: {Email,30} | Index: {IndexNm, 12} | Current school year: {StYear, 4} | Current student's status: {Status1, 2} |";
+            return $"ID: {Id,5} | Name: {Name,20} | Surname: {Surname,21} | Birthdate: {Birthdate,10} | Adress: {Adress1, 21} | Phone number: {PhoneNumber, 12} | Email: {Email,30} | Index: {IndexNm, 12} | Current school year: {StYear, 4} | Current student's status: {Status1, 2} |";
         }
         
         public string[] ToCSV() //ucitava u fajl
@@ -75,7 +75,11 @@ namespace CLI.Model
             Name,
             Surname,
             Birthdate.ToString(),
-            Adress.ToString(),
+            Adress1.ToCSV()[0],
+            Adress1.ToCSV()[1],
+            Adress1.ToCSV()[2],
+            Adress1.ToCSV()[3],
+            Adress1.ToCSV()[4],
             PhoneNumber.ToString(),
             Email.ToString(),
             IndexNm.ToCSV()[0],
@@ -94,13 +98,14 @@ namespace CLI.Model
             Name = values[1];
             Surname = values[2];
             Birthdate = DateTime.Parse(values[3]);
-            Adress = int.Parse(values[4]);
-            PhoneNumber = int.Parse(values[5]);
-            Email = values[6];
+            Adress1 = new Adress();
+            Adress1.FromCSV(new string[] { values[4], values[5], values[6], values[7], values[8] });
+            PhoneNumber = int.Parse(values[9]);
+            Email = values[10];
             IndexNm = new Index();
-            IndexNm.FromCSV(new string[] {  values[7], values[8], values[9] });
-            StYear = int.Parse(values[10]);
-            Status1= Enum.Parse<Status>(values[11]);   
+            IndexNm.FromCSV(new string[] {  values[11], values[12], values[13] });
+            StYear = int.Parse(values[14]);
+            Status1= Enum.Parse<Status>(values[15]);   
            
         }
     }
