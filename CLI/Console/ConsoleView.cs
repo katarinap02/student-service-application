@@ -664,7 +664,7 @@ public class ConsoleView
     private void PrintGrades(List<Grade> grades)
     {
         System.Console.WriteLine("GRADE: ");
-        string header = $"ID: {"",6}| Students Id {"",2} | Subjects Id {"",2} | Grade: {"",2} | Date: {"", 12}| "; //ZA SADA mi ispisuje samo ovo 
+        string header = $"ID: {"",6} | Student's Name: {"",10}| Student's Surname: {"",10}| Subject's Name: {"",10}| Grade: {"",2} | Date: {"", 12}| "; //ZA SADA mi ispisuje samo ovo 
         System.Console.WriteLine(header);
         foreach (Grade v2 in grades)
         {

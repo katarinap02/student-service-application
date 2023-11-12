@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using CLI.Storage.Serialization;
+using static CLI.Model.Student;
 
 namespace CLI.Model
 {
@@ -44,14 +46,17 @@ namespace CLI.Model
             grade = gr;
             date = d;
         }
-
+        public override string ToString()
+        {
+            return $"ID: {Id,6} | Student's Name: {student.Name,10}| Student's Surname: {student.Surname,10}|Subject's Name{subject.Name,10}| Grade: {grade,2} | Date: {date,12}| ";
+        }
         public string[] ToCSV()
         {
             string[] csvValues =
-             {
-            Id.ToString(),
-            student.ToCSV1()[0],
-            student.ToCSV1()[1],
+            {
+                Id.ToString(),
+                student.ToCSV1()[0],
+                student.ToCSV1()[1],
             student.ToCSV1()[2],
             subject.ToCSV1()[0],
             subject.ToCSV1()[1],
