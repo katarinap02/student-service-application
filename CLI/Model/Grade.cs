@@ -11,11 +11,11 @@ namespace CLI.Model
     public class Grade : ISerializable
     {
        // Student student {  get; set; }
-         int Id { get; set; }
-         Student student {  get; set; }
-         Subject subject { get; set; }
-        int grade {  get; set; }
-        DateOnly date {  get; set; }
+        public int Id { get; set; }
+        public Student student {  get; set; }
+        public  Subject subject { get; set; }
+        public int grade {  get; set; }
+        public DateOnly date {  get; set; }
 
         
         public Grade()
