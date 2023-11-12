@@ -79,6 +79,19 @@ namespace CLI.Model
             return csvValues;
 
         }
+        public string[] ToCSV1()
+        {
+            string[] csvValues =
+            {
+                Id.ToString(),
+                Name
+                
+
+
+        };
+            return csvValues;
+
+        }
 
         public void FromCSV(string[] values)
         {
@@ -87,6 +100,13 @@ namespace CLI.Model
             Semester1 = Enum.Parse<Semester>(values[2]);
             SYear = int.Parse(values[3]);
             NumEspb = int.Parse(values[4]);
+
+        }
+        public void FromCSV1(string[] values)
+        {
+            Id = int.Parse(values[0]);
+            Name = values[1];
+            
 
         }
     }

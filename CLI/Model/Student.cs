@@ -97,7 +97,18 @@ namespace CLI.Model
         };
             return csvValues;
         }
+        public string[] ToCSV1() //ucitava u fajl
+        {
+            string[] csvValues =
+            {
+            Id.ToString(),
+            Name,
+            Surname
+           
 
+        };
+            return csvValues;
+        }
         public void FromCSV(string[] values) //cita iz fajla
         {
             Id = int.Parse(values[0]);
@@ -112,6 +123,14 @@ namespace CLI.Model
             IndexNm.FromCSV(new string[] {  values[11], values[12], values[13] });
             StYear = int.Parse(values[14]);
             Status1= Enum.Parse<Status>(values[15]);   
+           
+        }
+
+        public void FromCSV1(string[] values) //cita iz fajla
+        {
+            Id = int.Parse(values[0]);
+            Name = values[1];
+            Surname = values[2];
            
         }
     }
