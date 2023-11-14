@@ -21,9 +21,12 @@ namespace CLI.Model
         public string Title { get; set; }
         public int YearS { get; set; } // godine staza
 
-      //public  List<Subject>subjects { get; set; }
+       public  List<string>subjects { get; set; }
 
-        public Professor() { }
+        public Professor() 
+        {
+            subjects = new List<string>();
+        }
         public Professor(int id, string name, string surname, DateOnly birthdate, int adress, int phonenumber, string email, string title, int styear)
         {
             Id = id;
@@ -35,7 +38,7 @@ namespace CLI.Model
             Email = email;
             Title = title;
             YearS = styear;
-          //  subjects = new List<Subject>();
+            //subjects = new List<Subject>();
 
         }
 
@@ -52,6 +55,11 @@ namespace CLI.Model
 
 
 
+        }
+
+        public void AddElementToSubject(string s)
+        {
+            subjects.Add(s);
         }
         public override string ToString()
         {
@@ -75,6 +83,21 @@ namespace CLI.Model
             return csvValues;
         }
 
+        public string[] ToCSV1()
+        {
+            string[] csvValues =
+            {
+               Id.ToString(),
+                Name,
+                Surname
+
+
+
+        };
+            return csvValues;
+
+        }
+
         public void FromCSV(string[] values) //cita iz fajla
         {
             Id = int.Parse(values[0]);
@@ -86,6 +109,14 @@ namespace CLI.Model
             Email = values[6];
             Title = values[7];
             YearS = int.Parse(values[8]);
+        }
+
+        public void FromCSV1(string[] values)
+        {
+            Id = int.Parse(values[0]);
+            Name = values[1];
+            Surname = values[2];
+
         }
 
 

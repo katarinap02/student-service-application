@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -67,6 +68,11 @@ namespace CLI.DAO
         public List<Professor> GetAllProfessors()
         {
             return professors;
+        }
+
+        public Model.Professor FindProfessorById(List<Professor> professors, int tId)
+        {
+            return professors.Find(professors => professors.Id == tId);
         }
 
     }

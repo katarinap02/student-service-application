@@ -67,9 +67,9 @@ namespace CLI.DAO
             return subjects;
         }
 
-        public Model.Subject FindSubjectById(List<Subject> subjects, int targetId)
+        public Model.Subject FindSubjectById(List<Subject> subjects, int tId)
         {
-            return subjects.Find(subjects => subjects.Id == targetId);
+            return subjects.Find(subjects => subjects.Id == tId);
         }
     }
 }

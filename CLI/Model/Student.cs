@@ -32,7 +32,7 @@ namespace CLI.Model
         //List<string> Subjects = new List<string>();
         public Student()
         {
-            Grades = new List<int>();
+          //  Grades = new List<int>();
             // Subjects = new List<Subject>();
         }
 
@@ -57,8 +57,8 @@ namespace CLI.Model
                 sum += grade;
             }
 
-            double average = (double)sum / Grades.Count;
-            return average;
+            double av = (double)sum / Grades.Count;
+            return av;
             
 
         }

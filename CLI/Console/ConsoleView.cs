@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -421,7 +422,7 @@ public class ConsoleView
     private void PrintSubjects(List<Subject> subjects) 
     {
         System.Console.WriteLine("SUBJECT: ");
-        string header = $"ID: {"",6} | Name: {"",21} | Semester: {"",21} | Year: {"",10} | ESPB: {"",5} |";
+        string header = $"ID: {"",6} | Name: {"",21} | Semester: {"",21} | Year: {"",10} | ESPB: {"",5} | Proffesors's Name: {"",10}| Professor's Surname: {"",10} |";
         System.Console.WriteLine(header);
         foreach (Subject v2 in subjects)
         {
@@ -450,7 +451,19 @@ public class ConsoleView
         System.Console.WriteLine("Enter subject's espb: ");
         int espb = ConsoleViewUtils.SafeInputInt();
 
-        return new Subject(name, semester, year, espb);
+        System.Console.WriteLine("Enter Proffesor's ID: ");
+        int Idpf = ConsoleViewUtils.SafeInputInt();
+
+        while ((_professorsDao.FindProfessorById(_professorsDao.GetAllProfessors(), Idpf)) == null)
+        {
+            System.Console.WriteLine("Professor not found, try again ");
+            Idpf = ConsoleViewUtils.SafeInputInt();
+        }
+
+        Model.Professor professor = _professorsDao.FindProfessorById(_professorsDao.GetAllProfessors(), Idpf);
+        professor.AddElementToSubject(name);
+
+        return new Subject(name, semester, year, espb, professor);
     }
 
     private void UpdateSubject() //azuriraj profesore
@@ -713,10 +726,6 @@ public class ConsoleView
 
 
             return new Grade(student, subject, grade, date);
-        
-        
-        
-
         
     }
 

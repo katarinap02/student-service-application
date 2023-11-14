@@ -1,2 +1,1 @@
-1|IME|PREZIME|12/12/1970 |3|3333|fdsf|title|10
-2|Rale|Ralevic|12/12/1960|3|333|rale|dr|20
+0|Name|Surname|12/12/2012|1|123|eee|ttt|11

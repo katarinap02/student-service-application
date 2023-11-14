@@ -1,3 +1,1 @@
-0|ttt|Winter|2023|9
-1|predmet|Summer|2023|9
-2|oisisi|Summer|2023|8
+0|fizika|Summer|2012|12|0|Name|Surname
