@@ -25,14 +25,21 @@ namespace CLI.Model
         public Professor Professor1 { get; set; }
        
 
+<<<<<<< HEAD
          public List<Student> StudentsP { get; set; }//spisak onih koji su polozili
+=======
+          public List<Student> StudentsP { get; set; }//spisak onih koji su polozili
+>>>>>>> 7be3ca3e14c53706da4c4b06ca1c97c880d4044f
 
          public List<Student> StudentsF { get; set; } //spisak onih koji nisu polozili
 
 
 
 
-        public Subject() { }
+        public Subject() 
+        {
+               StudentsP = new List<Student>();
+        }
 
         public Subject( int id, string name, Semester s, int syear,  int numespb, Professor p)
         {

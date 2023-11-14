@@ -63,7 +63,7 @@ public class StudentDao
         return student;
     }
 
-    private Student? GetStudentById(int id)
+    public Student? GetStudentById(int id)
     {
         return students.Find(v => v.Id == id);
     }

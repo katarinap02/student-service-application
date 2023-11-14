@@ -10,12 +10,34 @@ class Program
 {
     static void Main()
     {
+        
         StudentDao students = new StudentDao();
         ProfessorDao professors = new ProfessorDao();
         SubjectDao subjects = new SubjectDao();
         ChairDao chairs = new ChairDao();
         GradeDao grades = new GradeDao();
+        StudentSubjectDao studentsubject = new StudentSubjectDao();
+
+        foreach (StudentSubject ss in studentsubject.GetAllStudentSubjects())
+        {
+            Student s = students.GetStudentById(ss.StudentId);
+            Subject p = subjects.GetSubjectById(ss.SubjectId);
+            s.Subjects.Add(p);
+            p.StudentsP.Add(s);
+        }
+
         ConsoleView view = new ConsoleView(students, professors, subjects, chairs, grades );
+
         view.Run();
+
+
+        
+
+
+
+
+
+
+
     }
 }

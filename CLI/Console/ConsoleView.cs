@@ -134,7 +134,7 @@ public class ConsoleView
     private void PrintStudents(List<Student> students) //ispisi studente/studenta
     {
         System.Console.WriteLine("STUDENTS: ");
-        string header = $"ID {"",6} | Name {"",15} | Surname {"",15} | Birthdate {"",10} | Adress {"", 30} | Phone number{"",12} | Email{"",20} | Index {"", 12}| Current school year {"", 4} | Current student's status {"", 2} |  Average Grade: {"",5}|";
+        string header = $"ID {"",6} | Name {"",15} | Surname {"",15} | Birthdate {"",10} | Adress {"", 30} | Phone number{"",12} | Email{"",20} | Index {"", 12}| Current school year {"", 4} | Current student's status {"", 2} |  Average Grade: {"",5}| Subject: {"", 40}";
         System.Console.WriteLine(header);
         foreach (Student v in students)
         {
@@ -461,7 +461,7 @@ public class ConsoleView
         }
 
         Model.Professor professor = _professorsDao.FindProfessorById(_professorsDao.GetAllProfessors(), Idpf);
-        professor.AddElementToSubject(name);
+        professor.subjects.Add(name);
 
         return new Subject(name, semester, year, espb, professor);
     }
