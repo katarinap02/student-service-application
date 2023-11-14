@@ -11,56 +11,30 @@ namespace CLI.DAO;
 
 public class StudentSubjectDao
 {
+    private readonly List<StudentSubject> studentsubjects;
+    private readonly Storage<StudentSubject> _storage;
+
+    private readonly List<Student> students;
     private readonly List<Subject> subjects;
-    private readonly Storage<Subject> _storage;
 
 
-    public SubjectDao()
+    public StudentSubjectDao()
     {
-        _storage = new Storage<Subject>("subject.txt");
-        subjects = _storage.Load();
+        _storage = new Storage<StudentSubject>("studentsubject.txt");
+        studentsubjects = _storage.Load();
     }
 
-    private int GenerateId()
-    {
-        if (subjects.Count == 0) return 0;
-        return subjects[^1].Id + 1;
-    }
+  
 
-    public Subject AddSubject(Subject sub)
-    {
-        sub.Id = GenerateId(); //generisi id za svaki predmet
-        subjects.Add(sub);
-        _storage.Save(subjects);
-        return sub;
-    }
-
-    public Subject? UpdateSubject(Subject sub)
-    {
-        Subject? oldsub = GetSubjectById(sub.Id); // sa istim id treba da unesemo nove podatke koji su u sub
-        if (oldsub is null) return null;
-
-        oldsub.Name = sub.Name;
-        oldsub.SYear = sub.SYear;
-        oldsub.NumEspb = sub.NumEspb;
-
-        _storage.Save(subjects);
-        return oldsub;
-    }
-
-    public Subject? RemoveSubject(int id)
-    {
-        Subject? subject = GetSubjectById(id);
-        if (subject == null) return null;
-
-        subjects.Remove(subject);
-        _storage.Save(subjects);
-        return subject;
-    }
-
+   
     private Subject? GetSubjectById(int id)
     {
         return subjects.Find(v => v.Id == id);
+    }
+
+    private Student? GetStudentById(int id)
+    {
+        return students.Find(v => v.Id == id);
     }
 
     public List<Subject> GetAllSubjects()
@@ -68,8 +42,13 @@ public class StudentSubjectDao
         return subjects;
     }
 
-    public Model.Subject FindSubjectById(List<Subject> subjects, int tId)
+    public List<Student> GetAllStudents()
+    {
+        return students;
+    }
+
+    /*public Model.Subject FindSubjectById(List<Subject> subjects, int tId)
     {
         return subjects.Find(subjects => subjects.Id == tId);
-    }
+    }*/
 }
