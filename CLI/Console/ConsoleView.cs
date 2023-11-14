@@ -289,7 +289,7 @@ public class ConsoleView
     private void PrintProfessors(List<Professor> professors) //ispisi studente/studenta
     {
         System.Console.WriteLine("PROFESSOR: ");
-        string header = $"ID: {"",6} | Name: {"",21} | Surname: {"",21} | Birthdate: {"",10} | Adress: {"",21} | Phone number: {"",12} | Email: {"",30} | Title: {"",14} | Years of service: {"",3} |";
+        string header = $"ID: {"",6} | Name: {"",21} | Surname: {"",21} | Birthdate: {"",10} | Adress: {"",21} | Phone number: {"",12} | Email: {"",30} | Title: {"",14} | Years of service: {"",3} | Subjects: {"", 40}";
         System.Console.WriteLine(header);
         foreach (Professor v1 in professors)
         {

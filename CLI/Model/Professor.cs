@@ -63,7 +63,14 @@ namespace CLI.Model
         }
         public override string ToString()
         {
-            return $"ID: {Id,6} | Name: {Name,21} | Surname: {Surname,21} | Birthdate: {Birthdate,10} | Adress: {Adress,21} | Phone number: {PhoneNumber,12} | Email: {Email,30} | Title: {Title,14} | Years of service: {YearS,3} |";
+            string s1;
+             s1= $"ID: {Id,6} | Name: {Name,21} | Surname: {Surname,21} | Birthdate: {Birthdate,10} | Adress: {Adress,21} | Phone number: {PhoneNumber,12} | Email: {Email,30} | Title: {Title,14} | Years of service: {YearS,3} |";
+            if (subjects != null && subjects.Count > 0)
+            {
+                string sub = string.Join(", ", subjects);
+                return $"{s1} | Subjects: {sub}";
+            }
+            return s1;
         }
         public string[] ToCSV() //ucitava u fajl
         {
