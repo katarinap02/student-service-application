@@ -15,7 +15,7 @@ namespace CLI.Model
         public string Name { get; set; }
         public string Surname { get; set; }
         public DateOnly Birthdate { get; set; }
-        public int Adress { get; set; }
+        public Adress Adress1 { get; set; }
         public int PhoneNumber { get; set; }
         public string Email{ get; set; }
         public string Title { get; set; }
@@ -27,13 +27,13 @@ namespace CLI.Model
         {
             subjects = new List<string>();
         }
-        public Professor(int id, string name, string surname, DateOnly birthdate, int adress, int phonenumber, string email, string title, int styear)
+        public Professor(int id, string name, string surname, DateOnly birthdate, Adress adress, int phonenumber, string email, string title, int styear)
         {
             Id = id;
             Name = name;
             Surname = surname;
             Birthdate = birthdate;
-            Adress = adress;
+            Adress1 = adress;
             PhoneNumber = phonenumber;
             Email = email;
             Title = title;
@@ -42,12 +42,12 @@ namespace CLI.Model
 
         }
 
-        public Professor(string name, string surname, DateOnly birthdate, int adress, int phonenumber, string email, string title, int styear)
+        public Professor(string name, string surname, DateOnly birthdate, Adress adress, int phonenumber, string email, string title, int styear)
         {
             Name = name;
             Surname = surname;
             Birthdate = birthdate;
-            Adress = adress;
+            Adress1 = adress;
             PhoneNumber = phonenumber;
             Email = email;
             Title = title;
@@ -64,7 +64,7 @@ namespace CLI.Model
         public override string ToString()
         {
             string s1;
-             s1= $"ID: {Id,6} | Name: {Name,21} | Surname: {Surname,21} | Birthdate: {Birthdate,10} | Adress: {Adress,21} | Phone number: {PhoneNumber,12} | Email: {Email,30} | Title: {Title,14} | Years of service: {YearS,3} |";
+             s1= $"ID: {Id,6} | Name: {Name,21} | Surname: {Surname,21} | Birthdate: {Birthdate,10} | Adress: {Adress1,30} | Phone number: {PhoneNumber,12} | Email: {Email,30} | Title: {Title,14} | Years of service: {YearS,3} |";
             if (subjects != null && subjects.Count > 0)
             {
                 string sub = string.Join(", ", subjects);
@@ -80,7 +80,11 @@ namespace CLI.Model
             Name,
             Surname,
             Birthdate.ToString(),
-            Adress.ToString(),
+            Adress1.ToCSV()[0],
+            Adress1.ToCSV()[1],
+            Adress1.ToCSV()[2],
+            Adress1.ToCSV()[3],
+            Adress1.ToCSV()[4],
             PhoneNumber.ToString(),
             Email.ToString(),
             Title,
@@ -111,11 +115,12 @@ namespace CLI.Model
             Name = values[1];
             Surname = values[2];
             Birthdate = DateOnly.Parse(values[3]);
-            Adress = int.Parse(values[4]);
-            PhoneNumber = int.Parse(values[5]);
-            Email = values[6];
-            Title = values[7];
-            YearS = int.Parse(values[8]);
+            Adress1 = new Adress();
+            Adress1.FromCSV(new string[] { values[4], values[5], values[6], values[7], values[8] });
+            PhoneNumber = int.Parse(values[9]);
+            Email = values[10];
+            Title = values[11];
+            YearS = int.Parse(values[12]);
         }
 
         public void FromCSV1(string[] values)

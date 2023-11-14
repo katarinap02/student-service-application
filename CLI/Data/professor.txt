@@ -1,1 +1,1 @@
-0|Name|Surname|12/12/2012|1|123|eee|ttt|11
+0|Rale|Ralevic|12/12/1960|0|Ulica|10|NS|SRB|1234|ralerale@gmail.com|ddd|20

@@ -315,8 +315,19 @@ public class ConsoleView
         System.Console.WriteLine("Enter professor's birthdate: ");
         DateOnly birthdate = ConsoleViewDate.SafeInputDate();
 
-        System.Console.WriteLine("Enter professor's adress: ");
-        int adress = ConsoleViewUtils.SafeInputInt();
+        System.Console.WriteLine("Enter professor's name of street: ");
+        string adressA = ConsoleViewEmpty.SafeInputEmpty();
+
+        System.Console.WriteLine("Enter professor's number of street: ");
+        int adressB = ConsoleViewUtils.SafeInputInt();
+
+        System.Console.WriteLine("Enter professor's city: ");
+        string adressC = ConsoleViewEmpty.SafeInputEmpty();
+
+        System.Console.WriteLine("Enter professor's country: ");
+        string adressD = ConsoleViewEmpty.SafeInputEmpty();
+
+        Model.Adress adress = new Model.Adress(adressA, adressB, adressC, adressD);
 
         System.Console.WriteLine("Enter professor's phone numer: ");
         int phonenumber = ConsoleViewUtils.SafeInputInt();
