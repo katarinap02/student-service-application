@@ -25,9 +25,9 @@ namespace CLI.Model
         public Professor Professor1 { get; set; }
        
 
-        //  public List<Student> StudentsP { get; set; }//spisak onih koji su polozili
+         public List<Student> StudentsP { get; set; }//spisak onih koji su polozili
 
-        // public List<Student> StudentsF { get; set; } //spisak onih koji nisu polozili
+         public List<Student> StudentsF { get; set; } //spisak onih koji nisu polozili
 
 
 
@@ -117,5 +117,7 @@ namespace CLI.Model
             
 
         }
+
+        
     }
 }

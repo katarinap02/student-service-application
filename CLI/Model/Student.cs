@@ -24,7 +24,7 @@ namespace CLI.Model
         public int StYear { get; set; }
 
         public List<Subject> Subjects { get; set; } // lista nepolozenih predmeta
-
+       
         public Status Status1 { get; set; }
         // public double AvGrade { get; set; }
 
@@ -165,5 +165,6 @@ namespace CLI.Model
             Surname = values[2];
            
         }
+        
     }
 }
