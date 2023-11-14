@@ -57,7 +57,7 @@ namespace CLI.DAO
             return subject;
         }
 
-        private Subject? GetSubjectById(int id)
+        public Subject? GetSubjectById(int id)
         {
             return subjects.Find(v => v.Id == id);
         }

@@ -32,8 +32,8 @@ namespace CLI.Model
         //List<string> Subjects = new List<string>();
         public Student()
         {
-          //  Grades = new List<int>();
-            // Subjects = new List<Subject>();
+            Grades = new List<int>();
+             Subjects = new List<Subject>();
         }
 
         // Method to add an element to the list
@@ -102,8 +102,14 @@ namespace CLI.Model
 
         public override string ToString()
         {
-            return $"ID: {Id,5} | Name: {Name,15} | Surname: {Surname,15} | Birthdate: {Birthdate,10} | Adress: {Adress1, 30} | Phone number: {PhoneNumber, 12} | Email: {Email,20} | Index: {IndexNm, 12} | Current school year: {StYear, 4} | Current student's status: {Status1, 2} | Average Grade {Average(Grades)}";
-        
+            string s;
+            s = $"ID: {Id,5} | Name: {Name,15} | Surname: {Surname,15} | Birthdate: {Birthdate,10} | Adress: {Adress1, 30} | Phone number: {PhoneNumber, 12} | Email: {Email,20} | Index: {IndexNm, 12} | Current school year: {StYear, 4} | Current student's status: {Status1, 2} | Average Grade {Average(Grades)}";
+            foreach(Subject sub in Subjects)
+            {
+                s += sub.ToString();
+            }
+            return s;
+
         }
         public string[] ToCSV() //ucitava u fajl
         {

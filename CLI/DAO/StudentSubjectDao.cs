@@ -14,38 +14,28 @@ public class StudentSubjectDao
     private readonly List<StudentSubject> studentsubjects;
     private readonly Storage<StudentSubject> _storage;
 
-    private readonly List<Student> students;
-    private readonly List<Subject> subjects;
+   
 
 
     public StudentSubjectDao()
     {
-        _storage = new Storage<StudentSubject>("studentsubject.txt");
+        _storage = new Storage<StudentSubject>("studentsubjects.txt");
         studentsubjects = _storage.Load();
     }
 
-  
 
    
-    private Subject? GetSubjectById(int id)
+
+    public List<StudentSubject> GetAllStudentSubjects()
     {
-        return subjects.Find(v => v.Id == id);
+        return studentsubjects;
     }
 
-    private Student? GetStudentById(int id)
-    {
-        return students.Find(v => v.Id == id);
-    }
 
-    public List<Subject> GetAllSubjects()
-    {
-        return subjects;
-    }
 
-    public List<Student> GetAllStudents()
-    {
-        return students;
-    }
+
+
+
 
     /*public Model.Subject FindSubjectById(List<Subject> subjects, int tId)
     {
