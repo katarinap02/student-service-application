@@ -37,9 +37,9 @@ namespace CLI.Model
         }
 
 
-        /*  public double Average()
+          public double Average(List<Grade> grades)
        {
-           if (grade == null || grade.Count == 0)
+           if (grades == null || grades.Count == 0)
            {
 
                return 0;
@@ -47,16 +47,16 @@ namespace CLI.Model
 
            int sum = 0;
 
-           foreach (int g in Grades)
+           foreach (Grade g in grades)
            {
-               sum += g;
+               sum += g.grade;
            }
 
            double av = (double)sum / Grades.Count;
            return av;
 
 
-       }*/
+       }
 
 
 
@@ -78,7 +78,7 @@ namespace CLI.Model
 
         }
 
-        public Student(string name, string surname, DateOnly birthdate, Adress adress, int phonenumber, string email, Index indexnm, int styear, Status s) //fali avggrade parametar
+        public Student(string name, string surname, DateOnly birthdate, Adress adress, int phonenumber, string email, Index indexnm, int styear, Status s) //fali avggrade parametar, samo ispisi
         {
             Name = name;
             Surname = surname;
