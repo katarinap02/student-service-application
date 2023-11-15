@@ -56,7 +56,7 @@ public class GradeDao
         return grade;
     }
 
-    private Grade? GetGradeById(int id)
+    public Grade? GetGradeById(int id)
     {
         return grades.Find(v => v.Id == id);
     }

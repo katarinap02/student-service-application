@@ -60,7 +60,7 @@ namespace CLI.DAO
             return professor;
         }
 
-        private Professor? GetProfessorById(int id)
+        public Professor? GetProfessorById(int id)
         {
             return professors.Find(v => v.Id == id);
         }

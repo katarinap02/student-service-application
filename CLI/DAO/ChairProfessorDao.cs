@@ -12,6 +12,8 @@ public class ChairProfessorDao
 {
     private readonly List<ChairProfessor> chairprofessor;
     private readonly Storage<ChairProfessor> _storage;
+
+
     public ChairProfessorDao()
     {
         _storage = new Storage<ChairProfessor>("chairprofessor.txt");

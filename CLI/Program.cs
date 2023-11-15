@@ -27,13 +27,27 @@ class Program
             p.StudentsP.Add(s);
         }
 
-      /*  foreach (ChairProfessor cp in chairprofessor.GetAllChairProfessor())
+        foreach (Grade g in grades.GetAllGrades())
         {
-            Chair c = students.GetStudentById(ss.StudentId);
-            Subject p = subjects.GetSubjectById(ss.SubjectId);
-            s.Subjects.Add(p);
-            p.StudentsP.Add(s);
-        }*/
+            Student s = students.GetStudentById(g.student.Id);
+            s.Grades.Add(g);
+        }
+
+        
+
+        foreach (ChairProfessor cp in chairprofessor.GetAllChairProfessor())
+        {
+            Chair c = chairs.GetChairById(cp.ChairId);
+            Professor p = professors.GetProfessorById(cp.ProfessorId);
+            p.chairs.Add(c);
+            c.Professors.Add(p);
+            
+        }
+        foreach (Subject sb in subjects.GetAllSubjects())
+        {
+            Professor pp = professors.GetProfessorById(sb.Professor1.Id);
+            pp.subjects.Add(sb);
+        }
 
 
 

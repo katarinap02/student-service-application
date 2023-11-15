@@ -59,7 +59,7 @@ public class ChairDao
         return chair;
     }
 
-    private Chair? GetChairById(int id)
+    public Chair? GetChairById(int id)
     {
         return chairs.Find(v => v.Id == id);
     }

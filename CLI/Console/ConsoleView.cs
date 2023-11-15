@@ -134,7 +134,7 @@ public class ConsoleView
     private void PrintStudents(List<Student> students) //ispisi studente/studenta
     {
         System.Console.WriteLine("STUDENTS: ");
-        string header = $"ID {"",6} | Name {"",15} | Surname {"",15} | Birthdate {"",10} | Adress {"", 30} | Phone number{"",12} | Email{"",20} | Index {"", 12}| Current school year {"", 4} | Current student's status {"", 2} |  Average Grade: {"",5}| Subject: {"", 40}";
+        string header = $"ID {"",6} | Name {"",15} | Surname {"",15} | Birthdate {"",10} | Adress {"", 30} | Phone number{"",12} | Email{"",20} | Index {"", 12}| Current school year {"", 4} | Current student's status {"", 2} |  Average Grade: {"",5}| Subject: {"", 40}| Grades: {"",20}";
         System.Console.WriteLine(header);
         foreach (Student v in students)
         {
@@ -289,12 +289,13 @@ public class ConsoleView
     private void PrintProfessors(List<Professor> professors) //ispisi studente/studenta
     {
         System.Console.WriteLine("PROFESSOR: ");
-        string header = $"ID: {"",6} | Name: {"",21} | Surname: {"",21} | Birthdate: {"",10} | Adress: {"",21} | Phone number: {"",12} | Email: {"",30} | Title: {"",14} | Years of service: {"",3} | Subjects: {"", 40}";
+        string header = $"ID: {"",6} | Name: {"",21} | Surname: {"",21} | Birthdate: {"",10} | Adress: {"",21} | Phone number: {"",12} | Email: {"",30} | Title: {"",14} | Years of service: {"",3} | Subjects: {"", 40} | Chairs{"", 20}";
         System.Console.WriteLine(header);
         foreach (Professor v1 in professors)
         {
             System.Console.WriteLine(v1);
         }
+        
     }
 
     private void AddProfessors() //dodaj profesora
@@ -472,7 +473,7 @@ public class ConsoleView
         }
 
         Model.Professor professor = _professorsDao.FindProfessorById(_professorsDao.GetAllProfessors(), Idpf);
-        professor.subjects.Add(name);
+        
 
         return new Subject(name, semester, year, espb, professor);
     }
@@ -571,7 +572,7 @@ public class ConsoleView
     private void PrintChairs(List<Chair> chairs)
     {
         System.Console.WriteLine("CHAIR: ");
-        string header = $"ID: {"",6} | Name: {"",21} |"; //ZA SADA mi ispisuje samo ovo 
+        string header = $"ID: {"",6} | Name: {"",21} | Professors: {"",50}"; //ZA SADA mi ispisuje samo ovo 
         System.Console.WriteLine(header);
         foreach (Chair v2 in chairs)
         {
@@ -688,7 +689,7 @@ public class ConsoleView
     private void PrintGrades(List<Grade> grades)
     {
         System.Console.WriteLine("GRADE: ");
-        string header = $"ID: {"",6} | Student's Name: {"",10}| Student's Surname: {"",10}| Subject's Name: {"",10}| Grade: {"",2} | Date: {"", 12}|"; //ZA SADA mi ispisuje samo ovo 
+        string header = $"ID: {"",6} | Student's Name: {"",10}| Student's Surname: {"",10}| Subject's Name: {"",10}| Grade: {"",2} | Date: {"", 12}|  "; //ZA SADA mi ispisuje samo ovo 
         System.Console.WriteLine(header);
         foreach (Grade v2 in grades)
         {
@@ -732,7 +733,6 @@ public class ConsoleView
         //treba popuniti
 
         Model.Student student = _studentsDao.FindStudentById(_studentsDao.GetAllStudents(), Idst);
-        student.AddElementToGrades(grade);
         Model.Subject subject = _subjectsDao.FindSubjectById(_subjectsDao.GetAllSubjects(), Idsu);
 
 

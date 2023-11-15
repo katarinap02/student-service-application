@@ -21,11 +21,14 @@ namespace CLI.Model
         public string Title { get; set; }
         public int YearS { get; set; } // godine staza
 
-       public  List<string>subjects { get; set; }
+       public  List<Subject>subjects { get; set; }
+
+        public List<Chair> chairs { get; set; }
 
         public Professor() 
         {
-            subjects = new List<string>();
+            subjects = new List<Subject>();
+            chairs= new List<Chair>();
         }
         public Professor(int id, string name, string surname, DateOnly birthdate, Adress adress, int phonenumber, string email, string title, int styear)
         {
@@ -57,18 +60,19 @@ namespace CLI.Model
 
         }
 
-        public void AddElementToSubject(string s)
-        {
-            subjects.Add(s);
-        }
+        
         public override string ToString()
         {
             string s1;
              s1= $"ID: {Id,6} | Name: {Name,21} | Surname: {Surname,21} | Birthdate: {Birthdate,10} | Adress: {Adress1,30} | Phone number: {PhoneNumber,12} | Email: {Email,30} | Title: {Title,14} | Years of service: {YearS,3} |";
-            if (subjects != null && subjects.Count > 0)
+            foreach (Subject sb in subjects)
             {
-                string sub = string.Join(", ", subjects);
-                return $"{s1} | Subjects: {sub}";
+                s1 += sb.ToString();
+            }
+
+            foreach (Chair ch in chairs)
+            {
+                s1 += ch.ToString();
             }
             return s1;
         }

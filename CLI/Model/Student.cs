@@ -28,42 +28,38 @@ namespace CLI.Model
         public Status Status1 { get; set; }
         // public double AvGrade { get; set; }
 
-        List<int> Grades = new List<int>();
-        //List<string> Subjects = new List<string>();
+        public List<Grade> Grades = new List<Grade>();
+       
         public Student()
         {
-            Grades = new List<int>();
+            Grades = new List<Grade>();
              Subjects = new List<Subject>();
         }
 
-        // Method to add an element to the list
-        public void AddElementToGrades(int element)
-        {
-            Grades.Add(element);
-        }
 
-        public double Average(List<int> Grades)
-        {
-            if (Grades == null || Grades.Count == 0)
-            {
-                
-                return 0;
-            }
+        /*  public double Average()
+       {
+           if (grade == null || grade.Count == 0)
+           {
 
-            int sum = 0;
+               return 0;
+           }
 
-            foreach (int grade in Grades)
-            {
-                sum += grade;
-            }
+           int sum = 0;
 
-            double av = (double)sum / Grades.Count;
-            return av;
-            
+           foreach (int g in Grades)
+           {
+               sum += g;
+           }
 
-        }
+           double av = (double)sum / Grades.Count;
+           return av;
 
-        
+
+       }*/
+
+
+
 
         public Student ( int id,  string name, string surname, DateOnly birthdate, Adress adress, int phonenumber, string email,Index indexnm, int styear, Status s ) //fali avggrade parametar
         {
@@ -103,10 +99,15 @@ namespace CLI.Model
         public override string ToString()
         {
             string s;
-            s = $"ID: {Id,5} | Name: {Name,15} | Surname: {Surname,15} | Birthdate: {Birthdate,10} | Adress: {Adress1, 30} | Phone number: {PhoneNumber, 12} | Email: {Email,20} | Index: {IndexNm, 12} | Current school year: {StYear, 4} | Current student's status: {Status1, 2} | Average Grade {Average(Grades)}";
+            s = $"ID: {Id,5} | Name: {Name,15} | Surname: {Surname,15} | Birthdate: {Birthdate,10} | Adress: {Adress1, 30} | Phone number: {PhoneNumber, 12} | Email: {Email,20} | Index: {IndexNm, 12} | Current school year: {StYear, 4} | Current student's status: {Status1, 2} | Average Grade ";
             foreach(Subject sub in Subjects)
             {
                 s += sub.ToString();
+            }
+
+            foreach (Grade gra in Grades)
+            {
+                s += gra.ToString();
             }
             return s;
 

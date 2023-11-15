@@ -14,11 +14,15 @@ namespace CLI.Model
     {
         public int Id { get; set; }
         public string CName { get; set; }
-        // sef
+       
+        Professor sef { get; set; }
 
         public List<Professor> Professors { get; set; }
 
-        public Chair() { }
+        public Chair()
+        {
+            Professors = new List<Professor>();
+        }
         public Chair(int id, string name)
         {
             Id = id;
@@ -34,7 +38,13 @@ namespace CLI.Model
         }
         public override string ToString()
         {
-            return $"ID: {Id,6} | Name: {CName,21} |";
+            string s= $"ID: {Id,6} | Name: {CName,21} |";
+             foreach (Professor p in Professors)
+             {
+                 s += p.ToString();
+             }
+
+            return s;
         }
 
         public string[] ToCSV()

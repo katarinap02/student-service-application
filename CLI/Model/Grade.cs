@@ -50,6 +50,10 @@ namespace CLI.Model
         {
             return $"ID: {Id,6} | Student's Name: {student.Name,10}| Student's Surname: {student.Surname,10}|Subject's Name{subject.Name,10}| Grade: {grade,2} | Date: {date,12}| ";
         }
+
+     
+
+
         public string[] ToCSV()
         {
             string[] csvValues =
