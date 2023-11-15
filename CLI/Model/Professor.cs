@@ -21,6 +21,8 @@ namespace CLI.Model
         public string Title { get; set; }
         public int YearS { get; set; } // godine staza
 
+        public int bind { get; set; }
+
         public  List<Subject>subjects { get; set; }
 
         public List<Chair> chairs { get; set; }
@@ -64,16 +66,21 @@ namespace CLI.Model
         public override string ToString()
         {
             string s1;
-             s1= $"ID: {Id,6} | Name: {Name,21} | Surname: {Surname,21} | Birthdate: {Birthdate,10} | Adress: {Adress1,30} | Phone number: {PhoneNumber,12} | Email: {Email,30} | Title: {Title,14} | Years of service: {YearS,3} |";
+             s1= $"ID: {Id,2} | Name: {Name,10} | Surname: {Surname,10} | Birthdate: {Birthdate,10} |" +
+                $" Adress: {Adress1,30} | Phone number: {PhoneNumber,12} | \nEmail: {Email,20} |" +
+                $" Title: {Title,14} | Years of service: {YearS,3} |" +
+                $" \nSubjects: |";
             foreach (Subject sb in subjects)
             {
-                s1 += sb.ToString();
+                s1 += sb.Name + " ";
             }
 
-            /*foreach (Chair ch in chairs)
+            s1 += "\nChairs: ";
+            foreach (Chair ch in chairs)
             {
-                s1 += ch.ToString();
-            }*/
+                s1 += ch.CName + " ";
+            }
+            s1 += "\n";
             return s1;
         }
         public string[] ToCSV() //ucitava u fajl

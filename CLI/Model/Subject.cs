@@ -21,7 +21,9 @@ namespace CLI.Model
         public Semester Semester1 { get; set; }
         public int SYear {  get; set; }
         public int NumEspb { get; set; }
-        
+
+        public int bind { get; set; }
+
         public Professor Professor1 { get; set; }
        
 
@@ -74,10 +76,12 @@ namespace CLI.Model
         {
             string s;
             s= $"ID: {Id,6} | Name: {Name,21} | Semester: {Semester1,21} | Year: {SYear,10} | ESPB: {NumEspb,5} | Proffesors's Name: {Professor1.Name,10}| Professor's Surname: {Professor1,10} |";
-            /*foreach (Student st in StudentsP)
+            foreach (Student st in StudentsP)
             {
-                s += st.ToString();
-            }*/
+                s += st.Name;
+                s += " ";
+                s += st.Surname;
+            }
             return s;
         }
         public string[] ToCSV()

@@ -14,7 +14,9 @@ namespace CLI.Model
     {
         public int Id { get; set; }
         public string CName { get; set; }
-       
+
+        public int bind { get; set; }
+
         Professor sef { get; set; }
 
         public List<Professor> Professors { get; set; }
@@ -44,6 +46,8 @@ namespace CLI.Model
              {
 
                  s += p.Name;
+                 s += " ";
+                s += p.Surname;
              }
 
 

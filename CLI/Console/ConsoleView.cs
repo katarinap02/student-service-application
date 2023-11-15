@@ -134,7 +134,11 @@ public class ConsoleView
     private void PrintStudents(List<Student> students) //ispisi studente/studenta
     {
         System.Console.WriteLine("STUDENTS: ");
-        string header = $"ID {"",6} | Name {"",15} | Surname {"",15} | Birthdate {"",10} | Adress {"", 30} | Phone number{"",12} | Email{"",20} | Index {"", 12}| Current school year {"", 4} | Current student's status {"", 2} |  Average Grade: {"",5}| Subject: {"", 40}| Grades: {"",20}";
+        string header = $"ID {"",2} | Name {"",10} | Surname {"",10} | Birthdate {"",10 }  |" +
+            $" Adress {"", 30} | Phone number{"",12} | \nEmail{"",20} | Index {"", 12}|" +
+            $" Current school year {"", 4} | Current student's status {"", 2} |  Average Grade: {"",2}| " +
+            $"\nSubject: {"", 40}|" +
+            $" \nGrades: {"",20}";
         System.Console.WriteLine(header);
         foreach (Student v in students)
         {
@@ -225,6 +229,12 @@ public class ConsoleView
     private void RemoveStudent() //ukloni studenta
     {
         int id = InputId();
+        Student st = _studentsDao.GetStudentById(id);
+        if(st.bind == 1)
+        {
+            System.Console.WriteLine("Student can't be deleted");
+            return;
+        }
         Student? removedStudent = _studentsDao.RemoveStudent(id);
         if (removedStudent is null)
         {
@@ -289,7 +299,7 @@ public class ConsoleView
     private void PrintProfessors(List<Professor> professors) //ispisi studente/studenta
     {
         System.Console.WriteLine("PROFESSOR: ");
-        string header = $"ID: {"",6} | Name: {"",21} | Surname: {"",21} | Birthdate: {"",10} | Adress: {"",21} | Phone number: {"",12} | Email: {"",30} | Title: {"",14} | Years of service: {"",3} | Subjects: {"", 40} | Chairs{"", 20}";
+        string header = $"ID: {"",2} | Name: {"",10} | Surname: {"",10} | Birthdate: {"",10} | Adress: {"",30} | Phone number: {"",12} | \nEmail: {"",20} | Title: {"",14} | Years of service: {"",3} | \nSubjects: {"", 20} | \nChairs{"", 20}";
         System.Console.WriteLine(header);
         foreach (Professor v1 in professors)
         {
@@ -369,6 +379,12 @@ public class ConsoleView
     private void RemoveProfessor() //ukloni profesora
     {
         int id = InputIdP();
+        Professor pf = _professorsDao.GetProfessorById(id);
+        if (pf.bind == 1)
+        {
+            System.Console.WriteLine("Professor can't be deleted");
+            return;
+        }
         Professor? removedProfessor = _professorsDao.RemoveProfessor(id);
         if (removedProfessor is null)
         {
@@ -502,6 +518,12 @@ public class ConsoleView
     private void RemoveSubject() //ukloni profesora
     {
         int id = InputIdP();
+        Subject st = _subjectsDao.GetSubjectById(id);
+        if (st.bind == 1)
+        {
+            System.Console.WriteLine("Subject can't be deleted");
+            return;
+        }
         Subject? removedSubject = _subjectsDao.RemoveSubject(id);
         if (removedSubject is null)
         {
@@ -622,6 +644,12 @@ public class ConsoleView
     private void RemoveChair() //ukloni katedra
     {
         int id = InputIdC();
+        Chair ch = _chairsDao.GetChairById(id);
+        if (ch.bind == 1)
+        {
+            System.Console.WriteLine("Chair can't be deleted");
+            return;
+        }
         Chair? removedChair = _chairsDao.RemoveChair(id);
         if (removedChair is null)
         {

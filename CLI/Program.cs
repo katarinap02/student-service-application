@@ -24,13 +24,16 @@ class Program
             Student s = students.GetStudentById(ss.StudentId);
             Subject p = subjects.GetSubjectById(ss.SubjectId);
             s.Subjects.Add(p);
+            s.bind = 1;
             p.StudentsP.Add(s);
+            p.bind = 1;
         }
 
         foreach (Grade g in grades.GetAllGrades())
         {
             Student s = students.GetStudentById(g.student.Id);
             s.Grades.Add(g);
+            s.bind = 1;
         }
 
         
@@ -40,7 +43,9 @@ class Program
             Chair c = chairs.GetChairById(cp.ChairId);
             Professor p = professors.GetProfessorById(cp.ProfessorId);
             c.Professors.Add(p);
+            c.bind = 1;
             p.chairs.Add(c);
+            p.bind = 1;
             
             
         }
@@ -48,6 +53,7 @@ class Program
         {
             Professor pp = professors.GetProfessorById(sb.Professor1.Id);
             pp.subjects.Add(sb);
+            pp.bind = 1;
         }
 
 

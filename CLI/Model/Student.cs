@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,10 @@ namespace CLI.Model
         public string Email { get; set; }
         public Index IndexNm { get; set; }
         public int StYear { get; set; }
+
+        public int bind  {  get; set; }
+
+        
 
         public List<Subject> Subjects { get; set; } // lista nepolozenih predmeta
        
@@ -99,17 +104,24 @@ namespace CLI.Model
         public override string ToString()
         {
             string s;
-            s = $"ID: {Id,5} | Name: {Name,15} | Surname: {Surname,15} | Birthdate: {Birthdate,10} | Adress: {Adress1, 30} | Phone number: {PhoneNumber, 12} | Email: {Email,20} | Index: {IndexNm, 12} | Current school year: {StYear, 4} | Current student's status: {Status1, 2} | Average Grade ";
+            s = $"ID: {Id,2} | Name: {Name,10} | Surname: {Surname,10} | Birthdate: {Birthdate,10}  " + 
+                $"| Adress: {Adress1, 30} | Phone number: {PhoneNumber, 12} | \nEmail: {Email,20} | Index: {IndexNm, 12} " +
+                $"| Current school year: {StYear, 4} | Current student's status: {Status1, 2} | Average Grade {Average(Grades), 2} |" +
+                $" \nSubjectNames: |";
             foreach(Subject sub in Subjects)
             {
-                s += sub.ToString();
+                s += sub.Name + " ";
             }
+
+            s += $" \nGrades: |";
 
             foreach (Grade gra in Grades)
             {
-                s += gra.ToString();
+                s += gra.grade.ToString() + " ";
             }
+            s+= "\n";
             return s;
+            
 
         }
         public string[] ToCSV() //ucitava u fajl
