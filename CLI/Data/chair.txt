@@ -1,1 +1,2 @@
 0|adc
+1|automatika

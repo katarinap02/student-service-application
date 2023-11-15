@@ -21,7 +21,7 @@ namespace CLI.Model
         public string Title { get; set; }
         public int YearS { get; set; } // godine staza
 
-       public  List<Subject>subjects { get; set; }
+        public  List<Subject>subjects { get; set; }
 
         public List<Chair> chairs { get; set; }
 
@@ -41,7 +41,7 @@ namespace CLI.Model
             Email = email;
             Title = title;
             YearS = styear;
-            //subjects = new List<Subject>();
+            chairs = new List<Chair>();
 
         }
 
@@ -55,7 +55,7 @@ namespace CLI.Model
             Email = email;
             Title = title;
             YearS = styear;
-
+            chairs = new List<Chair>();
 
 
         }
@@ -70,10 +70,10 @@ namespace CLI.Model
                 s1 += sb.ToString();
             }
 
-            foreach (Chair ch in chairs)
+            /*foreach (Chair ch in chairs)
             {
                 s1 += ch.ToString();
-            }
+            }*/
             return s1;
         }
         public string[] ToCSV() //ucitava u fajl

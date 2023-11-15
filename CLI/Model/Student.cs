@@ -33,7 +33,7 @@ namespace CLI.Model
         public Student()
         {
             Grades = new List<Grade>();
-             Subjects = new List<Subject>();
+            Subjects = new List<Subject>();
         }
 
 

@@ -38,11 +38,12 @@ namespace CLI.Model
         }
         public override string ToString()
         {
-            string s= $"ID: {Id,6} | Name: {CName,21} |";
+            string s;
+            s= $"ID: {Id,6} | Name: {CName,21} |";
              foreach (Professor p in Professors)
              {
                  s += p.ToString();
-             }
+            }
 
             return s;
         }

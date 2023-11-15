@@ -72,7 +72,13 @@ namespace CLI.Model
         }
         public override string ToString()
         {
-            return $"ID: {Id,6} | Name: {Name,21} | Semester: {Semester1,21} | Year: {SYear,10} | ESPB: {NumEspb,5} | Proffesors's Name: {Professor1.Name,10}| Professor's Surname: {Professor1,10} |";
+            string s;
+            s= $"ID: {Id,6} | Name: {Name,21} | Semester: {Semester1,21} | Year: {SYear,10} | ESPB: {NumEspb,5} | Proffesors's Name: {Professor1.Name,10}| Professor's Surname: {Professor1,10} |";
+            /*foreach (Student st in StudentsP)
+            {
+                s += st.ToString();
+            }*/
+            return s;
         }
         public string[] ToCSV()
         {

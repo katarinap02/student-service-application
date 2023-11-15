@@ -68,4 +68,8 @@ public class ChairDao
     {
         return chairs;
     }
+    public Model.Chair FindChairById(List<Chair> chairs, int targetId)
+    {
+        return chairs.Find(chairs => chairs.Id == targetId);
+    }
 }
