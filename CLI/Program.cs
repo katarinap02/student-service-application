@@ -39,8 +39,9 @@ class Program
         {
             Chair c = chairs.GetChairById(cp.ChairId);
             Professor p = professors.GetProfessorById(cp.ProfessorId);
-            p.chairs.Add(c);
             c.Professors.Add(p);
+            p.chairs.Add(c);
+            
             
         }
         foreach (Subject sb in subjects.GetAllSubjects())
