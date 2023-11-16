@@ -75,13 +75,17 @@ namespace CLI.Model
         public override string ToString()
         {
             string s;
-            s= $"ID: {Id,6} | Name: {Name,21} | Semester: {Semester1,21} | Year: {SYear,10} | ESPB: {NumEspb,5} | Proffesors's Name: {Professor1.Name,10}| Professor's Surname: {Professor1,10} |";
+            s= $"ID: {Id,6} | Name: {Name,10} | Semester: {Semester1,15} | Year: {SYear,10} | ESPB: {NumEspb,5} | Proffesors's Name: {Professor1.Name,10}| Professor's Surname: {Professor1.Surname,10} |"+
+            $" \nStudents:  |";
+
             foreach (Student st in StudentsP)
             {
                 s += st.Name;
                 s += " ";
                 s += st.Surname;
+                s+= "   ";
             }
+            s += "\n";
             return s;
         }
         public string[] ToCSV()

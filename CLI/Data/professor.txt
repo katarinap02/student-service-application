@@ -1,2 +1,3 @@
-0|Rale|Ralevic|12/12/1960|0|Ulica|10|NS|SRB|1234|ralerale@gmail.com|ddd|20
-1|Raa |Rrrrrrr|12/12/1980|1|strit|11|NS|SRB|1134|raaarrrr@gmail.com|ddd|10
+0|Nebojsa|Ralevic|5/26/1965|0|Bulevar Jase Tomica|4|Novi Sad|Srbija|123456|nralevic@uns.ac.rs|prof.dr|13
+1|Vladimir |Dimitrieski|12/12/1980|1|Alekse Santica|8|Novi Sad|Srbija|654321|dimitrieski@uns.ac.rs|prof.dr|5
+2|Srdjan|Popov|8/24/1969|0|Bulevar Evrope|2|Novi Sad|Srbija|214854573|srdjanpopov@uns.ac.rs|prof.dr|14

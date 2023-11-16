@@ -1,2 +1,5 @@
-0|1|mima|sekaric|1|predmet|10|12/12/2023
-1|1|aa|aa|0|fizika|9|12/11/1023
+0|2|Katarina|Petrovic|2|baze podataka 1|10|3/2/2023
+1|3|Milena-Mima|Sekaric|2|baze podataka 1|10|2/20/2023
+2|1|Milan|Milenic|1|analiza 1|8|2/25/2023
+3|0|Petar|Petrovic|0|pjisp|9|2023/1/1
+4|1|Milan|Milenic|0|pjisp|9|2/12/2023

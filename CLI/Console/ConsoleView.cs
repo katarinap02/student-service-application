@@ -138,7 +138,7 @@ public class ConsoleView
             $" Adress {"", 30} | Phone number{"",12} | \nEmail{"",20} | Index {"", 12}|" +
             $" Current school year {"", 4} | Current student's status {"", 2} |  Average Grade: {"",2}| " +
             $"\nSubject: {"", 40}|" +
-            $" \nGrades: {"",20}";
+            $" \nGrades: {"",20} |\n\n";
         System.Console.WriteLine(header);
         foreach (Student v in students)
         {
@@ -299,7 +299,7 @@ public class ConsoleView
     private void PrintProfessors(List<Professor> professors) //ispisi studente/studenta
     {
         System.Console.WriteLine("PROFESSOR: ");
-        string header = $"ID: {"",2} | Name: {"",10} | Surname: {"",10} | Birthdate: {"",10} | Adress: {"",30} | Phone number: {"",12} | \nEmail: {"",20} | Title: {"",14} | Years of service: {"",3} | \nSubjects: {"", 20} | \nChairs{"", 20}";
+        string header = $"ID: {"",2} | Name: {"",10} | Surname: {"",10} | Birthdate: {"",10} | Adress: {"",30} | Phone number: {"",12} | \nEmail: {"",20} | Title: {"",14} | Years of service: {"",3} | \nSubjects: {"", 20} | \nChairs: {"", 20} |\n\n";
         System.Console.WriteLine(header);
         foreach (Professor v1 in professors)
         {
@@ -450,7 +450,8 @@ public class ConsoleView
     private void PrintSubjects(List<Subject> subjects) 
     {
         System.Console.WriteLine("SUBJECT: ");
-        string header = $"ID: {"",6} | Name: {"",21} | Semester: {"",21} | Year: {"",10} | ESPB: {"",5} | Proffesors's Name: {"",10}| Professor's Surname: {"",10} |";
+        string header = $"ID: {"",6} | Name: {"",10} | Semester: {"",15} | Year: {"",10} | ESPB: {"",5} | Proffesors's Name: {"",10}| Professor's Surname: {"",10} |"+
+                        $" \nStudents:  |*************************************************************************************************************************************************";
         System.Console.WriteLine(header);
         foreach (Subject v2 in subjects)
         {
@@ -594,7 +595,10 @@ public class ConsoleView
     private void PrintChairs(List<Chair> chairs)
     {
         System.Console.WriteLine("CHAIR: ");
-        string header = $"ID: {"",6} | Name: {"",21} | Professors: {"",50}"; //ZA SADA mi ispisuje samo ovo 
+        string header = $"ID: {"",6} | Name: {"",21} | Professors: {"",50}" +
+                        $"\n******************************************************\n";
+
+
         System.Console.WriteLine(header);
         foreach (Chair v2 in chairs)
         {
@@ -717,7 +721,8 @@ public class ConsoleView
     private void PrintGrades(List<Grade> grades)
     {
         System.Console.WriteLine("GRADE: ");
-        string header = $"ID: {"",6} | Student's Name: {"",10}| Student's Surname: {"",10}| Subject's Name: {"",10}| Grade: {"",2} | Date: {"", 12}|  "; //ZA SADA mi ispisuje samo ovo 
+        string header = $"ID: {"",6} | Student's Name: {"",10}| Student's Surname: {"",10}| Subject's Name: {"",10}| Grade: {"",2} | Date: {"",12}|  \n" +
+                        $"***********************************************************************************************************************************";
         System.Console.WriteLine(header);
         foreach (Grade v2 in grades)
         {

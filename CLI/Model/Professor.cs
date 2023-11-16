@@ -75,7 +75,7 @@ namespace CLI.Model
                 s1 += sb.Name + " ";
             }
 
-            s1 += "\nChairs: ";
+            s1 += "\nChairs: |";
             foreach (Chair ch in chairs)
             {
                 s1 += ch.CName + " ";

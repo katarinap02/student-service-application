@@ -104,7 +104,7 @@ namespace CLI.Model
         public override string ToString()
         {
             string s;
-            s = $"ID: {Id,2} | Name: {Name,10} | Surname: {Surname,10} | Birthdate: {Birthdate,10}  " + 
+            s = $"ID: {Id,2} | Name: {Name,10} | Surname: {Surname,10} | Birthdate: {Birthdate,10} " + 
                 $"| Adress: {Adress1, 30} | Phone number: {PhoneNumber, 12} | \nEmail: {Email,20} | Index: {IndexNm, 12} " +
                 $"| Current school year: {StYear, 4} | Current student's status: {Status1, 2} | Average Grade {Average(Grades), 2} |" +
                 $" \nSubjectNames: |";

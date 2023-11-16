@@ -1,2 +1,3 @@
-0|adc
-1|automatika
+0|automatika
+1|acs
+2|matematika
