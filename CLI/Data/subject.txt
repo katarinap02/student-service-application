@@ -1,3 +1,4 @@
 0|pjisp|Winter|1|9|2|Srdjan|Popov
 1|analiza 1|Summer|2012|9|0|Nebojsa|Ralevic
 2|baze podataka 1|Winter|3|8|1|Vladimir|Dimitrieski
+3|klfdsj|Summer|3|3|0|Nebojsa|Ralevic
