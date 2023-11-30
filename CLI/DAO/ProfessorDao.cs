@@ -39,7 +39,7 @@ namespace CLI.DAO
 
             oldpr.Name = pr.Name;
             oldpr.Surname = pr.Surname;
-            oldpr.Adress1 = pr.Adress1;
+            oldpr.AdressPr = pr.AdressPr;
             oldpr.Birthdate = pr.Birthdate;
             oldpr.PhoneNumber= pr.PhoneNumber;
             oldpr.Email = pr.Email; 

@@ -37,8 +37,9 @@ public class StudentSubjectDao
 
 
 
-    /*public Model.Subject FindSubjectById(List<Subject> subjects, int tId)
-    {
-        return subjects.Find(subjects => subjects.Id == tId);
-    }*/
+    /* public Model.Subject FindSubjectById(List<Subject> subjects, int tId)
+      {
+          return subjects.Find(subjects => subjects.Id == tId);
+      }
+    */
 }

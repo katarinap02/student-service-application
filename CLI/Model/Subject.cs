@@ -18,13 +18,13 @@ namespace CLI.Model
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public Semester Semester1 { get; set; }
+        public Semester SemesterSb { get; set; }
         public int SYear {  get; set; }
         public int NumEspb { get; set; }
 
         public int bind { get; set; }
 
-        public Professor Professor1 { get; set; }
+        public Professor ProfessorSb { get; set; }
        
 
 
@@ -48,10 +48,10 @@ namespace CLI.Model
        
             Id = id; 
             Name = name;
-            Semester1 = s; //postavljen je inicijalno na letnji
+            SemesterSb = s; //postavljen je inicijalno na letnji
             SYear = syear;
             NumEspb = numespb;
-            Professor1 = p;
+            ProfessorSb = p;
             //StudentsP = new List<Student>();
            // StudentsF = new List<Student>();
 
@@ -62,10 +62,10 @@ namespace CLI.Model
         public Subject(string name, Semester s, int syear,  int numespb, Professor p)
         {
             Name = name;
-            Semester1 = s; //postavljen je inicijalno na letnji
+            SemesterSb = s; //postavljen je inicijalno na letnji
             SYear = syear;
             NumEspb = numespb;
-            Professor1 = p;
+            ProfessorSb = p;
             //StudentsP = new List<Student>();
             // StudentsF = new List<Student>();
 
@@ -75,7 +75,7 @@ namespace CLI.Model
         public override string ToString()
         {
             string s;
-            s= $"ID: {Id,6} | Name: {Name,10} | Semester: {Semester1,15} | Year: {SYear,10} | ESPB: {NumEspb,5} | Proffesors's Name: {Professor1.Name,10}| Professor's Surname: {Professor1.Surname,10} |"+
+            s= $"ID: {Id,6} | Name: {Name,10} | Semester: {SemesterSb,15} | Year: {SYear,10} | ESPB: {NumEspb,5} | Proffesors's Name: {ProfessorSb.Name,10}| Professor's Surname: {ProfessorSb.Surname,10} |"+
             $" \nStudents:  |";
 
             foreach (Student st in StudentsP)
@@ -94,12 +94,12 @@ namespace CLI.Model
             {
                 Id.ToString(),
                 Name,
-                Semester1.ToString(),
+                SemesterSb.ToString(),
                 SYear.ToString(),
                 NumEspb.ToString(),
-                Professor1.ToCSV1()[0],
-                Professor1.ToCSV1()[1],
-            Professor1.ToCSV1()[2],
+                ProfessorSb.ToCSV1()[0],
+                ProfessorSb.ToCSV1()[1],
+            ProfessorSb.ToCSV1()[2],
 
 
         };
@@ -124,11 +124,11 @@ namespace CLI.Model
         {
             Id = int.Parse(values[0]);
             Name = values[1];
-            Semester1 = Enum.Parse<Semester>(values[2]);
+            SemesterSb = Enum.Parse<Semester>(values[2]);
             SYear = int.Parse(values[3]);
             NumEspb = int.Parse(values[4]);
-            Professor1 = new Professor();
-            Professor1.FromCSV1(new string[] { values[5], values[6], values[7] });
+            ProfessorSb = new Professor();
+            ProfessorSb.FromCSV1(new string[] { values[5], values[6], values[7] });
 
         }
         public void FromCSV1(string[] values)

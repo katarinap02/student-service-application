@@ -51,7 +51,7 @@ class Program
         }
         foreach (Subject sb in subjects.GetAllSubjects())
         {
-            Professor pp = professors.GetProfessorById(sb.Professor1.Id);
+            Professor pp = professors.GetProfessorById(sb.ProfessorSb.Id);
             pp.subjects.Add(sb);
             pp.bind = 1;
         }

@@ -44,7 +44,7 @@ public class StudentDao
         oldst.Surname = st.Surname;
         oldst.Birthdate = st.Birthdate;
         oldst.Email = st.Email;
-        oldst.Adress1 = st.Adress1;
+        oldst.AdressSt = st.AdressSt;
         oldst.PhoneNumber = st.PhoneNumber;
         oldst.IndexNm = st.IndexNm;
         oldst.StYear = st.StYear;

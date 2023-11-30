@@ -168,7 +168,7 @@ public class ConsoleView
         string adressA = ConsoleViewEmpty.SafeInputEmpty();
 
         System.Console.WriteLine("Enter student's number of street: ");
-        int adressB = ConsoleViewUtils.SafeInputInt();
+        string adressB = ConsoleViewAdressNm.SafeInputAdressNm();
 
         System.Console.WriteLine("Enter student's city: ");
         string adressC = ConsoleViewEmpty.SafeInputEmpty();
@@ -299,7 +299,7 @@ public class ConsoleView
     private void PrintProfessors(List<Professor> professors) //ispisi studente/studenta
     {
         System.Console.WriteLine("PROFESSOR: ");
-        string header = $"ID: {"",2} | Name: {"",10} | Surname: {"",10} | Birthdate: {"",10} | Adress: {"",30} | Phone number: {"",12} | \nEmail: {"",20} | Title: {"",14} | Years of service: {"",3} | \nSubjects: {"", 20} | \nChairs: {"", 20} |\n\n";
+        string header = $"ID: {"",2} | Name: {"",10} | Surname: {"",10} | Birthdate: {"",10} | Adress: {"",30} | Phone number: {"",12} | \nEmail: {"",20} | Title: {"",14} | Years of service: {"",3} | \nSubjects: {"", 20} | \n+Chairs: {"", 20} |\n\n";
         System.Console.WriteLine(header);
         foreach (Professor v1 in professors)
         {
@@ -330,7 +330,7 @@ public class ConsoleView
         string adressA = ConsoleViewEmpty.SafeInputEmpty();
 
         System.Console.WriteLine("Enter professor's number of street: ");
-        int adressB = ConsoleViewUtils.SafeInputInt();
+        string adressB = ConsoleViewAdressNm.SafeInputAdressNm();
 
         System.Console.WriteLine("Enter professor's city: ");
         string adressC = ConsoleViewEmpty.SafeInputEmpty();

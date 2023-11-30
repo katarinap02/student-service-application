@@ -18,7 +18,7 @@ namespace CLI.Model
         public string Surname { get; set; }
 
         public DateOnly Birthdate { get; set; }
-        public Adress Adress1 { get; set; } //povezacemo kasnije preko id
+        public Adress AdressSt { get; set; } //povezacemo kasnije preko id
         public int PhoneNumber { get; set; }
         public string Email { get; set; }
         public Index IndexNm { get; set; }
@@ -72,7 +72,7 @@ namespace CLI.Model
             Name = name;
             Surname = surname;
             Birthdate = birthdate;
-            Adress1 = adress;
+            AdressSt = adress;
             PhoneNumber = phonenumber;
             Email = email;
             IndexNm = indexnm;
@@ -88,7 +88,7 @@ namespace CLI.Model
             Name = name;
             Surname = surname;
             Birthdate = birthdate;
-            Adress1 = adress;
+            AdressSt = adress;
             PhoneNumber = phonenumber;
             Email = email;
             IndexNm = indexnm;
@@ -105,7 +105,7 @@ namespace CLI.Model
         {
             string s;
             s = $"ID: {Id,2} | Name: {Name,10} | Surname: {Surname,10} | Birthdate: {Birthdate,10} " + 
-                $"| Adress: {Adress1, 30} | Phone number: {PhoneNumber, 12} | \nEmail: {Email,20} | Index: {IndexNm, 12} " +
+                $"| Adress: {AdressSt, 30} | Phone number: {PhoneNumber, 12} | \nEmail: {Email,20} | Index: {IndexNm, 12} " +
                 $"| Current school year: {StYear, 4} | Current student's status: {Status1, 2} | Average Grade {Average(Grades), 2} |" +
                 $" \nSubjectNames: |";
             foreach(Subject sub in Subjects)
@@ -132,11 +132,11 @@ namespace CLI.Model
             Name,
             Surname,
             Birthdate.ToString("yyyy-MM-dd"),
-            Adress1.ToCSV()[0],
-            Adress1.ToCSV()[1],
-            Adress1.ToCSV()[2],
-            Adress1.ToCSV()[3],
-            Adress1.ToCSV()[4],
+            AdressSt.ToCSV()[0],
+            AdressSt.ToCSV()[1],
+            AdressSt.ToCSV()[2],
+            AdressSt.ToCSV()[3],
+            AdressSt.ToCSV()[4],
             PhoneNumber.ToString(),
             Email.ToString(),
             IndexNm.ToCSV()[0],
@@ -166,8 +166,8 @@ namespace CLI.Model
             Name = values[1];
             Surname = values[2];
             Birthdate = DateOnly.Parse(values[3]);
-            Adress1 = new Adress();
-            Adress1.FromCSV(new string[] { values[4], values[5], values[6], values[7], values[8] });
+            AdressSt = new Adress();
+            AdressSt.FromCSV(new string[] { values[4], values[5], values[6], values[7], values[8] });
             PhoneNumber = int.Parse(values[9]);
             Email = values[10];
             IndexNm = new Index();

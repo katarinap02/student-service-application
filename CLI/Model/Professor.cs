@@ -15,7 +15,7 @@ namespace CLI.Model
         public string Name { get; set; }
         public string Surname { get; set; }
         public DateOnly Birthdate { get; set; }
-        public Adress Adress1 { get; set; }
+        public Adress AdressPr { get; set; }
         public int PhoneNumber { get; set; }
         public string Email{ get; set; }
         public string Title { get; set; }
@@ -38,7 +38,7 @@ namespace CLI.Model
             Name = name;
             Surname = surname;
             Birthdate = birthdate;
-            Adress1 = adress;
+            AdressPr = adress;
             PhoneNumber = phonenumber;
             Email = email;
             Title = title;
@@ -52,7 +52,7 @@ namespace CLI.Model
             Name = name;
             Surname = surname;
             Birthdate = birthdate;
-            Adress1 = adress;
+            AdressPr = adress;
             PhoneNumber = phonenumber;
             Email = email;
             Title = title;
@@ -67,7 +67,7 @@ namespace CLI.Model
         {
             string s1;
              s1= $"ID: {Id,2} | Name: {Name,10} | Surname: {Surname,10} | Birthdate: {Birthdate,10} |" +
-                $" Adress: {Adress1,30} | Phone number: {PhoneNumber,12} | \nEmail: {Email,20} |" +
+                $" Adress: {AdressPr,30} | Phone number: {PhoneNumber,12} | \nEmail: {Email,20} |" +
                 $" Title: {Title,14} | Years of service: {YearS,3} |" +
                 $" \nSubjects: |";
             foreach (Subject sb in subjects)
@@ -91,11 +91,11 @@ namespace CLI.Model
             Name,
             Surname,
             Birthdate.ToString(),
-            Adress1.ToCSV()[0],
-            Adress1.ToCSV()[1],
-            Adress1.ToCSV()[2],
-            Adress1.ToCSV()[3],
-            Adress1.ToCSV()[4],
+            AdressPr.ToCSV()[0],
+            AdressPr.ToCSV()[1],
+            AdressPr.ToCSV()[2],
+            AdressPr.ToCSV()[3],
+            AdressPr.ToCSV()[4],
             PhoneNumber.ToString(),
             Email.ToString(),
             Title,
@@ -126,8 +126,8 @@ namespace CLI.Model
             Name = values[1];
             Surname = values[2];
             Birthdate = DateOnly.Parse(values[3]);
-            Adress1 = new Adress();
-            Adress1.FromCSV(new string[] { values[4], values[5], values[6], values[7], values[8] });
+            AdressPr = new Adress();
+            AdressPr.FromCSV(new string[] { values[4], values[5], values[6], values[7], values[8] });
             PhoneNumber = int.Parse(values[9]);
             Email = values[10];
             Title = values[11];
