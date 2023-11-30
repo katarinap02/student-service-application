@@ -16,7 +16,7 @@ namespace CLI.Model
         public string Surname { get; set; }
         public DateOnly Birthdate { get; set; }
         public Adress AdressPr { get; set; }
-        public int PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
         public string Email{ get; set; }
         public string Title { get; set; }
         public int YearS { get; set; } // godine staza
@@ -32,7 +32,7 @@ namespace CLI.Model
             subjects = new List<Subject>();
             chairs= new List<Chair>();
         }
-        public Professor(int id, string name, string surname, DateOnly birthdate, Adress adress, int phonenumber, string email, string title, int styear)
+        public Professor(int id, string name, string surname, DateOnly birthdate, Adress adress, string phonenumber, string email, string title, int styear)
         {
             Id = id;
             Name = name;
@@ -47,7 +47,7 @@ namespace CLI.Model
 
         }
 
-        public Professor(string name, string surname, DateOnly birthdate, Adress adress, int phonenumber, string email, string title, int styear)
+        public Professor(string name, string surname, DateOnly birthdate, Adress adress, string phonenumber, string email, string title, int styear)
         {
             Name = name;
             Surname = surname;
@@ -128,7 +128,7 @@ namespace CLI.Model
             Birthdate = DateOnly.Parse(values[3]);
             AdressPr = new Adress();
             AdressPr.FromCSV(new string[] { values[4], values[5], values[6], values[7], values[8] });
-            PhoneNumber = int.Parse(values[9]);
+            PhoneNumber = values[9];
             Email = values[10];
             Title = values[11];
             YearS = int.Parse(values[12]);

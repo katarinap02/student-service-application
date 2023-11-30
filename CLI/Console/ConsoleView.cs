@@ -179,7 +179,7 @@ public class ConsoleView
         Model.Adress adress = new Model.Adress(adressA, adressB, adressC, adressD);
 
         System.Console.WriteLine("Enter student's phone numer: ");
-        int phonenumber = ConsoleViewUtils.SafeInputInt();
+        string phonenumber = ConsoleViewPhoneNm.SafeInputPhone();
 
         System.Console.WriteLine("Enter student' s email: ");
         string email = ConsoleViewEmpty.SafeInputEmpty();
@@ -341,7 +341,7 @@ public class ConsoleView
         Model.Adress adress = new Model.Adress(adressA, adressB, adressC, adressD);
 
         System.Console.WriteLine("Enter professor's phone numer: ");
-        int phonenumber = ConsoleViewUtils.SafeInputInt();
+        string phonenumber = ConsoleViewPhoneNm.SafeInputPhone();
 
         System.Console.WriteLine("Enter professor's email: ");
         string email = ConsoleViewEmpty.SafeInputEmpty();
