@@ -12,7 +12,6 @@ namespace CLI.Model
 {
     public class Grade : ISerializable
     {
-       // Student student {  get; set; }
         public int Id { get; set; }
         public Student student {  get; set; }
         public  Subject subject { get; set; }

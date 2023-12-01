@@ -33,7 +33,7 @@ class Program
         {
             Student s = students.GetStudentById(g.student.Id);
             s.Grades.Add(g);
-            s.bind = 1;
+            
         }
 
         

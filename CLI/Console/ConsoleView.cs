@@ -713,7 +713,7 @@ public class ConsoleView
         }
     }
 
-    private void AddGrades() //dodaj katedru
+    private void AddGrades() //dodaj 
     {
         Grade grade1 = InputGrade();
         _gradesDao.AddGrade(grade1);

@@ -39,7 +39,9 @@ public class GradeDao
         Grade? oldgr = GetGradeById(gr.Id); // sa istim id treba da unesemo nove podatke koji su u st
         if (oldgr is null) return null;
 
-        oldgr.grade = gr.grade; //apdejtuje se samo ime
+        oldgr.student = gr.student;
+        oldgr.subject = gr.subject;
+        oldgr.grade = gr.grade; 
         oldgr.date = gr.date;
 
         _storage.Save(grades);
