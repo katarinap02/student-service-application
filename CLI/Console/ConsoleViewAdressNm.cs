@@ -14,13 +14,25 @@ static class ConsoleViewAdressNm
 
         string rawInput = System.Console.ReadLine() ?? string.Empty;
         
-
-        while (!int.TryParse(rawInput.Substring(0, rawInput.Length - 1), out input))
+        if(rawInput.Length == 1)
         {
-            System.Console.WriteLine("Not a valid number, try again: ");
+            while (!int.TryParse(rawInput, out input))
+            {
+                System.Console.WriteLine("Not a valid number, try again: ");
 
-            rawInput = System.Console.ReadLine() ?? string.Empty;
+                rawInput = System.Console.ReadLine() ?? string.Empty;
+            }
         }
+        
+        else
+        {
+              while (!int.TryParse(rawInput.Substring(0, rawInput.Length - 1), out input))
+                    {
+                        System.Console.WriteLine("Not a valid number, try again: ");
+
+                        rawInput = System.Console.ReadLine() ?? string.Empty;
+                    }
+                }
 
         return rawInput;
     }

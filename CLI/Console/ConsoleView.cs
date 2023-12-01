@@ -20,14 +20,16 @@ public class ConsoleView
     private readonly SubjectDao _subjectsDao;
     private readonly ChairDao _chairsDao;
     private readonly GradeDao _gradesDao;
+    private readonly HeadDao _headDao; 
   
-    public ConsoleView(StudentDao studentsDao, ProfessorDao professorsDao, SubjectDao subjectsDao, ChairDao chairsDao, GradeDao gradesDao) //konstruktor sa parametrima
+    public ConsoleView(StudentDao studentsDao, ProfessorDao professorsDao, SubjectDao subjectsDao, ChairDao chairsDao, GradeDao gradesDao, HeadDao headDao) //konstruktor sa parametrima
     {
         _studentsDao = studentsDao;
         _professorsDao = professorsDao;
         _subjectsDao = subjectsDao;
         _chairsDao = chairsDao;
         _gradesDao = gradesDao;
+        _headDao = headDao;
     }
 
 
@@ -149,7 +151,7 @@ public class ConsoleView
     private void AddStudents() //dodaj studenta
     {
         Student student1 = InputStudent();
-        _studentsDao.AddStudent(student1);
+        _headDao.AddStudentHead(student1);
         System.Console.WriteLine("Student added");
     }
 
@@ -210,14 +212,7 @@ public class ConsoleView
         int id = InputId();
         Student student = InputStudent();
         student.Id = id;
-        Student? updatedStudent = _studentsDao.UpdateStudent(student);
-        if (updatedStudent == null)
-        {
-            System.Console.WriteLine("Student not found");
-            return;
-        }
-
-        System.Console.WriteLine("Student updated");
+        _headDao.UpdateStudentHead(student);
     }
 
     private int InputId()
@@ -229,20 +224,8 @@ public class ConsoleView
     private void RemoveStudent() //ukloni studenta
     {
         int id = InputId();
-        Student st = _studentsDao.GetStudentById(id);
-        if(st.bind == 1)
-        {
-            System.Console.WriteLine("Student can't be deleted");
-            return;
-        }
-        Student? removedStudent = _studentsDao.RemoveStudent(id);
-        if (removedStudent is null)
-        {
-            System.Console.WriteLine("Student not found");
-            return;
-        }
-
-        System.Console.WriteLine("Student removed");
+        _headDao.RemoveStudentHead(id);
+        
     }
 
     //***********************************************************************

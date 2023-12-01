@@ -30,8 +30,6 @@ namespace CLI.Model
 
          public List<Student> StudentsP { get; set; }//spisak onih koji su polozili
 
-          //spisak onih koji su polozili
-
 
          public List<Student> StudentsF { get; set; } //spisak onih koji nisu polozili
 
@@ -41,6 +39,7 @@ namespace CLI.Model
         public Subject() 
         {
                StudentsP = new List<Student>();
+               StudentsF = new List<Student>();
         }
 
         public Subject( int id, string name, Semester s, int syear,  int numespb, Professor p)
@@ -52,8 +51,6 @@ namespace CLI.Model
             SYear = syear;
             NumEspb = numespb;
             ProfessorSb = p;
-            //StudentsP = new List<Student>();
-           // StudentsF = new List<Student>();
 
 
 
@@ -66,8 +63,6 @@ namespace CLI.Model
             SYear = syear;
             NumEspb = numespb;
             ProfessorSb = p;
-            //StudentsP = new List<Student>();
-            // StudentsF = new List<Student>();
 
 
 
@@ -78,7 +73,7 @@ namespace CLI.Model
             s= $"ID: {Id,6} | Name: {Name,10} | Semester: {SemesterSb,15} | Year: {SYear,10} | ESPB: {NumEspb,5} | Proffesors's Name: {ProfessorSb.Name,10}| Professor's Surname: {ProfessorSb.Surname,10} |"+
             $" \nStudents:  |";
 
-            foreach (Student st in StudentsP)
+            foreach (Student st in StudentsF)
             {
                 s += st.Name;
                 s += " ";

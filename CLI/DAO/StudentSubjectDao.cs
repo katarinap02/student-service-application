@@ -31,15 +31,19 @@ public class StudentSubjectDao
         return studentsubjects;
     }
 
+    public StudentSubject? RemoveStudentSubject(int id)
+    {
+        StudentSubject? studentsubject = GetStudentSubjectByIdSt(id);
+        if (studentsubject == null) return null;
 
+        studentsubjects.Remove(studentsubject);
+        _storage.Save(studentsubjects);
+        return studentsubject;
+    }
 
+    public StudentSubject? GetStudentSubjectByIdSt(int id)
+    {
+        return studentsubjects.Find(v => v.StudentId == id);
+    }
 
-
-
-
-    /* public Model.Subject FindSubjectById(List<Subject> subjects, int tId)
-      {
-          return subjects.Find(subjects => subjects.Id == tId);
-      }
-    */
 }

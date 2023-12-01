@@ -18,14 +18,14 @@ class Program
         GradeDao grades = new GradeDao();
         StudentSubjectDao studentsubject = new StudentSubjectDao();
         ChairProfessorDao chairprofessor = new ChairProfessorDao();
+        HeadDao heads = new HeadDao(students, professors, subjects, chairs, grades, studentsubject);
 
         foreach (StudentSubject ss in studentsubject.GetAllStudentSubjects())
         {
             Student s = students.GetStudentById(ss.StudentId);
             Subject p = subjects.GetSubjectById(ss.SubjectId);
             s.Subjects.Add(p);
-            s.bind = 1;
-            p.StudentsP.Add(s);
+            p.StudentsF.Add(s);
             p.bind = 1;
         }
 
@@ -58,7 +58,7 @@ class Program
 
 
 
-        ConsoleView view = new ConsoleView(students, professors, subjects, chairs, grades );
+        ConsoleView view = new ConsoleView(students, professors, subjects, chairs, grades, heads);
 
         view.Run();
 
