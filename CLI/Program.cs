@@ -49,9 +49,7 @@ class Program
             Chair c = chairs.GetChairById(cp.ChairId);
             Professor p = professors.GetProfessorById(cp.ProfessorId);
             c.Professors.Add(p);
-            c.bind = 1;
             p.chairs.Add(c);
-            p.bind = 1;
             
             
         }

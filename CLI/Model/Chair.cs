@@ -78,7 +78,7 @@ namespace CLI.Model
             Id = int.Parse(values[0]);
             CName = values[1];
             Chief = new Professor();
-            Chief.FromCSV1(new string[] { values[1], values[2], values[3] });
+            Chief.FromCSV1(new string[] { values[2], values[3], values[4] });
 
         }
     }

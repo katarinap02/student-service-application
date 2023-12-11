@@ -621,15 +621,9 @@ public class ConsoleView
         int id = InputIdC();
         Chair chair = InputChair();
         chair.Id = id;
-        Chair? updatedChair = _chairsDao.UpdateChair(chair);
-        if (updatedChair == null)
-        {
-            System.Console.WriteLine("Chair not found");
-            return;
-        }
-
-        System.Console.WriteLine("Chair updated");
+        _headDao.UpdateChairHead(chair);
     }
+
 
     private int InputIdC()
     {
@@ -640,20 +634,8 @@ public class ConsoleView
     private void RemoveChair() //ukloni katedra
     {
         int id = InputIdC();
-        Chair ch = _chairsDao.GetChairById(id);
-        if (ch.bind == 1)
-        {
-            System.Console.WriteLine("Chair can't be deleted");
-            return;
-        }
-        Chair? removedChair = _chairsDao.RemoveChair(id);
-        if (removedChair is null)
-        {
-            System.Console.WriteLine("Chair not found");
-            return;
-        }
-
-        System.Console.WriteLine("Chair removed");
+        _headDao.RemoveChairHead(id);
+        
     }
 
 

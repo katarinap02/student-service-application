@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -135,11 +136,61 @@ public class HeadDao
     }
 
     // kada budes brisala za subject ne zaboravi da izbrises iz obe liste kod studenta taj subject
+    // kod profesora mora da se obrise i iz liste ali i ako nema sefa cela katedra
 
     // ------------------------------------------CHAIR--------------------------------------------//
     public void AddChairHead(Chair ch)
     {
         _chairsDao.AddChair(ch);
+    }
+
+    public void UpdateChairHead(Chair ch)
+    {
+        Chair? oldchair = _chairsDao.UpdateChair(ch);
+        if (oldchair == null)
+        {
+            System.Console.WriteLine("Chair not found");
+            return;
+        }
+
+        System.Console.WriteLine("Chair updated");
+
+        foreach (Professor s in _professorsDao.GetAllProfessors())
+        {
+            if (s.chairs.Contains(oldchair))
+            {
+                s.chairs.Remove(oldchair); 
+                s.chairs.Add(ch); 
+
+            }
+        }
+    }
+
+    public void RemoveChairHead(int id)
+    {
+        Chair? ch = _chairsDao.GetChairById(id);
+        if (ch is null)
+        {
+            System.Console.WriteLine("Chair not found");
+            return;
+        }
+        foreach (Professor s in _professorsDao.GetAllProfessors())
+        {
+            if (s.chairs.Contains(ch))
+            {
+                s.chairs.Remove(ch);
+
+            }
+        }
+
+        Chair? removedChair = _chairsDao.RemoveChair(id);
+        if (removedChair is null)
+        {
+            System.Console.WriteLine("Chair not found");
+            return;
+        }
+
+        System.Console.WriteLine("Chair removed");
     }
 
 
