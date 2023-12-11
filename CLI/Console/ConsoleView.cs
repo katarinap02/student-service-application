@@ -592,7 +592,7 @@ public class ConsoleView
     private void AddChairs() //dodaj katedru
     {
         Chair chair1 = InputChair();
-        _chairsDao.AddChair(chair1);
+        _headDao.AddChairHead(chair1);
         System.Console.WriteLine("Chair added");
     }
 
@@ -716,8 +716,9 @@ public class ConsoleView
     private void AddGrades() //dodaj 
     {
         Grade grade1 = InputGrade();
-        _gradesDao.AddGrade(grade1);
+        _headDao.AddGradeHead(grade1);
         System.Console.WriteLine("Grade added");
+
     }
 
     private Grade InputGrade()
@@ -761,15 +762,10 @@ public class ConsoleView
         int id = InputIdG();
        Grade grade= InputGrade();
         grade.Id = id;
-        Grade? updatedGrade = _gradesDao.UpdateGrade(grade);
-        if (updatedGrade == null)
-        {
-            System.Console.WriteLine("Grade not found");
-            return;
-        }
-
-        System.Console.WriteLine("Grade updated");
+        _headDao.UpdateGreadHead(grade);
+        
     }
+
 
     private int InputIdG()
     {
@@ -780,15 +776,10 @@ public class ConsoleView
     private void RemoveGrade() //ukloni katedra
     {
         int id = InputIdG();
-        Grade? removedGrade = _gradesDao.RemoveGrade(id);
-        if (removedGrade is null)
-        {
-            System.Console.WriteLine("Grade not found");
-            return;
-        }
-
-        System.Console.WriteLine("Grade removed");
+        _headDao.RemoveGradeHead(id);
     }
+
+    
 
 
 }

@@ -2,6 +2,7 @@
 using CLI.Storage;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -110,7 +111,7 @@ public class HeadDao
         {
             if (g.student.Id == st.Id)
             {
-                gr.Add(g);
+                gr.Add(g); //pomocna lista iz koje cemo brisati
             }
         }
 
@@ -130,8 +131,86 @@ public class HeadDao
 
         System.Console.WriteLine("Student removed");
 
-
-
-
+        
     }
+
+    // kada budes brisala za subject ne zaboravi da izbrises iz obe liste kod studenta taj subject
+
+    // ------------------------------------------CHAIR--------------------------------------------//
+    public void AddChairHead(Chair ch)
+    {
+        _chairsDao.AddChair(ch);
+    }
+
+
+
+    // ----------------------------------------GRADE--------------------------------------------//
+
+    public void AddGradeHead(Grade gd) //ne radi kako treba...
+    {
+        Subject sb = gd.subject;
+        Student st = gd.student;
+        if (sb.StudentsF.Contains(st)) //kada dodamo ocenu za neki predmet student se prebacuje iz u listu studenata polozenih predmeta
+        {
+            sb.StudentsF.Remove(st);
+            sb.StudentsP.Add(st);
+
+        }
+        if(st.Subjects.Contains(sb)) // dodala sam pomocnu listu u kojoj cuvamo polozene predmete studenta
+        {
+            st.Subjects.Remove(sb);
+            st.SubjectsP.Add(sb);
+        }
+        _gradesDao.AddGrade(gd);
+    }
+
+    public void UpdateGreadHead(Grade g)
+    {
+        Grade? oldg = _gradesDao.UpdateGrade(g);
+        if (oldg == null)
+        {
+            System.Console.WriteLine("Grade not found");
+            return;
+        }
+
+        System.Console.WriteLine("Grade updated");
+
+        foreach (Student s in _studentsDao.GetAllStudents()) //update za ocenu u studentu
+        {
+            if (s.Grades.Contains(oldg))
+            {
+                s.Grades.Remove(oldg); 
+                s.Grades.Add(oldg); 
+
+            }
+        }
+    }
+
+    public void RemoveGradeHead(int id)
+    {
+        Grade? gr = _gradesDao.GetGradeById(id);
+        if (gr is null)
+        {
+            System.Console.WriteLine("Grade not found");
+            return;
+        }
+        foreach (Student s in _studentsDao.GetAllStudents())
+        {
+            if (s.Grades.Contains(gr))
+            {
+                s.Grades.Remove(gr);
+
+            }
+        }
+
+            Grade? removedGrade = _gradesDao.RemoveGrade(id);
+        if (removedGrade is null)
+        {
+            System.Console.WriteLine("Grade not found");
+            return;
+        }
+
+        System.Console.WriteLine("Grade removed");
+    }
+
 }

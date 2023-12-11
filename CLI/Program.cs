@@ -24,9 +24,15 @@ class Program
         {
             Student s = students.GetStudentById(ss.StudentId);
             Subject p = subjects.GetSubjectById(ss.SubjectId);
-            s.Subjects.Add(p);
-            p.StudentsF.Add(s);
-            p.bind = 1;
+            if(!s.SubjectsP.Contains(p)) //ako ne sadrzi druga lista vec predmet ovaj deo ne radi
+            {
+                s.Subjects.Add(p);
+            }
+            if(!p.StudentsP.Contains(s)) // dodala jer ako postoji u listi polozenih predmeta ne treba ga ponovo dodavati
+            {
+                p.StudentsF.Add(s);
+            }
+            
         }
 
         foreach (Grade g in grades.GetAllGrades())

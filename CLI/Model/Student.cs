@@ -29,6 +29,8 @@ namespace CLI.Model
         
 
         public List<Subject> Subjects { get; set; } // lista nepolozenih predmeta
+
+        public List<Subject> SubjectsP {  get; set; } //pomocna lista polozenih predmeta
        
         public Status Status1 { get; set; }
         // public double AvGrade { get; set; }
@@ -39,6 +41,7 @@ namespace CLI.Model
         {
             Grades = new List<Grade>();
             Subjects = new List<Subject>();
+            SubjectsP = new List<Subject>();    
         }
 
 
@@ -66,7 +69,7 @@ namespace CLI.Model
 
 
 
-        public Student ( int id,  string name, string surname, DateOnly birthdate, Adress adress, string phonenumber, string email,Index indexnm, int styear, Status s ) //fali avggrade parametar
+        public Student ( int id,  string name, string surname, DateOnly birthdate, Adress adress, string phonenumber, string email,Index indexnm, int styear, Status s )
         {
             Id = id;
             Name = name;
@@ -117,7 +120,7 @@ namespace CLI.Model
 
             foreach (Grade gra in Grades)
             {
-                s += gra.grade.ToString() + " ";
+                s +=gra.subject.Name + " " + gra.grade.ToString() + " ";
             }
             s+= "\n";
             return s;
