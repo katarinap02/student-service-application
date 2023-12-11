@@ -17,7 +17,7 @@ namespace CLI.Model
 
         public int bind { get; set; }
 
-        Professor sef { get; set; }
+        Professor Chief { get; set; }
 
         public List<Professor> Professors { get; set; }
 
@@ -25,23 +25,25 @@ namespace CLI.Model
         {
             Professors = new List<Professor>();
         }
-        public Chair(int id, string name)
+        public Chair(int id, string name, Professor p)
         {
             Id = id;
             CName = name;
+            Chief = p;
             Professors= new List<Professor>();
         }
 
-        public Chair( string name)
+        public Chair( string name, Professor p)
         {
            
             CName = name;
+            Chief = p;
             Professors = new List<Professor>();
         }
         public override string ToString()
         {
             string s;
-            s= $"ID: {Id,6} | Name: {CName,21} |"+
+            s= $"ID: {Id,6} | Name: {CName,21}| Chief's Name: {Chief.Name,10}| Chief's Surname: {Chief.Surname,10} |" +
                $" \nProfessors:  |";
             foreach (Professor p in Professors)
              {
@@ -61,8 +63,11 @@ namespace CLI.Model
             string[] csvValues =
             {
             Id.ToString(),
-            CName
-            
+            CName,
+            Chief.ToCSV1()[0],
+            Chief.ToCSV1()[1],
+            Chief.ToCSV1()[2]
+
 
         };
             return csvValues;
@@ -72,7 +77,9 @@ namespace CLI.Model
         {
             Id = int.Parse(values[0]);
             CName = values[1];
-            
+            Chief = new Professor();
+            Chief.FromCSV1(new string[] { values[1], values[2], values[3] });
+
         }
     }
 }
