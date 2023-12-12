@@ -6,7 +6,35 @@
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+    <Window.Resources>
+        <ComponentResourceKey x:Key="NewIconKey" />
+        <ComponentResourceKey x:Key="SaveIconKey" ResourceId="/Resources/save.png"/>
+        <ComponentResourceKey x:Key="InfoIconKey" ResourceId="/Resources/info.png" />
+        <ComponentResourceKey x:Key="EditIconKey" ResourceId="/Resources/edit.png"/>
+        <ComponentResourceKey x:Key="CrossIconKey" ResourceId="/Resources/cross.png"/>
+        <ComponentResourceKey x:Key="TrashIconKey" ResourceId="/Resources/trash.png"/>
+        <ComponentResourceKey x:Key="OpenIconKey" ResourceId="/Resources/open.png"/>
+    </Window.Resources>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="New" InputGestureText="Ctrl+N"  Icon="{DynamicResource NewIconKey}"/>
+                <MenuItem Header="Save" InputGestureText="Ctrl+S" Icon="{DynamicResource SaveIconKey}"></MenuItem>
+                <MenuItem Header="Open" InputGestureText="Ctrl+O" Icon="{DynamicResource OpenIconKey}">
+                    <MenuItem Header="Students"></MenuItem>
+                    <MenuItem Header="Subjects"></MenuItem>
+                    <MenuItem Header="Professors"></MenuItem>
+                    <MenuItem Header="Chairs"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Close" InputGestureText="Ctrl+C" Icon="{DynamicResource CrossIconKey}"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Edit">
+                <MenuItem Header="Edit" InputGestureText="Ctrl+E" Icon="{DynamicResource EditIconKey}" ></MenuItem>
+                <MenuItem Header="Delete" InputGestureText="Ctrl+D" Icon="{DynamicResource TrashIconKey}"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="About"  Icon="{DynamicResource InfoIconKey}" InputGestureText="Ctrl+H"></MenuItem>
+            </MenuItem>
+        </Menu>
+    </DockPanel>
 </Window>

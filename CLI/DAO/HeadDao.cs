@@ -205,7 +205,7 @@ public class HeadDao
 
     // ----------------------------------------GRADE--------------------------------------------//
 
-    public void AddGradeHead(Grade gd) //ne radi kako treba...
+    public void AddGradeHead(Grade gd) //ne radi kako treba..., ali ne znam da li ce nam trebati
     {
         Subject sb = gd.subject;
         Student st = gd.student;
