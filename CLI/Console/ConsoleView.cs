@@ -536,14 +536,9 @@ public class ConsoleView
                 UpdateChair();
                 break;
             case "44":
-                RemoveChairs();
+                RemoveChair();
                 break;
         }
-    }
-
-    private void RemoveChairs()
-    {
-        throw new NotImplementedException();
     }
 
     public void RunMenuChair()

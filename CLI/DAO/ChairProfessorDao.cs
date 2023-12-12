@@ -25,4 +25,19 @@ public class ChairProfessorDao
         return chairprofessor;
     }
 
+    public ChairProfessor? RemoveChairProfessor(int id)
+    {
+        ChairProfessor? cp = GetChairProfessorByIdSt(id);
+        if (cp == null) return null;
+
+        chairprofessor.Remove(cp);
+        _storage.Save(chairprofessor);
+        return cp;
+    }
+
+    public ChairProfessor? GetChairProfessorByIdSt(int id)
+    {
+        return chairprofessor.Find(v => v.ChairId == id);
+    }
+
 }

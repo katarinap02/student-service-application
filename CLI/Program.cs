@@ -18,7 +18,7 @@ class Program
         GradeDao grades = new GradeDao();
         StudentSubjectDao studentsubject = new StudentSubjectDao();
         ChairProfessorDao chairprofessor = new ChairProfessorDao();
-        HeadDao heads = new HeadDao(students, professors, subjects, chairs, grades, studentsubject);
+        HeadDao heads = new HeadDao(students, professors, subjects, chairs, grades, studentsubject, chairprofessor);
 
         foreach (StudentSubject ss in studentsubject.GetAllStudentSubjects())
         {

@@ -18,6 +18,7 @@ public class HeadDao
     private readonly ChairDao _chairsDao;
     private readonly GradeDao _gradesDao;
     private readonly StudentSubjectDao _studentsubjectsDao;
+    private readonly ChairProfessorDao _chairprofessorDao;
     
 
     public HeadDao()
@@ -25,7 +26,7 @@ public class HeadDao
        
     }
 
-    public HeadDao(StudentDao studentsDao, ProfessorDao professorsDao, SubjectDao subjectsDao, ChairDao chairsDao, GradeDao gradesDao, StudentSubjectDao studentsubjectDao) //konstruktor sa parametrima
+    public HeadDao(StudentDao studentsDao, ProfessorDao professorsDao, SubjectDao subjectsDao, ChairDao chairsDao, GradeDao gradesDao, StudentSubjectDao studentsubjectDao, ChairProfessorDao chairprofessorDao) //konstruktor sa parametrima
     {
         _studentsDao = studentsDao;
         _professorsDao = professorsDao;
@@ -33,6 +34,7 @@ public class HeadDao
         _chairsDao = chairsDao;
         _gradesDao = gradesDao;
         _studentsubjectsDao = studentsubjectDao;
+        _chairprofessorDao = chairprofessorDao;
     }
 
     public void AddStudentHead(Student st)
@@ -181,6 +183,12 @@ public class HeadDao
                 s.chairs.Remove(ch);
 
             }
+        }
+
+        ChairProfessor? removedChairProfessor = _chairprofessorDao.RemoveChairProfessor(id); //brisemo i vezu
+        if (removedChairProfessor is null)
+        {
+            //continue;
         }
 
         Chair? removedChair = _chairsDao.RemoveChair(id);
