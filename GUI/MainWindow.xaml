@@ -35,6 +35,8 @@
             <MenuItem Header="Help">
                 <MenuItem Header="About"  Icon="{DynamicResource InfoIconKey}" InputGestureText="Ctrl+H"></MenuItem>
             </MenuItem>
+            <StatusBar DockPanel.Dock="Bottom" Height="19" Width="256" RenderTransformOrigin="0.458,5.76" />
         </Menu>
+        
     </DockPanel>
 </Window>
