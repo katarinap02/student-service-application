@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" >
     <Window.Resources>
+
         <ComponentResourceKey x:Key="NewIconKey" />
         <ComponentResourceKey x:Key="SaveIconKey" ResourceId="/Resources/save.png"/>
         <ComponentResourceKey x:Key="InfoIconKey" ResourceId="/Resources/info.png" />
@@ -16,9 +17,22 @@
         <ComponentResourceKey x:Key="OpenIconKey" ResourceId="/Resources/open.png"/>
     </Window.Resources>
     <DockPanel>
+        <DockPanel DockPanel.Dock="Bottom" Height="20">
+            <StatusBar Height="20" Width="797">
+                <TextBlock x:Name="statusTextBlock" DockPanel.Dock ="Left"  Text="Student services" Width="94"/>
+                <TextBlock x:Name="TextBlockOpen" DockPanel.Dock ="Left"  Text="Open window..." Width="94"/>
+                <DockPanel DockPanel.Dock="Right" Height="20" Width="1081">
+                    <TextBlock x:Name="dateTimeTextBlock"  Width="122"/>
+                </DockPanel>
+            </StatusBar>
+        </DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
-                <MenuItem Header="New" InputGestureText="Ctrl+N"  Icon="{DynamicResource NewIconKey}"/>
+                <MenuItem Header="New" InputGestureText="Ctrl+N">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/save.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
                 <MenuItem Header="Save" InputGestureText="Ctrl+S" Icon="{DynamicResource SaveIconKey}"></MenuItem>
                 <MenuItem Header="Open" InputGestureText="Ctrl+O" Icon="{DynamicResource OpenIconKey}">
                     <MenuItem Header="Students"></MenuItem>
@@ -35,8 +49,7 @@
             <MenuItem Header="Help">
                 <MenuItem Header="About"  Icon="{DynamicResource InfoIconKey}" InputGestureText="Ctrl+H"></MenuItem>
             </MenuItem>
-            <StatusBar DockPanel.Dock="Bottom" Height="19" Width="256" RenderTransformOrigin="0.458,5.76" />
         </Menu>
-        
+
     </DockPanel>
 </Window>
