@@ -1,4 +1,9 @@
 0|pjisp|Winter|1|9|2|Srdjan|Popov
-1|analiza 1|Summer|2012|9|0|Nebojsa|Ralevic
+1|ANALIZA I|Summer|2022|9|0|Nebojsa|Ralevic
 2|baze podataka 1|Winter|3|8|1|Jana|Jankovic
 3|klfdsj|Summer|3|3|0|Nebojsa|Ralevic
+5|nans|Summer|2023|7|2|Srdjan|Popov
+5|nans|Summer|2023|7|2|Srdjan|Popov
+7|nans|Winter|2023|7|1|Jana|Jankovic
+7|nans|Winter|2023|7|1|Jana|Jankovic
+8|predme|Summer|2023|5|1|Jana|Jankovic

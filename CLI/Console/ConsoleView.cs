@@ -445,7 +445,8 @@ public class ConsoleView
     private void AddSubjects() //dodaj profesora
     {
         Subject subject1 = InputSubject();
-        _subjectsDao.AddSubject(subject1);
+       // _subjectsDao.AddSubject(subject1);
+        _headDao.AddSubjectHead(subject1);
         System.Console.WriteLine("Subject added");
     }
 
@@ -483,14 +484,14 @@ public class ConsoleView
         int id = InputIdS();
         Subject subject = InputSubject();
         subject.Id = id;
-        Subject? updatedSubject = _subjectsDao.UpdateSubject(subject);
-        if (updatedSubject == null)
-        {
-            System.Console.WriteLine("Subject not found");
-            return;
-        }
-
-        System.Console.WriteLine("Subject updated");
+        //Subject? updatedSubject = _subjectsDao.UpdateSubject(subject);
+        //if (updatedSubject == null)
+       // {
+            //System.Console.WriteLine("Subject not found");
+            //return;
+       // }
+        _headDao.UpdateSubjectHead(subject);
+       // System.Console.WriteLine("Subject updated");
     }
 
     private int InputIdS()
@@ -508,14 +509,15 @@ public class ConsoleView
             System.Console.WriteLine("Subject can't be deleted");
             return;
         }
-        Subject? removedSubject = _subjectsDao.RemoveSubject(id);
-        if (removedSubject is null)
-        {
-            System.Console.WriteLine("Subject not found");
-            return;
-        }
+        /* Subject? removedSubject = _subjectsDao.RemoveSubject(id);
+         if (removedSubject is null)
+         {
+             System.Console.WriteLine("Subject not found");
+             return;
+         }
 
-        System.Console.WriteLine("Subject removed");
+         System.Console.WriteLine("Subject removed");*/
+        _headDao.RemoveSubjectHead(id);
     }
 
     //***********************************************************************

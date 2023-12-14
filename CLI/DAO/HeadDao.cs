@@ -136,7 +136,99 @@ public class HeadDao
 
         
     }
+    public void AddSubjectHead(Subject sb)
+    {
+        _subjectsDao.AddSubject(sb);
+    }
 
+    public void UpdateSubjectHead(Subject sb)
+    {
+        Subject? olds = _subjectsDao.UpdateSubject(sb);
+        if (olds == null)
+        {
+            System.Console.WriteLine("Subject not found");
+            return;
+        }
+
+        System.Console.WriteLine("Subject updated");
+        foreach (Student s in _studentsDao.GetAllStudents())
+        {
+            if (s.SubjectsP.Contains(olds))//moze da subject bude u polozenim i nepolozenim predmetima kod studenta
+            {
+                s.SubjectsP.Remove(olds); //izbaci ga iz liste(stare vrednosti)
+                s.SubjectsP.Add(sb); // ubaci ponovo kad je odradjen upgrade
+
+            }
+
+            else if (s.Subjects.Contains(olds))
+            {
+                s.Subjects.Remove(olds);
+                s.Subjects.Add(sb);
+            }
+        }
+        foreach (Grade g in _gradesDao.GetAllGrades()) //promijenimo u ocjeni predmet
+        {
+            if (g.subject.Id == olds.Id)
+            {
+                g.subject = sb;
+                _gradesDao.UpdateGrade(g); //ovo mora da bi odradio i u fajlu
+            }
+        }
+    
+    }
+    public void RemoveSubjectHead(int id)
+    {
+        Subject? sb = _subjectsDao.GetSubjectById(id);
+        if (sb is null)
+        {
+            System.Console.WriteLine("Subject not found");
+            return;
+        }
+        List<Grade> gr = new List<Grade>(); //sluzi da bismo stavili sve sto treba za brisanje
+
+        foreach (Student s in _studentsDao.GetAllStudents())
+        {
+            if (s.SubjectsP.Contains(sb))//moze da student bude u polozenim i nepolozenim predmetima
+            {
+                s.SubjectsP.Remove(sb);
+                //ovo je za kada obrisemo spredmet da se obrise iz pomocne liste polozenih predmeta ko studenta
+
+            }
+
+            else if (s.Subjects.Contains(sb))
+            {
+                s.Subjects.Remove(sb);
+            }
+            StudentSubject? removedStudentSubject = _studentsubjectsDao.RemoveStudentSubject(id); //brisemo i vezu
+            if (removedStudentSubject is null)
+            {
+                continue;
+            }
+        }
+        foreach (Grade g in _gradesDao.GetAllGrades()) //promenimo u oceni studenta
+        {
+            if (g.subject.Id == sb.Id)
+            {
+                gr.Add(g); //pomocna lista iz koje cemo brisati
+            }
+        }
+
+        foreach (Grade g in gr)
+        {
+            Grade? removedgrade = _gradesDao.RemoveGrade(g.Id);
+            if (removedgrade is null)
+            { continue; }
+        }
+        Subject? removedsb = _subjectsDao.RemoveSubject(id); //tek kad smo obrisali sve veze obrisemo i predmet
+        if (removedsb is null)
+        {
+            System.Console.WriteLine("Subject not found");
+            return;
+        }
+
+        System.Console.WriteLine("Subject removed");
+
+    }
     // kada budes brisala za subject ne zaboravi da izbrises iz obe liste kod studenta taj subject
     // kod profesora mora da se obrise i iz liste ali i ako nema sefa cela katedra
 
