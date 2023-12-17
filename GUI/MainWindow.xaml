@@ -49,7 +49,39 @@
             <MenuItem Header="Help">
                 <MenuItem Header="About"  Icon="{DynamicResource InfoIconKey}" InputGestureText="Ctrl+H"></MenuItem>
             </MenuItem>
+            <Menu/>
+            <ToolBar Height="20" Width="792"/>
+
         </Menu>
+        <Grid Width="736" Height="370">
+            <ToggleButton x:Name="toggleButton" Content="Students" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="60" Checked="ShowStudentsGrid" Unchecked="ShowStudentsGrid">
+                <ToggleButton.Style>
+                    <Style TargetType="ToggleButton">
+                        <Style.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Background" Value="#FF97989A"/>
+                                <!-- Change to your desired color -->
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="False">
+                                <Setter Property="Background" Value="{x:Null}"/>
+                                <!-- Change to your desired color -->
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ToggleButton.Style>
+            </ToggleButton>
+            <ToggleButton Content="Professors" HorizontalAlignment="Left" Height="25" Margin="60,0,0,0" VerticalAlignment="Top" Width="60" Background="{x:Null}"/>
+            <ToggleButton Content="Subjects" HorizontalAlignment="Left" Height="25" Margin="120,0,0,0" VerticalAlignment="Top" Width="60" Background="{x:Null}"/>
+            <Grid x:Name="studentGrid" HorizontalAlignment="Center" Height="279" VerticalAlignment="Center" Width="736" Visibility="Collapsed" AutomationProperties.ItemType="">
+                <Label Content="Index" HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="114" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderBrush="#FF090303"/>
+                <Label Content="Year of study" HorizontalAlignment="Left" Height="33" Margin="368,0,0,0" VerticalAlignment="Top" Width="168" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
+                <Label Content="Status" HorizontalAlignment="Left" Height="33" Margin="536,0,0,0" VerticalAlignment="Top" Width="96" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
+                <Label Content="Average" HorizontalAlignment="Left" Height="33" Margin="632,0,0,0" VerticalAlignment="Top" Width="104" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
+                <Label Content="Name" HorizontalAlignment="Left" Height="33" Margin="114,0,0,0" VerticalAlignment="Top" Width="119" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
+                <Label Content="Surname" HorizontalAlignment="Left" Height="33" Margin="233,0,0,0" VerticalAlignment="Top" Width="135" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
+
+            </Grid>
+        </Grid>
 
     </DockPanel>
 </Window>
