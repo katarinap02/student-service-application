@@ -24,8 +24,6 @@ namespace CLI.Model
         public Index IndexNm { get; set; }
         public int StYear { get; set; }
 
-        public int bind  {  get; set; }
-
         
 
         public List<Subject> Subjects { get; set; } // lista nepolozenih predmeta
