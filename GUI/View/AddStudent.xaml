@@ -1,12 +1,12 @@
-﻿<Window x:Class="GUI.View.AddStudent"
+﻿<Window x:Class="GUI.AddStudent"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GUI.View"
+        xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
         Title="Add Student" Height="358" Width="600">
-    <Grid Margin="0,0,0,9">
+    <!--<Grid Margin="0,0,0,9">
         <Grid.Background>
             <ImageBrush/>
         </Grid.Background>
@@ -23,7 +23,7 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <!-- Labels and Text Boxes -->
+        --><!-- Labels and Text Boxes --><!--
         <Label Grid.Row="0" Grid.Column="0" Margin="34,10,108,30" Content="Id*" Grid.ColumnSpan="2"/>
         <TextBox Grid.Row="0" Grid.Column="2" Text="{Binding Path=StudentDto.Name, UpdateSourceTrigger=PropertyChanged}" Height="27" VerticalAlignment="Top" Margin="61,10,59,0"/>
 
@@ -45,9 +45,9 @@
 
         <Label Grid.Column="0" Margin="34,21,108,10" Content="ESPB*" Grid.ColumnSpan="2" Grid.Row="1"/>
 
-        <!-- Button for adding a student -->
+        --><!-- Button for adding a student --><!--
         <Button Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left" Click="Add_Click" Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63">Potvrdi</Button>
         <Button Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left" Click="Add_Click" Margin="99,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67" Content="Odustani "></Button>
 
-    </Grid>
+    </Grid>-->
 </Window>
