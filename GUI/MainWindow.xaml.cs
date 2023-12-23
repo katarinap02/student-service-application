@@ -1,6 +1,7 @@
 ﻿using CLI.DAO;
 using CLI.Model;
 using GUI.DTO;
+using GUI.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -74,6 +75,13 @@ namespace GUI
 
             }
             dataGridProfessor.ItemsSource= professorDtos; 
+        }
+
+
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+           // GUI.AddStudent addStudent = new GUI.AddStudent();
+           // addStudent.Show();
         }
 
 
