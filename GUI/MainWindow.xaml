@@ -50,9 +50,28 @@
                 <MenuItem Header="About"  Icon="{DynamicResource InfoIconKey}" InputGestureText="Ctrl+H"></MenuItem>
             </MenuItem>
             <Menu/>
-            <ToolBar Height="20" Width="792"/>
+           
 
         </Menu>
+
+        <Grid Height="20" DockPanel.Dock="Top" >
+            <DockPanel Grid.Column="0" LastChildFill="False" Margin="15,0,0, 0">
+                <Button x:Name="buttonAdd" DockPanel.Dock="Left" Width="30" >Add</Button>
+                <Button x:Name="buttonEdit" DockPanel.Dock="Left" Width="30">Edit</Button>
+                <Button x:Name="buttonDelete" DockPanel.Dock="Left" Width="40">Delete</Button>
+            </DockPanel>
+            <DockPanel Grid.Column="1" LastChildFill="False" Margin="0,0,15, 0">
+                <Button x:Name="buttonSearch" DockPanel.Dock="Right" Width="40">Search</Button>
+                <TextBox x:Name="textboxSearch" DockPanel.Dock="Right" Width="150"></TextBox>
+               
+            </DockPanel>
+
+
+
+
+
+
+        </Grid>
         <Grid Width="736" Height="370">
             <ToggleButton x:Name="toggleButton" Content="Students" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="60" Checked="ShowStudentsGrid" Unchecked="ShowStudentsGrid">
                 <ToggleButton.Style>
