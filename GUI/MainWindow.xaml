@@ -70,8 +70,21 @@
         <Grid Width="736" Height="370">
             <TabControl x:Name="tabControl">
                 <TabItem x:Name="tabItemStudent" Header="Student">
-                    
-                    
+                    <DataGrid x:Name="dataGridStudent" IsReadOnly="True" AutoGenerateColumns="False" >
+                        <DataGrid.Columns>
+                             <DataGridTextColumn Header="INDEX" Width="*" Binding="{Binding IndexNm}"/>
+                            
+                            <DataGridTextColumn Header="NAME" Width="*" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Header="SURNAME" Width="*" Binding="{Binding Surname}"/>
+                            <DataGridTextColumn Header="YEAR" Width="*" Binding="{Binding StYear}"/>
+                            <DataGridTextColumn Header="STATUS" Width="*" Binding="{Binding StudentStatus}"/>
+                            <DataGridTextColumn Header="AVERAGE" Width="*" Binding="{Binding Average}"/>
+
+
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+
                 </TabItem>
                 <TabItem x:Name="tabItemProfessor" Header="Professor">
                     <DataGrid x:Name="dataGridProfessor" IsReadOnly="True" AutoGenerateColumns="False" >

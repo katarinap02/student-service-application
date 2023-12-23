@@ -12,7 +12,33 @@ namespace GUI.DTO
 {
     class StudentDTO : INotifyPropertyChanged
     {
-        public int Id { get; set; }
+
+        public StudentDTO(Student std)
+        {
+            index = std.IndexNm;
+            name = std.Name;
+            surname = std.Surname;
+            studentYear = std.StYear;
+           status = std.StudentStatus;
+            average = std.Average(std.Grades); //jos nema ocena
+            
+            
+        }
+
+        public int id { get; set; }
+
+        public int Id
+        {
+            get { return id; }
+            set
+            {
+                if (value != id)
+                {
+                    id = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
 
         private string name;
         public string Name
@@ -44,8 +70,8 @@ namespace GUI.DTO
             }
         }
 
-        private int average;
-        public int Average
+        private double average;
+        public double Average
         {
             get { return average; }
             set
@@ -165,7 +191,7 @@ namespace GUI.DTO
 
         public Student ToStudent()
         { 
-            return new Student(name, surname, birthdate, adress, phoneNumber, email, index, studentYear, status);
+            return new Student( name, surname, birthdate, adress, phoneNumber, email, index, studentYear, status);
         }
 
 

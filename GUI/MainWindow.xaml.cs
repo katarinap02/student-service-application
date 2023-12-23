@@ -27,6 +27,7 @@ namespace GUI
     {
 
         List<ProfessorDTO> professorDtos;
+        List<StudentDTO> studentDtos;
         private HeadDao headDao;
         private DispatcherTimer timer;
         public MainWindow()
@@ -40,6 +41,7 @@ namespace GUI
             timer.Tick += UpdateDateTime;
             timer.Start();
 
+            makeStudentList();
             makeProfessorList();
         }
 
@@ -51,6 +53,16 @@ namespace GUI
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        public void makeStudentList()
+        { 
+            studentDtos = new List<StudentDTO>();
+            foreach (Student std in headDao.GetAllStudentsHead())
+            { 
+                studentDtos.Add(new StudentDTO(std));
+            }
+            dataGridStudent.ItemsSource = studentDtos;
         }
 
         public void makeProfessorList()

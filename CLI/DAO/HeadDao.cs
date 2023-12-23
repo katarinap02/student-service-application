@@ -48,6 +48,11 @@ public class HeadDao
         _studentsDao.AddStudent(st);
     }
 
+    public List<Student> GetAllStudentsHead()
+    {
+        return _studentsDao.GetAllStudents();
+    }
+
     public void UpdateStudentHead(Student st)
     {
         Student? olds = _studentsDao.UpdateStudent(st);

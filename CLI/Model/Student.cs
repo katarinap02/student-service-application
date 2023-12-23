@@ -30,8 +30,7 @@ namespace CLI.Model
 
         public List<Subject> SubjectsP {  get; set; } //pomocna lista polozenih predmeta
        
-        public Status Status1 { get; set; }
-        // public double AvGrade { get; set; }
+        public Status StudentStatus { get; set; }
 
         public List<Grade> Grades = new List<Grade>();
        
@@ -78,7 +77,7 @@ namespace CLI.Model
             Email = email;
             IndexNm = indexnm;
             StYear = styear;
-            Status1 = s;
+            StudentStatus = s;
             Subjects = new List<Subject>();
             
 
@@ -94,7 +93,7 @@ namespace CLI.Model
             Email = email;
             IndexNm = indexnm;
             StYear = styear;
-            Status1 = s;
+            StudentStatus = s;
             Subjects = new List<Subject>();
             
 
@@ -107,7 +106,7 @@ namespace CLI.Model
             string s;
             s = $"ID: {Id,2} | Name: {Name,10} | Surname: {Surname,10} | Birthdate: {Birthdate,10} " + 
                 $"| Adress: {AdressSt, 30} | Phone number: {PhoneNumber, 12} | \nEmail: {Email,20} | Index: {IndexNm, 12} " +
-                $"| Current school year: {StYear, 4} | Current student's status: {Status1, 2} | Average Grade {Average(Grades), 2} |" +
+                $"| Current school year: {StYear, 4} | Current student's status: {StudentStatus, 2} | Average Grade {Average(Grades), 2} |" +
                 $" \nSubjectNames: |";
             foreach(Subject sub in Subjects)
             {
@@ -144,7 +143,7 @@ namespace CLI.Model
             IndexNm.ToCSV()[1],
             IndexNm.ToCSV()[2],
             StYear.ToString(),
-            Status1.ToString()
+            StudentStatus.ToString()
 
         };
             return csvValues;
@@ -174,7 +173,7 @@ namespace CLI.Model
             IndexNm = new Index();
             IndexNm.FromCSV(new string[] {  values[11], values[12], values[13] });
             StYear = int.Parse(values[14]);
-            Status1= Enum.Parse<Status>(values[15]);   
+            StudentStatus = Enum.Parse<Status>(values[15]);   
            
         }
 
