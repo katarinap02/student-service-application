@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CLI.DAO;
+using CLI.Model;
+using GUI.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,15 +25,22 @@ namespace GUI
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        List<ProfessorDTO> professorDtos;
+        private HeadDao headDao;
         private DispatcherTimer timer;
         public MainWindow()
         {
+                
             InitializeComponent();
+            headDao = new HeadDao();
 
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += UpdateDateTime;
             timer.Start();
+
+            makeProfessorList();
         }
 
         private void UpdateDateTime(object sender, EventArgs e)
@@ -43,9 +53,21 @@ namespace GUI
 
         }
 
+        public void makeProfessorList()
+        {
+            professorDtos = new List<ProfessorDTO>();
+            foreach (Professor prof in headDao.GetAllProfessorsHead())
+            {
+                professorDtos.Add(new ProfessorDTO(prof));
+
+            }
+            dataGridProfessor.ItemsSource= professorDtos; 
+        }
+
+
         private void ShowStudentsGrid(object sender, RoutedEventArgs e)
         {
-            studentGrid.Visibility = ((ToggleButton)sender).IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
+            //studentGrid.Visibility = ((ToggleButton)sender).IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
         }
     }
 }

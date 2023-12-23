@@ -11,8 +11,36 @@ namespace GUI.DTO
 {
     public  class ProfessorDTO: INotifyPropertyChanged
     {
+        //FALI NAM BROJ LICNE KARTE!    
+        
+        public ProfessorDTO(Professor prof)
+        {
+            id = prof.Id;
+            name = prof.Name;
+            surname = prof.Surname;
+            birthdate = prof.Birthdate;
+            phoneNumber = prof.PhoneNumber; 
+            email = prof.Email; 
+            title = prof.Title;
+            year = prof.YearS;
+            adress = prof.AdressPr;
+        }
 
-        public int Id { get; set; }
+
+
+        private int id;
+        public int Id
+        {
+            get { return id; }
+            set
+            {
+                if (value != id)
+                {
+                    id = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
 
         private string name;
         public string Name

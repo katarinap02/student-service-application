@@ -22,8 +22,14 @@ public class HeadDao
     
 
     public HeadDao()
-    { 
-       
+    {
+        _studentsDao= new StudentDao();
+        _professorsDao= new ProfessorDao();
+        _subjectsDao = new SubjectDao() ;
+        _chairsDao = new ChairDao();
+        _gradesDao = new GradeDao();
+        _studentsubjectsDao = new StudentSubjectDao();
+        _chairprofessorDao= new ChairProfessorDao();
     }
 
     public HeadDao(StudentDao studentsDao, ProfessorDao professorsDao, SubjectDao subjectsDao, ChairDao chairsDao, GradeDao gradesDao, StudentSubjectDao studentsubjectDao, ChairProfessorDao chairprofessorDao) //konstruktor sa parametrima
@@ -292,6 +298,20 @@ public class HeadDao
 
         System.Console.WriteLine("Chair removed");
     }
+
+    //-----------------------------------------PROFESSOR-----------------------------------------//
+
+    public void AddProfessorHead(Professor prof)
+    {
+        _professorsDao.AddProfessor(prof);
+    }
+
+    public List<Professor> GetAllProfessorsHead()
+    {
+       return  _professorsDao.GetAllProfessors();
+    }
+
+
 
 
 

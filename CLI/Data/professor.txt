@@ -1,5 +1,5 @@
-0|Nebojsa|Ralevic|5/26/1965|0|Bulevar Jase Tomica|4|Novi Sad|Srbija|123456|nralevic@uns.ac.rs|prof.dr|13
-1|Jana|Jankovic|11/12/2000|0|Maksima Gorkog|21|Beograd|Srbija|614210080|aleksa.lala@gmail.com|dr|10
-2|Srdjan|Popov|8/24/1969|0|Bulevar Evrope|2|Novi Sad|Srbija|214854573|srdjanpopov@uns.ac.rs|prof.dr|14
-3|Janko|Jankovic|11/11/2003|0|Ime Ulice|43a|Novi Sad|Srbija|21345890|email|dr|10
-4|Janko|Jankovic|11/11/2010|0|Ime Ulice|31a|Novi Sad|Srbija|0641231109|emaik|dr|10
+0|Nebojsa|Ralevic|02-02-2002|0|Bulevar Jase Tomica|4|Novi Sad|Srbija|123456|nralevic@uns.ac.rs|prof.dr|13
+1|Jana|Jankovic|02-02-2002|0|Maksima Gorkog|21|Beograd|Srbija|614210080|aleksa.lala@gmail.com|dr|10
+2|Srdjan|Popov|02-02-2002|0|Bulevar Evrope|2|Novi Sad|Srbija|214854573|srdjanpopov@uns.ac.rs|prof.dr|14
+3|Janko|Jankovic|02-02-2002|0|Ime Ulice|43a|Novi Sad|Srbija|21345890|email|dr|10
+4|Janko|Jankovic|02-02-2002|0|Ime Ulice|31a|Novi Sad|Srbija|0641231109|emaik|dr|10

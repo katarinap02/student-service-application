@@ -20,6 +20,7 @@ class Program
         ChairProfessorDao chairprofessor = new ChairProfessorDao();
         HeadDao heads = new HeadDao(students, professors, subjects, chairs, grades, studentsubject, chairprofessor);
 
+      
         foreach (StudentSubject ss in studentsubject.GetAllStudentSubjects())
         {
             Student s = students.GetStudentById(ss.StudentId);

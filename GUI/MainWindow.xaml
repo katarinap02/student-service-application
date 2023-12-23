@@ -63,27 +63,50 @@
             <DockPanel Grid.Column="1" LastChildFill="False" Margin="0,0,15, 0">
                 <Button x:Name="buttonSearch" DockPanel.Dock="Right" Width="40">Search</Button>
                 <TextBox x:Name="textboxSearch" DockPanel.Dock="Right" Width="150"></TextBox>
-               
+
             </DockPanel>
-
-
-
-
-
-
+            
         </Grid>
         <Grid Width="736" Height="370">
-            <ToggleButton x:Name="toggleButton" Content="Students" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="60" Checked="ShowStudentsGrid" Unchecked="ShowStudentsGrid">
+            <TabControl x:Name="tabControl">
+                <TabItem x:Name="tabItemStudent" Header="Student">
+                    
+                    
+                </TabItem>
+                <TabItem x:Name="tabItemProfessor" Header="Professor">
+                    <DataGrid x:Name="dataGridProfessor" IsReadOnly="True" AutoGenerateColumns="False" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Width="*" Binding="{Binding Id}"/>
+                            <DataGridTextColumn Header="NAME" Width="*" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Header="SURNAME" Width="*" Binding="{Binding Surname}"/>
+                            <DataGridTextColumn Header="BIRTHDATE" Width="*" Binding="{Binding Birthdate}"/>
+                            <DataGridTextColumn Header="PHONENUMBER" Width="*" Binding="{Binding Phonenumber}"/>
+                            <DataGridTextColumn Header="EMAIL" Width="*" Binding="{Binding Email}"/>
+                            <DataGridTextColumn Header="TITLE" Width="*" Binding="{Binding Title}"/>
+                            <DataGridTextColumn Header="YEAR" Width="*" Binding="{Binding Year}"/>
+                            <DataGridTextColumn Header="ADDRESS" Width="*" Binding="{Binding AdressSt}"/>
+                            
+                            
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem>
+                <TabItem x:Name="tabItemSubject" Header="Subject">
+                    
+                    
+                </TabItem>
+            </TabControl>
+            <!--<ToggleButton x:Name="toggleButton" Content="Students" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="60" Checked="ShowStudentsGrid" Unchecked="ShowStudentsGrid">
                 <ToggleButton.Style>
                     <Style TargetType="ToggleButton">
                         <Style.Triggers>
                             <Trigger Property="IsChecked" Value="True">
                                 <Setter Property="Background" Value="#FF97989A"/>
-                                <!-- Change to your desired color -->
+                                --><!-- Change to your desired color --><!--
                             </Trigger>
                             <Trigger Property="IsChecked" Value="False">
                                 <Setter Property="Background" Value="{x:Null}"/>
-                                <!-- Change to your desired color -->
+                                --><!-- Change to your desired color --><!--
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -99,7 +122,7 @@
                 <Label Content="Name" HorizontalAlignment="Left" Height="33" Margin="114,0,0,0" VerticalAlignment="Top" Width="119" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
                 <Label Content="Surname" HorizontalAlignment="Left" Height="33" Margin="233,0,0,0" VerticalAlignment="Top" Width="135" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
 
-            </Grid>
+            </Grid>-->
         </Grid>
 
     </DockPanel>
