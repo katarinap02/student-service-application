@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using System.Runtime.CompilerServices;
 using CLI.Model;
 using System.IO;
+using System.Text.RegularExpressions;
+using System.Xml.Linq;
 
 namespace GUI.DTO
 {
@@ -25,7 +27,6 @@ namespace GUI.DTO
             
             
         }
-
         public int id { get; set; }
 
         public int Id
@@ -55,6 +56,12 @@ namespace GUI.DTO
                 }
             }
         }
+
+        
+
+
+
+        
 
         private CLI.Model.Student.Status status;
 
@@ -114,6 +121,7 @@ namespace GUI.DTO
                 }
             }
         }
+        private AdressDTO adressDTO;
         private Adress adress;
 
         public Adress AdressSt
@@ -187,13 +195,61 @@ namespace GUI.DTO
                 }
             }
         }
+        /*
+        public string Error => null;
 
-        public StudentDTO() { }
+        private Regex _indexRegex = new Regex(@"([a-zA-Z]{2,3})(\\d{2,3})-(\\d{4})\"); //regex za indeks
+        private Regex _adressRegex = new Regex(@"(\d+\s[a-zA-Z\s]+),\s(\d+[a-zA-Z]?),\s([a-zA-Z]+),\s([a-zA-Z]+)"); // regex za adresu
+        string adrReg = @"(\d+\s[a-zA-Z\s]+),\s(\d+[a-zA-Z]?),\s([a-zA-Z]+),\s([a-zA-Z]+)";
+        private Regex _NameRegex = new Regex("[A-Za-z0-9-]+ [A-Za-z0-9-]+");
+
+        Match matchAdress = _adressRegex.Match(Adress);
+
+        if(Regex.)
+            {
+                
+            }
+
+    public string this[string columnName]
+    {
+        get
+        {
+            if (columnName == "Name")
+            {
+                if (string.IsNullOrEmpty(Name))
+                    return "Name is required";
+
+                Match match = _NameRegex.Match(Name);
+                if (!match.Success)
+                    return "Format not good. Try again.";
+
+            }
+            else if (columnName == "NumberOfWheels")
+            {
+                if (NumberOfWheels <= 0)
+                    return "Number of wheels must be a positive value";
+            }
+            return null;
+        }
+    }
+
+   
+    */
+
+
+
+
+
+
+        public StudentDTO(AdressDTO adress) { }
 
         public Student ToStudent()
         { 
             return new Student( name, surname, birthdate, adress, phoneNumber, email, index, studentYear, status);
         }
+
+
+       
 
 
         public event PropertyChangedEventHandler? PropertyChanged;
