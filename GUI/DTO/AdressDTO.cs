@@ -131,7 +131,7 @@ namespace GUI.DTO
 
         private string adressDTO;
 
-        public string AdressDTO { get => adressDTO; set => SetProperty(ref adressDTO, value); }
+         
     }
 }
 

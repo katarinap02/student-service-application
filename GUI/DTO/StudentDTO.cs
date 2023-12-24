@@ -64,6 +64,7 @@ namespace GUI.DTO
 
 
         private CLI.Model.Student.Status status;
+        
 
         public CLI.Model.Student.Status StudentStatus
         {
@@ -242,7 +243,9 @@ namespace GUI.DTO
 
 
 
-        public StudentDTO(AdressDto) { }
+        public StudentDTO(AdressDTO adr) {
+            adressDto = adr;
+        }
 
         public Student ToStudent()
         { 

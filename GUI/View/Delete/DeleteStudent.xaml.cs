@@ -26,7 +26,7 @@ namespace GUI
         public bool IsClosed { get; set; } = false;
         public DeleteStudent(HeadDao cnt, StudentDTO studentDto)
         {
-            InitializeComponent();
+             InitializeComponent();
             _headDao= cnt;
             _studentDTO = studentDto;
 

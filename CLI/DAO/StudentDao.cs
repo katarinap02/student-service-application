@@ -21,6 +21,7 @@ public class StudentDao
     {
         _storage = new Storage<Student>("student.txt");
         students = _storage.Load();
+        StudentObserverSub = new ObserverSub(); 
     }
 
     private int GenerateId()
@@ -33,6 +34,7 @@ public class StudentDao
     {
         st.Id = GenerateId(); //generisi id za svakog studenta
         students.Add(st);
+        StudentObserverSub.NotifyObservers();
         _storage.Save(students);
         return st;
     }
@@ -51,6 +53,7 @@ public class StudentDao
         oldst.IndexNm = st.IndexNm;
         oldst.StYear = st.StYear;
 
+        StudentObserverSub.NotifyObservers();
         _storage.Save(students);
         return oldst;
     }
@@ -60,8 +63,10 @@ public class StudentDao
         Student? student = GetStudentById(id);
         if (student == null) return null;
 
+        StudentObserverSub.NotifyObservers();
         students.Remove(student);
         _storage.Save(students);
+        
         return student;
     }
 
