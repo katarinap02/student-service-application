@@ -23,5 +23,15 @@ namespace GUI.View.Add
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Student added!");
+        }
+
+        private void Button_Exit(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Student deleted!");
+        }
     }
 }

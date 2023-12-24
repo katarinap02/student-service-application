@@ -23,5 +23,15 @@ namespace GUI.View.Add
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Subject added!");
+        }
+
+        private void Button_Exit(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Subject not added!");
+        }
     }
 }
