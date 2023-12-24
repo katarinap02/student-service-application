@@ -98,7 +98,7 @@ namespace GUI
                 else if(currentTab.Header.Equals("Professor"))
                 {
                     //MessageBox.Show("Selected tab: " + (tabControl.SelectedItem as TabItem).Header);
-                    AddProfessor addProfessor = new AddProfessor();
+                    AddProfessor addProfessor = new AddProfessor(headDao);
                     addProfessor.Show();
                     
                 }

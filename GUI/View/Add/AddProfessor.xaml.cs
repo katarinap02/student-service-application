@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CLI.DAO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,13 +20,19 @@ namespace GUI.View.Add
     /// </summary>
     public partial class AddProfessor : Window
     {
-        public AddProfessor()
+        private HeadDao contoller;
+        public DTO.ProfessorDTO professorDTO {  get; set; }
+        public AddProfessor(HeadDao cnt)
         {
             InitializeComponent();
+            this.contoller = cnt;
+            DataContext = this;
+            professorDTO = new DTO.ProfessorDTO();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            contoller.AddProfessorHead(professorDTO.ToProfessor());
             MessageBox.Show("Professor added!");
         }
 
@@ -33,6 +40,7 @@ namespace GUI.View.Add
         private void Button_Exit(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Professor is not added");
+            Close();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
