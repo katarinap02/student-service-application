@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CLI.Model;
+using CLI.Observer;
 using CLI.Storage;
 
 namespace CLI.DAO
@@ -13,6 +14,8 @@ namespace CLI.DAO
     {
         private readonly List<Professor> professors;
         private readonly Storage<Professor> _storage;
+
+        public ObserverSub ProfessorObserverSub;
 
         public ProfessorDao()
         {

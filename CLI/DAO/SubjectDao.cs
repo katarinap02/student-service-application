@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CLI.Model;
+using CLI.Observer;
 using CLI.Storage;
 
 namespace CLI.DAO
@@ -13,7 +14,7 @@ namespace CLI.DAO
         private readonly List<Subject> subjects;
         private readonly Storage<Subject> _storage;
 
-
+        public ObserverSub SubjectObserverSub;
         public SubjectDao()
         {
             _storage = new Storage<Subject>("subject.txt");

@@ -1,4 +1,5 @@
 ﻿using CLI.Model;
+using CLI.Observer;
 using CLI.Storage;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ public class ChairDao
     private readonly List<Chair> chairs;
     private readonly Storage<Chair> _storage;
 
-
+    public ObserverSub ChairObserverSub;
     public ChairDao()
     {
         _storage = new Storage<Chair>("chair.txt");

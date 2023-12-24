@@ -1,4 +1,5 @@
 ﻿using CLI.Model;
+using CLI.Observer;
 using CLI.Storage;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ public class StudentDao
     private readonly List<Student> students;
     private readonly Storage<Student> _storage;
 
+    public ObserverSub StudentObserverSub;
 
     public StudentDao()
     {

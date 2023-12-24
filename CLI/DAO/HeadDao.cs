@@ -1,4 +1,5 @@
 ﻿using CLI.Model;
+using CLI.Observer;
 using CLI.Storage;
 using System;
 using System.Collections.Generic;
@@ -41,6 +42,11 @@ public class HeadDao
         _gradesDao = gradesDao;
         _studentsubjectsDao = studentsubjectDao;
         _chairprofessorDao = chairprofessorDao;
+    }
+
+    public void SubscribeStudent(IObserver observer)
+    {
+        _studentsDao.StudentObserverSub.Subscribe(observer);
     }
 
     public void AddStudentHead(Student st)
@@ -147,6 +153,12 @@ public class HeadDao
 
         
     }
+
+    public void SubscribeSubject(IObserver observer)
+    {
+        _subjectsDao.SubjectObserverSub.Subscribe(observer);
+    }
+
     public void AddSubjectHead(Subject sb)
     {
         _subjectsDao.AddSubject(sb);
@@ -244,6 +256,12 @@ public class HeadDao
     // kod profesora mora da se obrise i iz liste ali i ako nema sefa cela katedra
 
     // ------------------------------------------CHAIR--------------------------------------------//
+
+    public void SubscribeChair(IObserver observer)
+    {
+        _chairsDao.ChairObserverSub.Subscribe(observer);
+    }
+
     public void AddChairHead(Chair ch)
     {
         _chairsDao.AddChair(ch);
@@ -306,6 +324,12 @@ public class HeadDao
 
     //-----------------------------------------PROFESSOR-----------------------------------------//
 
+
+    public void SubscribeProfessor(IObserver observer)
+    {
+        _professorsDao.ProfessorObserverSub.Subscribe(observer);
+    }
+
     public void AddProfessorHead(Professor prof)
     {
         _professorsDao.AddProfessor(prof);
@@ -321,6 +345,12 @@ public class HeadDao
 
 
     // ----------------------------------------GRADE--------------------------------------------//
+
+    public void SubscribeGrade(IObserver observer)
+    {
+        _gradesDao.GradeObserverSub.Subscribe(observer);
+    }
+
 
     public void AddGradeHead(Grade gd) //ne radi kako treba..., ali ne znam da li ce nam trebati
     {

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CLI.Model;
+using CLI.Observer;
 using CLI.Storage;
 
 namespace CLI.DAO;
@@ -12,6 +13,8 @@ public class GradeDao
 {
     private readonly List<Grade> grades;
     private readonly Storage<Grade> _storage;
+
+    public ObserverSub GradeObserverSub;
     public GradeDao()
     {
         _storage = new Storage<Grade>("grade.txt");
