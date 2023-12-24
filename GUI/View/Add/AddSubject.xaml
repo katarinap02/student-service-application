@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="Add Subject" Height="350" Width="600">
-    <Grid Margin="0,0,0,-1">
+        Title="Add Subject" Height="320" Width="600">
+    <Grid>
         <Grid.Background>
             <ImageBrush/>
         </Grid.Background>
@@ -21,27 +21,31 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            
+
+
         </Grid.RowDefinitions>
 
         <!-- Labels and Text Boxes -->
+        <Label Grid.Row="0" Grid.Column="1" Margin="10,10,108,4" Content="Name*"/>
+        <TextBox Grid.Row="0" Grid.Column="2" Text="{Binding Path=StudentDto.Name, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-        <Label Grid.Column="1" Margin="0,33,108,66" Content="Name*" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2"/>
-        <TextBox Grid.Column="2" Text="{Binding Path=StudentDto.Birthdate, UpdateSourceTrigger=PropertyChanged}" Margin="61,33,59,0"/>
+        <Label Grid.Row="1" Grid.Column="1" Margin="10,10,108,4" Content="ESPB*"/>
+        <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=StudentDto.Name, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-        <Label Grid.Column="1" Content="Year*" HorizontalAlignment="Left" Height="34" Margin="0,61,0,0" Grid.Row="1" VerticalAlignment="Top" Width="157" Grid.RowSpan="2"/>
-        <TextBox Grid.Column="2" Text="{Binding Path=StudentDto.Address, UpdateSourceTrigger=PropertyChanged}" Margin="61,14,59,17" Grid.Row="1" RenderTransformOrigin="0.5,0.5"/>
+        <Label Grid.Row="2" Grid.Column="1" Margin="10,10,108,4" Content="Year*"/>
+        <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=StudentDto.Name, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-        <Label Grid.Row="2" Grid.Column="1" Margin="0,39,108,66" Content="Semester*" Grid.RowSpan="2"/>
-        <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=StudentDto.Address, UpdateSourceTrigger=PropertyChanged}" Margin="61,61,59,38" Grid.RowSpan="2"/>
-        <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=StudentDto.Address, UpdateSourceTrigger=PropertyChanged}" Margin="61,39,59,66" Grid.RowSpan="2"/>
+        <Label Grid.Row="3" Grid.Column="1" Margin="10,10,108,4" Content="Semester*"/>
+        <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding Path=StudentDto.Name, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-        <Label Grid.Row="3" Grid.Column="1" Margin="1,10,108,23" Content="Professor's id*" RenderTransformOrigin="0.5,0.5"/>
-        <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding Path=StudentDto.Address, UpdateSourceTrigger=PropertyChanged}" Margin="61,10,59,23"/>
+        <Label Grid.Row="4" Grid.Column="1" Margin="10,10,108,4" Content="Professor*"/>
+        <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding Path=StudentDto.Name, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-        <Label Grid.Column="0" Margin="34,14,108,17" Content="ESPB*" Grid.ColumnSpan="2" Grid.Row="1"/>
+        
+        <Button Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63">Save</Button>
+        <Button Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="99,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67" Content="Exit"></Button>
 
-        <!-- Button for adding a student -->
-        <Button Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63">Save</Button>
-        <Button Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="99,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67" Content="Exit"></Button>
     </Grid>
 </Window>

@@ -34,6 +34,11 @@ namespace GUI.View.Add
         {
             MessageBox.Show("Professor is not added");
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
     
 }
