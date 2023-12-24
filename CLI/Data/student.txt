@@ -4,5 +4,3 @@
 4|Petar|Petrovic|2003-01-01|0|Dositeja Obradovica|4|Banja Luka|Republika Srpska|66111222|ppetrovic@gmail.com|PSI|10|2022|2023|S
 5|Petar|Petrovic|2003-01-01|0|Dositeja Obradovica|4|Banja Luka|Republika Srpska|66111222|ppetrovic@gmail.com|PSI|10|2022|2023|S
 6|Petar|Petrovic|2003-01-01|0|Dositeja Obradovica|4|Banja Luka|Republika Srpska|66111222|ppetrovic@gmail.com|PSI|10|2022|2023|S
-7|Petar|Petrovic|2003-01-01|0|Dositeja Obradovica|4|Banja Luka|Republika Srpska|66111222|ppetrovic@gmail.com|PSI|10|2022|2023|S
-8|Petar|Petrovic|2003-01-01|0|Dositeja Obradovica|4|Banja Luka|Republika Srpska|66111222|ppetrovic@gmail.com|PSI|10|2022|2023|S

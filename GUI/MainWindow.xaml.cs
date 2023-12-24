@@ -159,7 +159,7 @@ namespace GUI
                     case "Student":
                         StudentDTO studentDTO = dataGridStudent.SelectedItem as StudentDTO;
                         DeleteStudent deleteStudent = new DeleteStudent(headDao, studentDTO);
-                        deleteStudent.Show();
+                        deleteStudent.ShowDialog();
                         break;
                     case "Professors":
                         //  deleteProfessor();
@@ -168,9 +168,9 @@ namespace GUI
                         // deleteSubject();
                         break;
                 }
-
+                
             }
-             
+             makeStudentList();
 
         }
         

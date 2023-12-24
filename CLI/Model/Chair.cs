@@ -17,7 +17,7 @@ namespace CLI.Model
 
         public int bind { get; set; }
 
-        Professor Chief { get; set; }
+        public Professor Chief { get; set; }
 
         public List<Professor> Professors { get; set; }
 

@@ -343,59 +343,70 @@ public class HeadDao
     public void RemoveProfessorHead(int id)
     {
 
-      /*  Professor? pr = _professorsDao.GetProfessorById(id);
+        Professor? pr = _professorsDao.GetProfessorById(id);
         if (pr is null)
         {
             System.Console.WriteLine("Professor not found");
             return;
         }
-       // List<Grade> gr = new List<Grade>(); //sluzi da bismo stavili sve sto treba za brisanje
+        // List<Chair> chr = new List<Chair>(); //sluzi da bismo stavili sve sto treba za brisanje
 
         foreach (Chair ch in _chairsDao.GetAllChairs())
         {
-            if (ch.Professors.Contains(pr))//moze da student bude u polozenim i nepolozenim predmetima
+            if (ch.Professors.Contains(pr))//moze da profesor bude u listi katedri
             {
-                ch.Professors.Remove(pr);
+                // ch.Professors.Remove(pr);
                 //ovo je za kada obrisemo studenta da se obrise iz liste predmeta
-
+                return;
             }
 
-         
 
-            StudentSubject? removedStudentSubject = _studentsubjectsDao.RemoveStudentSubject(id); //brisemo i vezu
-            if (removedStudentSubject is null)
+
+            /*  StudentSubject? removedStudentSubject = _studentsubjectsDao.RemoveStudentSubject(id); //brisemo i vezu
+              if (removedStudentSubject is null)
+              {
+                  continue;
+              }*/
+        }
+
+        foreach (Chair ch in _chairsDao.GetAllChairs())
+        {
+            if (ch.Chief.Id == pr.Id)
             {
-                continue;
+                return;
             }
         }
 
-        foreach (Grade g in _gradesDao.GetAllGrades()) //promenimo u oceni studenta
+        
+            
+        foreach (Subject sb in _subjectsDao.GetAllSubjects())
         {
-            if (g.student.Id == st.Id)
+                if (sb.ProfessorSb.Id == pr.Id)
+                {
+                    return;
+                }
+        }
+
+
+            /* foreach (Grade g in gr)
+             {
+                 Grade? removedgrade = _gradesDao.RemoveGrade(g.Id);
+                 if (removedgrade is null)
+                 { continue; }
+             }*/
+
+        Professor? removedpr = _professorsDao.RemoveProfessor(id); //tek kad smo obrisali sve veze obrisemo i studenta
+            if (removedpr is null)
             {
-                gr.Add(g); //pomocna lista iz koje cemo brisati
+                System.Console.WriteLine("Student not found");
+                return;
             }
-        }
 
-        foreach (Grade g in gr)
-        {
-            Grade? removedgrade = _gradesDao.RemoveGrade(g.Id);
-            if (removedgrade is null)
-            { continue; }
-        }
+            System.Console.WriteLine("Student removed");
 
-        Student? removedst = _studentsDao.RemoveStudent(id); //tek kad smo obrisali sve veze obrisemo i studenta
-        if (removedst is null)
-        {
-            System.Console.WriteLine("Student not found");
-            return;
-        }
-
-        System.Console.WriteLine("Student removed");*/
+        
 
     }
-
-
 
     // ----------------------------------------GRADE--------------------------------------------//
 
