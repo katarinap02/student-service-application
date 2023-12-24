@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="Add Student" Height="358" Width="600">
-    <Grid Margin="0,0,0,9">
+        Title="Add Subject" Height="350" Width="600">
+    <Grid Margin="0,0,0,-1">
         <Grid.Background>
             <ImageBrush/>
         </Grid.Background>
@@ -24,26 +24,24 @@
         </Grid.RowDefinitions>
 
         <!-- Labels and Text Boxes -->
-        <Label Grid.Row="0" Grid.Column="0" Margin="34,10,108,30" Content="Id*" Grid.ColumnSpan="2"/>
-        <TextBox Grid.Row="0" Grid.Column="2" Text="{Binding Path=StudentDto.Name, UpdateSourceTrigger=PropertyChanged}" Height="27" VerticalAlignment="Top" Margin="61,10,59,0"/>
 
-        <Label Grid.Column="1" Margin="0,49,108,57" Content="Name*" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2"/>
-        <TextBox Grid.Column="2" Text="{Binding Path=StudentDto.Birthdate, UpdateSourceTrigger=PropertyChanged}" Margin="61,49,59,57" Grid.RowSpan="2"/>
+        <Label Grid.Column="1" Margin="0,33,108,66" Content="Name*" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2"/>
+        <TextBox Grid.Column="2" Text="{Binding Path=StudentDto.Birthdate, UpdateSourceTrigger=PropertyChanged}" Margin="61,33,59,0"/>
 
-        <Label Grid.Column="1" Content="Year*" HorizontalAlignment="Left" Height="29" Margin="0,66,0,0" Grid.Row="1" VerticalAlignment="Top" Width="157" Grid.RowSpan="2"/>
-        <TextBox Grid.Column="2" Text="{Binding Path=StudentDto.Address, UpdateSourceTrigger=PropertyChanged}" Margin="61,21,59,10" Grid.Row="1" RenderTransformOrigin="0.5,0.5"/>
+        <Label Grid.Column="1" Content="Year*" HorizontalAlignment="Left" Height="34" Margin="0,61,0,0" Grid.Row="1" VerticalAlignment="Top" Width="157" Grid.RowSpan="2"/>
+        <TextBox Grid.Column="2" Text="{Binding Path=StudentDto.Address, UpdateSourceTrigger=PropertyChanged}" Margin="61,14,59,17" Grid.Row="1" RenderTransformOrigin="0.5,0.5"/>
 
         <Label Grid.Row="2" Grid.Column="1" Margin="0,39,108,66" Content="Semester*" Grid.RowSpan="2"/>
-        <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=StudentDto.Address, UpdateSourceTrigger=PropertyChanged}" Margin="61,66,59,38" Grid.RowSpan="2"/>
+        <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=StudentDto.Address, UpdateSourceTrigger=PropertyChanged}" Margin="61,61,59,38" Grid.RowSpan="2"/>
         <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=StudentDto.Address, UpdateSourceTrigger=PropertyChanged}" Margin="61,39,59,66" Grid.RowSpan="2"/>
 
         <Label Grid.Row="3" Grid.Column="1" Margin="1,10,108,23" Content="Professor's id*" RenderTransformOrigin="0.5,0.5"/>
         <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding Path=StudentDto.Address, UpdateSourceTrigger=PropertyChanged}" Margin="61,10,59,23"/>
 
-        <Label Grid.Column="0" Margin="34,21,108,10" Content="ESPB*" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <Label Grid.Column="0" Margin="34,14,108,17" Content="ESPB*" Grid.ColumnSpan="2" Grid.Row="1"/>
 
         <!-- Button for adding a student -->
-        <Button Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63">Potvrdi</Button>
-        <Button Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="99,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67" Content="Odustani"></Button>
+        <Button Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63">Save</Button>
+        <Button Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="99,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67" Content="Exit"></Button>
     </Grid>
 </Window>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI.View.Add"
         mc:Ignorable="d"
-        Title="Add Subject" Height="500" Width="600">
+        Title="Add Student" Height="500" Width="600">
     <Grid>
         <Grid.Background>
             <ImageBrush/>
@@ -44,8 +44,20 @@
 
         <Label Grid.Row="1" Grid.Column="0" Margin="34,0,108,67" Content="Surname*" Grid.ColumnSpan="2"/>
 
-        <Button Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63">Potvrdi</Button>
-        <Button Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="99,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67" Content="Odustani"></Button>
+        <Label Grid.Row="2" Grid.Column="1" Margin="1,72,108,91" Content="Year of enrollment*" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
+        </Label>
+        <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=StudentDto.Address, UpdateSourceTrigger=PropertyChanged}" Margin="61,72,59,91" Grid.RowSpan="2"/>
+
+        <Label Grid.Row="3" Grid.Column="1" Margin="1,19,108,48" Content="Current Year*" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding Path=StudentDto.Address, UpdateSourceTrigger=PropertyChanged}" Margin="61,19,59,48"/>
+
+        <Label Grid.Row="3" Grid.Column="1" Margin="1,65,108,0" Content="Method of financing*" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding Path=StudentDto.Address, UpdateSourceTrigger=PropertyChanged}" Margin="61,65,59,0"/>
+
+
+
+        <Button Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63">Save</Button>
+        <Button Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="99,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67" Content="Exit"></Button>
 
     </Grid>
 </Window>
