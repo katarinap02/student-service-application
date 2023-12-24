@@ -3,8 +3,10 @@ using CLI.Model;
 using GUI.DTO;
 using GUI.View;
 using GUI.View.Add;
+using GUI.View.Delete;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -109,6 +111,30 @@ namespace GUI
         private void ShowStudentsGrid(object sender, RoutedEventArgs e)
         {
             //studentGrid.Visibility = ((ToggleButton)sender).IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            TabItem currentTab = tabControl.SelectedItem as TabItem;  //  kastujem u objekat tipa TabItem 
+
+            if (currentTab != null)
+            {
+                if (currentTab.Header.Equals("Student"))
+                {
+                  
+                   
+
+                }
+
+                else if (currentTab.Header.Equals("Professor"))
+                {
+                    ProfessorDTO professorDTO = dataGridStudent.SelectedItem as ProfessorDTO;
+                    DeleteProfessor deleteProfessor = new DeleteProfessor(professorDTO);
+                    deleteProfessor.Show();
+
+                }
+            }
+
         }
     }
 }

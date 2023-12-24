@@ -59,7 +59,7 @@
                 <!--<Label x:Name="NameLabel" Content="STUDENTSKA SLUZBA" FontWeight="ExtraBold" />-->
                 <Button x:Name="buttonAdd" DockPanel.Dock="Left" Width="30" Click="Add_Click" >Add</Button>
                 <Button x:Name="buttonEdit" DockPanel.Dock="Left" Width="30">Edit</Button>
-                <Button x:Name="buttonDelete" DockPanel.Dock="Left" Width="40">Delete</Button>
+                <Button x:Name="buttonDelete" DockPanel.Dock="Left" Width="40" Click="Delete_Click">Delete</Button>
             </DockPanel>
             <DockPanel Grid.Column="1" LastChildFill="False" Margin="0,0,15, 0">
                 <Button x:Name="buttonSearch" DockPanel.Dock="Right" Width="40">Search</Button>

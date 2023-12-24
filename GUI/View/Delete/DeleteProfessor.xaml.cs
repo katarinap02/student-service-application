@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,7 @@ namespace GUI.View.Delete
     /// </summary>
     public partial class DeleteProfessor : Window
     {
-        public DeleteProfessor()
+        public DeleteProfessor(ProfessorDTO professorDTO)
         {
             InitializeComponent();
         }
