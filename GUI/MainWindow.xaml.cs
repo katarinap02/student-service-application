@@ -90,7 +90,7 @@ namespace GUI
             {
                 if (currentTab.Header.Equals("Student"))
                 {
-                    AddStudent addStudent = new AddStudent();
+                    AddStudent addStudent = new AddStudent(headDao);
                     addStudent.Show();
 
                 }

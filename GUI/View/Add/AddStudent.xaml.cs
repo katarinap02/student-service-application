@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CLI.DAO;
+using CLI.Model;
+using GUI.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,18 +22,31 @@ namespace GUI.View.Add
     /// </summary>
     public partial class AddStudent : Window
     {
-        public AddStudent()
+        private HeadDao controller;
+        public StudentDTO studentDTO {  get; set; }
+        public AdressDTO adressDTO { get; set; }    
+        
+            
+        public AddStudent(HeadDao cnt)
         {
             InitializeComponent();
+            DataContext = this;
+            controller = cnt;
+            adressDTO = new AdressDTO();
+            studentDTO = new StudentDTO(adressDTO);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            controller.AddStudentHead(studentDTO.ToStudent());
+            Close();
             MessageBox.Show("Student added!");
+
         }
 
         private void Button_Exit(object sender, RoutedEventArgs e)
         {
+            Close();
             MessageBox.Show("Student deleted!");
         }
 

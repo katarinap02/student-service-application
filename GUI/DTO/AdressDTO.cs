@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace GUI.DTO
 {
-    internal class AdressDTO
+    public class AdressDTO : INotifyPropertyChanged
     {
         public AdressDTO(Adress adr)
         {
@@ -118,4 +118,4 @@ namespace GUI.DTO
         }
     }
 }
-}
+
