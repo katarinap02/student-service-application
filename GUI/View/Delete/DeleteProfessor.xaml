@@ -25,8 +25,8 @@
         <Label Grid.Row="0" Grid.Column="1" Margin="10,10,27,18" Content="Are you sure that you want to delete Professor?" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
 
         <!-- Button for adding a student -->
-        <Button x:Name="YesButton" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="17,0,0,0" Grid.Column="1" Height="36" Width="91" Content="Yes"/>
-        <Button x:Name="NoButton" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="40,0,0,0" Grid.Column="2" Height="36" Width="91" Content="No"/>
+        <Button x:Name="YesButton" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Click="YesButton_Click" Margin="17,0,0,0" Grid.Column="1" Height="36" Width="91" Content="Yes"/>
+        <Button x:Name="NoButton" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Click="NoButton_Click" Margin="40,0,0,0" Grid.Column="2" Height="36" Width="91" Content="No"/>
 
 
     </Grid>

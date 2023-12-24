@@ -56,6 +56,7 @@
 
         <Grid Height="20" DockPanel.Dock="Top" >
             <DockPanel Grid.Column="0" LastChildFill="False" Margin="15,0,0, 0">
+                <!--<Label x:Name="NameLabel" Content="STUDENTSKA SLUZBA" FontWeight="ExtraBold" />-->
                 <Button x:Name="buttonAdd" DockPanel.Dock="Left" Width="30" Click="Add_Click" >Add</Button>
                 <Button x:Name="buttonEdit" DockPanel.Dock="Left" Width="30">Edit</Button>
                 <Button x:Name="buttonDelete" DockPanel.Dock="Left" Width="40">Delete</Button>
@@ -69,7 +70,7 @@
         </Grid>
         <Grid Width="736" Height="370">
             <TabControl x:Name="tabControl">
-                <TabItem x:Name="tabItemStudent" Header="Student">
+                <TabItem x:Name="tabItemStudent" Header="Student" Foreground="Blue">
                     <DataGrid x:Name="dataGridStudent" IsReadOnly="True" AutoGenerateColumns="False" >
                         <DataGrid.Columns>
                              <DataGridTextColumn Header="INDEX" Width="*" Binding="{Binding IndexNm}"/>
@@ -86,7 +87,7 @@
                     </DataGrid>
 
                 </TabItem>
-                <TabItem x:Name="tabItemProfessor" Header="Professor">
+                <TabItem x:Name="tabItemProfessor" Header="Professor" Foreground="Green">
                     <DataGrid x:Name="dataGridProfessor" IsReadOnly="True" AutoGenerateColumns="False" >
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="ID" Width="*" Binding="{Binding Id}"/>
@@ -104,7 +105,7 @@
                         </DataGrid.Columns>
                     </DataGrid>
                 </TabItem>
-                <TabItem x:Name="tabItemSubject" Header="Subject">
+                <TabItem x:Name="tabItemSubject" Header="Subject"  Foreground="Red">
                     
                     
                 </TabItem>

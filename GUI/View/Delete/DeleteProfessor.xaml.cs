@@ -23,5 +23,16 @@ namespace GUI.View.Delete
         {
             InitializeComponent();
         }
+
+        private void NoButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Professor is not deleted!");
+        }
+
+        private void YesButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Professor is  deleted!");
+        }
     }
+    
 }

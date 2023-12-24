@@ -2,6 +2,7 @@
 using CLI.Model;
 using GUI.DTO;
 using GUI.View;
+using GUI.View.Add;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -80,7 +81,15 @@ namespace GUI
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-           // GUI.AddStudent addStudent = new GUI.AddStudent();
+           
+            AddProfessor addProfessor = new AddProfessor();
+            addProfessor.Show();
+            
+            
+            
+            
+            
+            // GUI.AddStudent addStudent = new GUI.AddStudent();
            // addStudent.Show();
         }
 
