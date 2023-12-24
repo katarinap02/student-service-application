@@ -137,6 +137,21 @@ namespace GUI.DTO
             }
         }
 
+        private IndexDTO indexDto;
+
+        public IndexDTO IndexDto
+        {
+            get { return indexDto; }
+            set
+            {
+                if (value != indexDto)
+                {
+                    indexDto = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
 
 
         private string phoneNumber;
@@ -243,13 +258,14 @@ namespace GUI.DTO
 
 
 
-        public StudentDTO(AdressDTO adr) {
+        public StudentDTO(AdressDTO adr, IndexDTO ind) {
             adressDto = adr;
+            indexDto = ind;
         }
 
         public Student ToStudent()
         { 
-            return new Student( name, surname, birthdate, adressDto.ToAdress(), phoneNumber, email, index, studentYear, status);
+            return new Student( name, surname, birthdate, adressDto.ToAdress(), phoneNumber, email, indexDto.ToIndex(), studentYear, status);
         }
 
 

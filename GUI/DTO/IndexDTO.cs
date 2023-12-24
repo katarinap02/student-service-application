@@ -10,9 +10,9 @@ using Index = CLI.Model.Index;
 
 namespace GUI.DTO
 {
-    public class IndexDTO
+    public class IndexDTO : INotifyPropertyChanged
     {
-        
+
         public IndexDTO(Index ind)
         {
             course = ind.Course;
@@ -21,8 +21,6 @@ namespace GUI.DTO
 
 
         }
-
-   
 
         private string course;
         public string Course
@@ -38,12 +36,6 @@ namespace GUI.DTO
                 }
             }
         }
-
-
-
-       
-
-
 
         private int year;
 
@@ -92,7 +84,7 @@ namespace GUI.DTO
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-       
+
 
 
     }
