@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,28 +20,27 @@ namespace GUI.View.Delete
     /// </summary>
     public partial class DeleteStudent : Window
     {
-        public DeleteStudent()
+        public DeleteStudent(StudentDTO studentDTO)
         {
             InitializeComponent();
         }
 
-        private void Add_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+       
 
         private void YesButton_Click(object sender, RoutedEventArgs e)
         {
-            
-            YesButton.Background = Brushes.Blue; 
-            NoButton.Background = Brushes.Gray;  
+
+            MessageBox.Show("Professor is not deleted!");
+          //  YesButton.Background = Brushes.Blue; 
+           // NoButton.Background = Brushes.Gray;  
         }
 
         private void NoButton_Click(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show("Professor is not deleted!");
             // Change color when No button is clicked
-            NoButton.Background = Brushes.Blue;   
-            YesButton.Background = Brushes.Gray; 
+          //  NoButton.Background = Brushes.Blue;   
+           // YesButton.Background = Brushes.Gray; 
         }
 
     }

@@ -10,7 +10,7 @@ using System.IO;
 
 namespace GUI.DTO
 {
-    class StudentDTO : INotifyPropertyChanged
+    public class StudentDTO : INotifyPropertyChanged
     {
 
         public StudentDTO(Student std)

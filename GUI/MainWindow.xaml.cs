@@ -4,6 +4,7 @@ using GUI.DTO;
 using GUI.View;
 using GUI.View.Add;
 using GUI.View.Delete;
+using GUI.View.Insert;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -101,17 +102,50 @@ namespace GUI
                     addProfessor.Show();
                     
                 }
+                else
+                {
+                    AddSubject addSubject = new AddSubject();
+                    addSubject.Show();
+                }    
             }
             
             
             
         }
-
-
-        private void ShowStudentsGrid(object sender, RoutedEventArgs e)
+        private void Edit_Click(object sender, RoutedEventArgs e)
         {
-            //studentGrid.Visibility = ((ToggleButton)sender).IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
+            TabItem currentTab = tabControl.SelectedItem as TabItem;  //  kastujem u objekat tipa TabItem 
+
+            if (currentTab != null)
+            {
+                if (currentTab.Header.Equals("Student"))
+                {
+                   InsertStudent insertStudent = new InsertStudent();
+                   insertStudent.Show();
+
+                }
+
+                else if (currentTab.Header.Equals("Professor"))
+                {
+                   InsertProfessor insertProfessor= new InsertProfessor();
+                   insertProfessor.Show();
+
+                }
+                else
+                {
+                   InsertSubject insertSubject = new InsertSubject();   
+                   insertSubject.Show();
+                }
+            }
         }
+
+
+
+
+        /*  private void ShowStudentsGrid(object sender, RoutedEventArgs e)
+          {
+              //studentGrid.Visibility = ((ToggleButton)sender).IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
+          }*/
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
@@ -122,13 +156,15 @@ namespace GUI
                 if (currentTab.Header.Equals("Student"))
                 {
                   
-                   
+                   StudentDTO studentDTO = dataGridStudent.SelectedItem as StudentDTO;
+                   DeleteStudent deleteStudent = new DeleteStudent(studentDTO);
+                   deleteStudent.Show();
 
                 }
 
                 else if (currentTab.Header.Equals("Professor"))
                 {
-                    ProfessorDTO professorDTO = dataGridStudent.SelectedItem as ProfessorDTO;
+                    ProfessorDTO professorDTO = dataGridProfessor.SelectedItem as ProfessorDTO;
                     DeleteProfessor deleteProfessor = new DeleteProfessor(professorDTO);
                     deleteProfessor.Show();
 
@@ -136,5 +172,7 @@ namespace GUI
             }
 
         }
+
+       
     }
 }

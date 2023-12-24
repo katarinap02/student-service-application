@@ -23,5 +23,15 @@ namespace GUI.View.Insert
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Subject updated!");
+        }
+
+        private void Button_Exit(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Subject is not updated!");
+        }
     }
 }

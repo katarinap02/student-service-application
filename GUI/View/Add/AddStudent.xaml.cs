@@ -33,5 +33,14 @@ namespace GUI.View.Add
         {
             MessageBox.Show("Student deleted!");
         }
+
+
+
+
+
+
+
+
+
     }
 }
