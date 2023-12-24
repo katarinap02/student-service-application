@@ -1,11 +1,11 @@
-﻿<Window x:Class="GUI.View.Add.AddSubject"
+﻿<Window x:Class="GUI.View.Insert.InsertSubject"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GUI"
+        xmlns:local="clr-namespace:GUI.View.Insert"
         mc:Ignorable="d"
-        Title="Add Subject" Height="320" Width="600">
+        Title="Insert Subject" Height="320" Width="500">
     <Grid>
         <Grid.Background>
             <ImageBrush/>
@@ -48,11 +48,10 @@
         <Label Grid.Row="5" Grid.Column="1" Margin="10,10,108,4" Content="Professor*"/>
         <TextBox Grid.Row="5" Grid.Column="2" Text="{Binding Path=StudentDto.Name, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-        
 
-        <Button Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63" Click="Button_Click">Save</Button>
-        <Button Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="99,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67" Click="Button_Exit" Content="Exit"></Button>
 
+        <Button Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63">Save</Button>
+        <Button Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="99,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67" Content="Exit"></Button>
 
     </Grid>
 </Window>
