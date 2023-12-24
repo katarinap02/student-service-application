@@ -81,16 +81,27 @@ namespace GUI
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-           
-            AddProfessor addProfessor = new AddProfessor();
-            addProfessor.Show();
+            TabItem currentTab = tabControl.SelectedItem as TabItem;  //  kastujem u objekat tipa TabItem 
+
+            if (currentTab != null)
+            {
+                if (currentTab.Header.Equals("Student"))
+                {
+                    AddStudent addStudent = new AddStudent();
+                    addStudent.Show();
+                }
+               
+                else if(currentTab.Header.Equals("Professor"))
+                {
+                    //MessageBox.Show("Selected tab: " + (tabControl.SelectedItem as TabItem).Header);
+                    AddProfessor addProfessor = new AddProfessor();
+                    addProfessor.Show();
+                    
+                }
+            }
             
             
             
-            
-            
-            // GUI.AddStudent addStudent = new GUI.AddStudent();
-           // addStudent.Show();
         }
 
 
