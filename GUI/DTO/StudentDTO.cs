@@ -21,10 +21,10 @@ namespace GUI.DTO
             name = std.Name;
             surname = std.Surname;
             studentYear = std.StYear;
-           status = std.StudentStatus;
+            status = std.StudentStatus;
             average = std.Average(std.Grades); //jos nema ocena
-            
-            
+
+
         }
         public int id { get; set; }
 
@@ -56,11 +56,11 @@ namespace GUI.DTO
             }
         }
 
-        
 
 
 
-        
+
+
 
         private CLI.Model.Student.Status status;
 
@@ -120,21 +120,22 @@ namespace GUI.DTO
                 }
             }
         }
-        private AdressDTO adressDTO;
-        private Adress adress;
+        private AdressDTO adressDto;
 
-        public Adress AdressSt
+        public AdressDTO AdressDto
         {
-            get { return adress; }
+            get { return adressDto; }
             set
             {
-                if (value != adress)
+                if (value != adressDto)
                 {
-                    adress = value;
+                    adressDto = value;
                     OnPropertyChanged();
                 }
             }
         }
+
+
 
         private string phoneNumber;
 
@@ -240,11 +241,11 @@ namespace GUI.DTO
 
 
 
-        public StudentDTO(AdressDTO adress) { }
+        public StudentDTO(AdressDto) { }
 
         public Student ToStudent()
         { 
-            return new Student( name, surname, birthdate, adress, phoneNumber, email, index, studentYear, status);
+            return new Student( name, surname, birthdate, adressDto.ToAdress(), phoneNumber, email, index, studentYear, status);
         }
 
 
