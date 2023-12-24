@@ -15,6 +15,7 @@ namespace GUI.DTO
 
         public StudentDTO(Student std)
         {
+            id = std.Id;
             index = std.IndexNm;
             name = std.Name;
             surname = std.Surname;

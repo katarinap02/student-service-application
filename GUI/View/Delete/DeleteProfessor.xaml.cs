@@ -1,4 +1,5 @@
-﻿using GUI.DTO;
+﻿using CLI.DAO;
+using GUI.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,20 +14,28 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace GUI.View.Delete
+namespace GUI
 {
     /// <summary>
     /// Interaction logic for DeleteProfessor.xaml
     /// </summary>
     public partial class DeleteProfessor : Window
     {
-        public DeleteProfessor(ProfessorDTO professorDTO)
+
+        private HeadDao contoller;
+        public ProfessorDTO professorDTO { get; set; }
+
+        public DeleteProfessor(HeadDao cnt,   ProfessorDTO profDTO)
         {
             InitializeComponent();
+            this.contoller = cnt;
+            DataContext = this;
+            professorDTO = profDTO;
         }
 
         private void NoButton_Click(object sender, RoutedEventArgs e)
         {
+            
             MessageBox.Show("Professor is not deleted!");
         }
 

@@ -3,7 +3,6 @@ using CLI.Model;
 using GUI.DTO;
 using GUI.View;
 using GUI.View.Add;
-using GUI.View.Delete;
 using GUI.View.Insert;
 using System;
 using System.Collections.Generic;
@@ -43,17 +42,17 @@ namespace GUI
 
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
-            timer.Tick += UpdateDateTime;
+           // timer.Tick += UpdateDateTime;
             timer.Start();
 
             makeStudentList();
             makeProfessorList();
         }
 
-        private void UpdateDateTime(object sender, EventArgs e)
-        {
+       /* private void UpdateDateTime(object sender, EventArgs e)
+        /*{
             dateTimeTextBlock.Text = DateTime.Now.ToString("HH:mm yyyy-MM-dd");
-        }
+        }*/
 
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -69,7 +68,7 @@ namespace GUI
             }
             dataGridStudent.ItemsSource = studentDtos;
         }
-
+        
         public void makeProfessorList()
         {
             professorDtos = new List<ProfessorDTO>();
@@ -143,36 +142,38 @@ namespace GUI
 
 
         /*  private void ShowStudentsGrid(object sender, RoutedEventArgs e)
-          {
+          { StudentDTO studentDTO = dataGridStudent.SelectedItem as StudentDTO;
+                        DeleteStudent deleteStudent = new DeleteStudent(headDao, studentDTO);
+                        deleteStudent.Show();
               //studentGrid.Visibility = ((ToggleButton)sender).IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
           }*/
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-            TabItem currentTab = tabControl.SelectedItem as TabItem;  //  kastujem u objekat tipa TabItem 
+            TabItem selectedTab = tabControl.SelectedItem as TabItem;
 
-            if (currentTab != null)
+            if (selectedTab != null)
             {
-                if (currentTab.Header.Equals("Student"))
+                switch (selectedTab.Header)
                 {
-                  
-                   StudentDTO studentDTO = dataGridStudent.SelectedItem as StudentDTO;
-                   DeleteStudent deleteStudent = new DeleteStudent(studentDTO);
-                   deleteStudent.Show();
-
+                    case "Student":
+                        StudentDTO studentDTO = dataGridStudent.SelectedItem as StudentDTO;
+                        DeleteStudent deleteStudent = new DeleteStudent(headDao, studentDTO);
+                        deleteStudent.Show();
+                        break;
+                    case "Professors":
+                        //  deleteProfessor();
+                        break;
+                    case "Subjects":
+                        // deleteSubject();
+                        break;
                 }
 
-                else if (currentTab.Header.Equals("Professor"))
-                {
-                    ProfessorDTO professorDTO = dataGridProfessor.SelectedItem as ProfessorDTO;
-                    DeleteProfessor deleteProfessor = new DeleteProfessor(professorDTO);
-                    deleteProfessor.Show();
-
-                }
             }
+             
 
         }
-
+        
        
     }
 }
