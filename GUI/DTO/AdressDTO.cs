@@ -21,6 +21,10 @@ namespace GUI.DTO
 
         }
 
+        public string Course { get; set; }
+        public int Number { get; set; }
+        public int YearE { get; set; } //godina upisa
+
         public int id { get; set; }
 
         public int Id
@@ -116,6 +120,12 @@ namespace GUI.DTO
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+       
+
+
+
+         
     }
 }
 

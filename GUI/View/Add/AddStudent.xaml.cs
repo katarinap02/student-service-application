@@ -24,7 +24,9 @@ namespace GUI.View.Add
     {
         private HeadDao controller;
         public StudentDTO studentDTO {  get; set; }
-        public AdressDTO adressDTO { get; set; }    
+        public AdressDTO adressDTO { get; set; }  
+        
+        public IndexDTO indexDTO { get; set; }
         
             
         public AddStudent(HeadDao cnt)
@@ -33,7 +35,8 @@ namespace GUI.View.Add
             DataContext = this;
             controller = cnt;
             adressDTO = new AdressDTO();
-            studentDTO = new StudentDTO(adressDTO);
+            indexDTO = new IndexDTO();
+            studentDTO = new StudentDTO(adressDTO, indexDTO);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

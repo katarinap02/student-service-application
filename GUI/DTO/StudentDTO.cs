@@ -22,10 +22,10 @@ namespace GUI.DTO
             name = std.Name;
             surname = std.Surname;
             studentYear = std.StYear;
-           status = std.StudentStatus;
+            status = std.StudentStatus;
             average = std.Average(std.Grades); //jos nema ocena
-            
-            
+
+
         }
         public int id { get; set; }
 
@@ -57,13 +57,14 @@ namespace GUI.DTO
             }
         }
 
-        
 
 
 
-        
+
+
 
         private CLI.Model.Student.Status status;
+        
 
         public CLI.Model.Student.Status StudentStatus
         {
@@ -121,21 +122,37 @@ namespace GUI.DTO
                 }
             }
         }
-        private AdressDTO adressDTO;
-        private Adress adress;
+        private AdressDTO adressDto;
 
-        public Adress AdressSt
+        public AdressDTO AdressDto
         {
-            get { return adress; }
+            get { return adressDto; }
             set
             {
-                if (value != adress)
+                if (value != adressDto)
                 {
-                    adress = value;
+                    adressDto = value;
                     OnPropertyChanged();
                 }
             }
         }
+
+        private IndexDTO indexDto;
+
+        public IndexDTO IndexDto
+        {
+            get { return indexDto; }
+            set
+            {
+                if (value != indexDto)
+                {
+                    indexDto = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+
 
         private string phoneNumber;
 
@@ -241,11 +258,14 @@ namespace GUI.DTO
 
 
 
-        public StudentDTO(AdressDTO adress) { }
+        public StudentDTO(AdressDTO adr, IndexDTO ind) {
+            adressDto = adr;
+            indexDto = ind;
+        }
 
         public Student ToStudent()
         { 
-            return new Student( name, surname, birthdate, adress, phoneNumber, email, index, studentYear, status);
+            return new Student( name, surname, birthdate, adressDto.ToAdress(), phoneNumber, email, indexDto.ToIndex(), studentYear, status);
         }
 
 

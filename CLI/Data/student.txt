@@ -2,5 +2,3 @@
 2|Mirko|Mirkovic|2022-01-01|0|Marka|32|Novi Sad|Serbia|21123654|email|RA|17|2011|2011|B
 3|Milena-Mima|Sekaric|2001-11-13|0|Tolstojeva|54|Novi Sad|Srbija|63654321|mimasekaric@gmail.com|RA|57|2021|2023|B
 4|Petar|Petrovic|2003-01-01|0|Dositeja Obradovica|4|Banja Luka|Republika Srpska|66111222|ppetrovic@gmail.com|PSI|10|2022|2023|S
-5|Petar|Petrovic|2003-01-01|0|Dositeja Obradovica|4|Banja Luka|Republika Srpska|66111222|ppetrovic@gmail.com|PSI|10|2022|2023|S
-6|Petar|Petrovic|2003-01-01|0|Dositeja Obradovica|4|Banja Luka|Republika Srpska|66111222|ppetrovic@gmail.com|PSI|10|2022|2023|S
