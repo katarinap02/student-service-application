@@ -340,7 +340,60 @@ public class HeadDao
        return  _professorsDao.GetAllProfessors();
     }
 
+    public void RemoveProfessorHead(int id)
+    {
 
+      /*  Professor? pr = _professorsDao.GetProfessorById(id);
+        if (pr is null)
+        {
+            System.Console.WriteLine("Professor not found");
+            return;
+        }
+       // List<Grade> gr = new List<Grade>(); //sluzi da bismo stavili sve sto treba za brisanje
+
+        foreach (Chair ch in _chairsDao.GetAllChairs())
+        {
+            if (ch.Professors.Contains(pr))//moze da student bude u polozenim i nepolozenim predmetima
+            {
+                ch.Professors.Remove(pr);
+                //ovo je za kada obrisemo studenta da se obrise iz liste predmeta
+
+            }
+
+         
+
+            StudentSubject? removedStudentSubject = _studentsubjectsDao.RemoveStudentSubject(id); //brisemo i vezu
+            if (removedStudentSubject is null)
+            {
+                continue;
+            }
+        }
+
+        foreach (Grade g in _gradesDao.GetAllGrades()) //promenimo u oceni studenta
+        {
+            if (g.student.Id == st.Id)
+            {
+                gr.Add(g); //pomocna lista iz koje cemo brisati
+            }
+        }
+
+        foreach (Grade g in gr)
+        {
+            Grade? removedgrade = _gradesDao.RemoveGrade(g.Id);
+            if (removedgrade is null)
+            { continue; }
+        }
+
+        Student? removedst = _studentsDao.RemoveStudent(id); //tek kad smo obrisali sve veze obrisemo i studenta
+        if (removedst is null)
+        {
+            System.Console.WriteLine("Student not found");
+            return;
+        }
+
+        System.Console.WriteLine("Student removed");*/
+
+    }
 
 
 
