@@ -89,6 +89,7 @@ namespace GUI
                 {
                     AddStudent addStudent = new AddStudent();
                     addStudent.Show();
+
                 }
                
                 else if(currentTab.Header.Equals("Professor"))
