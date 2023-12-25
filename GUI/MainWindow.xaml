@@ -90,18 +90,10 @@
                 <TabItem x:Name="tabItemProfessor" Header="Professor" Foreground="Green">
                     <DataGrid x:Name="dataGridProfessor" IsReadOnly="True" AutoGenerateColumns="False" >
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="ID" Width="*" Binding="{Binding Id}"/>
                             <DataGridTextColumn Header="NAME" Width="*" Binding="{Binding Name}"/>
                             <DataGridTextColumn Header="SURNAME" Width="*" Binding="{Binding Surname}"/>
-                            <DataGridTextColumn Header="BIRTHDATE" Width="*" Binding="{Binding Birthdate}"/>
-                            <DataGridTextColumn Header="PHONENUMBER" Width="*" Binding="{Binding Phonenumber}"/>
                             <DataGridTextColumn Header="EMAIL" Width="*" Binding="{Binding Email}"/>
                             <DataGridTextColumn Header="TITLE" Width="*" Binding="{Binding Title}"/>
-                            <DataGridTextColumn Header="YEAR" Width="*" Binding="{Binding Year}"/>
-                            <DataGridTextColumn Header="ADDRESS" Width="*" Binding="{Binding AdressSt}"/>
-                            
-                            
-
                         </DataGrid.Columns>
                     </DataGrid>
                 </TabItem>

@@ -70,9 +70,12 @@ namespace CLI.Model
                 $" Adress: {AdressPr,30} | Phone number: {PhoneNumber,12} | \nEmail: {Email,20} |" +
                 $" Title: {Title,14} | Years of service: {YearS,3} |" +
                 $" \nSubjects: |";
-            foreach (Subject sb in subjects)
+            if (subjects != null)
             {
-                s1 += sb.Name + " ";
+                foreach (Subject sb in subjects)
+                {
+                    s1 += sb.Name + " ";
+                }
             }
 
             s1 += "\nChairs: |";
@@ -85,24 +88,16 @@ namespace CLI.Model
         }
         public string[] ToCSV() //ucitava u fajl
         {
-            string[] csvValues =
+            List<string> csvValues = new List<string>
             {
-            Id.ToString(),
-            Name,
-            Surname,
-            Birthdate.ToString(),
-            AdressPr.ToCSV()[0],
-            AdressPr.ToCSV()[1],
-            AdressPr.ToCSV()[2],
-            AdressPr.ToCSV()[3],
-            AdressPr.ToCSV()[4],
-            PhoneNumber.ToString(),
-            Email.ToString(),
-            Title,
-            YearS.ToString()
+                Id.ToString(), Name, Surname, Birthdate.ToString("dd-MM-yyyy"),
+                PhoneNumber, Email, Title, YearS.ToString()
+            };
 
-        };
-            return csvValues;
+            csvValues.AddRange(AdressPr.ToCSV());
+
+            string result = string.Join("|", csvValues);
+            return result.Split('|');
         }
 
         public string[] ToCSV1()

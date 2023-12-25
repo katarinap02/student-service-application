@@ -119,6 +119,12 @@ namespace GUI.DTO
                 }
             }
         }
+
+        public string AdressString
+        {
+            get { return street + ", " + streetNm + ", " + city + ", " + country; }
+        }
+
         public String ToString()
         {
             return street + " " + streetNm + " city and country: " + city + " " + country;

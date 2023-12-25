@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CLI.DAO;
+using GUI.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,18 +21,27 @@ namespace GUI.View.Insert
     /// </summary>
     public partial class InsertProfessor : Window
     {
-        public InsertProfessor()
+        ProfessorDTO professorDTO;
+        HeadDao headDao;
+        public InsertProfessor(HeadDao contr, ProfessorDTO prof)
         {
             InitializeComponent();
+
+            headDao = contr;
+            professorDTO = new ProfessorDTO(prof);
+            DataContext = professorDTO;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+           // headDao.
+            Close();
             MessageBox.Show("Professor updated!");
         }
 
         private void Button_Exit(object sender, RoutedEventArgs e)
         {
+            Close();
             MessageBox.Show("Professor is not updated!");
         }
     }

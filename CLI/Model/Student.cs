@@ -126,27 +126,22 @@ namespace CLI.Model
         }
         public string[] ToCSV() //ucitava u fajl
         {
-            string[] csvValues =
+           
             {
-            Id.ToString(),
-            Name,
-            Surname,
-            Birthdate.ToString("yyyy-MM-dd"),
-            AdressSt.ToCSV()[0],
-            AdressSt.ToCSV()[1],
-            AdressSt.ToCSV()[2],
-            AdressSt.ToCSV()[3],
-            AdressSt.ToCSV()[4],
-            PhoneNumber.ToString(),
-            Email.ToString(),
-            IndexNm.ToCSV()[0],
-            IndexNm.ToCSV()[1],
-            IndexNm.ToCSV()[2],
-            StYear.ToString(),
-            StudentStatus.ToString()
+            List<string> csvValues = new List<string>
+            {
+                Id.ToString(), Name, Surname, Birthdate.ToString("dd-MM-yyyy"),
+                PhoneNumber, Email, StYear.ToString(), StudentStatus.ToString(),
+            };
+
+            csvValues.AddRange(AdressSt.ToCSV());
+            csvValues.AddRange(IndexNm.ToCSV());
+
+            string result = string.Join("|", csvValues);
+            return result.Split('|');
 
         };
-            return csvValues;
+            
         }
         public string[] ToCSV1() //ucitava u fajl
         {
@@ -167,13 +162,13 @@ namespace CLI.Model
             Surname = values[2];
             Birthdate = DateOnly.Parse(values[3]);
             AdressSt = new Adress();
-            AdressSt.FromCSV(new string[] { values[4], values[5], values[6], values[7], values[8] });
-            PhoneNumber = values[9];
-            Email = values[10];
+            AdressSt.FromCSV(new string[] { values[8], values[9], values[10], values[11], values[12] });
+            PhoneNumber = values[4];
+            Email = values[5];
             IndexNm = new Index();
-            IndexNm.FromCSV(new string[] {  values[11], values[12], values[13] });
-            StYear = int.Parse(values[14]);
-            StudentStatus = Enum.Parse<Status>(values[15]);   
+            IndexNm.FromCSV(new string[] {  values[13], values[14], values[15] });
+            StYear = int.Parse(values[6]);
+            StudentStatus = Enum.Parse<Status>(values[7]);   
            
         }
 
