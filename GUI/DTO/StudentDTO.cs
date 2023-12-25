@@ -62,6 +62,19 @@ namespace GUI.DTO
 
 
 
+        private String statusS;
+        public String StatusS
+        {
+            get { return status.ToString(); }
+            set
+            {
+                if (value != statusS)
+                {
+                    statusS = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
 
 
 
@@ -73,10 +86,14 @@ namespace GUI.DTO
             get { return status; }
             set
             {
-                if (value != status)
+                if (statusS == "S")
                 {
-                    status = value;
-                    OnPropertyChanged();
+                    status = Student.Status.S;
+                }
+                else
+                {
+                    // Postavite drugu vrednost enuma, ako je potrebno
+                    status = Student.Status.B;
                 }
             }
         }
@@ -110,9 +127,9 @@ namespace GUI.DTO
             }
         }
 
-        private DateOnly birthdate;
+        private DateTime birthdate;
 
-        public DateOnly Birthdate
+        public DateTime Birthdate
         {
             get { return birthdate; }
             set
@@ -257,7 +274,7 @@ namespace GUI.DTO
 
         public Student ToStudent()
         { 
-            return new Student( name, surname, birthdate, adressDto.ToAdress(), phoneNumber, email, indexDto.ToIndex(), studentYear, status);
+            return new Student( name, surname, DateOnly.FromDateTime(birthdate), adressDto.ToAdress(), phoneNumber, email, indexDto.ToIndex(), studentYear, status);
         }
 
 
