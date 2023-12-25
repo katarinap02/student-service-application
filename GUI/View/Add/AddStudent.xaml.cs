@@ -41,6 +41,11 @@ namespace GUI.View.Add
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (comboBoxFinancing.SelectedItem.Equals("B"))
+                studentDTO.StudentStatus = Student.Status.B;
+            else
+                studentDTO.StudentStatus = Student.Status.S;
+
             controller.AddStudentHead(studentDTO.ToStudent());
             Close();
             MessageBox.Show("Student added!");

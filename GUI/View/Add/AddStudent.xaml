@@ -41,21 +41,12 @@
         <Label Grid.Row="2" Grid.Column="1" Margin="10,10,108,4" Content="Birthdate*"/>
         <DatePicker x:Name="datePickerBirthdate" Grid.Row="2" Grid.Column="2" SelectedDate="{Binding Path=studentDTO.Birthdate, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-
-<<<<<<< HEAD
-        <Label Grid.Row="3" Grid.Column="1" Margin="10,10,108,4" Content="Adress, city and county*"/>
-        <TextBox d:DataContext="{d:DesignInstance Type=dto:AdressDTO}" x:Name ="textBoxAdress1" Grid.Row="3" Grid.Column="2" Text="{Binding Path=adressDTO.Street, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="10,8,235,0"/>
-        <TextBox d:DataContext="{d:DesignInstance Type=dto:AdressDTO}" x:Name ="textBoxAdress4" Grid.Row="3" Grid.Column="2" Text="{Binding Path=adressDTO.StreetNm, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="98,8,185,0"/>
-        <TextBox d:DataContext="{d:DesignInstance Type=dto:AdressDTO}" x:Name ="textBoxAdress3" Grid.Row="3" Grid.Column="2" Text="{Binding Path=adressDTO.City, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="144,8,98,0"/>
-        <TextBox d:DataContext="{d:DesignInstance Type=dto:AdressDTO}" x:Name ="textBoxAdress2" Grid.Row="3" Grid.Column="2" Text="{Binding Path=adressDTO.Country, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="232,8,10,0"/>
-
-=======
         <Label Grid.Row="3" Grid.Column="1" Margin="10,10,108,4" Content="Address, city, and county*"/>
-        <TextBox  x:Name="textBoxAddress1" Grid.Row="3" Grid.Column="2" Text="{Binding Path=AdressDto.Street, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="10,8,235,0"/>
-        <TextBox  x:Name="textBoxAddress4" Grid.Row="3" Grid.Column="2" Text="{Binding Path=AdressDto.StreetNm, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="98,8,185,0"/>
-        <TextBox  x:Name="textBoxAddress3" Grid.Row="3" Grid.Column="2" Text="{Binding Path=AdressDto.City, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="144,8,98,0"/>
-        <TextBox  x:Name="textBoxAddress2" Grid.Row="3" Grid.Column="2" Text="{Binding Path=AdressDto.Country, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="232,8,10,0"/>
->>>>>>> e6e6f418c849c5a81341f482cca41188067af855
+        <TextBox  x:Name="textBoxAddress1" Grid.Row="3" Grid.Column="2" Text="{Binding Path=adressDTO.Street, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="10,8,235,0"/>
+        <TextBox  x:Name="textBoxAddress4" Grid.Row="3" Grid.Column="2" Text="{Binding Path=adressDTO.StreetNm, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="98,8,185,0"/>
+        <TextBox  x:Name="textBoxAddress3" Grid.Row="3" Grid.Column="2" Text="{Binding Path=adressDTO.City, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="144,8,98,0"/>
+        <TextBox  x:Name="textBoxAddress2" Grid.Row="3" Grid.Column="2" Text="{Binding Path=adressDTO.Country, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="232,8,10,0"/>
+
 
         <Label Grid.Row="4" Grid.Column="1" Margin="10,10,108,4" Content="Phonenumber*"/>
         <TextBox x:Name ="textBoxPhone" Grid.Row="4" Grid.Column="2" Text="{Binding Path=studentDTO.PhoneNumber, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
@@ -64,18 +55,11 @@
         <TextBox x:Name ="textBoxEmail" Grid.Row="5" Grid.Column="2" Text="{Binding Path=studentDTO.Email, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
         <Label Grid.Row="6" Grid.Column="1" Margin="10,10,108,4" Content="Index*"/>
-<<<<<<< HEAD
-        <TextBox d:DataContext="{d:DesignInstance Type=dto:IndexDTO}" x:Name ="textBoxIndex1" Grid.Row="6" Grid.Column="2" Text="{Binding Path=indexDTO.Course, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="77,8,185,0"/>
-        <TextBox d:DataContext="{d:DesignInstance Type=dto:IndexDTO}" x:Name ="textBoxIndex2" Grid.Row="6" Grid.Column="2" Text="{Binding Path=indexDTO.Number, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="144,8,129,0"/>
-        <TextBox d:DataContext="{d:DesignInstance Type=dto:IndexDTO}" x:Name ="textBoxIndex3" Grid.Row="6" Grid.Column="2" Text="{Binding Path=indexDTO.Year, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="200,8,71,0"/>
 
-=======
-        <TextBox  x:Name ="textBoxIndex1" Grid.Row="6" Grid.Column="2" Text="{Binding Path=IndexDto.Course, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="77,8,185,0"/>
-        <TextBox  x:Name ="textBoxIndex2" Grid.Row="6" Grid.Column="2" Text="{Binding Path=IndexDto.Number, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="144,8,129,0"/>
-        <TextBox  x:Name ="textBoxIndex3" Grid.Row="6" Grid.Column="2" Text="{Binding Path=IndexDto.Year, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="200,8,71,0"/>
+        <TextBox  x:Name ="textBoxIndex1" Grid.Row="6" Grid.Column="2" Text="{Binding Path=indexDTO.Course, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="77,8,185,0"/>
+        <TextBox  x:Name ="textBoxIndex2" Grid.Row="6" Grid.Column="2" Text="{Binding Path=indexDTO.Number, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="144,8,129,0"/>
+        <TextBox  x:Name ="textBoxIndex3" Grid.Row="6" Grid.Column="2" Text="{Binding Path=indexDTO.Year, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="200,8,71,0"/>
         
->>>>>>> e6e6f418c849c5a81341f482cca41188067af855
-
         <Label Grid.Row="7" Grid.Column="1" Margin="10,10,108,4" Content="Year of enrollment*"/>
         <TextBox x:Name ="textBoxEnrollment" Grid.Row="7" Grid.Column="2" Text="{Binding Path=studentDTO.StYear, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
@@ -89,7 +73,7 @@
             <ComboBoxItem x:Name="Item4">IV</ComboBoxItem>
         </ComboBox>
         <Label Grid.Row="9" Grid.Column="1" Margin="10,10,108,4" Content="Method of financing*"/>
-        <ComboBox x:Name="BoxFinancing" Grid.Row="9" Grid.Column="2" Text="{Binding Path=studentDTO.StatusS, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" Height="32" VerticalAlignment="Top" Margin="61,8,59,0">
+        <ComboBox x:Name="comboBoxFinancing" Grid.Row="9" Grid.Column="2" Text="{Binding Path=studentDTO.StatusS, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" Height="32" VerticalAlignment="Top" Margin="61,8,59,0">
             <ComboBoxItem x:Name="ItemB">B</ComboBoxItem>
             <ComboBoxItem x:Name="ItemS">S</ComboBoxItem>
         </ComboBox>

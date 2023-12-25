@@ -21,15 +21,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Collections.ObjectModel;
 
-namespace GUI
+namespace GUI 
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-
         List<ProfessorDTO> professorDtos;
         List<StudentDTO> studentDtos;
         private HeadDao headDao;
