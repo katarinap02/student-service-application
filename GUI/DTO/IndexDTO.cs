@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -20,6 +21,22 @@ namespace GUI.DTO
             year = ind.YearE;
 
 
+        }
+
+        public IndexDTO(IndexDTO ind)
+        {
+            course = ind.Course;
+            number = ind.Number;
+            year = ind.Year;
+
+
+        }
+
+        public IndexDTO(String c, int n, int y)
+        {
+            this.course = c;
+            this.number = n;
+            this.year = y;
         }
 
         private string course;
@@ -74,6 +91,11 @@ namespace GUI.DTO
         public Index ToIndex()
         {
             return new Index(course, number, year);
+        }
+
+        public String ToString()
+        {
+            return course + "" + number + "-" + year;
         }
 
 

@@ -139,6 +139,8 @@ namespace GUI.DTO
             }
         }
 
+        
+
         private IndexDTO indexDto;
 
         public IndexDTO IndexDto
@@ -154,9 +156,14 @@ namespace GUI.DTO
             }
         }
 
+        public String IndexS
+        {
+            get { return indexDto.ToString(); }
+        }
 
 
-        private string phoneNumber;
+
+    private string phoneNumber;
 
         public string PhoneNumber
         {
