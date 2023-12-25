@@ -1,11 +1,13 @@
 ﻿using CLI.DAO;
 using CLI.Model;
+using CLI.Observer;
 using GUI.DTO;
 using GUI.View;
 using GUI.View.Add;
 using GUI.View.Insert;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -27,9 +29,11 @@ namespace GUI
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, IObserver
     {
-
+        public ObservableCollection<StudentDTO> Students { get; set; }
+        public ObservableCollection<ProfessorDTO> Professors { get; set; }
+        //public ObservableCollection<SubjectDTO> Subjects { get; set; }
         List<ProfessorDTO> professorDtos;
         List<StudentDTO> studentDtos;
         private HeadDao headDao;
@@ -39,7 +43,9 @@ namespace GUI
                 
             InitializeComponent();
             SetWindowSize();
-
+            Students = new ObservableCollection<StudentDTO>();
+            Professors = new ObservableCollection<ProfessorDTO>();
+            //Subjects = new ObservableCollection<SubjectDTO>();
             headDao = new HeadDao();
 
             timer = new DispatcherTimer();
@@ -49,6 +55,9 @@ namespace GUI
 
             makeStudentList();
             makeProfessorList();
+            UpdateProfessor();
+            UpdateStudent();
+            //UpdateSubject();
         }
 
 
@@ -155,12 +164,23 @@ namespace GUI
 
 
 
-        /*  private void ShowStudentsGrid(object sender, RoutedEventArgs e)
-          { StudentDTO studentDTO = dataGridStudent.SelectedItem as StudentDTO;
-                        DeleteStudent deleteStudent = new DeleteStudent(headDao, studentDTO);
-                        deleteStudent.Show();
-              //studentGrid.Visibility = ((ToggleButton)sender).IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
-          }*/
+        public void UpdateStudent()
+        {
+            Students.Clear();
+            foreach (Student student in headDao.GetAllStudentsHead()) Students.Add(new StudentDTO(student));
+        }
+
+        public void UpdateProfessor()
+        {
+            Professors.Clear();
+            foreach (Professor professor in headDao.GetAllProfessorsHead()) Professors.Add(new ProfessorDTO(professor));
+        }
+
+       // public void UpdateSubject()
+       // {
+        //    Subjects.Clear();
+       //     foreach (Subject subjects in headDao.GetAllSubjectsHead()) Subjects.Add(new SubjectDTO(subject));
+      //  }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {

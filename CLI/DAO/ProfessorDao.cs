@@ -32,6 +32,7 @@ namespace CLI.DAO
             pr.Id = GenerateId(); //generisi id za svakog profesora
             professors.Add(pr);
             _storage.Save(professors);
+            ProfessorObserverSub.NotifyObservers();
             return pr;
         }
 
@@ -50,6 +51,7 @@ namespace CLI.DAO
             oldpr.YearS=pr.YearS;   
           
             _storage.Save(professors);
+            ProfessorObserverSub.NotifyObservers();
             return oldpr;
         }
 
@@ -60,6 +62,7 @@ namespace CLI.DAO
 
             professors.Remove(professor);
             _storage.Save(professors);
+            ProfessorObserverSub.NotifyObservers();
             return professor;
         }
 

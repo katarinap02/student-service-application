@@ -32,6 +32,7 @@ namespace CLI.DAO
             sub.Id = GenerateId(); //generisi id za svaki predmet
             subjects.Add(sub);
             _storage.Save(subjects);
+            SubjectObserverSub.NotifyObservers();
             return sub;
         }
 
@@ -45,6 +46,7 @@ namespace CLI.DAO
             oldsub.NumEspb= sub.NumEspb;    
 
             _storage.Save(subjects);
+            SubjectObserverSub.NotifyObservers();
             return oldsub;
         }
 
@@ -55,6 +57,7 @@ namespace CLI.DAO
 
             subjects.Remove(subject);
             _storage.Save(subjects);
+            SubjectObserverSub.NotifyObservers();
             return subject;
         }
 

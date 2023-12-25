@@ -34,8 +34,8 @@ public class StudentDao
     {
         st.Id = GenerateId(); //generisi id za svakog studenta
         students.Add(st);
-        StudentObserverSub.NotifyObservers();
         _storage.Save(students);
+        StudentObserverSub.NotifyObservers();
         return st;
     }
 
@@ -53,8 +53,9 @@ public class StudentDao
         oldst.IndexNm = st.IndexNm;
         oldst.StYear = st.StYear;
 
-        StudentObserverSub.NotifyObservers();
+        
         _storage.Save(students);
+        StudentObserverSub.NotifyObservers();
         return oldst;
     }
 
@@ -66,7 +67,8 @@ public class StudentDao
         StudentObserverSub.NotifyObservers();
         students.Remove(student);
         _storage.Save(students);
-        
+        StudentObserverSub.NotifyObservers();
+
         return student;
     }
 

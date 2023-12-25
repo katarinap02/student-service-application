@@ -164,6 +164,11 @@ public class HeadDao
         _subjectsDao.AddSubject(sb);
     }
 
+    public List<Subject> GetAllSubjectsHead()
+    {
+        return _subjectsDao.GetAllSubjects();
+    }
+
     public void UpdateSubjectHead(Subject sb)
     {
         Subject? olds = _subjectsDao.UpdateSubject(sb);
