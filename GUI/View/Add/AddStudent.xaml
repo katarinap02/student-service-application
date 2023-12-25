@@ -39,7 +39,8 @@
         <TextBox x:Name ="textBoxSurname" Grid.Row="1" Grid.Column="2" Text="{Binding Path=Surname, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
         <Label Grid.Row="2" Grid.Column="1" Margin="10,10,108,4" Content="Birthdate*"/>
-        <TextBox x:Name ="textBoxBirthdate" Grid.Row="2" Grid.Column="2" Text="{Binding Path=Birthdate, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
+        <DatePicker x:Name="datePickerBirthdate" Grid.Row="2" Grid.Column="2" SelectedDate="{Binding Path=Birthdate, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
+
 
         <!--<Label Grid.Row="3" Grid.Column="1" Margin="10,10,108,4" Content="Adress, city and county*"/>
         <TextBox d:DataContext="{d:DesignInstance Type=dto:AdressDTO}" x:Name ="textBoxAdress1" Grid.Row="3" Grid.Column="2" Text="{Binding Path=Street, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="10,8,235,0"/>
@@ -73,7 +74,7 @@
             <ComboBoxItem x:Name="Item4">IV</ComboBoxItem>
         </ComboBox>
         <Label Grid.Row="9" Grid.Column="1" Margin="10,10,108,4" Content="Method of financing*"/>
-        <ComboBox x:Name="BoxFinancing" Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="2" Height="32" VerticalAlignment="Top" Margin="61,8,59,0">
+        <ComboBox x:Name="BoxFinancing" Grid.Row="9" Grid.Column="2" Text="{Binding Path=StatusS, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" Height="32" VerticalAlignment="Top" Margin="61,8,59,0">
             <ComboBoxItem x:Name="ItemB">B</ComboBoxItem>
             <ComboBoxItem x:Name="ItemS">S</ComboBoxItem>
         </ComboBox>

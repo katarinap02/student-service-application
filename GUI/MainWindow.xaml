@@ -73,7 +73,7 @@
                 <TabItem x:Name="tabItemStudent" Header="Student" Foreground="Blue">
                     <DataGrid x:Name="dataGridStudent" IsReadOnly="True" AutoGenerateColumns="False" >
                         <DataGrid.Columns>
-                             <DataGridTextColumn Header="INDEX" Width="*" Binding="{Binding IndexDTO}"/>
+                            <DataGridTextColumn Header="INDEX" Width="*" Binding="{Binding IndexS}"/>
                             
                             <DataGridTextColumn Header="NAME" Width="*" Binding="{Binding Name}"/>
                             <DataGridTextColumn Header="SURNAME" Width="*" Binding="{Binding Surname}"/>
