@@ -22,12 +22,14 @@ namespace GUI.View.Add
     {
         private HeadDao contoller;
         public DTO.ProfessorDTO professorDTO {  get; set; }
+        public DTO.AdressDTO adressDTO { get; set; }
         public AddProfessor(HeadDao cnt)
         {
             InitializeComponent();
             this.contoller = cnt;
             DataContext = this;
-            professorDTO = new DTO.ProfessorDTO();
+            adressDTO = new DTO.AdressDTO();
+            professorDTO = new DTO.ProfessorDTO(adressDTO);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

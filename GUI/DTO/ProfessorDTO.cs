@@ -23,7 +23,6 @@ namespace GUI.DTO
             email = prof.Email; 
             title = prof.Title;
             year = prof.YearS;
-            adress = prof.AdressPr;
         }
 
 
@@ -170,31 +169,34 @@ namespace GUI.DTO
             }
         }
 
-        private Adress adress;
+        private AdressDTO adressDto;
 
-        public Adress AdressSt
+        public AdressDTO AdressDto
         {
-            get { return adress; }
+            get { return adressDto; }
             set
             {
-                if (value != adress)
+                if (value != adressDto)
                 {
-                    adress = value;
+                    adressDto = value;
                     OnPropertyChanged();
                 }
             }
         }
         // public Professor(string name, string surname, DateOnly birthdate, Adress adress, string phonenumber, string email,
         // string title, int styear)
+       
+
+        public ProfessorDTO(AdressDTO adress)
+        {
+            adressDto = adress;
+        }
+
         public Professor ToProfessor()
         {
-            return new Professor(name, surname, birthdate, adress, phoneNumber, email, title, year);
+            return new Professor(name, surname, birthdate, adressDto.ToAdress(), phoneNumber, email, title, year);
         }
 
-
-        public ProfessorDTO()
-        {
-        }
 
 
         public event PropertyChangedEventHandler? PropertyChanged;
