@@ -127,7 +127,7 @@ namespace GUI.DTO
 
         public String ToString()
         {
-            return street + " " + streetNm + " city and country: " + city + " " + country;
+            return street + " number " + streetNm + " city and country: " + city + " " + country;
         }
 
 

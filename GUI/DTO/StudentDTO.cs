@@ -27,7 +27,14 @@ namespace GUI.DTO
 
         }
 
+        private IndexDTO indexDto;
+        private AdressDTO adressDto;
 
+        public StudentDTO(AdressDTO adr, IndexDTO ind)
+        {
+            adressDto = adr;
+            indexDto = ind;
+        }
 
         public int id { get; set; }
 
@@ -141,7 +148,7 @@ namespace GUI.DTO
                 }
             }
         }
-        private AdressDTO adressDto;
+       
 
         public AdressDTO AdressDto
         {
@@ -158,7 +165,7 @@ namespace GUI.DTO
 
         
 
-        private IndexDTO indexDto;
+        
 
         public IndexDTO IndexDto
         {
@@ -267,10 +274,7 @@ namespace GUI.DTO
 
 
 
-        public StudentDTO(AdressDTO adr, IndexDTO ind) {
-            adressDto = adr;
-            indexDto = ind;
-        }
+        
 
         public Student ToStudent()
         { 

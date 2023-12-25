@@ -38,6 +38,8 @@ namespace GUI
         {
                 
             InitializeComponent();
+            SetWindowSize();
+
             headDao = new HeadDao();
 
             timer = new DispatcherTimer();
@@ -49,10 +51,22 @@ namespace GUI
             makeProfessorList();
         }
 
-       /* private void UpdateDateTime(object sender, EventArgs e)
-        /*{
-            dateTimeTextBlock.Text = DateTime.Now.ToString("HH:mm yyyy-MM-dd");
-        }*/
+
+        private void SetWindowSize()
+        {
+            double screenW = SystemParameters.PrimaryScreenWidth;
+            double screenH = SystemParameters.PrimaryScreenHeight;
+            double desiredW = screenW * 0.75;
+            double desiredH = screenH * 0.75;
+
+            Width = desiredW;
+            Height = desiredH;
+        }
+
+        /* private void UpdateDateTime(object sender, EventArgs e)
+         /*{
+             dateTimeTextBlock.Text = DateTime.Now.ToString("HH:mm yyyy-MM-dd");
+         }*/
 
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" >
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="Auto" Width="Auto" >
     <Window.Resources>
 
         <ComponentResourceKey x:Key="NewIconKey" />
@@ -16,7 +17,7 @@
         <ComponentResourceKey x:Key="TrashIconKey" ResourceId="/Resources/trash.png"/>
         <ComponentResourceKey x:Key="OpenIconKey" ResourceId="/Resources/open.png"/>
     </Window.Resources>
-    <DockPanel>
+    <DockPanel LastChildFill="True">
         <DockPanel DockPanel.Dock="Bottom" Height="20">
             <StatusBar Height="20" Width="797">
                 <TextBlock x:Name="statusTextBlock" DockPanel.Dock ="Left"  Text="Student services" Width="94"/>
@@ -68,7 +69,7 @@
             </DockPanel>
             
         </Grid>
-        <Grid Width="736" Height="370">
+        <Grid Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" Height="{Binding Path=ActualHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}">
             <TabControl x:Name="tabControl">
                 <TabItem x:Name="tabItemStudent" Header="Student" Foreground="Blue">
                     <DataGrid x:Name="dataGridStudent" IsReadOnly="True" AutoGenerateColumns="False" >
