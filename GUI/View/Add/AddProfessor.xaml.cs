@@ -37,6 +37,7 @@ namespace GUI
         {
             contoller.AddProfessorHead(professorDTO.ToProfessor());
             MessageBox.Show("Professor added!");
+            Close();
         }
 
 

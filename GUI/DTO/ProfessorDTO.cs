@@ -24,7 +24,17 @@ namespace GUI.DTO
             title = prof.Title;
             year = prof.YearS;
         }
-
+        public ProfessorDTO(ProfessorDTO prof)
+        {
+            id = prof.id;
+            name = prof.name;
+            surname = prof.surname;
+            birthdate = prof.birthdate;
+            phoneNumber = prof.phoneNumber;
+            email = prof.email;
+            title = prof.title;
+            year = prof.year;
+        }
 
 
         private int id;
@@ -70,7 +80,7 @@ namespace GUI.DTO
             {
                 if (value != surname)
                 {
-                    name = value;
+                    surname = value;
                     OnPropertyChanged();
                 }
             }

@@ -149,9 +149,16 @@ namespace GUI
 
                 else if (currentTab.Header.Equals("Professor"))
                 {
-                   InsertProfessor insertProfessor= new InsertProfessor();
-                   insertProfessor.Show();
-
+                   ProfessorDTO professorDTO = dataGridProfessor.SelectedItem as ProfessorDTO;
+                    if (professorDTO != null)
+                    {
+                        InsertProfessor insertProfessor = new InsertProfessor(headDao, professorDTO);
+                        insertProfessor.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("You didnt select professor to edit!");
+                    }
                 }
                 else
                 {
