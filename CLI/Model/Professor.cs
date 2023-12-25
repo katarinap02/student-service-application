@@ -126,12 +126,16 @@ namespace CLI.Model
             Name = values[1];
             Surname = values[2];
             Birthdate = DateOnly.Parse(values[3]);
+            PhoneNumber = values[4];
+            Email = values[5];
+            Title = values[6];
+            YearS = int.Parse(values[7]);
             AdressPr = new Adress();
-            AdressPr.FromCSV(new string[] { values[4], values[5], values[6], values[7], values[8] });
-            PhoneNumber = values[9];
-            Email = values[10];
-            Title = values[11];
-            YearS = int.Parse(values[12]);
+            AdressPr.FromCSV(new string[] { values[8], values[9], values[10], values[11], values[12] });
+            
+           
+           
+           
         }
 
         public void FromCSV1(string[] values)

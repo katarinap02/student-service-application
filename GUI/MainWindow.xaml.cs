@@ -90,26 +90,26 @@ namespace GUI
                 if (currentTab.Header.Equals("Student"))
                 {
                     AddStudent addStudent = new AddStudent(headDao);
-                    addStudent.Show();
-
+                    addStudent.ShowDialog();
                 }
                
                 else if(currentTab.Header.Equals("Professor"))
                 {
                     //MessageBox.Show("Selected tab: " + (tabControl.SelectedItem as TabItem).Header);
                     AddProfessor addProfessor = new AddProfessor(headDao);
-                    addProfessor.Show();
+                    addProfessor.ShowDialog();
                     
                 }
                 else
                 {
                     AddSubject addSubject = new AddSubject();
-                    addSubject.Show();
+                    addSubject.ShowDialog();
                 }    
             }
-            
-            
-            
+
+            makeStudentList();
+            makeProfessorList();
+
         }
         private void Edit_Click(object sender, RoutedEventArgs e)
         {

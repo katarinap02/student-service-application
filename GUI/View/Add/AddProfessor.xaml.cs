@@ -1,4 +1,5 @@
 ﻿using CLI.DAO;
+using GUI.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace GUI.View.Add
+namespace GUI
 {
     /// <summary>
     /// Interaction logic for AddProfessor.xaml
@@ -21,15 +22,15 @@ namespace GUI.View.Add
     public partial class AddProfessor : Window
     {
         private HeadDao contoller;
-        public DTO.ProfessorDTO professorDTO {  get; set; }
-        public DTO.AdressDTO adressDTO { get; set; }
+        public ProfessorDTO professorDTO {  get; set; }
+        public AdressDTO adressDTO { get; set; }
         public AddProfessor(HeadDao cnt)
         {
             InitializeComponent();
-            this.contoller = cnt;
+            contoller = cnt;
             DataContext = this;
-            adressDTO = new DTO.AdressDTO();
-            professorDTO = new DTO.ProfessorDTO(adressDTO);
+            adressDTO = new AdressDTO();
+            professorDTO = new ProfessorDTO(adressDTO);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

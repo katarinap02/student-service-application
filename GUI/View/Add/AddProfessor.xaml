@@ -1,9 +1,9 @@
-﻿<Window x:Class="GUI.View.Add.AddProfessor"
+﻿<Window x:Class="GUI.AddProfessor"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GUI.View.Add"
+        xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
            Title="Add Professor" Height="472" Width="598">
     <Grid>
@@ -31,30 +31,32 @@
 
         <!-- Labels and Text Boxes -->
         <Label Grid.Row="0" Grid.Column="1" Margin="10,10,108,4" Content="Name*"/>
-        <TextBox Grid.Row="0" Grid.Column="2" Text="{Binding Path=StudentDto.Name, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
+        <TextBox Grid.Row="0" Grid.Column="2" Text="{Binding Path=professorDTO.Name, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
         <Label Grid.Row="1" Grid.Column="1" Margin="10,10,108,4" Content="Surname*"/>
-        <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=StudentDto.Name, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
+        <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=professorDTO.Surname, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
         <Label Grid.Row="2" Grid.Column="1" Margin="10,10,108,4" Content="Birthdate*"/>
-        <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=StudentDto.Name, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
-
-        <Label Grid.Row="3" Grid.Column="1" Margin="10,10,108,4" Content="Adress*"/>
-        <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding Path=StudentDto.Name, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
+        <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=professorDTO.Birthdate, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
         <Label Grid.Row="4" Grid.Column="1" Margin="10,10,108,4" Content="Phonenumber*"/>
-        <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding Path=StudentDto.Name, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
+        <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding Path=professorDTO.PhoneNumber, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
         <Label Grid.Row="5" Grid.Column="1" Margin="10,10,108,4" Content="Email*"/>
-        <TextBox Grid.Row="5" Grid.Column="2" Text="{Binding Path=StudentDto.Name, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
+        <TextBox Grid.Row="5" Grid.Column="2" Text="{Binding Path=professorDTO.Email, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
         <Label Grid.Row="6" Grid.Column="1" Margin="10,10,108,4" Content="Title*"/>
-        <TextBox Grid.Row="6" Grid.Column="2" Text="{Binding Path=StudentDto.Name, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
+        <TextBox Grid.Row="6" Grid.Column="2" Text="{Binding Path=professorDTO.Title, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
         <Label Grid.Row="7" Grid.Column="1" Margin="10,10,108,4" Content="Years of service*"/>
-        <TextBox Grid.Row="7" Grid.Column="2" Text="{Binding Path=StudentDto.Name, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
+        <TextBox Grid.Row="7" Grid.Column="2" Text="{Binding Path=professorDTO.YearS, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
+        <Label Grid.Row="3" Grid.Column="1" Margin="10,10,108,4" Content="Adress, city and county*"/>
+        <TextBox  x:Name ="textBoxAdress1" Grid.Row="3" Grid.Column="2" Text="{Binding Path=adreesDTO.Street, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="10,8,235,0"/>
+        <TextBox  x:Name ="textBoxAdress4" Grid.Row="3" Grid.Column="2" Text="{Binding Path=adreesDTO.StreetNm, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="98,8,185,0"/>
+        <TextBox  x:Name ="textBoxAdress3" Grid.Row="3" Grid.Column="2" Text="{Binding Path=adreesDTO.City, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="144,8,98,0"/>
+        <TextBox  x:Name ="textBoxAdress2" Grid.Row="3" Grid.Column="2" Text="{Binding Path=adreesDTO.Country, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="232,8,10,0"/>
 
-        
+
         <Button Grid.Row="8" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63" Click="Button_Click">Save</Button>
         <Button Grid.Row="8" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="99,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67" Click="Button_Exit" Content="Exit"></Button>
 
