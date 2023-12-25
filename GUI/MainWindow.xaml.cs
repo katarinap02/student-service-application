@@ -32,12 +32,11 @@ namespace GUI
     /// </summary>
     public partial class MainWindow : Window, IObserver
     {
-<<<<<<< HEAD
+
         public ObservableCollection<StudentDTO> Students { get; set; }
         public ObservableCollection<ProfessorDTO> Professors { get; set; }
         //public ObservableCollection<SubjectDTO> Subjects { get; set; }
-=======
->>>>>>> 848eff35b9ddfd6b12eade1d8b2142de04064acb
+
         List<ProfessorDTO> professorDtos;
         List<StudentDTO> studentDtos;
         private HeadDao headDao;
