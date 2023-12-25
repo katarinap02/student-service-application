@@ -23,7 +23,7 @@ namespace GUI
     {
         StudentDTO _studentDTO;
         HeadDao _headDao;
-        public bool IsClosed { get; set; } = false;
+     
         public DeleteStudent(HeadDao cnt, StudentDTO studentDto)
         {
              InitializeComponent();
@@ -39,19 +39,20 @@ namespace GUI
 
 
             _headDao.RemoveStudentHead(_studentDTO.Id);
-            IsClosed= true;
+            MessageBox.Show("Student is  deleted!");
             Close();
-            //MessageBox.Show("Professor is not deleted!");
+           
           //  YesButton.Background = Brushes.Blue; 
            // NoButton.Background = Brushes.Gray;  
         }
 
         private void NoButton_Click(object sender, RoutedEventArgs e)
         {
-            IsClosed = true;
+
+            MessageBox.Show("Student is not deleted!");
             Close();
 
-           // MessageBox.Show("Professor is not deleted!");
+            
             // Change color when No button is clicked
           //  NoButton.Background = Brushes.Blue;   
            // YesButton.Background = Brushes.Gray; 

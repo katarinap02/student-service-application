@@ -161,17 +161,18 @@ namespace GUI
                         DeleteStudent deleteStudent = new DeleteStudent(headDao, studentDTO);
                         deleteStudent.ShowDialog();
                         break;
-                    case "Professors":
-                        //  deleteProfessor();
+                    case "Professor":
+                        ProfessorDTO professorDTO = dataGridProfessor.SelectedItem as ProfessorDTO;
+                        DeleteProfessor deleteProfessor = new DeleteProfessor(headDao, professorDTO);
+                        deleteProfessor.ShowDialog();
                         break;
-                    case "Subjects":
-                        // deleteSubject();
+                    case "Subject":
                         break;
                 }
                 
             }
              makeStudentList();
-
+             makeProfessorList();
         }
         
        

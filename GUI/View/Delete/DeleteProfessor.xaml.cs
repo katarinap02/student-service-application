@@ -21,27 +21,38 @@ namespace GUI
     /// </summary>
     public partial class DeleteProfessor : Window
     {
-
-        private HeadDao contoller;
-        public ProfessorDTO professorDTO { get; set; }
+        ProfessorDTO _professorDTO;
+        HeadDao _headDao;
+        
 
         public DeleteProfessor(HeadDao cnt,   ProfessorDTO profDTO)
         {
             InitializeComponent();
-            this.contoller = cnt;
-            DataContext = this;
-            professorDTO = profDTO;
+            _headDao = cnt;
+            _professorDTO = profDTO;
         }
 
         private void NoButton_Click(object sender, RoutedEventArgs e)
         {
             
+
+            Close();
             MessageBox.Show("Professor is not deleted!");
         }
 
         private void YesButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Professor is  deleted!");
+            if(_headDao.RemoveProfessorHead(_professorDTO.Id))
+            {
+                MessageBox.Show("Professor is  deleted!");
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Professor can't be deleted!");
+                Close();
+            }
+             // MessageBox.Show("Professor is  deleted!");
         }
     }
     

@@ -340,14 +340,14 @@ public class HeadDao
        return  _professorsDao.GetAllProfessors();
     }
 
-    public void RemoveProfessorHead(int id)
+    public Boolean RemoveProfessorHead(int id)
     {
 
         Professor? pr = _professorsDao.GetProfessorById(id);
         if (pr is null)
         {
             System.Console.WriteLine("Professor not found");
-            return;
+            return false;
         }
         // List<Chair> chr = new List<Chair>(); //sluzi da bismo stavili sve sto treba za brisanje
 
@@ -357,7 +357,7 @@ public class HeadDao
             {
                 // ch.Professors.Remove(pr);
                 //ovo je za kada obrisemo studenta da se obrise iz liste predmeta
-                return;
+                return false;
             }
 
 
@@ -365,7 +365,7 @@ public class HeadDao
             /*  StudentSubject? removedStudentSubject = _studentsubjectsDao.RemoveStudentSubject(id); //brisemo i vezu
               if (removedStudentSubject is null)
               {
-                  continue;
+                  continue ;
               }*/
         }
 
@@ -373,7 +373,7 @@ public class HeadDao
         {
             if (ch.Chief.Id == pr.Id)
             {
-                return;
+                return false;
             }
         }
 
@@ -383,12 +383,12 @@ public class HeadDao
         {
                 if (sb.ProfessorSb.Id == pr.Id)
                 {
-                    return;
+                    return false;
                 }
         }
 
 
-            /* foreach (Grade g in gr)
+          /*   foreach (Grade g in gr)
              {
                  Grade? removedgrade = _gradesDao.RemoveGrade(g.Id);
                  if (removedgrade is null)
@@ -399,11 +399,12 @@ public class HeadDao
             if (removedpr is null)
             {
                 System.Console.WriteLine("Student not found");
-                return;
+                return false;
             }
 
             System.Console.WriteLine("Student removed");
 
+        return true;
         
 
     }
