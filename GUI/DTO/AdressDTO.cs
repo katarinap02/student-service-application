@@ -21,9 +21,25 @@ namespace GUI.DTO
 
         }
 
-        public string Course { get; set; }
-        public int Number { get; set; }
-        public int YearE { get; set; } //godina upisa
+        public AdressDTO(AdressDTO adr)
+        {
+            street = adr.Street;
+            streetNm = adr.StreetNm;
+            city = adr.City;
+            country = adr.Country;
+
+        }
+
+        public AdressDTO(String s, String n, String ci, String co)
+        {
+            this.street = s;
+            this.streetNm = n;
+            this.city = ci;
+            this.country = co;
+        }
+
+
+
 
         public int id { get; set; }
 
@@ -103,8 +119,11 @@ namespace GUI.DTO
                 }
             }
         }
+        public String ToString()
+        {
+            return street + " " + streetNm + " " + city + " " + country;
+        }
 
-       
 
         public AdressDTO() { }
 

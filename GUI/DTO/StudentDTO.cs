@@ -18,15 +18,17 @@ namespace GUI.DTO
         public StudentDTO(Student std)
         {
             id = std.Id;
-            index = std.IndexNm;
+            indexDto = new IndexDTO(std.IndexNm);
             name = std.Name;
             surname = std.Surname;
             studentYear = std.StYear;
             status = std.StudentStatus;
             average = std.Average(std.Grades); //jos nema ocena
 
-
         }
+
+
+
         public int id { get; set; }
 
         public int Id
@@ -184,20 +186,6 @@ namespace GUI.DTO
             }
         }
 
-        private CLI.Model.Index index;
-
-        public CLI.Model.Index IndexNm
-        {
-            get { return index; }
-            set
-            {
-
-                index = value;
-                OnPropertyChanged();
-
-            }
-        }
-
         private int studentYear;
 
         public int StYear
@@ -252,9 +240,6 @@ namespace GUI.DTO
 
    
     */
-
-
-
 
 
 
