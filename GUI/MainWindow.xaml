@@ -47,7 +47,10 @@
         </DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
-                <MenuItem  Header="New" InputGestureText="Ctrl+N" Click="Add_Click">
+                <MenuItem Header="New" InputGestureText="Ctrl+N" Click="Add_Click">
+                    <MenuItem.InputBindings>
+                        <KeyBinding Key="N" Modifiers="Ctrl"/>
+                    </MenuItem.InputBindings>
                 </MenuItem>
                 <MenuItem Header="Save" InputGestureText="Ctrl+S" Icon="{DynamicResource SaveIconKey}"></MenuItem>
                 <MenuItem Header="Open" InputGestureText="Ctrl+O" Icon="{DynamicResource OpenIconKey}">
@@ -62,7 +65,7 @@
                 <MenuItem Header="Delete" InputGestureText="Ctrl+D" Icon="{DynamicResource TrashIconKey}" Click="Delete_Click"></MenuItem>
             </MenuItem>
             <MenuItem Header="Help">
-                <MenuItem Header="About"  Icon="{DynamicResource InfoIconKey}" InputGestureText="Ctrl+H"></MenuItem>
+                <MenuItem Header="About"  Icon="{DynamicResource InfoIconKey}" InputGestureText="Ctrl+H" Click="About_Click" ></MenuItem>
             </MenuItem>
             <Menu/>
            
