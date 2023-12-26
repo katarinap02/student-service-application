@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Xml.Linq;
 using static CLI.Model.Subject;
+using System.Windows.Media.Animation;
+using CLI.DAO;
+using System.Net;
 
 namespace GUI.DTO
 {
@@ -17,7 +20,8 @@ namespace GUI.DTO
 
         private CLI.DAO.HeadDao controller;
 
-        public SubjectDTO(CLI.DAO.HeadDao cnt)
+
+        public SubjectDTO(HeadDao cnt)
         {
             controller = cnt;
         }
@@ -30,7 +34,7 @@ namespace GUI.DTO
             semester = sb.SemesterSb;
             year = sb.SYear;
             espb = sb.NumEspb;
-            professorsId = sb.ProfessorSb.Id;
+            professors = sb.ProfessorSb;
 
     }
     public SubjectDTO(SubjectDTO sb)
@@ -40,7 +44,7 @@ namespace GUI.DTO
             semester = sb.Semester;
             year = sb.Year;
             espb = sb.Espb;
-            professorsId = sb.ProfessorsId;
+            professors = sb.Professors;
         }
 
 
@@ -144,50 +148,38 @@ namespace GUI.DTO
             }
         }
 
-        private int professorsId;
-        public int ProfessorsId
-        {
-            get { return professorsId; }
-            set
-            {
-                if (value != professorsId)
-                {
-                    professorsId = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-
         private Professor professors;
-        public Professor Professors
-        {
-            get { return professors; }
+       public Professor Professors
+       {
+          get { return professors; }
             set
             {
-                if (controller.getProfessorById(professorsId) != professors)
+                if (value != professors)
                 {
-                    professors = controller.getProfessorById(professorsId);
+                    professors = value;
                     OnPropertyChanged();
                 }
             }
         }
 
+         
+        
         
         public String ProfessorString
         {
             get { return professors.Name + " " + professors.Surname; }
         }
 
-        
+
+       private Professor newProfessor = new Professor( 0, "Nebojsa", "Ralevic",  
+        DateOnly.FromDateTime(DateTime.Parse("02-02-2002")), 
+        new Adress("Bulevar Jase Tomica", "4" , "Novi Sad", "Srbija"), "123456", "nralevic@uns.ac.rs", "prof.dr", 13);
 
 
 
-
-        
-
-    public Subject ToSubject()
+        public Subject ToSubject()
     {
-        return new Subject(name, semester, year, espb, professors);
+        return new Subject(name, semester, year, espb, newProfessor);
     }
 
 

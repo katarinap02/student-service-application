@@ -34,6 +34,7 @@ namespace GUI.View.Add
             subjectDTO = new SubjectDTO(controller);
         }
 
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             controller.AddSubjectHead(subjectDTO.ToSubject());

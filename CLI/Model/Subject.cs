@@ -87,22 +87,19 @@ namespace CLI.Model
         }
         public string[] ToCSV()
         {
-            string[] csvValues =
+            List<string> csvValues = new List<string>
             {
-                Id.ToString(),
-                Name,
-                SemesterSb.ToString(),
-                SYear.ToString(),
-                NumEspb.ToString(),
-                ProfessorSb.ToCSV1()[0],
-                ProfessorSb.ToCSV1()[1],
-            ProfessorSb.ToCSV1()[2],
+                Id.ToString(), Name, SemesterSb.ToString(),
+                SYear.ToString(), NumEspb.ToString()
 
 
         };
-            return csvValues;
+            csvValues.AddRange(ProfessorSb.ToCSV());
+            string result = string.Join("|", csvValues); ;
+            return result.Split('|');
 
         }
+
         public string[] ToCSV1()
         {
             string[] csvValues =
