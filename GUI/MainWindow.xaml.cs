@@ -239,20 +239,6 @@ namespace GUI
                 if (currentTab.Header.Equals("Student"))
                 {
                     StudentDTO studentDTO = dataGridStudent.SelectedItem as StudentDTO;
-<<<<<<< HEAD
-=======
-                    if (studentDTO != null)
-                    {
-                        InsertStudent insertStudent = new InsertStudent();
-                        insertStudent.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("You didnt select student to edit!");
-                    }
-                    
-                   
->>>>>>> 0a09f44ab61a5564c05d7c6ece02ebb2c31b4b14
 
                     if (studentDTO != null)
                     {
@@ -267,7 +253,6 @@ namespace GUI
 
                 else if (currentTab.Header.Equals("Professor"))
                 {
-<<<<<<< HEAD
                    ProfessorDTO professorDTO = dataGridProfessor.SelectedItem as ProfessorDTO;
 
                     if (professorDTO != null)
@@ -279,9 +264,6 @@ namespace GUI
                     {
                         MessageBox.Show("You didnt select professor to edit!");
                     }
-=======
-                   
->>>>>>> 0a09f44ab61a5564c05d7c6ece02ebb2c31b4b14
                 }
                 else
                 {
