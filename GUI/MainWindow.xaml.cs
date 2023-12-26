@@ -33,8 +33,8 @@ namespace GUI
     public partial class MainWindow : Window, IObserver
     {
 
-        public ObservableCollection<StudentDTO> Students { get; set; }
-        public ObservableCollection<ProfessorDTO> Professors { get; set; }
+        public ObservableCollection<StudentDTO> Students { get; }
+        public ObservableCollection<ProfessorDTO> Professors { get; }
         //public ObservableCollection<SubjectDTO> Subjects { get; set; }
 
         List<ProfessorDTO> professorDtos;
@@ -50,19 +50,24 @@ namespace GUI
             Professors = new ObservableCollection<ProfessorDTO>();
             //Subjects = new ObservableCollection<SubjectDTO>();
             headDao = new HeadDao();
-
+            headDao.observerSub.Subscribe(this);
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
            // timer.Tick += UpdateDateTime;
             timer.Start();
 
-            makeStudentList();
-            makeProfessorList();
+            dataGridProfessor.ItemsSource = Professors;
+            dataGridStudent.ItemsSource = Students;
+           
+            
+            Update();
+         
+        }
+        public void Update()
+        {
             UpdateProfessor();
             UpdateStudent();
-            //UpdateSubject();
         }
-
 
         private void SetWindowSize()
         {
@@ -85,26 +90,7 @@ namespace GUI
 
         }
 
-        public void makeStudentList()
-        { 
-            studentDtos = new List<StudentDTO>();
-            foreach (Student std in headDao.GetAllStudentsHead())
-            { 
-                studentDtos.Add(new StudentDTO(std));
-            }
-            dataGridStudent.ItemsSource = studentDtos;
-        }
-        
-        public void makeProfessorList()
-        {
-            professorDtos = new List<ProfessorDTO>();
-            foreach (Professor prof in headDao.GetAllProfessorsHead())
-            {
-                professorDtos.Add(new ProfessorDTO(prof));
-
-            }
-            dataGridProfessor.ItemsSource= professorDtos; 
-        }
+       
 
 
         private void Add_Click(object sender, RoutedEventArgs e)
@@ -133,8 +119,7 @@ namespace GUI
                 }    
             }
 
-            makeStudentList();
-            makeProfessorList();
+           
 
         }
         private void Edit_Click(object sender, RoutedEventArgs e)
@@ -215,8 +200,7 @@ namespace GUI
                 }
                 
             }
-             makeStudentList();
-             makeProfessorList();
+            
         }
         
        

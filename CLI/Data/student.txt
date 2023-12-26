@@ -1,5 +1,4 @@
 1|Milan|Milenic|12-12-2004|61000111|mmilenic@gmail.com|2023|S|0|Svetozara Markovica|14|Beograd|Srbija|EE|100|2023
-2|Mirko|Mirkovic|01-01-2022|21123654|email|2011|B|0|Marka|32|Novi Sad|Serbia|RA|17|2011
 3|Milena-Mima|Sekaric|13-11-2001|63654321|mimasekaric@gmail.com|2023|B|0|Tolstojeva|54|Novi Sad|Srbija|RA|57|2021
 4|Petar|Petrovic|01-01-2003|66111222|ppetrovic@gmail.com|2023|S|0|Dositeja Obradovica|4|Banja Luka|Republika Srpska|PSI|10|2022
 5|ds|ds|12-12-2000|0651233451|mima@gm|20|S|0|ds|3a|ci|fr|ra|45|2021
@@ -9,4 +8,4 @@
 10|DZON SNOV|TARGERIJAN|01-01-0001|0635435432|maskda|2000|B|0||||||0|0
 11|gdfgd|gdfgdf|01-01-0001|0653453452|aSD|2020|B|0||||||0|0
 12|sfasdf|adfsdf|01-01-0001|0642342341|mima@gmail.com|2023|S|0||||||0|0
-13|sdfsdf|sdfsdf|01-01-0001|0652344561|mima@gmail|1|S|0|sdfs|4|dfasf|adfad|ww|34|2020
+13|Zeka|Pravi|01-01-0001|0654564562|telepnemanja@gmail.com|3|S|0|asd|33|asda|asdasd|asdf|44|2021

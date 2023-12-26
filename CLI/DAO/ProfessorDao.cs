@@ -21,6 +21,7 @@ namespace CLI.DAO
         {
             _storage = new Storage<Professor>("professor.txt");
             professors = _storage.Load();
+            ProfessorObserverSub = new ObserverSub();
         }
         private int GenerateId()
         {
@@ -32,7 +33,7 @@ namespace CLI.DAO
             pr.Id = GenerateId(); //generisi id za svakog profesora
             professors.Add(pr);
             _storage.Save(professors);
-            ProfessorObserverSub.NotifyObservers();
+            //ProfessorObserverSub.NotifyObservers();
             return pr;
         }
 

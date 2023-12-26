@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
+        Background="LightPink"
         Title="MainWindow" Height="Auto" Width="Auto" >
     <Window.Resources>
 
@@ -58,9 +59,9 @@
         <Grid Height="20" DockPanel.Dock="Top" >
             <DockPanel Grid.Column="0" LastChildFill="False" Margin="15,0,0, 0">
                 <!--<Label x:Name="NameLabel" Content="STUDENTSKA SLUZBA" FontWeight="ExtraBold" />-->
-                <Button x:Name="buttonAdd" DockPanel.Dock="Left" Width="30" Click="Add_Click" >Add</Button>
-                <Button x:Name="buttonEdit" DockPanel.Dock="Left" Width="30" Click="Edit_Click">Edit</Button>
-                <Button x:Name="buttonDelete" DockPanel.Dock="Left" Width="40" Click="Delete_Click">Delete</Button>
+                <Button x:Name="buttonAdd" DockPanel.Dock="Left" Width="30" Click="Add_Click" Background="AntiqueWhite" Foreground="DeepPink" >Add</Button>
+                <Button x:Name="buttonEdit" DockPanel.Dock="Left" Width="30" Click="Edit_Click" Background="AntiqueWhite" Foreground="BlueViolet">Edit</Button>
+                <Button x:Name="buttonDelete" DockPanel.Dock="Left" Width="40" Click="Delete_Click" Background="AntiqueWhite" Foreground="DeepSkyBlue">Delete</Button>
             </DockPanel>
             <DockPanel Grid.Column="1" LastChildFill="False" Margin="0,0,15, 0">
                 <Button x:Name="buttonSearch" DockPanel.Dock="Right" Width="40">Search</Button>
@@ -71,9 +72,9 @@
         </Grid>
         <Grid Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" Height="{Binding Path=ActualHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}">
             <TabControl x:Name="tabControl">
-                <TabItem x:Name="tabItemStudent" Header="Student" Foreground="Blue">
+                <TabItem x:Name="tabItemStudent" Header="Student" Background="AntiqueWhite" Foreground="LightCoral">
                     <DataGrid x:Name="dataGridStudent" IsReadOnly="True" AutoGenerateColumns="False" >
-                        <DataGrid.Columns>
+                        <DataGrid.Columns >
                             <DataGridTextColumn Header="INDEX" Width="*" Binding="{Binding IndexS}"/>
                             
                             <DataGridTextColumn Header="NAME" Width="*" Binding="{Binding Name}"/>
@@ -88,7 +89,7 @@
                     </DataGrid>
 
                 </TabItem>
-                <TabItem x:Name="tabItemProfessor" Header="Professor" Foreground="Green">
+                <TabItem x:Name="tabItemProfessor" Header="Professor" Background="AntiqueWhite" Foreground="LightGreen">
                     <DataGrid x:Name="dataGridProfessor" IsReadOnly="True" AutoGenerateColumns="False" >
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="NAME" Width="*" Binding="{Binding Name}"/>
@@ -98,7 +99,7 @@
                         </DataGrid.Columns>
                     </DataGrid>
                 </TabItem>
-                <TabItem x:Name="tabItemSubject" Header="Subject"  Foreground="Red">
+                <TabItem x:Name="tabItemSubject" Header="Subject" Background="AntiqueWhite"  Foreground="PaleVioletRed">
                     
                     
                 </TabItem>

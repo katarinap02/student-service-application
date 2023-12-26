@@ -19,6 +19,7 @@ namespace CLI.DAO
         {
             _storage = new Storage<Subject>("subject.txt");
             subjects = _storage.Load();
+            SubjectObserverSub = new ObserverSub();
         }
 
         private int GenerateId()

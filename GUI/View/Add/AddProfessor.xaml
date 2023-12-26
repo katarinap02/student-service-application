@@ -37,7 +37,7 @@
         <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=professorDTO.Surname, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
         <Label Grid.Row="2" Grid.Column="1" Margin="10,10,108,4" Content="Birthdate*"/>
-        <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=professorDTO.Birthdate, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
+        <DatePicker x:Name="datePickerBirthdate"  Grid.Row="2" Grid.Column="2" Text="{Binding Path=professorDTO.Birthdate, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
         <Label Grid.Row="4" Grid.Column="1" Margin="10,10,108,4" Content="Phone Number*"/>
         <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding Path=professorDTO.Phonenumber, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>

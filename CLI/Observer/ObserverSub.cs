@@ -29,9 +29,7 @@ namespace CLI.Observer
         {
             foreach (var observer in _observers)
             {
-                observer.UpdateStudent();
-                observer.UpdateProfessor();
-                //observer.UpdateSubject();
+                observer.Update();
             }
 
         }

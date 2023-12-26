@@ -8,9 +8,7 @@ namespace CLI.Observer
 {
     public interface IObserver
     {
-        void UpdateStudent();
-        void UpdateProfessor();
-
-       // void UpdateSubject();
+        void Update();
+        
     }
 }
