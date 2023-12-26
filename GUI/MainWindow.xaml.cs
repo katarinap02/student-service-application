@@ -94,6 +94,73 @@ namespace GUI
         }
 
        
+        private void Close_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void St_Click(object sender, RoutedEventArgs e)
+        {
+            TabItem currentTab = tabControl.SelectedItem as TabItem;
+
+            if (!currentTab.Header.Equals("Student"))
+            {
+                TabItem studentTabItem = tabControl.Items.OfType<TabItem>().FirstOrDefault(tab => tab.Header.Equals("Student"));
+
+                if (studentTabItem == null)
+                {
+                    
+                    studentTabItem = new TabItem { Header = "Student" };
+                    
+                    tabControl.Items.Add(studentTabItem);
+                }
+
+               
+                tabControl.SelectedItem = studentTabItem;
+            }
+        }
+
+        private void Pf_Click(object sender, RoutedEventArgs e)
+        {
+            TabItem currentTab = tabControl.SelectedItem as TabItem;
+
+            if (!currentTab.Header.Equals("Professor"))
+            {
+                TabItem studentTabItem = tabControl.Items.OfType<TabItem>().FirstOrDefault(tab => tab.Header.Equals("Professor"));
+
+                if (studentTabItem == null)
+                {
+                    
+                    studentTabItem = new TabItem { Header = "Professor" };
+                    
+                    tabControl.Items.Add(studentTabItem);
+                }
+
+               
+                tabControl.SelectedItem = studentTabItem;
+            }
+        }
+
+        private void Sb_Click(object sender, RoutedEventArgs e)
+        {
+            TabItem currentTab = tabControl.SelectedItem as TabItem;
+
+            if (!currentTab.Header.Equals("Subject"))
+            {
+                TabItem studentTabItem = tabControl.Items.OfType<TabItem>().FirstOrDefault(tab => tab.Header.Equals("Subject"));
+
+                if (studentTabItem == null)
+                {
+                    
+                    studentTabItem = new TabItem { Header = "Subject" };
+            
+                    tabControl.Items.Add(studentTabItem);
+                }
+
+
+                tabControl.SelectedItem = studentTabItem;
+            }
+        }
 
 
         private void Add_Click(object sender, RoutedEventArgs e)
@@ -133,28 +200,38 @@ namespace GUI
             {
                 if (currentTab.Header.Equals("Student"))
                 {
-                   InsertStudent insertStudent = new InsertStudent();
-                   insertStudent.Show();
+                    StudentDTO studentDTO = dataGridStudent.SelectedItem as StudentDTO;
+                    if (studentDTO != null)
+                    {
+                        InsertStudent insertStudent = new InsertStudent();
+                        insertStudent.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("You didnt select student to edit!");
+                    }
+                    
+                   
 
                 }
 
                 else if (currentTab.Header.Equals("Professor"))
                 {
-                   ProfessorDTO professorDTO = dataGridProfessor.SelectedItem as ProfessorDTO;
-                    if (professorDTO != null)
-                    {
-                        InsertProfessor insertProfessor = new InsertProfessor(headDao, professorDTO);
-                        insertProfessor.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("You didnt select professor to edit!");
-                    }
+                   
                 }
                 else
                 {
-                   InsertSubject insertSubject = new InsertSubject();   
-                   insertSubject.Show();
+                    SubjectDTO subjectDTO = dataGridSubject.SelectedItem as SubjectDTO;
+                    if (subjectDTO != null)
+                    {
+                        InsertSubject insertSubject = new InsertSubject();
+                        insertSubject.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("You didnt select subject to edit!");
+                    }
+                    
                 }
             }
         }
