@@ -32,7 +32,7 @@ namespace GUI
     /// </summary>
     public partial class MainWindow : Window, IObserver
     {
-
+        public static RoutedCommand NewCommand = new RoutedCommand();
         public ObservableCollection<StudentDTO> Students { get; }
         public ObservableCollection<ProfessorDTO> Professors { get; }
         public ObservableCollection<SubjectDTO> Subjects { get; set; }
@@ -47,6 +47,7 @@ namespace GUI
                 
             InitializeComponent();
             SetWindowSize();
+            CommandBindings.Add(new CommandBinding(NewCommand, Add_Click));
             Students = new ObservableCollection<StudentDTO>();
             Professors = new ObservableCollection<ProfessorDTO>();
             Subjects = new ObservableCollection<SubjectDTO>();
@@ -64,6 +65,43 @@ namespace GUI
             
             Update();
          
+        }
+        private void About_Click(object sender, RoutedEventArgs e)
+        {
+            
+            Window newWindow = new Window
+            {
+                Title = "New Text Window",
+                Width = 550,
+                Height = 400,
+                WindowStartupLocation = WindowStartupLocation.CenterScreen
+            };
+
+
+            TextBlock textBlock = new TextBlock
+            {
+                Text = "Application Version: Visual Studio 2022 \n" +
+                "Description: An application for student services, providing insight into necessary information essential for more efficient operation to every faculty. \n\n" +
+                "Students who worked on it: Katarina Petrovic, RA17-2021, and Milena-Mima Sekaric, RAnzm-2021.\n" +
+                " Both are third-year students at the Faculty of Technical Sciences in Novi Sad",
+                TextWrapping = TextWrapping.Wrap,
+                Margin = new Thickness(10)
+            };
+
+
+            newWindow.Content = textBlock;
+
+   
+            newWindow.ShowDialog();
+        }
+
+        private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.N && (Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+            {
+                
+                Add_Click(sender, e);
+            }
         }
         public void Update()
         {
@@ -94,6 +132,73 @@ namespace GUI
         }
 
        
+        private void Close_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void St_Click(object sender, RoutedEventArgs e)
+        {
+            TabItem currentTab = tabControl.SelectedItem as TabItem;
+
+            if (!currentTab.Header.Equals("Student"))
+            {
+                TabItem studentTabItem = tabControl.Items.OfType<TabItem>().FirstOrDefault(tab => tab.Header.Equals("Student"));
+
+                if (studentTabItem == null)
+                {
+                    
+                    studentTabItem = new TabItem { Header = "Student" };
+                    
+                    tabControl.Items.Add(studentTabItem);
+                }
+
+               
+                tabControl.SelectedItem = studentTabItem;
+            }
+        }
+
+        private void Pf_Click(object sender, RoutedEventArgs e)
+        {
+            TabItem currentTab = tabControl.SelectedItem as TabItem;
+
+            if (!currentTab.Header.Equals("Professor"))
+            {
+                TabItem studentTabItem = tabControl.Items.OfType<TabItem>().FirstOrDefault(tab => tab.Header.Equals("Professor"));
+
+                if (studentTabItem == null)
+                {
+                    
+                    studentTabItem = new TabItem { Header = "Professor" };
+                    
+                    tabControl.Items.Add(studentTabItem);
+                }
+
+               
+                tabControl.SelectedItem = studentTabItem;
+            }
+        }
+
+        private void Sb_Click(object sender, RoutedEventArgs e)
+        {
+            TabItem currentTab = tabControl.SelectedItem as TabItem;
+
+            if (!currentTab.Header.Equals("Subject"))
+            {
+                TabItem studentTabItem = tabControl.Items.OfType<TabItem>().FirstOrDefault(tab => tab.Header.Equals("Subject"));
+
+                if (studentTabItem == null)
+                {
+                    
+                    studentTabItem = new TabItem { Header = "Subject" };
+            
+                    tabControl.Items.Add(studentTabItem);
+                }
+
+
+                tabControl.SelectedItem = studentTabItem;
+            }
+        }
 
 
         private void Add_Click(object sender, RoutedEventArgs e)
@@ -134,6 +239,20 @@ namespace GUI
                 if (currentTab.Header.Equals("Student"))
                 {
                     StudentDTO studentDTO = dataGridStudent.SelectedItem as StudentDTO;
+<<<<<<< HEAD
+=======
+                    if (studentDTO != null)
+                    {
+                        InsertStudent insertStudent = new InsertStudent();
+                        insertStudent.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("You didnt select student to edit!");
+                    }
+                    
+                   
+>>>>>>> 0a09f44ab61a5564c05d7c6ece02ebb2c31b4b14
 
                     if (studentDTO != null)
                     {
@@ -148,6 +267,7 @@ namespace GUI
 
                 else if (currentTab.Header.Equals("Professor"))
                 {
+<<<<<<< HEAD
                    ProfessorDTO professorDTO = dataGridProfessor.SelectedItem as ProfessorDTO;
 
                     if (professorDTO != null)
@@ -159,11 +279,23 @@ namespace GUI
                     {
                         MessageBox.Show("You didnt select professor to edit!");
                     }
+=======
+                   
+>>>>>>> 0a09f44ab61a5564c05d7c6ece02ebb2c31b4b14
                 }
                 else
                 {
-                   InsertSubject insertSubject = new InsertSubject();   
-                   insertSubject.Show();
+                    SubjectDTO subjectDTO = dataGridSubject.SelectedItem as SubjectDTO;
+                    if (subjectDTO != null)
+                    {
+                        InsertSubject insertSubject = new InsertSubject();
+                        insertSubject.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("You didnt select subject to edit!");
+                    }
+                    
                 }
             }
         }
