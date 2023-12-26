@@ -27,6 +27,17 @@ namespace GUI.DTO
             average = std.Average(std.Grades); //jos nema ocena
 
         }
+        public StudentDTO(StudentDTO std)
+        {
+            id = std.id;
+           // indexDto = new IndexDTO(std.IndexNm);
+            name = std.name;
+            surname = std.surname;
+            studentYear = std.studentYear;
+            status = std.status;
+            average = std.average; //jos nema ocena
+
+        }
 
         private IndexDTO indexDto;
         private AdressDTO adressDto;

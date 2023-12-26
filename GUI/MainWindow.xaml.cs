@@ -133,14 +133,23 @@ namespace GUI
             {
                 if (currentTab.Header.Equals("Student"))
                 {
-                   InsertStudent insertStudent = new InsertStudent();
-                   insertStudent.Show();
+                    StudentDTO studentDTO = dataGridStudent.SelectedItem as StudentDTO;
 
+                    if (studentDTO != null)
+                    {
+                        InsertStudent insertStudent = new InsertStudent(headDao, studentDTO);
+                        insertStudent.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("You didnt select student to edit!");
+                    }
                 }
 
                 else if (currentTab.Header.Equals("Professor"))
                 {
                    ProfessorDTO professorDTO = dataGridProfessor.SelectedItem as ProfessorDTO;
+
                     if (professorDTO != null)
                     {
                         InsertProfessor insertProfessor = new InsertProfessor(headDao, professorDTO);
@@ -177,6 +186,7 @@ namespace GUI
        public void UpdateSubject()
        {
             Subjects.Clear();
+            List<Subject> subjects = headDao.GetAllSubjectsHead();
             foreach (Subject subject in headDao.GetAllSubjectsHead()) Subjects.Add(new SubjectDTO(subject));
        }
 
@@ -203,6 +213,10 @@ namespace GUI
                 }
                 
             }
+           /* else
+            {
+                MessageBox.Show("You didnt select anything to delete!");
+            }*/
             
         }
         

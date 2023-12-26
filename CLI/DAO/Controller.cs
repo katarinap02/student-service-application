@@ -169,7 +169,7 @@ public class HeadDao
 
     public void AddSubjectHead(Subject sb)
     {
-        _subjectsDao.AddSubject(sb);
+        _subjectsDao.AddSubject(sb);            //JA SAM MIMA PEDER 
         observerSub.NotifyObservers();
 
     }

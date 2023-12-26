@@ -21,22 +21,23 @@ namespace GUI.DTO
             name = prof.Name;
             surname = prof.Surname;
             birthdate = prof.Birthdate;
-            phoneNumber = prof.PhoneNumber; 
+            phoneNumber = prof.PhoneNumber;
+            adressDto = new AdressDTO(prof.AdressPr);
             email = prof.Email; 
             title = prof.Title;
             year = prof.YearS;
         }
         public ProfessorDTO(ProfessorDTO prof)
         {
-            Id = prof.id;
-            Name = prof.name;
-            Surname = prof.surname;
-            Birthdate = prof.birthdate;
-            phoneNumber = prof.phoneNumber;
-            adressDto = prof.adressDto;
-            email = prof.email;
-            title = prof.title;
-            year = prof.year;
+            id = prof.Id;
+            name = prof.Name;
+            surname = prof.Surname;
+            birthdate = prof.Birthdate;
+            phoneNumber = prof.Phonenumber;
+            adressDto = prof.AdressDto;
+            email = prof.Email;
+            title = prof.Title;
+            year = prof.Year;
         }
 
 
@@ -268,6 +269,10 @@ namespace GUI.DTO
         {
             return name + " " + surname;
         }
+        public String ProfessorNameSurname
+        {
+            get { return name + " " + surname; }
+        }
 
         public ProfessorDTO(AdressDTO adress)
         {
@@ -276,7 +281,7 @@ namespace GUI.DTO
 
         public Professor ToProfessor()
         {
-            return new Professor(name, surname, birthdate, adressDto.ToAdress(), phoneNumber, email, title, year);
+            return new Professor(id, name, surname, birthdate, adressDto.ToAdress(), phoneNumber, email, title, year);
         }
 
 

@@ -14,6 +14,7 @@ namespace GUI.DTO
     {
         public AdressDTO(Adress adr)
         {
+
             street = adr.Street;
             streetNm = adr.StrNumber;
             city = adr.City;

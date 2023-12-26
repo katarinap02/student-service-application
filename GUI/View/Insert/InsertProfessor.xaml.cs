@@ -1,4 +1,5 @@
 ﻿using CLI.DAO;
+using CLI.Model;
 using GUI.DTO;
 using System;
 using System.Collections.Generic;
@@ -29,9 +30,10 @@ namespace GUI
             InitializeComponent();
 
             headDao = contr;
-           // adressDTO = new AdressDTO();
+
+           
             professorDTO = new ProfessorDTO(prof);
-           // professorDTO= new ProfessorDTO(adressDTO);
+           // 
             DataContext = professorDTO;
            
         }

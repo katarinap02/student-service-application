@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CLI.DAO;
+using GUI.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,13 +21,22 @@ namespace GUI.View.Insert
     /// </summary>
     public partial class InsertStudent : Window
     {
-        public InsertStudent()
+        StudentDTO studentDTO;
+        AdressDTO adressDTO;
+        HeadDao headDao;
+        public InsertStudent(HeadDao contr, StudentDTO std)
         {
             InitializeComponent();
+            headDao = contr;
+            studentDTO = new StudentDTO(std);
+            DataContext= studentDTO;
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            headDao.UpdateStudentHead(studentDTO.ToStudent());
+            Close();
             MessageBox.Show("Student updated!");
         }
 

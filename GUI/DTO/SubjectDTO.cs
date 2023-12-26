@@ -34,7 +34,7 @@ namespace GUI.DTO
             semester = sb.SemesterSb;
             year = sb.SYear;
             espb = sb.NumEspb;
-            professors = sb.ProfessorSb;
+            //professor = new ProfessorDTO(sb.ProfessorSb);
 
     }
     public SubjectDTO(SubjectDTO sb)
@@ -44,7 +44,7 @@ namespace GUI.DTO
             semester = sb.Semester;
             year = sb.Year;
             espb = sb.Espb;
-            professors = sb.Professors;
+            //professor = sb.Professor;
         }
 
 
@@ -148,15 +148,15 @@ namespace GUI.DTO
             }
         }
 
-        private Professor professors;
-       public Professor Professors
+       private ProfessorDTO professor;
+       public ProfessorDTO Professor
        {
-          get { return professors; }
+          get { return professor; }
             set
             {
-                if (value != professors)
+                if (value != professor)
                 {
-                    professors = value;
+                    professor = value;
                     OnPropertyChanged();
                 }
             }
@@ -165,10 +165,7 @@ namespace GUI.DTO
          
         
         
-        public String ProfessorString
-        {
-            get { return professors.Name + " " + professors.Surname; }
-        }
+       
 
 
        private Professor newProfessor = new Professor( 0, "Nebojsa", "Ralevic",  
