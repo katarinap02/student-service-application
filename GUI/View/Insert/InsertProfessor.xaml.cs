@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace GUI.View.Insert
+namespace GUI
 {
     /// <summary>
     /// Interaction logic for InsertProfessor.xaml
@@ -36,7 +36,8 @@ namespace GUI.View.Insert
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           // headDao.
+
+            headDao.UpdateProfessorHead(professorDTO.ToProfessor()); 
             Close();
             MessageBox.Show("Professor updated!");
         }

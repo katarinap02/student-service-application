@@ -10,6 +10,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 
+
 namespace GUI.DTO
 {
     public class StudentDTO : INotifyPropertyChanged
@@ -231,50 +232,70 @@ namespace GUI.DTO
                 }
             }
         }
-        /*
         public string Error => null;
 
-        private Regex _indexRegex = new Regex(@"([a-zA-Z]{2,3})(\\d{2,3})-(\\d{4})\"); //regex za indeks
-        private Regex _adressRegex = new Regex(@"(\d+\s[a-zA-Z\s]+),\s(\d+[a-zA-Z]?),\s([a-zA-Z]+),\s([a-zA-Z]+)"); // regex za adresu
-        string adrReg = @"(\d+\s[a-zA-Z\s]+),\s(\d+[a-zA-Z]?),\s([a-zA-Z]+),\s([a-zA-Z]+)";
         private Regex _NameRegex = new Regex("[A-Za-z0-9-]+ [A-Za-z0-9-]+");
-
-        Match matchAdress = _adressRegex.Match(Adress);
-
-        if(Regex.)
-            {
-                
-            }
-
-    public string this[string columnName]
-    {
-        get
+        private Regex _PhoneNumberRegex = new Regex("^06\\d{8}$");
+        public string this[string columnName]
         {
-            if (columnName == "Name")
+            get
             {
-                if (string.IsNullOrEmpty(Name))
-                    return "Name is required";
+                if (columnName == "Name")
+                {
+                    if (string.IsNullOrEmpty(Name))
+                        return "Name is required";
 
-                Match match = _NameRegex.Match(Name);
-                if (!match.Success)
-                    return "Format not good. Try again.";
+                }
+                else if (columnName == "Surname")
+                {
+                    if (string.IsNullOrEmpty(Surname))
+                        return "Surname is required";
 
+                }
+                else if (columnName == "PhoneNumber")
+                {
+                    if (string.IsNullOrEmpty(PhoneNumber))
+                        return "Phonenumber is required";
+
+                    Match match = _PhoneNumberRegex.Match(PhoneNumber);
+                    if (!match.Success)
+                    return "Phonenumber must start with 06 and have 10 digits";
+
+                }
+                else if (columnName == "Email")
+                {
+                    if (string.IsNullOrEmpty(Email))
+                        return "Email is required";
+
+                }
+                else if (columnName == "StYear")
+                {
+                    if (StYear <= 0)
+                        return "Student Year must be a number";
+                }
+                return null;
             }
-            else if (columnName == "NumberOfWheels")
+        }//cao Kaca : )
+
+        private readonly string[] _validatedProperties = { "Surname", "Name", "PhoneNumber", "Email", "StYear" };
+
+        public bool IsValid
+        {
+            get
             {
-                if (NumberOfWheels <= 0)
-                    return "Number of wheels must be a positive value";
+                foreach (var property in _validatedProperties)
+                {
+                    if (this[property] != null)
+                        return false;
+                }
+
+                return true;
             }
-            return null;
         }
-    }
-
-   
-    */
 
 
 
-        
+
 
         public Student ToStudent()
         { 

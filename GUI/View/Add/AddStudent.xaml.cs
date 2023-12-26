@@ -41,14 +41,24 @@ namespace GUI.View.Add
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           // if (comboBoxFinancing.SelectedItem.Equals("B"))
-                studentDTO.StudentStatus = Student.Status.B;
-           // else
-              //  studentDTO.StudentStatus = Student.Status.S;
+            
+            
+             //if (comboBoxFinancing.SelectedItem.Equals("B"))
+            studentDTO.StudentStatus = Student.Status.B;
+            // else
+            // studentDTO.StudentStatus = Student.Status.S;
+            if (studentDTO.IsValid && adressDTO.IsValid && indexDTO.IsValid)
+            {
+                controller.AddStudentHead(studentDTO.ToStudent());
+                MessageBox.Show("Student added!");
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Student can not be created. Not all fields are valid.");
+            }
 
-            controller.AddStudentHead(studentDTO.ToStudent());
-            Close();
-            MessageBox.Show("Student added!");
+            
 
         }
 

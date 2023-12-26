@@ -130,6 +130,56 @@ namespace GUI.DTO
             return street + " number " + streetNm + " city and country: " + city + " " + country;
         }
 
+        public string Error => null;
+
+        public string this[string columnName]
+        {
+            get
+            {
+                if (columnName == "Street")
+                {
+                    if (string.IsNullOrEmpty(Street))
+                        return "Street is required";
+
+                }
+                else if (columnName == "StreetNm")
+                {
+                    if (string.IsNullOrEmpty(StreetNm))
+                        return "Course is required";
+
+                }
+                else if (columnName == "City")
+                {
+                    if (string.IsNullOrEmpty(City))
+                        return "Course is required";
+
+                }
+                else if (columnName == "Couuntry")
+                {
+                    if (string.IsNullOrEmpty(Country))
+                        return "Course is required";
+
+                }
+                return null;
+            }
+        }
+
+        private readonly string[] _validatedProperties = { "Street", "StreetNm", "City", "Country" };
+
+        public bool IsValid
+        {
+            get
+            {
+                foreach (var property in _validatedProperties)
+                {
+                    if (this[property] != null)
+                        return false;
+                }
+
+                return true;
+            }
+        }
+
 
         public AdressDTO() { }
 

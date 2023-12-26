@@ -21,6 +21,8 @@ namespace CLI.Model
         public string Title { get; set; }
         public int YearS { get; set; } // godine staza
 
+        public string IdNumber { get; set; }
+
         public int bind { get; set; }
 
         public  List<Subject>subjects { get; set; }

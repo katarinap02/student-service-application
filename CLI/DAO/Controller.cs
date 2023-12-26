@@ -62,6 +62,7 @@ public class HeadDao
     public List<Student> GetAllStudentsHead()
     {
         return _studentsDao.GetAllStudents();
+        
     }
 
     public void UpdateStudentHead(Student st)
@@ -176,7 +177,7 @@ public class HeadDao
     public List<Subject> GetAllSubjectsHead()
     {
         return _subjectsDao.GetAllSubjects();
-       // observerSub.NotifyObservers();
+        
     }
 
     public void UpdateSubjectHead(Subject sb)
@@ -356,6 +357,41 @@ public class HeadDao
     public List<Professor> GetAllProfessorsHead()
     {
        return  _professorsDao.GetAllProfessors();
+
+
+
+    }
+    public void UpdateProfessorHead(Professor pr)
+    {
+        Professor? olds = _professorsDao.UpdateProfessor(pr);
+        if (olds == null)
+        {
+            System.Console.WriteLine("Professor not found");
+            return;
+        }
+
+        System.Console.WriteLine("Professor updated");
+        foreach (Chair ch in _chairsDao.GetAllChairs())
+        {
+            if (ch.Professors.Contains(olds)) //moze da student bude u polozenim i nepolozenim predmetima
+            {
+                ch.Professors.Remove(olds); //izbaci ga iz liste(stare vrednosti)
+                ch.Professors.Add(pr);  // ubaci ponovo kad je odradjen upgrade
+
+            }
+
+            
+        }
+
+        foreach (Chair ch in _chairsDao.GetAllChairs()) //promenimo u oceni studenta
+        {
+            if (ch.Chief.Id == olds.Id)
+            {
+                ch.Chief = pr;
+                _chairsDao.UpdateChair(ch); //ovo mora da bi odradio i u fajlu
+            }
+        }
+        observerSub.NotifyObservers();
     }
 
     public Boolean RemoveProfessorHead(int id)
@@ -502,4 +538,5 @@ public class HeadDao
         System.Console.WriteLine("Grade removed");
     }
 
+    
 }

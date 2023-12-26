@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using System.Text.RegularExpressions;
 
 namespace GUI.DTO
 {
@@ -27,10 +28,10 @@ namespace GUI.DTO
         }
         public ProfessorDTO(ProfessorDTO prof)
         {
-            id = prof.id;
-            name = prof.name;
-            surname = prof.surname;
-            birthdate = prof.birthdate;
+            Id = prof.id;
+            Name = prof.name;
+            Surname = prof.surname;
+            Birthdate = prof.birthdate;
             phoneNumber = prof.phoneNumber;
             email = prof.email;
             title = prof.title;
@@ -196,7 +197,71 @@ namespace GUI.DTO
         }
         // public Professor(string name, string surname, DateOnly birthdate, Adress adress, string phonenumber, string email,
         // string title, int styear)
-       
+
+        public string Error => null;
+        private Regex _PhoneNumberRegex = new Regex("^06\\d{8}$");
+        public string this[string columnName]
+        {
+            get
+            {
+                if (columnName == "Name")
+                {
+                    if (string.IsNullOrEmpty(Name))
+                        return "Name is required";
+
+                }
+                else if (columnName == "Surname")
+                {
+                    if (string.IsNullOrEmpty(Surname))
+                        return "Surname is required";
+
+                }
+                else if (columnName == "Title")
+                {
+                    if (string.IsNullOrEmpty(Title))
+                        return "Title is required";
+
+                }
+                else if (columnName == "PhoneNumber")
+                {
+                    if (string.IsNullOrEmpty(Phonenumber))
+                        return "Phonenumber is required";
+
+                    Match match = _PhoneNumberRegex.Match(Phonenumber);
+                    if (!match.Success)
+                        return "Phonenumber must start with 06 and have 10 digits";
+
+                }
+                else if (columnName == "Email")
+                {
+                    if (string.IsNullOrEmpty(Email))
+                        return "Email is required";
+
+                }
+                else if (columnName == "Year")
+                {
+                    if (Year <= 0)
+                        return "Years of service must be a number";
+                }
+                return null;
+            }
+        }//cao Kaca : )
+
+        private readonly string[] _validatedProperties = { "Surname", "Name","Title", "PhoneNumber", "Email", "Year" };
+
+        public bool IsValid
+        {
+            get
+            {
+                foreach (var property in _validatedProperties)
+                {
+                    if (this[property] != null)
+                        return false;
+                }
+
+                return true;
+            }
+        }
 
         public ProfessorDTO(AdressDTO adress)
         {

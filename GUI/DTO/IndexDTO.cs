@@ -3,10 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.Metrics;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Xml.Linq;
 using Index = CLI.Model.Index;
 
 namespace GUI.DTO
@@ -83,6 +87,50 @@ namespace GUI.DTO
                 }
             }
         }
+
+        public string Error => null;
+
+        public string this[string columnName]
+        {
+            get
+            {
+                if (columnName == "Course")
+                {
+                    if (string.IsNullOrEmpty(Course))
+                        return "Course is required";
+
+                }
+                else if (columnName == "Year")
+                {
+                    if (Year <= 0)
+                        return "Year must be a number";
+                }
+                else if (columnName == "Number")
+                {
+                    if (Number <= 0)
+                        return "Year must be a number";
+                }
+                return null;
+            }
+        }
+
+        private readonly string[] _validatedProperties = { "Course", "Year", "Number"};
+
+        public bool IsValid
+        {
+            get
+            {
+                foreach (var property in _validatedProperties)
+                {
+                    if (this[property] != null)
+                        return false;
+                }
+
+                return true;
+            }
+        }
+
+
 
 
 

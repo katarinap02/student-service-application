@@ -21,13 +21,13 @@ namespace GUI
     /// </summary>
     public partial class AddProfessor : Window
     {
-        private HeadDao contoller;
+        private HeadDao controller;
         public ProfessorDTO professorDTO {  get; set; }
         public AdressDTO adressDTO { get; set; }
         public AddProfessor(HeadDao cnt)
         {
             InitializeComponent();
-            contoller = cnt;
+            controller = cnt;
             DataContext = this;
             adressDTO = new AdressDTO();
             professorDTO = new ProfessorDTO(adressDTO);
@@ -35,9 +35,16 @@ namespace GUI
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            contoller.AddProfessorHead(professorDTO.ToProfessor());
-            MessageBox.Show("Professor added!");
-            Close();
+            if (professorDTO.IsValid && adressDTO.IsValid)
+            {
+                controller.AddProfessorHead(professorDTO.ToProfessor());
+                MessageBox.Show("Student added!");
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Student can not be created. Not all fields are valid.");
+            }
         }
 
 
