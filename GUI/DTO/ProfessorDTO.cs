@@ -33,6 +33,7 @@ namespace GUI.DTO
             Surname = prof.surname;
             Birthdate = prof.birthdate;
             phoneNumber = prof.phoneNumber;
+            adressDto = prof.adressDto;
             email = prof.email;
             title = prof.title;
             year = prof.year;
@@ -261,6 +262,11 @@ namespace GUI.DTO
 
                 return true;
             }
+        }
+
+        public String ToString()
+        {
+            return name + " " + surname;
         }
 
         public ProfessorDTO(AdressDTO adress)

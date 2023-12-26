@@ -29,7 +29,9 @@ namespace GUI
             InitializeComponent();
 
             headDao = contr;
+           // adressDTO = new AdressDTO();
             professorDTO = new ProfessorDTO(prof);
+           // professorDTO= new ProfessorDTO(adressDTO);
             DataContext = professorDTO;
            
         }

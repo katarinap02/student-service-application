@@ -121,6 +121,7 @@
                             <DataGridTextColumn Header="ESPB" Width="*" Binding="{Binding Espb}"/>
                             <DataGridTextColumn Header="YEAR OF STUDY" Width="*" Binding="{Binding Year}"/>
                             <DataGridTextColumn Header="SEMESTER" Width="*" Binding="{Binding Semester}"/>
+                            <DataGridTextColumn Header="PROFESSOR" Width="*" Binding="{Binding ProfessorString}"/>
                         </DataGrid.Columns>
                     </DataGrid>
 

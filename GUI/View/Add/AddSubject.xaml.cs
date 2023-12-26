@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,15 +24,21 @@ namespace GUI.View.Add
     {
 
         public DTO.SubjectDTO subjectDTO {  get; set; }
-        public AddSubject()
+        private CLI.DAO.HeadDao controller;
+
+        public AddSubject(CLI.DAO.HeadDao cnt)
         {
-       
-        InitializeComponent();
+            InitializeComponent();
+            DataContext = this;
+            controller = cnt;
+            subjectDTO = new SubjectDTO(controller);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            controller.AddSubjectHead(subjectDTO.ToSubject());
             MessageBox.Show("Subject added!");
+            Close();
         }
 
         private void Button_Exit(object sender, RoutedEventArgs e)

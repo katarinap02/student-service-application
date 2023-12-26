@@ -13,15 +13,24 @@ using static CLI.Model.Subject;
 namespace GUI.DTO
 {
     public class SubjectDTO: INotifyPropertyChanged
-    { 
-     public SubjectDTO(Subject sb)
+    {
+
+        private CLI.DAO.HeadDao controller;
+
+        public SubjectDTO(CLI.DAO.HeadDao cnt)
+        {
+            controller = cnt;
+        }
+
+
+        public SubjectDTO(Subject sb)
     {
             id = sb.Id;
             name = sb.Name;
             semester = sb.SemesterSb;
             year = sb.SYear;
             espb = sb.NumEspb;
-           // professorsId = sb.ProfessorSb;
+            professorsId = sb.ProfessorSb.Id;
 
     }
     public SubjectDTO(SubjectDTO sb)
@@ -31,7 +40,7 @@ namespace GUI.DTO
             semester = sb.Semester;
             year = sb.Year;
             espb = sb.Espb;
-           // professorsId = sb.ProfessorSb;
+            professorsId = sb.ProfessorsId;
         }
 
 
@@ -135,27 +144,46 @@ namespace GUI.DTO
             }
         }
 
+        private int professorsId;
+        public int ProfessorsId
+        {
+            get { return professorsId; }
+            set
+            {
+                if (value != professorsId)
+                {
+                    professorsId = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
         private Professor professors;
         public Professor Professors
         {
             get { return professors; }
             set
             {
-                if (value != professors)
+                if (controller.getProfessorById(professorsId) != professors)
                 {
-                    professors = value;
+                    professors = controller.getProfessorById(professorsId);
                     OnPropertyChanged();
                 }
             }
         }
 
+        
+        public String ProfessorString
+        {
+            get { return professors.Name + " " + professors.Surname; }
+        }
+
+        
 
 
 
-        public SubjectDTO()
-         {
-       
-             }
+
+        
 
     public Subject ToSubject()
     {

@@ -117,7 +117,7 @@ namespace GUI
                 }
                 else
                 {
-                    AddSubject addSubject = new AddSubject();
+                    AddSubject addSubject = new AddSubject(headDao);
                     addSubject.ShowDialog();
                 }    
             }

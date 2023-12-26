@@ -348,6 +348,11 @@ public class HeadDao
 
     }
 
+    public Professor getProfessorById(int id)
+    {
+        return _professorsDao.GetProfessorById(id);
+    }
+
     public void AddProfessorHead(Professor prof)
     {
         _professorsDao.AddProfessor(prof);
