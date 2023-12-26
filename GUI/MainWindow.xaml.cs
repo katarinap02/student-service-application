@@ -53,7 +53,7 @@ namespace GUI
             headDao.observerSub.Subscribe(this);
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
-           // timer.Tick += UpdateDateTime;
+            timer.Tick += UpdateDateTime;
             timer.Start();
 
             dataGridProfessor.ItemsSource = Professors;
@@ -80,10 +80,10 @@ namespace GUI
             Height = desiredH;
         }
 
-        /* private void UpdateDateTime(object sender, EventArgs e)
-         /*{
+         private void UpdateDateTime(object sender, EventArgs e)
+         {
              dateTimeTextBlock.Text = DateTime.Now.ToString("HH:mm yyyy-MM-dd");
-         }*/
+         }
 
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

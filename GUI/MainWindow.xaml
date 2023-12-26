@@ -18,22 +18,36 @@
         <ComponentResourceKey x:Key="TrashIconKey" ResourceId="/Resources/trash.png"/>
         <ComponentResourceKey x:Key="OpenIconKey" ResourceId="/Resources/open.png"/>
     </Window.Resources>
-    <DockPanel LastChildFill="True">
+    <DockPanel LastChildFill="True"  Height="Auto"> 
         <DockPanel DockPanel.Dock="Bottom" Height="20">
-            <StatusBar Height="20" Width="797">
-                <TextBlock x:Name="statusTextBlock" DockPanel.Dock ="Left"  Text="Student services" Width="94"/>
-                <TextBlock x:Name="TextBlockOpen" DockPanel.Dock ="Left"  Text="Open window..." Width="94"/>
+            <StatusBar Height="Auto" Width="797">
+                <TextBlock x:Name="statusTextBlock" DockPanel.Dock="Left" Text="Student services" Width="94"/>
+                <TextBlock x:Name="TextBlockOpen" DockPanel.Dock="Left" Width="94">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Text" Value="Open window..."/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=tabItemStudent, Path=IsSelected}" Value="True">
+                                    <Setter Property="Text" Value="Student"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=tabItemProfessor, Path=IsSelected}" Value="True">
+                                    <Setter Property="Text" Value="Professor"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=tabItemSubject, Path=IsSelected}" Value="True">
+                                    <Setter Property="Text" Value="Subject"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
                 <DockPanel DockPanel.Dock="Right" Height="20" Width="1081">
-                    <TextBlock x:Name="dateTimeTextBlock"  Width="122"/>
+                    <TextBlock x:Name="dateTimeTextBlock" Width="122"/>
                 </DockPanel>
             </StatusBar>
         </DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
                 <MenuItem Header="New" InputGestureText="Ctrl+N">
-                    <MenuItem.Icon>
-                        <Image Source="Resources/save.png" Width="16" Height="16"/>
-                    </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="Save" InputGestureText="Ctrl+S" Icon="{DynamicResource SaveIconKey}"></MenuItem>
                 <MenuItem Header="Open" InputGestureText="Ctrl+O" Icon="{DynamicResource OpenIconKey}">
