@@ -114,8 +114,16 @@
                     </DataGrid>
                 </TabItem>
                 <TabItem x:Name="tabItemSubject" Header="Subject" Background="AntiqueWhite"  Foreground="PaleVioletRed">
-                    
-                    
+                    <DataGrid x:Name="dataGridSubject" IsReadOnly="True" AutoGenerateColumns="False" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Width="*" Binding="{Binding Id}"/>
+                            <DataGridTextColumn Header="NAME" Width="*" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Header="ESPB" Width="*" Binding="{Binding Espb}"/>
+                            <DataGridTextColumn Header="YEAR OF STUDY" Width="*" Binding="{Binding Year}"/>
+                            <DataGridTextColumn Header="SEMESTER" Width="*" Binding="{Binding Semester}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
                 </TabItem>
             </TabControl>
             <!--<ToggleButton x:Name="toggleButton" Content="Students" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="60" Checked="ShowStudentsGrid" Unchecked="ShowStudentsGrid">

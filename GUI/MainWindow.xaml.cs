@@ -35,10 +35,11 @@ namespace GUI
 
         public ObservableCollection<StudentDTO> Students { get; }
         public ObservableCollection<ProfessorDTO> Professors { get; }
-        //public ObservableCollection<SubjectDTO> Subjects { get; set; }
+        public ObservableCollection<SubjectDTO> Subjects { get; set; }
 
         List<ProfessorDTO> professorDtos;
         List<StudentDTO> studentDtos;
+        List<SubjectDTO> subjectDtos;
         private HeadDao headDao;
         private DispatcherTimer timer;
         public MainWindow()
@@ -58,6 +59,7 @@ namespace GUI
 
             dataGridProfessor.ItemsSource = Professors;
             dataGridStudent.ItemsSource = Students;
+            dataGridSubject.ItemsSource = Subjects;
            
             
             Update();

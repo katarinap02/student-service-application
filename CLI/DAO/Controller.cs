@@ -45,6 +45,7 @@ public class HeadDao
         _gradesDao = gradesDao;
         _studentsubjectsDao = studentsubjectDao;
         _chairprofessorDao = chairprofessorDao;
+        observerSub = new ObserverSub();
     }
 
     public void SubscribeStudent(IObserver observer)
@@ -55,7 +56,7 @@ public class HeadDao
     public void AddStudentHead(Student st)
     {
         _studentsDao.AddStudent(st);
-        observerSub.NotifyObservers();
+       // observerSub.NotifyObservers();
     }
 
     public List<Student> GetAllStudentsHead()
@@ -97,7 +98,7 @@ public class HeadDao
                 _gradesDao.UpdateGrade(g); //ovo mora da bi odradio i u fajlu
             }
         }
-        observerSub.NotifyObservers();
+       // observerSub.NotifyObservers();
     }
 
 
@@ -156,14 +157,14 @@ public class HeadDao
 
         System.Console.WriteLine("Student removed");
 
-        observerSub.NotifyObservers();
+       // observerSub.NotifyObservers();
 
     }
 
-   /* public void SubscribeSubject(IObserver observer)
+    public void SubscribeSubject(IObserver observer)
     {
         _subjectsDao.SubjectObserverSub.Subscribe(observer);
-    }*/
+    }
 
     public void AddSubjectHead(Subject sb)
     {
@@ -345,7 +346,7 @@ public class HeadDao
     public void AddProfessorHead(Professor prof)
     {
         _professorsDao.AddProfessor(prof);
-        observerSub.NotifyObservers();
+       // observerSub.NotifyObservers();
     }
 
     public List<Professor> GetAllProfessorsHead()
@@ -416,7 +417,7 @@ public class HeadDao
             }
 
             System.Console.WriteLine("Student removed");
-        observerSub.NotifyObservers();
+       // observerSub.NotifyObservers();
         return true;
         
 
