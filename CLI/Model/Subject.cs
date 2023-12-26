@@ -72,15 +72,17 @@ namespace CLI.Model
             string s;
             s= $"ID: {Id,6} | Name: {Name,10} | Semester: {SemesterSb,15} | Year: {SYear,10} | ESPB: {NumEspb,5} | Proffesors's Name: {ProfessorSb.Name,10}| Professor's Surname: {ProfessorSb.Surname,10} |"+
             $" \nStudents:  |";
-
-            foreach (Student st in StudentsF) //ispisuje samo studente koji nisu polozili predmet
+            if (StudentsF != null)
             {
-                s += st.Name;
-                s += " ";
-                s += st.Surname;
-                s+= "   ";
+                foreach (Student st in StudentsF) //ispisuje samo studente koji nisu polozili predmet
+                {
+                    s += st.Name;
+                    s += " ";
+                    s += st.Surname;
+                    s += "   ";
+                }
+                s += "\n";
             }
-            s += "\n";
             return s;
         }
         public string[] ToCSV()

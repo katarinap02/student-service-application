@@ -49,7 +49,7 @@ namespace GUI
             SetWindowSize();
             Students = new ObservableCollection<StudentDTO>();
             Professors = new ObservableCollection<ProfessorDTO>();
-            //Subjects = new ObservableCollection<SubjectDTO>();
+            Subjects = new ObservableCollection<SubjectDTO>();
             headDao = new HeadDao();
             headDao.observerSub.Subscribe(this);
             timer = new DispatcherTimer();
@@ -69,6 +69,7 @@ namespace GUI
         {
             UpdateProfessor();
             UpdateStudent();
+            UpdateSubject();
         }
 
         private void SetWindowSize()
@@ -173,11 +174,11 @@ namespace GUI
             foreach (Professor professor in headDao.GetAllProfessorsHead()) Professors.Add(new ProfessorDTO(professor));
         }
 
-       // public void UpdateSubject()
-       // {
-        //    Subjects.Clear();
-       //     foreach (Subject subjects in headDao.GetAllSubjectsHead()) Subjects.Add(new SubjectDTO(subject));
-      //  }
+       public void UpdateSubject()
+       {
+            Subjects.Clear();
+            foreach (Subject subject in headDao.GetAllSubjectsHead()) Subjects.Add(new SubjectDTO(subject));
+       }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {

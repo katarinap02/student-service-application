@@ -17,11 +17,16 @@ namespace GUI.View.Add
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
+    /// 
+    
     public partial class AddSubject : Window
     {
+
+        public DTO.SubjectDTO subjectDTO {  get; set; }
         public AddSubject()
         {
-            InitializeComponent();
+       
+        InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

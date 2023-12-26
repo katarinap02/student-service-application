@@ -56,7 +56,7 @@ public class HeadDao
     public void AddStudentHead(Student st)
     {
         _studentsDao.AddStudent(st);
-       // observerSub.NotifyObservers();
+        observerSub.NotifyObservers();
     }
 
     public List<Student> GetAllStudentsHead()
@@ -98,7 +98,7 @@ public class HeadDao
                 _gradesDao.UpdateGrade(g); //ovo mora da bi odradio i u fajlu
             }
         }
-       // observerSub.NotifyObservers();
+        observerSub.NotifyObservers();
     }
 
 
@@ -157,7 +157,7 @@ public class HeadDao
 
         System.Console.WriteLine("Student removed");
 
-       // observerSub.NotifyObservers();
+        observerSub.NotifyObservers();
 
     }
 
@@ -169,11 +169,14 @@ public class HeadDao
     public void AddSubjectHead(Subject sb)
     {
         _subjectsDao.AddSubject(sb);
+        observerSub.NotifyObservers();
+
     }
 
     public List<Subject> GetAllSubjectsHead()
     {
         return _subjectsDao.GetAllSubjects();
+       // observerSub.NotifyObservers();
     }
 
     public void UpdateSubjectHead(Subject sb)
@@ -209,7 +212,8 @@ public class HeadDao
                 _gradesDao.UpdateGrade(g); //ovo mora da bi odradio i u fajlu
             }
         }
-    
+        observerSub.NotifyObservers();
+
     }
     public void RemoveSubjectHead(int id)
     {
@@ -260,7 +264,7 @@ public class HeadDao
             System.Console.WriteLine("Subject not found");
             return;
         }
-
+        observerSub.NotifyObservers();
         System.Console.WriteLine("Subject removed");
 
     }
@@ -337,16 +341,16 @@ public class HeadDao
     //-----------------------------------------PROFESSOR-----------------------------------------//
 
 
-   /* public void SubscribeProfessor(IObserver observer)
+    public void SubscribeProfessor(IObserver observer)
     {
         _professorsDao.ProfessorObserverSub.Subscribe(observer);
 
-    }*/
+    }
 
     public void AddProfessorHead(Professor prof)
     {
         _professorsDao.AddProfessor(prof);
-       // observerSub.NotifyObservers();
+        observerSub.NotifyObservers();
     }
 
     public List<Professor> GetAllProfessorsHead()
@@ -417,7 +421,7 @@ public class HeadDao
             }
 
             System.Console.WriteLine("Student removed");
-       // observerSub.NotifyObservers();
+        observerSub.NotifyObservers();
         return true;
         
 

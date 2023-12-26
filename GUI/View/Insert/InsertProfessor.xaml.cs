@@ -22,6 +22,7 @@ namespace GUI.View.Insert
     public partial class InsertProfessor : Window
     {
         ProfessorDTO professorDTO;
+        AdressDTO adressDTO;
         HeadDao headDao;
         public InsertProfessor(HeadDao contr, ProfessorDTO prof)
         {
@@ -30,6 +31,7 @@ namespace GUI.View.Insert
             headDao = contr;
             professorDTO = new ProfessorDTO(prof);
             DataContext = professorDTO;
+           
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
