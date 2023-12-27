@@ -58,7 +58,7 @@
         <TextBox  x:Name="textBoxAddress2" Grid.Row="3" Grid.Column="2" Text="{Binding Path=adressDTO.Country, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="232,8,10,0"/>
 
 
-        <Label Grid.Row="4" Grid.Column="1" Margin="10,10,108,4" Content="Phonenumber*"/>
+        <Label Grid.Row="4" Grid.Column="1" Margin="1,1,0,0" Content="Phonenumber ( format: 06******** )"/>
         <TextBox x:Name ="textBoxPhone" Grid.Row="4" Grid.Column="2" Text="{Binding Path=studentDTO.PhoneNumber, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ValidationTemplate}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
         <Label Grid.Row="5" Grid.Column="1" Margin="10,10,108,4" Content="Email*"/>

@@ -270,7 +270,7 @@ namespace GUI
                     SubjectDTO subjectDTO = dataGridSubject.SelectedItem as SubjectDTO;
                     if (subjectDTO != null)
                     {
-                        InsertSubject insertSubject = new InsertSubject();
+                        InsertSubject insertSubject = new InsertSubject(headDao, subjectDTO);
                         insertSubject.Show();
                     }
                     else

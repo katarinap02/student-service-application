@@ -37,18 +37,26 @@ namespace GUI.View.Add
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (semesterComboBox.SelectedValue.Equals("Winter"))
+           
+            
+
+            if (subjectDTO.IsValid)
             {
-                subjectDTO.Semester = CLI.Model.Subject.Semester.Winter;
+                controller.AddSubjectHead(subjectDTO.ToSubject());
+                MessageBox.Show("Subject added!");
+                Close();
             }
-            controller.AddSubjectHead(subjectDTO.ToSubject());
-            MessageBox.Show("Subject added!");
-            Close();
+            else
+            {
+                MessageBox.Show("Student can not be created. Not all fields are valid.");
+            }
         }
 
         private void Button_Exit(object sender, RoutedEventArgs e)
         {
+            Close();
             MessageBox.Show("Subject not added!");
+            
         }
     }
 }

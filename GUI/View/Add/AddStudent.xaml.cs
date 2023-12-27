@@ -45,8 +45,7 @@ namespace GUI.View.Add
             
              //if (comboBoxFinancing.SelectedItem.Equals("B"))
             studentDTO.StudentStatus = Student.Status.B;
-            // else
-            // studentDTO.StudentStatus = Student.Status.S;
+            
             if (studentDTO.IsValid && adressDTO.IsValid && indexDTO.IsValid)
             {
                 controller.AddStudentHead(studentDTO.ToStudent());

@@ -89,6 +89,7 @@ namespace GUI.DTO
         }
 
         public string Error => null;
+        private Regex _NumberRegex = new Regex("^[0-9]+$");
 
         public string this[string columnName]
         {
@@ -102,12 +103,14 @@ namespace GUI.DTO
                 }
                 else if (columnName == "Year")
                 {
-                    if (Year <= 0)
+                    Match match = _NumberRegex.Match(Year.ToString());
+                    if (!match.Success)
                         return "Year must be a number";
                 }
                 else if (columnName == "Number")
                 {
-                    if (Number <= 0)
+                    Match match = _NumberRegex.Match(Number.ToString());
+                    if (!match.Success)
                         return "Year must be a number";
                 }
                 return null;

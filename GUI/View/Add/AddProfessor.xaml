@@ -39,7 +39,7 @@
         <Label Grid.Row="2" Grid.Column="1" Margin="10,10,108,4" Content="Birthdate*"/>
         <DatePicker x:Name="datePickerBirthdate"  Grid.Row="2" Grid.Column="2" Text="{Binding Path=professorDTO.Birthdate, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-        <Label Grid.Row="4" Grid.Column="1" Margin="10,10,108,4" Content="Phone Number*"/>
+        <Label Grid.Row="4" Grid.Column="1" Margin="1,1,0,0" Content="Phone number ( format:06******** )"/>
         <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding Path=professorDTO.Phonenumber, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
         <Label Grid.Row="5" Grid.Column="1" Margin="10,10,108,4" Content="Email*"/>

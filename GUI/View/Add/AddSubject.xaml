@@ -30,16 +30,16 @@
 
 
         <Label Grid.Row="0" Grid.Column="1" Margin="10,10,108,4" Content="Name*"/>
-        <TextBox Grid.Row="0" Grid.Column="2" Text="{Binding Path=subjectDTO.Name, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
+        <TextBox Grid.Row="0" Grid.Column="2" Text="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
         <Label Grid.Row="1" Grid.Column="1" Margin="10,10,108,4" Content="ESPB*"/>
-        <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=subjectDTO.Espb, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
+        <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=Espb, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
         <Label Grid.Row="2" Grid.Column="1" Margin="10,10,108,4" Content="Year*"/>
-        <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=subjectDTO.Year, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
+        <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=Year, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
         <Label Grid.Row="3" Grid.Column="1" Margin="10,10,108,4" Content="Semester*"/>
-        <ComboBox x:Name="semesterComboBox" Grid.Row="3" Grid.Column="2" SelectedItem="{Binding Path=subjectDTO.SemesterS, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0">
+        <ComboBox Grid.Row="3" Grid.Column="2" SelectedItem="{Binding Path=Semester, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0">
             <ComboBoxItem Content="Summer" />
             <ComboBoxItem Content="Winter" />
         </ComboBox>

@@ -1,4 +1,4 @@
-0|pjisp|Winter|1|9
+0|PREDMET|Winter|4|10
 1|ANALIZA I|Summer|2022|9
 2|baze podataka 1|Winter|3|8
 3|klfdsj|Summer|3|3

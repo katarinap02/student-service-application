@@ -255,6 +255,7 @@ namespace GUI.DTO
 
         private Regex _NameRegex = new Regex("[A-Za-z0-9-]+ [A-Za-z0-9-]+");
         private Regex _PhoneNumberRegex = new Regex("^06\\d{8}$");
+        private Regex _NumberRegex = new Regex("^[0-9]+$");
         public string this[string columnName]
         {
             get
@@ -289,7 +290,8 @@ namespace GUI.DTO
                 }
                 else if (columnName == "StYear")
                 {
-                    if (StYear <= 0)
+                    Match match = _NumberRegex.Match(StYear.ToString());
+                    if (!match.Success)
                         return "Student Year must be a number";
                 }
                 return null;

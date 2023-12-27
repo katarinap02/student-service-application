@@ -12,6 +12,7 @@ using static CLI.Model.Subject;
 using System.Windows.Media.Animation;
 using CLI.DAO;
 using System.Net;
+using System.Text.RegularExpressions;
 
 namespace GUI.DTO
 {
@@ -141,21 +142,52 @@ namespace GUI.DTO
             }
         }
 
-       private ProfessorDTO professor;
-       public ProfessorDTO Professor
-       {
-          get { return professor; }
-            set
+       
+
+        public string Error => null;
+        private Regex _NumberRegex = new Regex("^[0-9]+$");
+
+        public string this[string columnName]
+        {
+            get
             {
-                if (value != professor)
+                if (columnName == "Name")
                 {
-                    professor = value;
-                    OnPropertyChanged();
+                    if (string.IsNullOrEmpty(Name))
+                        return "Course is required";
+
                 }
+                else if (columnName == "Year")
+                {
+                    Match match = _NumberRegex.Match(Year.ToString());
+                    if (!match.Success)
+                        return "Year must be a number";
+                }
+                else if (columnName == "Espb")
+                {
+                    Match match = _NumberRegex.Match(Espb.ToString());
+                    if (!match.Success)
+                        return "Year must be a number";
+                }
+                return null;
             }
         }
 
+        private readonly string[] _validatedProperties = { "Name", "Year", "Espb" };
 
+        public bool IsValid
+        {
+            get
+            {
+                foreach (var property in _validatedProperties)
+                {
+                    if (this[property] != null)
+                        return false;
+                }
+
+                return true;
+            }
+        }
 
 
 
@@ -170,7 +202,7 @@ namespace GUI.DTO
 
         public Subject ToSubject()
     {
-        return new Subject(name, semester, year, espb);
+        return new Subject(id,name, semester, year, espb);
     }
 
 

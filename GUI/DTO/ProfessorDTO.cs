@@ -202,6 +202,7 @@ namespace GUI.DTO
 
         public string Error => null;
         private Regex _PhoneNumberRegex = new Regex("^06\\d{8}$");
+        private Regex _NumberRegex = new Regex("^[0-9]+$");
         public string this[string columnName]
         {
             get
@@ -242,7 +243,8 @@ namespace GUI.DTO
                 }
                 else if (columnName == "Year")
                 {
-                    if (Year <= 0)
+                    Match match = _NumberRegex.Match(Year.ToString());
+                    if (!match.Success)
                         return "Years of service must be a number";
                 }
                 return null;

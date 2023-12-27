@@ -16,3 +16,4 @@
 19|1|1|01-01-0001|0676788888|1|1|B|0|1|1|1|1|1|1|1
 21|EDITOVANI STUDENT|EditovanoPrezimeeee|01-01-0001|0678989000|1|20|B|0|1|1|1|1|1|10|1
 22|StudentEdit|PrezimeEdit|01-01-0001|0651231231|email@emailedit.com|2020|S|0|AdresaEdit|222222|GradEdit|DrzavaEdit|SIT|20|22020
+23|hhhhhhh|uuuuu|01-01-0001|0656786789|aaaaa|2|B|0|jjj|66|sdcs|sdcs|aaa|33|2020
