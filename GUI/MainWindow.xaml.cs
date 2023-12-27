@@ -82,7 +82,7 @@ namespace GUI
             {
                 Text = "Application Version: Visual Studio 2022 \n" +
                 "Description: An application for student services, providing insight into necessary information essential for more efficient operation to every faculty. \n\n" +
-                "Students who worked on it: Katarina Petrovic, RA17-2021, and Milena-Mima Sekaric, RAnzm-2021.\n" +
+                "Students who worked on it: Katarina Petrovic, RA17-2021, and Milena-Mima Sekaric, RA57-2021.\n" +
                 " Both are third-year students at the Faculty of Technical Sciences in Novi Sad",
                 TextWrapping = TextWrapping.Wrap,
                 Margin = new Thickness(10)

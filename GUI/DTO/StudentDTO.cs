@@ -20,22 +20,30 @@ namespace GUI.DTO
         {
             id = std.Id;
             indexDto = new IndexDTO(std.IndexNm);
+            adressDto = new AdressDTO(std.AdressSt);
             name = std.Name;
             surname = std.Surname;
+            birthdate = std.Birthdate;
             studentYear = std.StYear;
             status = std.StudentStatus;
+            phoneNumber = std.PhoneNumber;
+            email=std.Email;
             average = std.Average(std.Grades); //jos nema ocena
 
         }
         public StudentDTO(StudentDTO std)
         {
-            id = std.id;
-           // indexDto = new IndexDTO(std.IndexNm);
-            name = std.name;
-            surname = std.surname;
-            studentYear = std.studentYear;
-            status = std.status;
-            average = std.average; //jos nema ocena
+            id = std.Id;
+            indexDto = std.IndexDto;
+            adressDto = std.AdressDto;
+            name = std.Name;
+            surname = std.Surname;
+            studentYear = std.StYear;
+            status = std.StudentStatus;
+            birthdate=std.Birthdate;
+            phoneNumber = std.PhoneNumber;
+            email = std.Email;
+            average = std.Average; //jos nema ocena
 
         }
 
@@ -146,9 +154,9 @@ namespace GUI.DTO
             }
         }
 
-        private DateTime birthdate;
+        private DateOnly birthdate;
 
-        public DateTime Birthdate
+        public DateOnly Birthdate
         {
             get { return birthdate; }
             set
@@ -310,7 +318,7 @@ namespace GUI.DTO
 
         public Student ToStudent()
         { 
-            return new Student( name, surname, DateOnly.FromDateTime(birthdate), adressDto.ToAdress(), phoneNumber, email, indexDto.ToIndex(), studentYear, status);
+            return new Student( id, name, surname, birthdate, adressDto.ToAdress(), phoneNumber, email, indexDto.ToIndex(), studentYear, status);
         }
 
 

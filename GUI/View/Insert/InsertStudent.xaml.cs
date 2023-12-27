@@ -22,7 +22,6 @@ namespace GUI.View.Insert
     public partial class InsertStudent : Window
     {
         StudentDTO studentDTO;
-        AdressDTO adressDTO;
         HeadDao headDao;
         public InsertStudent(HeadDao contr, StudentDTO std)
         {
