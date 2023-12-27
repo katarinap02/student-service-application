@@ -18,13 +18,10 @@ namespace GUI.DTO
     public class SubjectDTO: INotifyPropertyChanged
     {
 
-        private CLI.DAO.HeadDao controller;
+        
 
 
-        public SubjectDTO(HeadDao cnt)
-        {
-            controller = cnt;
-        }
+        
 
 
         public SubjectDTO(Subject sb)
@@ -122,14 +119,10 @@ namespace GUI.DTO
             get { return semester; }
             set
             {
-                if (semesterS == "Summer")
+                if (value != semester)
                 {
-                    semester = Subject.Semester.Summer;
-                }
-                else
-                {
-                    // Postavite drugu vrednost enuma, ako je potrebno
-                    semester = Subject.Semester.Winter;
+                    semester = value;
+                    OnPropertyChanged();
                 }
             }
         }
@@ -162,15 +155,16 @@ namespace GUI.DTO
             }
         }
 
-         
-        
-        
-       
 
 
-       private Professor newProfessor = new Professor( 0, "Nebojsa", "Ralevic",  
-        DateOnly.FromDateTime(DateTime.Parse("02-02-2002")), 
-        new Adress("Bulevar Jase Tomica", "4" , "Novi Sad", "Srbija"), "123456", "nralevic@uns.ac.rs", "prof.dr", 13);
+
+
+
+        public SubjectDTO()
+        {
+
+        }
+
 
 
 

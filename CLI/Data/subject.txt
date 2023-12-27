@@ -13,3 +13,18 @@
 12|fssfsffsfssffs|Summer|2|8
 13|ddfdsfdsfdfs|Winter|2021|8
 14||Summer|0|0
+<<<<<<< HEAD
+=======
+15||Summer|0|0
+16||Summer|0|0
+17|11|Summer|1|1
+18|11|Summer|1|1
+19|1|Summer|1|1
+20|1|Summer|1|1
+21|111|Summer|1|1
+22|1|Summer|1|1
+23|1|Summer|1|11
+24|12|Summer|1|12
+25|a|Summer|1|1
+26|1|Summer|1|1
+>>>>>>> 16e7ba23a4d7a9f15fe7f7141b0547e799852329

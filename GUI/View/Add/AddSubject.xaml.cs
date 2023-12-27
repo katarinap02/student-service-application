@@ -31,12 +31,16 @@ namespace GUI.View.Add
             InitializeComponent();
             DataContext = this;
             controller = cnt;
-            subjectDTO = new SubjectDTO(controller);
+            subjectDTO = new SubjectDTO();
         }
 
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (semesterComboBox.SelectedValue.Equals("Winter"))
+            {
+                subjectDTO.Semester = CLI.Model.Subject.Semester.Winter;
+            }
             controller.AddSubjectHead(subjectDTO.ToSubject());
             MessageBox.Show("Subject added!");
             Close();
