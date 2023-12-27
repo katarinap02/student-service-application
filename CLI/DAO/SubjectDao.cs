@@ -76,5 +76,10 @@ namespace CLI.DAO
         {
             return subjects.Find(subjects => subjects.Id == tId);
         }
+
+        public void setProfessor(Professor professor, Subject sb)
+        {
+            sb.ProfessorSb = professor;
+        }
     }
 }

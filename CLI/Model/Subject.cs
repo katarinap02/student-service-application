@@ -24,7 +24,7 @@ namespace CLI.Model
 
         public int bind { get; set; }
 
-        public Professor ProfessorSb { get; set; }
+        public Professor ProfessorSb { get; set; } //predmetni profesor
        
 
 
@@ -40,9 +40,10 @@ namespace CLI.Model
         {
                StudentsP = new List<Student>();
                StudentsF = new List<Student>();
+            ProfessorSb = null; //videcemo za ovo, paziti da ne puca
         }
 
-        public Subject( int id, string name, Semester s, int syear,  int numespb, Professor p)
+        public Subject( int id, string name, Semester s, int syear,  int numespb)
         {
        
             Id = id; 
@@ -50,19 +51,19 @@ namespace CLI.Model
             SemesterSb = s; //postavljen je inicijalno na letnji
             SYear = syear;
             NumEspb = numespb;
-            ProfessorSb = p;
+          //  ProfessorSb = p;
 
 
 
         }
 
-        public Subject(string name, Semester s, int syear,  int numespb, Professor p)
+        public Subject(string name, Semester s, int syear,  int numespb)
         {
             Name = name;
             SemesterSb = s; //postavljen je inicijalno na letnji
             SYear = syear;
             NumEspb = numespb;
-            ProfessorSb = p;
+          //  ProfessorSb = p;
 
 
 
@@ -70,7 +71,7 @@ namespace CLI.Model
         public override string ToString()
         {
             string s;
-            s= $"ID: {Id,6} | Name: {Name,10} | Semester: {SemesterSb,15} | Year: {SYear,10} | ESPB: {NumEspb,5} | Proffesors's Name: {ProfessorSb.Name,10}| Professor's Surname: {ProfessorSb.Surname,10} |"+
+            s= $"ID: {Id,6} | Name: {Name,10} | Semester: {SemesterSb,15} | Year: {SYear,10} | ESPB: {NumEspb,5}  |"+
             $" \nStudents:  |";
             if (StudentsF != null)
             {
@@ -94,7 +95,8 @@ namespace CLI.Model
 
 
         };
-            csvValues.AddRange(ProfessorSb.ToCSV());
+            
+         //   csvValues.AddRange(ProfessorSb.ToCSV());
             string result = string.Join("|", csvValues); ;
             return result.Split('|');
 
@@ -121,8 +123,8 @@ namespace CLI.Model
             SemesterSb = Enum.Parse<Semester>(values[2]);
             SYear = int.Parse(values[3]);
             NumEspb = int.Parse(values[4]);
-            ProfessorSb = new Professor();
-            ProfessorSb.FromCSV1(new string[] { values[5], values[6], values[7] });
+           // ProfessorSb = new Professor();
+          //  ProfessorSb.FromCSV1(new string[] { values[5], values[6], values[7] });
 
         }
         public void FromCSV1(string[] values)

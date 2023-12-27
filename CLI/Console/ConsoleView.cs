@@ -473,10 +473,10 @@ public class ConsoleView
             Idpf = ConsoleViewUtils.SafeInputInt();
         }
 
-        Model.Professor professor = _professorsDao.FindProfessorById(_professorsDao.GetAllProfessors(), Idpf);
+       // Model.Professor professor = _professorsDao.FindProfessorById(_professorsDao.GetAllProfessors(), Idpf);
         
 
-        return new Subject(name, semester, year, espb, professor);
+        return new Subject(name, semester, year, espb);
     }
 
     private void UpdateSubject() //azuriraj profesore

@@ -269,6 +269,12 @@ public class HeadDao
         System.Console.WriteLine("Subject removed");
 
     }
+
+    public void setProfessor(Professor p, Subject sb)
+    {
+        _subjectsDao.setProfessor(p, sb);
+    }
+
     // kada budes brisala za subject ne zaboravi da izbrises iz obe liste kod studenta taj subject
     // kod profesora mora da se obrise i iz liste ali i ako nema sefa cela katedra
 

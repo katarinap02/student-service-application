@@ -66,7 +66,7 @@ namespace GUI
             Update();
          
         }
-        private void About_Click(object sender, RoutedEventArgs e)
+        private void About_Click(object sender, RoutedEventArgs e) //kratak tekst kad se klikne na help + about
         {
             
             Window newWindow = new Window
@@ -300,7 +300,7 @@ namespace GUI
        public void UpdateSubject()
        {
             Subjects.Clear();
-            List<Subject> subjects = headDao.GetAllSubjectsHead();
+          //  List<Subject> subjects = headDao.GetAllSubjectsHead();
             foreach (Subject subject in headDao.GetAllSubjectsHead()) Subjects.Add(new SubjectDTO(subject));
        }
 

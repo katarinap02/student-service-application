@@ -1,14 +1,14 @@
-0|pjisp|Winter|1|9|2|Srdjan|Popov
-1|ANALIZA I|Summer|2022|9|0|Nebojsa|Ralevic
-2|baze podataka 1|Winter|3|8|1|Jana|Jankovic
-3|klfdsj|Summer|3|3|0|Nebojsa|Ralevic
-5|nans|Summer|2023|7|2|Srdjan|Popov
-5|nans|Summer|2023|7|2|Srdjan|Popov
-7|nans|Winter|2023|7|1|Jana|Jankovic
-7|nans|Winter|2023|7|1|Jana|Jankovic
-8|predme|Summer|2023|5|1|Jana|Jankovic
-9|ime|Summer|1212|12|4|Janko|Jankovic
-10|oisisi|Summer|2023|8|1|Jana|Jankovic
-11|a|Summer|1|1|1|Jana|Jankovic
-12|fssfsffsfssffs|Summer|2|8|1|Jana|Jankovic
-13|ddfdsfdsfdfs|Winter|2021|8|1|Jana|Jankovic
+0|pjisp|Winter|1|9|2
+1|ANALIZA I|Summer|2022|9|0
+2|baze podataka 1|Winter|3|8|1
+3|klfdsj|Summer|3|3|0
+5|nans|Summer|2023|7|2
+5|nans|Summer|2023|7|2
+7|nans|Winter|2023|7|1
+7|nans|Winter|2023|7|1
+8|predme|Summer|2023|5|1
+9|ime|Summer|1212|12|4
+10|oisisi|Summer|2023|8|1
+11|a|Summer|1|1|1
+12|fssfsffsfssffs|Summer|2|8|1
+13|ddfdsfdsfdfs|Winter|2021|8|1

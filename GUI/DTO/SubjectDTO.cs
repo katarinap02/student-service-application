@@ -176,7 +176,7 @@ namespace GUI.DTO
 
         public Subject ToSubject()
     {
-        return new Subject(name, semester, year, espb, newProfessor);
+        return new Subject(name, semester, year, espb);
     }
 
 
