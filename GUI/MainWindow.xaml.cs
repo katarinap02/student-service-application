@@ -337,6 +337,16 @@ namespace GUI
                         }
                         break;
                     case "Subject":
+                        SubjectDTO subjectDTO = dataGridSubject.SelectedItem as SubjectDTO;
+                        if (subjectDTO != null)
+                        {
+                            DeleteSubject deleteSubject = new DeleteSubject(headDao, subjectDTO);
+                            deleteSubject.ShowDialog();
+                        }
+                        else
+                        {
+                            MessageBox.Show("You didnt select subject to delete!");
+                        }
                         break;
                 }
                 

@@ -30,6 +30,7 @@ namespace GUI
             _headDao= cnt;
             _studentDTO = studentDto;
 
+
         }
 
 

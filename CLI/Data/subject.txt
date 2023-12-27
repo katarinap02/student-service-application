@@ -10,6 +10,5 @@
 9|ime|Summer|1212|12
 10|oisisi|Summer|2023|8
 11|a|Summer|1|1
-12|fssfsffsfssffs|Summer|2|8
-13|ddfdsfdsfdfs|Winter|2021|8
+13|IMEEE|Winter|2021|1
 14|PREDMET|Summer|4|9
