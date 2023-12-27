@@ -15,3 +15,4 @@
 17|awsdas|asdasd|01-01-0001|0653453451|mima@skl|dr|0|0|qwdasd|3|asd|asda
 18|asdasd|asdasd|01-01-0001|0541231231|mima@dd|drmr|0|0|dwad|3|ddsdsf|czxxc
 19|EDIT 1|EDIT2|11-11-2001|0655675678|EDIT7|EDIT8|96|0|EDIT3|EDIT4|EDIT5|EDIT6
+20|1|1|01-01-0001|0656788989|1|1|1|0|1|1|1|1

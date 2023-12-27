@@ -65,7 +65,7 @@ namespace GUI.View.Add
         private void Button_Exit(object sender, RoutedEventArgs e)
         {
             Close();
-            MessageBox.Show("Student deleted!");
+            MessageBox.Show("Student not added!");
         }
 
 

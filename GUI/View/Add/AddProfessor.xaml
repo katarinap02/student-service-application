@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GUI"
+        xmlns:local="clr-namespace:GUI" xmlns:dto="clr-namespace:GUI.DTO" d:DataContext="{d:DesignInstance Type=dto:ProfessorDTO}"
         mc:Ignorable="d"
            Title="Add Professor" Height="472" Width="598">
     <Grid>
@@ -49,7 +49,7 @@
         <TextBox Grid.Row="6" Grid.Column="2" Text="{Binding Path=professorDTO.Title, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
         <Label Grid.Row="7" Grid.Column="1" Margin="10,10,108,4" Content="Years of service*"/>
-        <TextBox Grid.Row="7" Grid.Column="2" Text="{Binding Path=professorDTO.YearS, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
+        <TextBox Grid.Row="7" Grid.Column="2" Text="{Binding Path=professorDTO.Year, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
         <Label Grid.Row="3" Grid.Column="1" Margin="10,10,108,4" Content="Adress, city and county*"/>
         <TextBox  x:Name ="textBoxAdress1" Grid.Row="3" Grid.Column="2" Text="{Binding Path=adressDTO.Street, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="10,8,235,0"/>
         <TextBox  x:Name ="textBoxAdress4" Grid.Row="3" Grid.Column="2" Text="{Binding Path=adressDTO.StreetNm, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="98,8,185,0"/>

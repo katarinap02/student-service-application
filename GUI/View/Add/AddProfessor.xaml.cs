@@ -38,12 +38,12 @@ namespace GUI
             if (professorDTO.IsValid && adressDTO.IsValid)
             {
                 controller.AddProfessorHead(professorDTO.ToProfessor());
-                MessageBox.Show("Student added!");
+                MessageBox.Show("Professor added!");
                 Close();
             }
             else
             {
-                MessageBox.Show("Student can not be created. Not all fields are valid.");
+                MessageBox.Show("Professor can not be created. Not all fields are valid.");
             }
         }
 
