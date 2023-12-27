@@ -1,4 +1,4 @@
-0|RALEVIC DVA|sdfsdsfs|11-11-2001|0655675678|dddd|dr|3|0|asdasda|3|asdasda|asdasdasda
+0|RALEVIC DVA|sdfsdsfs|11-11-2001|0655675678|dddd|dr|5|0|asdasda|3|asdasda|asdasdasda
 1|Jana|Jankovic|02-02-2002|614210080|aleksa.lala@gmail.com|dr|10|0|Maksima Gorkog|21|Beograd|Srbija
 2|Srdjan|Popov|02-02-2002|214854573|srdjanpopov@uns.ac.rs|prof.dr|14|0|Bulevar Evrope|2|Novi Sad|Srbija
 3|Janko|Jankovic|02-02-2002|21345890|email|dr|10|0|Ime Ulice|43a|Novi Sad|Srbija
@@ -13,6 +13,6 @@
 15|ASDasd|ASDa|01-01-0001|06513313341|SMSM@|DR|0|0|adAD|4|ADSas|ASD
 16|edasd|asdasd|01-01-0001|065123123|mima@mmm|dr|0|0|asdas|33|dfadf|dcdf
 17|awsdas|asdasd|01-01-0001|0653453451|mima@skl|dr|0|0|qwdasd|3|asd|asda
-18|asdasd|asdasd|01-01-0001|0541231231|mima@dd|drmr|0|0|dwad|3|ddsdsf|czxxc
-19|EDIT 1|EDIT2|11-11-2001|0655675678|EDIT7|EDIT8|96|0|EDIT3|EDIT4|EDIT5|EDIT6
+19|EDIT1111|EDIT2|11-11-2001|0655675678|EDIT7|EDIT8|96|0|EDIT3|EDIT4|EDIT5|EDIT6
 20|1|1|01-01-0001|0656788989|1|1|1|0|1|1|1|1
+21|IMEIME|PREZIME|01-01-0001|0672342341|emaill@emailemail|DR|10|0|ADRESA|44|GRAD|DRZAVA

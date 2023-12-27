@@ -314,13 +314,27 @@ namespace GUI
                 {
                     case "Student":
                         StudentDTO studentDTO = dataGridStudent.SelectedItem as StudentDTO;
-                        DeleteStudent deleteStudent = new DeleteStudent(headDao, studentDTO);
-                        deleteStudent.ShowDialog();
+                        if (studentDTO != null)
+                        {
+                            DeleteStudent deleteStudent = new DeleteStudent(headDao, studentDTO);
+                            deleteStudent.ShowDialog();
+                        }
+                        else
+                        {
+                            MessageBox.Show("You didnt select student to delete!");
+                        }
                         break;
                     case "Professor":
                         ProfessorDTO professorDTO = dataGridProfessor.SelectedItem as ProfessorDTO;
-                        DeleteProfessor deleteProfessor = new DeleteProfessor(headDao, professorDTO);
-                        deleteProfessor.ShowDialog();
+                        if (professorDTO != null)
+                        {
+                            DeleteProfessor deleteProfessor = new DeleteProfessor(headDao, professorDTO);
+                            deleteProfessor.ShowDialog();
+                        }
+                        else
+                        {
+                            MessageBox.Show("You didnt select professor to delete!");
+                        }
                         break;
                     case "Subject":
                         break;

@@ -446,10 +446,15 @@ public class HeadDao
             
         foreach (Subject sb in _subjectsDao.GetAllSubjects())
         {
+            if (sb.ProfessorSb != null)
+            {
+
+
                 if (sb.ProfessorSb.Id == pr.Id)
                 {
                     return false;
                 }
+            }
         }
 
 
