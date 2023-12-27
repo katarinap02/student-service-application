@@ -30,23 +30,23 @@
 
 
         <Label Grid.Row="0" Grid.Column="1" Margin="10,10,108,4" Content="Name*"/>
-        <TextBox Grid.Row="0" Grid.Column="2" Text="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
+        <TextBox Grid.Row="0" Grid.Column="2" Text="{Binding Path=subjectDTO.Name, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
         <Label Grid.Row="1" Grid.Column="1" Margin="10,10,108,4" Content="ESPB*"/>
-        <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=Espb, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
+        <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=subjectDTO.Espb, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
         <Label Grid.Row="2" Grid.Column="1" Margin="10,10,108,4" Content="Year*"/>
-        <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=Year, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
+        <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=subjectDTO.Year, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
         <Label Grid.Row="3" Grid.Column="1" Margin="10,10,108,4" Content="Semester*"/>
-        <ComboBox Grid.Row="3" Grid.Column="2" SelectedItem="{Binding Path=Semester, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0">
-            <ComboBoxItem Content="Summer" />
-            <ComboBoxItem Content="Winter" />
+        <ComboBox SelectedValuePath="Tag" Grid.Row="3" Grid.Column="2" SelectedItem="{Binding subjectDTO.SemesterS, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0">
+            <ComboBoxItem Content="Winter" Tag="Winter"></ComboBoxItem>
+            <ComboBoxItem Content="Summer" Tag="Summer"></ComboBoxItem>
         </ComboBox>
 
-       
 
-        
+
+
 
         <Button Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63" Click="Button_Click">Save</Button>
         <Button Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="99,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67" Click="Button_Exit" Content="Exit"></Button>

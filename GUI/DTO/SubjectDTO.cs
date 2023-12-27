@@ -99,7 +99,7 @@ namespace GUI.DTO
         private String semesterS;
         public String SemesterS
         {
-            get { return semester.ToString(); }
+            get { return semesterS; }
             set
             {
                 if (value != semesterS)
@@ -112,6 +112,13 @@ namespace GUI.DTO
 
 
 
+
+
+
+
+
+
+
         private CLI.Model.Subject.Semester semester;
 
 
@@ -120,10 +127,14 @@ namespace GUI.DTO
             get { return semester; }
             set
             {
-                if (value != semester)
+                if (semesterS == "Winter")
                 {
-                    semester = value;
-                    OnPropertyChanged();
+                    semester = Subject.Semester.Winter;
+                    
+                }
+                else
+                {
+                    semester = Subject.Semester.Summer;
                 }
             }
         }
@@ -167,7 +178,7 @@ namespace GUI.DTO
                 {
                     Match match = _NumberRegex.Match(Espb.ToString());
                     if (!match.Success)
-                        return "Year must be a number";
+                        return "Espb must be a number";
                 }
                 return null;
             }

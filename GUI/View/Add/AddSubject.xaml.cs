@@ -1,4 +1,6 @@
-﻿using GUI.DTO;
+﻿using CLI.DAO;
+using CLI.Model;
+using GUI.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,9 +39,9 @@ namespace GUI.View.Add
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           
-            
 
+
+            subjectDTO.Semester = Subject.Semester.Winter;
             if (subjectDTO.IsValid)
             {
                 controller.AddSubjectHead(subjectDTO.ToSubject());
