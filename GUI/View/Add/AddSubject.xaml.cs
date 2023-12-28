@@ -60,5 +60,7 @@ namespace GUI.View.Add
             MessageBox.Show("Subject not added!");
             
         }
+
+
     }
 }

@@ -105,7 +105,7 @@ namespace GUI.DTO
                 if (value != semesterS)
                 {
                     semesterS = value;
-                    OnPropertyChanged();
+                    OnPropertyChanged(nameof(SemesterS));
                 }
             }
         }
@@ -136,6 +136,8 @@ namespace GUI.DTO
                 {
                     semester = Subject.Semester.Summer;
                 }
+                OnPropertyChanged(nameof(SemesterS));
+
             }
         }
 

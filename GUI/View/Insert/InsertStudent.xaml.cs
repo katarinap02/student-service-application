@@ -34,6 +34,7 @@ namespace GUI.View.Insert
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
             headDao.UpdateStudentHead(studentDTO.ToStudent());
             Close();
             MessageBox.Show("Student updated!");

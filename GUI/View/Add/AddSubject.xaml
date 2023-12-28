@@ -39,7 +39,7 @@
         <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=subjectDTO.Year, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
         <Label Grid.Row="3" Grid.Column="1" Margin="10,10,108,4" Content="Semester*"/>
-        <ComboBox SelectedValuePath="Tag" Grid.Row="3" Grid.Column="2" SelectedItem="{Binding subjectDTO.SemesterS, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0">
+        <ComboBox SelectedValuePath="Tag" Grid.Row="3" Grid.Column="2" SelectedItem="{Binding subjectDTO.SemesterS, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0" >
             <ComboBoxItem Content="Winter" Tag="Winter"></ComboBoxItem>
             <ComboBoxItem Content="Summer" Tag="Summer"></ComboBoxItem>
         </ComboBox>
