@@ -65,6 +65,14 @@
                     <Label Grid.Row="7" Grid.Column="1" Margin="10,10,108,4" Content="Year of enrollment*"/>
                     <TextBox Grid.Row="7" Grid.Column="2" Text="{Binding StYear, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
+                    <Label Grid.Row="8" Grid.Column="1" Margin="10,10,108,4" Content="Current Year*"/>
+                    <ComboBox x:Name="BoxYear" Grid.Row="8" Grid.Column="2" Height="32" VerticalAlignment="Top" Margin="61,8,59,0">
+                        <ComboBoxItem x:Name="Item1">I</ComboBoxItem>
+                        <ComboBoxItem x:Name="Item2">II</ComboBoxItem>
+                        <ComboBoxItem x:Name="Item3">III</ComboBoxItem>
+                        <ComboBoxItem x:Name="Item4">IV</ComboBoxItem>
+                    </ComboBox>
+
                     <Label Grid.Row="9" Grid.Column="1" Margin="10,10,108,4" Content="Method of financing*"/>
                     <ComboBox SelectedValuePath="Tag" Grid.Row="9" Grid.Column="2" SelectedValue="{Binding StatusS, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" Height="32" VerticalAlignment="Top" Margin="61,8,59,0">
                         <ComboBoxItem Content="B" Tag="B"></ComboBoxItem>
