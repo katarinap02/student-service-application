@@ -17,4 +17,3 @@
 17|1|Summer|10|1
 18|1|Summer|1|1
 19|1|Summer|1|1
-21|1|Summer|1|1
