@@ -14,5 +14,3 @@
 14|PREDMET|Summer|4|9
 15|1|Summer|1|1
 16|1|Summer|10|1
-17|1|Summer|10|1
-18|1|Summer|1|1
