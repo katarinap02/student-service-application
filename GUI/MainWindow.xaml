@@ -7,18 +7,14 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Background="LightPink"
-        Title="MainWindow" Height="Auto" Width="Auto" >
-    <Window.Resources>
+        Title="Studentska Sluzba" Height="Auto" Width="Auto" >
 
-        <ComponentResourceKey x:Key="NewIconKey" />
-        <ComponentResourceKey x:Key="SaveIconKey" ResourceId="/Resources/save.png"/>
-        <ComponentResourceKey x:Key="InfoIconKey" ResourceId="/Resources/info.png" />
-        <ComponentResourceKey x:Key="EditIconKey" ResourceId="/Resources/edit.png"/>
-        <ComponentResourceKey x:Key="CrossIconKey" ResourceId="/Resources/cross.png"/>
-        <ComponentResourceKey x:Key="TrashIconKey" ResourceId="/Resources/trash.png"/>
-        <ComponentResourceKey x:Key="OpenIconKey" ResourceId="/Resources/open.png"/>
-    </Window.Resources>
-    <DockPanel LastChildFill="True"  Height="Auto"> 
+    <Window.Icon >
+        <BitmapImage UriSource="Resources/catgradd.jpg" DecodePixelWidth="94" DecodePixelHeight="94"/>
+    </Window.Icon>
+    
+    <DockPanel LastChildFill="True"  Height="Auto">
+        
         <DockPanel DockPanel.Dock="Bottom" Height="20">
             <StatusBar Height="Auto" Width="797">
                 <TextBlock x:Name="statusTextBlock" DockPanel.Dock="Left" Text="Student services" Width="94"/>
@@ -48,51 +44,89 @@
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
                 <MenuItem Header="New" InputGestureText="Ctrl+N" Click="Add_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/new.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
                     <MenuItem.InputBindings>
                         <KeyBinding Key="N" Modifiers="Ctrl"/>
                     </MenuItem.InputBindings>
                 </MenuItem>
-                <MenuItem Header="Save" InputGestureText="Ctrl+S" Icon="{DynamicResource SaveIconKey}"></MenuItem>
-                <MenuItem Header="Open" InputGestureText="Ctrl+O" Icon="{DynamicResource OpenIconKey}">
+                <MenuItem Header="Save" InputGestureText="Ctrl+S">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/save.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Open" InputGestureText="Ctrl+O">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/open.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
                     <MenuItem Header="Students" Click="St_Click" ></MenuItem>
                     <MenuItem Header="Subjects" Click="Sb_Click" ></MenuItem>
                     <MenuItem Header="Professors" Click="Pf_Click" ></MenuItem>
                 </MenuItem>
-                <MenuItem Header="Close" InputGestureText="Ctrl+C" Icon="{DynamicResource CrossIconKey}" Click="Close_Click"></MenuItem>
+                <MenuItem Header="Close" InputGestureText="Ctrl+C" Click="Close_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/cross.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="Edit">
-                <MenuItem Header="Edit" InputGestureText="Ctrl+E" Icon="{DynamicResource EditIconKey}" Click="Edit_Click"></MenuItem>
-                <MenuItem Header="Delete" InputGestureText="Ctrl+D" Icon="{DynamicResource TrashIconKey}" Click="Delete_Click"></MenuItem>
+                <MenuItem Header="Edit" InputGestureText="Ctrl+E" Click="Edit_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/edit.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Delete" InputGestureText="Ctrl+D"  Click="Delete_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/trash.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="Help">
-                <MenuItem Header="About"  Icon="{DynamicResource InfoIconKey}" InputGestureText="Ctrl+H" Click="About_Click" ></MenuItem>
+                <MenuItem Header="About"  InputGestureText="Ctrl+H" Click="About_Click" >
+                    <MenuItem.Icon>
+                        <Image Source="Resources/info.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             <Menu/>
-           
+
 
         </Menu>
 
         <Grid Height="20" DockPanel.Dock="Top" >
-            <DockPanel Grid.Column="0" LastChildFill="False" Margin="15,0,0, 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="82*"/>
+                <ColumnDefinition Width="695*"/>
+            </Grid.ColumnDefinitions>
+            <DockPanel Grid.Column="0" LastChildFill="False" Margin="15,0,0,0" Grid.ColumnSpan="3">
                 <!--<Label x:Name="NameLabel" Content="STUDENTSKA SLUZBA" FontWeight="ExtraBold" />-->
-                <Button x:Name="buttonAdd" DockPanel.Dock="Left" Width="30" Click="Add_Click" Background="AntiqueWhite" Foreground="DeepPink" >Add</Button>
-                <Button x:Name="buttonEdit" DockPanel.Dock="Left" Width="30" Click="Edit_Click" Background="AntiqueWhite" Foreground="BlueViolet">Edit</Button>
-                <Button x:Name="buttonDelete" DockPanel.Dock="Left" Width="40" Click="Delete_Click" Background="AntiqueWhite" Foreground="DeepSkyBlue">Delete</Button>
+                <Button x:Name="buttonAdd" DockPanel.Dock="Left" Width="30" Click="Add_Click" Background="Transparent" BorderBrush="Transparent">
+                    <Image Source="Resources/new.png" Width="20" Height="18" />
+                </Button>
+
+                <Button x:Name="buttonEdit" DockPanel.Dock="Left" Width="30" Click="Edit_Click" Background="Transparent" BorderBrush="Transparent">
+                    <Image Source="Resources/edit.png" Width="20" Height="16.5" />
+                </Button>
+                <Button x:Name="buttonDelete" DockPanel.Dock="Left" Width="40" Click="Delete_Click" Background="Transparent" BorderBrush="Transparent">
+                    <Image Source="Resources/trash.png" Width="20" Height="18" />
+                </Button>
             </DockPanel>
-            <DockPanel Grid.Column="1" LastChildFill="False" Margin="0,0,15, 0">
+            <DockPanel LastChildFill="False" Margin="0,0,15,0" Grid.ColumnSpan="3">
                 <Button x:Name="buttonSearch" DockPanel.Dock="Right" Width="40">Search</Button>
                 <TextBox x:Name="textboxSearch" DockPanel.Dock="Right" Width="150"></TextBox>
 
             </DockPanel>
-            
+
         </Grid>
         <Grid Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" Height="{Binding Path=ActualHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}">
             <TabControl x:Name="tabControl">
-                <TabItem x:Name="tabItemStudent" Header="Student" Background="AntiqueWhite" Foreground="LightCoral">
+                <TabItem x:Name="tabItemStudent" Header="Student" Background="AntiqueWhite" Foreground="LightPink">
                     <DataGrid x:Name="dataGridStudent" IsReadOnly="True" AutoGenerateColumns="False" >
                         <DataGrid.Columns >
                             <DataGridTextColumn Header="INDEX" Width="*" Binding="{Binding IndexS}"/>
-                            
+
                             <DataGridTextColumn Header="NAME" Width="*" Binding="{Binding Name}"/>
                             <DataGridTextColumn Header="SURNAME" Width="*" Binding="{Binding Surname}"/>
                             <DataGridTextColumn Header="YEAR" Width="*" Binding="{Binding StYear}"/>
@@ -105,7 +139,7 @@
                     </DataGrid>
 
                 </TabItem>
-                <TabItem x:Name="tabItemProfessor" Header="Professor" Background="AntiqueWhite" Foreground="LightGreen">
+                <TabItem x:Name="tabItemProfessor" Header="Professor" Background="AntiqueWhite" Foreground="DeepSkyBlue">
                     <DataGrid x:Name="dataGridProfessor" IsReadOnly="True" AutoGenerateColumns="False" >
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="NAME" Width="*" Binding="{Binding Name}"/>
@@ -115,7 +149,7 @@
                         </DataGrid.Columns>
                     </DataGrid>
                 </TabItem>
-                <TabItem x:Name="tabItemSubject" Header="Subject" Background="AntiqueWhite"  Foreground="PaleVioletRed">
+                <TabItem x:Name="tabItemSubject" Header="Subject" Background="AntiqueWhite"  Foreground="Violet">
                     <DataGrid x:Name="dataGridSubject" IsReadOnly="True" AutoGenerateColumns="False" >
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="ID" Width="*" Binding="{Binding Id}"/>
@@ -129,33 +163,6 @@
 
                 </TabItem>
             </TabControl>
-            <!--<ToggleButton x:Name="toggleButton" Content="Students" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="60" Checked="ShowStudentsGrid" Unchecked="ShowStudentsGrid">
-                <ToggleButton.Style>
-                    <Style TargetType="ToggleButton">
-                        <Style.Triggers>
-                            <Trigger Property="IsChecked" Value="True">
-                                <Setter Property="Background" Value="#FF97989A"/>
-                                --><!-- Change to your desired color --><!--
-                            </Trigger>
-                            <Trigger Property="IsChecked" Value="False">
-                                <Setter Property="Background" Value="{x:Null}"/>
-                                --><!-- Change to your desired color --><!--
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </ToggleButton.Style>
-            </ToggleButton>
-            <ToggleButton Content="Professors" HorizontalAlignment="Left" Height="25" Margin="60,0,0,0" VerticalAlignment="Top" Width="60" Background="{x:Null}"/>
-            <ToggleButton Content="Subjects" HorizontalAlignment="Left" Height="25" Margin="120,0,0,0" VerticalAlignment="Top" Width="60" Background="{x:Null}"/>
-            <Grid x:Name="studentGrid" HorizontalAlignment="Center" Height="279" VerticalAlignment="Center" Width="736" Visibility="Collapsed" AutomationProperties.ItemType="">
-                <Label Content="Index" HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="114" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderBrush="#FF090303"/>
-                <Label Content="Year of study" HorizontalAlignment="Left" Height="33" Margin="368,0,0,0" VerticalAlignment="Top" Width="168" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
-                <Label Content="Status" HorizontalAlignment="Left" Height="33" Margin="536,0,0,0" VerticalAlignment="Top" Width="96" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
-                <Label Content="Average" HorizontalAlignment="Left" Height="33" Margin="632,0,0,0" VerticalAlignment="Top" Width="104" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
-                <Label Content="Name" HorizontalAlignment="Left" Height="33" Margin="114,0,0,0" VerticalAlignment="Top" Width="119" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
-                <Label Content="Surname" HorizontalAlignment="Left" Height="33" Margin="233,0,0,0" VerticalAlignment="Top" Width="135" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
-
-            </Grid>-->
         </Grid>
 
     </DockPanel>
