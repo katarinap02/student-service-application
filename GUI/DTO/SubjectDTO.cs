@@ -40,7 +40,7 @@ namespace GUI.DTO
     {
             id = sb.Id;
             name = sb.Name;
-            semester = sb.Semester;
+            semesterS= sb.SemesterS;
             year = sb.Year;
             espb = sb.Espb;
             //professor = sb.Professor;
@@ -97,8 +97,8 @@ namespace GUI.DTO
         }
     }
 
-        private String semesterS;
-        public String SemesterS
+        private string semesterS;
+        public string SemesterS
         {
             get { return semesterS; }
             set
@@ -106,7 +106,7 @@ namespace GUI.DTO
                 if (value != semesterS)
                 {
                     semesterS = value;
-                    OnPropertyChanged(nameof(SemesterS));
+                    OnPropertyChanged();
                 }
             }
         }
@@ -128,17 +128,11 @@ namespace GUI.DTO
             get { return semester; }
             set
             {
-                if (semesterS == "Winter")
+                if (value != semester)
                 {
-                    semester = Subject.Semester.Winter;
-                    
+                    semester= value;
+                    OnPropertyChanged();
                 }
-                else
-                {
-                    semester = Subject.Semester.Summer;
-                }
-                //OnPropertyChanged(nameof(SemesterS));
-
             }
         }
 
@@ -184,13 +178,13 @@ namespace GUI.DTO
                     if (!match.Success)
                         return "Espb must be a number";
                 }
-                else if (columnName == "SemesterS")
+               /* else if (columnName == "SemesterS")
                 {
                     Match match = _SeasonRegex.Match(SemesterS);
                     if (!match.Success)
                         return "Semester can be only Winter or Summer";
 
-                }
+                }*/
                 return null;
             }
         }
@@ -225,7 +219,7 @@ namespace GUI.DTO
         public Subject ToSubject()
     {
             
-        return new Subject(id,name, semester, year, espb);
+        return new Subject(id,name, semesterS, year, espb);
     }
 
 

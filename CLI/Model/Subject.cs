@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using CLI.Storage.Serialization;
 using static CLI.Model.Student;
+using static CLI.Model.Subject;
 
 
 namespace CLI.Model
@@ -52,6 +53,24 @@ namespace CLI.Model
             SYear = syear;
             NumEspb = numespb;
           //  ProfessorSb = p;
+
+
+
+        }
+        public Subject(int id, string name, string s, int syear, int numespb)
+        {
+
+            Id = id;
+            Name = name;
+            Semester ss;
+            if(Enum.TryParse<Semester>(s, out ss))
+                SemesterSb= ss;
+
+
+            //postavljen je inicijalno na letnji
+            SYear = syear;
+            NumEspb = numespb;
+            //  ProfessorSb = p;
 
 
 
