@@ -13,6 +13,7 @@ using System.Windows.Media.Animation;
 using CLI.DAO;
 using System.Net;
 using System.Text.RegularExpressions;
+using System.Diagnostics.Eventing.Reader;
 
 namespace GUI.DTO
 {
@@ -136,7 +137,7 @@ namespace GUI.DTO
                 {
                     semester = Subject.Semester.Summer;
                 }
-                OnPropertyChanged(nameof(SemesterS));
+                //OnPropertyChanged(nameof(SemesterS));
 
             }
         }
@@ -188,6 +189,7 @@ namespace GUI.DTO
                     Match match = _SeasonRegex.Match(SemesterS);
                     if (!match.Success)
                         return "Semester can be only Winter or Summer";
+
                 }
                 return null;
             }
@@ -222,7 +224,7 @@ namespace GUI.DTO
 
         public Subject ToSubject()
     {
-
+            
         return new Subject(id,name, semester, year, espb);
     }
 

@@ -53,7 +53,7 @@
 
         <Label Grid.Row="3" Grid.Column="1" Margin="10,10,108,4" Content="Address, city, and county*"/>
         <TextBox  x:Name="textBoxAddress1" Grid.Row="3" Grid.Column="2" Text="{Binding Path=adressDTO.Street, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="10,8,235,0"/>
-        <TextBox  x:Name="textBoxAddress4" Grid.Row="3" Grid.Column="2" Text="{Binding Path=adressDTO.StreetNm, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="98,8,185,0"/>
+        <TextBox  x:Name="textBoxAddress4" Grid.Row="3" Grid.Column="2" Text="{Binding Path=adressDTO.StreetNm, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="87,8,185,0"/>
         <TextBox  x:Name="textBoxAddress3" Grid.Row="3" Grid.Column="2" Text="{Binding Path=adressDTO.City, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="144,8,98,0"/>
         <TextBox  x:Name="textBoxAddress2" Grid.Row="3" Grid.Column="2" Text="{Binding Path=adressDTO.Country, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="232,8,10,0"/>
 

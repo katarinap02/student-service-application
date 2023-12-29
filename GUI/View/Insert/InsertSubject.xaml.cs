@@ -1,4 +1,5 @@
 ﻿using CLI.DAO;
+using CLI.Model;
 using GUI.DTO;
 using System;
 using System.Collections.Generic;
@@ -35,10 +36,12 @@ namespace GUI.View.Insert
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           
+                //subjectDTO.Semester = Subject.Semester.Winter;
                 headDao.UpdateSubjectHead(subjectDTO.ToSubject());
                 Close();
                 MessageBox.Show("Subject updated!");
+
+
             
         }
 

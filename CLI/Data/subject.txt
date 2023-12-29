@@ -12,5 +12,8 @@
 11|a|Summer|1|1
 13|IMEEE|Winter|2021|1
 14|PREDMET|Summer|4|9
-16|1|Summer|10|1
-18|sdcdc|Winter|2020|6
+16|ime|Summer|1|12
+18|ime|Winter|2021|9
+19|aa|Summer|5|5
+20|a|Winter|3|3
+21|11|Summer|1|1

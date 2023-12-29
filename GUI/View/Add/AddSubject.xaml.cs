@@ -40,7 +40,7 @@ namespace GUI.View.Add
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-           // subjectDTO.Semester = Subject.Semester.Winter;
+            subjectDTO.Semester = Subject.Semester.Winter;
             if (subjectDTO.IsValid)
             {
                 controller.AddSubjectHead(subjectDTO.ToSubject());

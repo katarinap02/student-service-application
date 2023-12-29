@@ -34,17 +34,7 @@ namespace GUI.View.Insert
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if(StatusBox.SelectedItem==StatusS)
-            {
-               // studentDTO.StatusS = CLI.Model.Student.Status.S;
-            }
-            else
-            {
-             //   studentDTO.StudentStatus = CLI.Model.Student.Status.B;
-            }
-
-
-           
+            
 
             if (studentDTO.IsValid)
             {

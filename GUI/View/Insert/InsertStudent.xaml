@@ -46,7 +46,7 @@
 
                     <Label Grid.Row="3" Grid.Column="1" Margin="10,10,108,4" Content="Adress, city and county*"/>
                     <TextBox  x:Name ="textBoxAdress1" Grid.Row="3" Grid.Column="2" Text="{Binding AdressDto.Street, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="10,8,235,0"/>
-                    <TextBox  x:Name ="textBoxAdress4" Grid.Row="3" Grid.Column="2" Text="{Binding AdressDto.StreetNm, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="98,8,185,0"/>
+                    <TextBox  x:Name ="textBoxAdress4" Grid.Row="3" Grid.Column="2" Text="{Binding AdressDto.StreetNm, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="77,8,177,0"/>
                     <TextBox  x:Name ="textBoxAdress3" Grid.Row="3" Grid.Column="2" Text="{Binding AdressDto.City, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="144,8,98,0"/>
                     <TextBox  x:Name ="textBoxAdress2" Grid.Row="3" Grid.Column="2" Text="{Binding AdressDto.Country, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="232,8,10,0"/>
 
