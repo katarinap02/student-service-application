@@ -40,7 +40,7 @@ namespace GUI.DTO
     {
             id = sb.Id;
             name = sb.Name;
-            semesterS= sb.SemesterS;
+            semesterS = sb.SemesterS;
             year = sb.Year;
             espb = sb.Espb;
             //professor = sb.Professor;

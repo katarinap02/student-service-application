@@ -15,11 +15,9 @@
 16|ime|Summer|1|12
 18|ime|Winter|2021|9
 19|aa|Summer|5|5
-20|a|Winter|3|3
 21|11|Summer|1|1
-22|ADADVAD|Summer|2|8
-23|DFDFV|Summer|2|5
+22|TEEST|Summer|33|4
+23|22|Summer|2|5
 24|DFSDFS|Summer|2|8
-25|dffdf|Summer|2|5
-26|HHHHHHHHHH|Winter|555555555|555555
 27|hhh|Winter|555|6
+29|444|Summer|4|4

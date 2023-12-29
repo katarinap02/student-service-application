@@ -180,6 +180,11 @@ public class HeadDao
         
     }
 
+    public Subject getSubjectById(int id)
+    {
+        return _subjectsDao.GetSubjectById(id);
+    }
+
     public void UpdateSubjectHead(Subject sb)
     {
         Subject? olds = _subjectsDao.UpdateSubject(sb);
