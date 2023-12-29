@@ -35,9 +35,11 @@ namespace GUI.View.Insert
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            headDao.UpdateSubjectHead(subjectDTO.ToSubject());
-            Close();
-            MessageBox.Show("Subject updated!");
+           
+                headDao.UpdateSubjectHead(subjectDTO.ToSubject());
+                Close();
+                MessageBox.Show("Subject updated!");
+            
         }
 
         private void Button_Exit(object sender, RoutedEventArgs e)

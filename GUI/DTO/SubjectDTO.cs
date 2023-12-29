@@ -159,6 +159,7 @@ namespace GUI.DTO
 
         public string Error => null;
         private Regex _NumberRegex = new Regex("^[0-9]+$");
+        private Regex _SeasonRegex = new Regex("^(Winter|Summer)$");
 
         public string this[string columnName]
         {
@@ -182,11 +183,17 @@ namespace GUI.DTO
                     if (!match.Success)
                         return "Espb must be a number";
                 }
+                else if (columnName == "SemesterS")
+                {
+                    Match match = _SeasonRegex.Match(SemesterS);
+                    if (!match.Success)
+                        return "Semester can be only Winter or Summer";
+                }
                 return null;
             }
         }
 
-        private readonly string[] _validatedProperties = { "Name", "Year", "Espb" };
+        private readonly string[] _validatedProperties = { "Name", "Year", "Espb", "SemesterS" };
 
         public bool IsValid
         {
@@ -215,6 +222,7 @@ namespace GUI.DTO
 
         public Subject ToSubject()
     {
+
         return new Subject(id,name, semester, year, espb);
     }
 

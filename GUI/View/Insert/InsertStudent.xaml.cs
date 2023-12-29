@@ -34,10 +34,28 @@ namespace GUI.View.Insert
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if(StatusBox.SelectedItem==StatusS)
+            {
+               // studentDTO.StatusS = CLI.Model.Student.Status.S;
+            }
+            else
+            {
+             //   studentDTO.StudentStatus = CLI.Model.Student.Status.B;
+            }
 
-            headDao.UpdateStudentHead(studentDTO.ToStudent());
-            Close();
-            MessageBox.Show("Student updated!");
+
+           
+
+            if (studentDTO.IsValid)
+            {
+                    headDao.UpdateStudentHead(studentDTO.ToStudent());
+                    Close();
+                    MessageBox.Show("Student updated!");
+                }
+            else
+            {
+                MessageBox.Show("Student can not be created. Not all fields are valid.");
+            }
         }
 
         private void Button_Exit(object sender, RoutedEventArgs e)

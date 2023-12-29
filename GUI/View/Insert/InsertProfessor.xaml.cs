@@ -41,9 +41,16 @@ namespace GUI
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            headDao.UpdateProfessorHead(professorDTO.ToProfessor()); 
-            Close();
-            MessageBox.Show("Professor updated!");
+            if (professorDTO.IsValid)
+            {
+                headDao.UpdateProfessorHead(professorDTO.ToProfessor());
+                Close();
+                MessageBox.Show("Professor updated!");
+            }
+            else
+            {
+                MessageBox.Show("Professor can not be created. Not all fields are valid.");
+            }
         }
 
         private void Button_Exit(object sender, RoutedEventArgs e)
