@@ -18,7 +18,7 @@ namespace CLI.Model
         public int grade {  get; set; }
         public DateOnly date {  get; set; }
 
-        public int bind { get; set; }
+        
 
 
         public Grade()

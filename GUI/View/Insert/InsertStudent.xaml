@@ -84,9 +84,24 @@
                 </Grid>
 
             </TabItem>
-            <TabItem x:Name="tabItemPassed" Header="Passed" Foreground="Green">
+            <TabItem x:Name="tabItemPassed" Header="Passed" Foreground="Green" Height="20" VerticalAlignment="Bottom">
+                <StackPanel Height="425">
 
+                    <Button Content="Cancel grade" Width="107" HorizontalAlignment="Left" Height="23"/>
+
+                    
+                    <DataGrid x:Name="dataGridPassed" IsReadOnly="True" AutoGenerateColumns="False" Height="393">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="SUBJECT ID" Width="*" Binding="{Binding Name}" />
+                            <DataGridTextColumn Header="SUBJECT NAME" Width="*" Binding="{Binding Surname}" />
+                            <DataGridTextColumn Header="ESPB" Width="*" Binding="{Binding Email}" />
+                            <DataGridTextColumn Header="GRADE" Width="*" Binding="{Binding Grade}" />
+                            <DataGridTextColumn Header="DATE" Width="*" Binding="{Binding Date}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
             </TabItem>
+
             <TabItem x:Name="tabItemFailed" Header="Failed"  Foreground="Red">
 
 

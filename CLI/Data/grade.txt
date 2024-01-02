@@ -1,2 +1,3 @@
-2|1|Milan|Milenic|1|analiza 1|8|02.02.2002
-4|1|Milan|Milenic|0|PREDMET|9|02.02.2002
+2|1|Milan|Milenic|1|analiza 1|8|2/2/2002
+4|1|Milan|Milenic|0|PREDMET|9|2/2/2002
+5|27|sssss|qqqqqqqqqqqsssssss|1|ANALIZA I|8|11/11/1111

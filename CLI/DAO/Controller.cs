@@ -56,12 +56,31 @@ public class HeadDao
     public void AddStudentHead(Student st)
     {
         _studentsDao.AddStudent(st);
+
+        
+
+
         observerSub.NotifyObservers();
     }
 
     public List<Student> GetAllStudentsHead()
     {
         return _studentsDao.GetAllStudents();
+        
+    }
+
+    public List<Grade> getGradesForStudent(Student st) //videcemo da li treba
+    {
+        List<Grade> grades = new List<Grade>();
+        foreach(Grade g in _gradesDao.GetAllGrades())
+            {
+            if(g.student.Id == st.Id)
+            {
+                grades.Add(g);
+            }
+        }
+
+        return grades;
         
     }
 
@@ -508,6 +527,9 @@ public class HeadDao
             st.SubjectsP.Add(sb);
         }
         _gradesDao.AddGrade(gd);
+
+
+        
     }
 
     public void UpdateGreadHead(Grade g)

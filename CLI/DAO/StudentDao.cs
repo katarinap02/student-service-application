@@ -21,7 +21,7 @@ public class StudentDao
     {
         _storage = new Storage<Student>("student.txt");
         students = _storage.Load();
-        StudentObserverSub = new ObserverSub(); 
+        StudentObserverSub = new ObserverSub();
     }
 
     private int GenerateId()
@@ -53,7 +53,7 @@ public class StudentDao
         oldst.IndexNm = st.IndexNm;
         oldst.StYear = st.StYear;
 
-        
+
         _storage.Save(students);
         StudentObserverSub.NotifyObservers();
         return oldst;
@@ -81,6 +81,7 @@ public class StudentDao
     {
         return students;
     }
+
 
     public Model.Student FindStudentById(List<Student> students, int targetId)
     {
