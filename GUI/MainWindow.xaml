@@ -115,7 +115,7 @@
             </DockPanel>
             <DockPanel LastChildFill="False" Margin="0,0,15,0" Grid.ColumnSpan="3">
                 <Button x:Name="buttonSearch" DockPanel.Dock="Right" Width="40">Search</Button>
-                <TextBox x:Name="textboxSearch" DockPanel.Dock="Right" Width="150"></TextBox>
+                <TextBox x:Name="textboxSearch" DockPanel.Dock="Right" Width="150" TextChanged="txtSearch_TextChanged"></TextBox>
 
             </DockPanel>
 

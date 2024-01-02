@@ -357,7 +357,14 @@ namespace GUI
             }*/
             
         }
-        
-       
+
+        private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string searchTerm = textboxSearch.Text.ToLower();
+
+            var filtered = Students.Where(student => student.Name.ToLower().Contains(searchTerm)).ToList();
+
+            dataGridStudent.ItemsSource = filtered;
+        }
     }
 }

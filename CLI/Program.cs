@@ -23,17 +23,21 @@ class Program
       
         foreach (StudentSubject ss in studentsubject.GetAllStudentSubjects())
         {
-            Student s = students.GetStudentById(ss.StudentId);
-            Subject p = subjects.GetSubjectById(ss.SubjectId);
-            if(!s.SubjectsP.Contains(p)) //ako ne sadrzi druga lista vec predmet ovaj deo ne radi
-            {
-                s.Subjects.Add(p);
+            Student s= new Student();
+            Subject p = new Subject();
+             s = students.GetStudentById(ss.StudentId);
+             p = subjects.GetSubjectById(ss.SubjectId);
+            if(s!=null && p!=null)
+                {
+                if (!s.SubjectsP.Contains(p)) //ako ne sadrzi druga lista vec predmet ovaj deo ne radi
+                {
+                    s.Subjects.Add(p);
+                }
+                if (!p.StudentsP.Contains(s)) // dodala jer ako postoji u listi polozenih predmeta ne treba ga ponovo dodavati
+                {
+                    p.StudentsF.Add(s);
+                }
             }
-            if(!p.StudentsP.Contains(s)) // dodala jer ako postoji u listi polozenih predmeta ne treba ga ponovo dodavati
-            {
-                p.StudentsF.Add(s);
-            }
-            
         }
 
         foreach (Grade g in grades.GetAllGrades())
