@@ -5,7 +5,6 @@
 5|nans|Summer|2023|7
 5|nans|Summer|2023|7
 7|nans|Winter|2023|7
-7|nans|Winter|2023|7
 8|predme|Summer|2023|5
 9|ime|Summer|1212|12
 10|oisisi|Summer|2023|8
@@ -17,7 +16,4 @@
 19|aa|Summer|5|5
 21|11|Summer|1|1
 22|TEEST|Summer|33|4
-23|22|Summer|2|5
 24|DFSDFS|Summer|2|8
-27|hhh|Winter|555|6
-29|444|Summer|4|4

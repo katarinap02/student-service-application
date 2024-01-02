@@ -12,7 +12,6 @@
 14|wdasd|ASD|01-01-0001|0641231231|mimima@gmail.cmo|dr|0|0|asd|4|asdas|werwe
 15|ASDasd|ASDa|01-01-0001|06513313341|SMSM@|DR|0|0|adAD|4|ADSas|ASD
 16|edasd|asdasd|01-01-0001|065123123|mima@mmm|dr|0|0|asdas|33|dfadf|dcdf
-17|awsdas|asdasd|01-01-0001|0653453451|mima@skl|dr|0|0|qwdasd|3|asd|asda
 19|EDIT1111|EDIT2|11-11-2001|0655675678|EDIT7|EDIT8|96|0|EDIT3|EDIT4|EDIT5|EDIT6
 20|dsdfsdf|sdfsdf|01-01-0001|0654564567|sdfs|sdf|1|0|sdf|df|sdf|sdfsd
 21|IMEIME|PREZIME|01-01-0001|0672342341|emaill@emailemail|DR|10|0|ADRESA|44|GRAD|DRZAVA
