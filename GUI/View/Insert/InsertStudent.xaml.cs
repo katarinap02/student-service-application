@@ -25,7 +25,7 @@ namespace GUI.View.Insert
     {
         StudentDTO studentDTO;
         HeadDao headDao;
-        GradeDTO gradeDTO;
+       // GradeDTO gradeDTO;
         public static RoutedCommand NewCommand = new RoutedCommand();
         public ObservableCollection<GradeDTO> Grades { get; set; }
         public InsertStudent(HeadDao contr, StudentDTO std)
@@ -69,5 +69,27 @@ namespace GUI.View.Insert
         {
             MessageBox.Show("Student is not updated!");
         }
-    }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+
+
+            GradeDTO gradeDTO = dataGridPassed.SelectedItem as GradeDTO;
+            if (gradeDTO != null)
+            {
+                 CancelGrade cancelGrade = new CancelGrade(headDao, gradeDTO);
+                  cancelGrade.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You didnt select grade to cancel!");
+            }
+
+
+
+
+
+
+        }
+        }
 }

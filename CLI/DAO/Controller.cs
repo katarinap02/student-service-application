@@ -63,6 +63,8 @@ public class HeadDao
         observerSub.NotifyObservers();
     }
 
+   
+
     public List<Student> GetAllStudentsHead()
     {
         return _studentsDao.GetAllStudents();
@@ -554,7 +556,8 @@ public class HeadDao
         }
     }
 
-    public void RemoveGradeHead(int id)
+
+    public void RemoveGradeHead(int id) //treba dodati da vraca u listu nepolozenih predmeta
     {
         Grade? gr = _gradesDao.GetGradeById(id);
         if (gr is null)

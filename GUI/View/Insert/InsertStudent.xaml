@@ -87,7 +87,7 @@
             <TabItem x:Name="tabItemPassed" Header="Passed" Foreground="Green" Height="20" VerticalAlignment="Bottom">
                 <StackPanel Height="425" Orientation="Vertical">
 
-                    <Button Content="Cancel grade" Width="107" HorizontalAlignment="Left" Height="23"/>
+                    <Button Content="Cancel grade" Click="Cancel_Click" Width="107" HorizontalAlignment="Left" Height="23"/>
 
                     <DataGrid x:Name="dataGridPassed" IsReadOnly="True" AutoGenerateColumns="False" Height="347">
                         <DataGrid.Columns>
