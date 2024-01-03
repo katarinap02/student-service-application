@@ -20,12 +20,6 @@ namespace GUI.DTO
     public class SubjectDTO: INotifyPropertyChanged
     {
 
-        
-
-
-        
-
-
         public SubjectDTO(Subject sb)
     {
             id = sb.Id;

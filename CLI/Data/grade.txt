@@ -1,2 +1,1 @@
-2|1|Milan|Milenic|1|analiza 1|8|02.02.2002
 3|1|Milan|Milenic|2|baze podataka 1|6|03.01.2024

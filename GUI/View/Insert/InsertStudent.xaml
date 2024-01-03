@@ -125,11 +125,13 @@
                         <Button Content="Remove" Click="Remove_Click" Width="106" Background="LightPink" Height="23"/>
                         <Button Content="Pass" Click="Pass_Click" Width="106" Background="Aqua" Height="23"/>
                     </DockPanel>
-                    <DataGrid x:Name="dataGridFiled" IsReadOnly="True" AutoGenerateColumns="False" Height="347">
+                    <DataGrid x:Name="dataGridFiled" IsReadOnly="True" AutoGenerateColumns="False" Height="404">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="SUBJECT ID" Width="*" Binding="{Binding IdSubject}" />
-                            <DataGridTextColumn Header="SUBJECT NAME" Width="*" Binding="{Binding SubName}" />
+                            <DataGridTextColumn Header="SUBJECT ID" Width="*" Binding="{Binding Id}" />
+                            <DataGridTextColumn Header="SUBJECT NAME" Width="*" Binding="{Binding Name}" />
                             <DataGridTextColumn Header="ESPB" Width="*" Binding="{Binding Espb}" />
+                            <DataGridTextColumn Header="SEMESTER" Width="*" Binding="{Binding Semester}" />
+                            <DataGridTextColumn Header="YEAR OF STUDY" Width="*" Binding="{Binding Year}" />
                             
                         </DataGrid.Columns>
                     </DataGrid>

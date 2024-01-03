@@ -86,6 +86,47 @@ public class HeadDao
         
     }
 
+    public List<Subject> getFailedSubjects(Student student) // id studenta za kog gledamo nepolozene predmete
+    {
+        List<Subject> failedSubjects = new List<Subject>();
+
+        if (student != null)
+        {
+            List<StudentSubject> studentSubjects = _studentsubjectsDao.GetAllStudentSubjects();
+            foreach (Subject subject in _subjectsDao.GetAllSubjects()) //prvo ubacimo sve predmete iz liste
+            {
+                foreach(StudentSubject sb in studentSubjects) {
+
+                    if (sb != null && sb.SubjectId == subject.Id && sb.StudentId == student.Id)
+                        failedSubjects.Add(subject);
+                }
+               
+                
+            }
+
+            List<Subject> list2 = new List<Subject>();
+
+            foreach (Subject subject in failedSubjects)
+            {
+                list2.Add(subject); //treba nam kopija liste
+            }
+
+
+
+            foreach (Grade grade in getGradesForStudent(student)) //zatim izbacimo one koji imaju trenutno ocenu
+           {
+               foreach(Subject sub in list2) 
+                {
+                    if(sub.Id == grade.subject.Id)
+                        failedSubjects.Remove(sub);
+                }
+            }
+        }
+
+
+        return failedSubjects;
+    }
+
     public void UpdateStudentHead(Student st)
     {
         Student? olds = _studentsDao.UpdateStudent(st);

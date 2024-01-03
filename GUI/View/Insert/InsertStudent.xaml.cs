@@ -29,6 +29,7 @@ namespace GUI.View.Insert
        // GradeDTO gradeDTO;
         public static RoutedCommand NewCommand = new RoutedCommand();
         public ObservableCollection<GradeDTO> Grades { get; set; }
+        public ObservableCollection<SubjectDTO> Subjects { get; set; }
         public InsertStudent(HeadDao contr, StudentDTO std)
         {
             InitializeComponent();
@@ -38,12 +39,15 @@ namespace GUI.View.Insert
             studentDTO = new StudentDTO(std);
             DataContext= studentDTO;
             Grades = new ObservableCollection<GradeDTO>();
+            Subjects = new ObservableCollection<SubjectDTO>();
             //headDao.observerSub.Subscribe(this);
 
             dataGridPassed.ItemsSource = Grades;
+            dataGridFiled.ItemsSource = Subjects;
 
 
             UpdateGrade(std.ToStudent());
+            UpdateSubject(std.ToStudent());
             
 
         }
@@ -52,6 +56,13 @@ namespace GUI.View.Insert
         {
             Grades.Clear();
             foreach (Grade grade in headDao.getGradesForStudent(std)) Grades.Add(new GradeDTO(grade, grade.subject));
+        }
+
+        public void UpdateSubject(Student std)
+        {
+            Subjects.Clear();
+           // foreach (Subject subject in headDao.GetAllSubjectsHead()) Subjects.Add(new SubjectDTO(subject));
+            foreach (Subject subject in headDao.getFailedSubjects(std)) Subjects.Add(new SubjectDTO(subject));
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

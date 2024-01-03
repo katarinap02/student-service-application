@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GUI.DTO
 {
-    public class StudentGradeDTO : INotifyPropertyChanged
+    public class FailedSubjectDTO : INotifyPropertyChanged
     {
 
 
