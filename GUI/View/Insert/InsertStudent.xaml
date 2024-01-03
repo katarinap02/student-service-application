@@ -7,7 +7,11 @@
         mc:Ignorable="d"
         Title="Insert Student" Height="514" Width="600">
     <Grid Margin="0,32,0,-6">
-        <TabControl x:Name="tabControl" Margin="0,-18,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="71*"/>
+            <ColumnDefinition Width="529*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl x:Name="tabControl" Margin="0,-18,0,0" Grid.ColumnSpan="2">
             <TabItem x:Name="tabItemInfo" Header="Info" Foreground="Blue">
                 <Grid>
                     <Grid.Background>
@@ -99,7 +103,7 @@
                         </DataGrid.Columns>
                     </DataGrid>
 
-                   
+
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Average Grade" Height="26" Width="88"/>
                         <TextBox Text="{Binding StYear, UpdateSourceTrigger=PropertyChanged}" Height="19" Width="83" Margin="10,8,0,0"/>

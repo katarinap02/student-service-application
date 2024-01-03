@@ -23,6 +23,8 @@ namespace GUI.DTO
             idSubject = sb.Id;
             espb = sb.NumEspb;
             subName = sb.Name;
+            subYear = sb.SYear;
+            subSemester = sb.SemesterSb.ToString();
 
             stId = gr.student.Id;
             sumEspb = sumEspb + sb.NumEspb;
@@ -37,13 +39,48 @@ namespace GUI.DTO
             grade = gr.Grade;
 
             idSubject = gr.IdSubject;
-             espb = gr.Espb;
-             subName = gr.SubName;
+            espb = gr.Espb;
+            subName = gr.SubName;
+            subSemester = gr.SubSemester;
+            subYear = gr.subYear;
 
             stId = gr.StId;
             sumEspb = gr.SumEspb;
 
         }
+
+        private int subYear;
+        public int SubYear
+        {
+            get { return subYear; }
+            set
+            {
+                if (value != subYear)
+                {
+                    subYear = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        private string subSemester;
+        public string SubSemester
+        {
+            get { return subSemester; }
+            set
+            {
+                if (value != subSemester)
+                {
+                   subSemester = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+
+
+
+
 
         private int sumEspb = 0;
         public int SumEspb

@@ -512,6 +512,15 @@ public class HeadDao
         _gradesDao.GradeObserverSub.Subscribe(observer);
     }
 
+    public List<Grade> GetAllGradesHead()
+    {
+        return _gradesDao.GetAllGrades();
+
+
+
+    }
+
+
 
     public void AddGradeHead(Grade gd) //ne radi kako treba..., ali ne znam da li ce nam trebati
     {
