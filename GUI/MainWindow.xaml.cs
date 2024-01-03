@@ -158,7 +158,7 @@ namespace GUI
             }
         }
 
-        private void Pf_Click(object sender, RoutedEventArgs e)
+        private void Pf_Click(object sender, RoutedEventArgs e) //sluzi da bi radilo add i na vise nacina
         {
             TabItem currentTab = tabControl.SelectedItem as TabItem;
 

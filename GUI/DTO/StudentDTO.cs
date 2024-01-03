@@ -21,7 +21,6 @@ namespace GUI.DTO
             id = std.Id;
             indexDto = new IndexDTO(std.IndexNm);
             adressDto = new AdressDTO(std.AdressSt);
-            gradeDto = std.Grades;
             name = std.Name;
             surname = std.Surname;
             birthdate = std.Birthdate;
@@ -30,6 +29,8 @@ namespace GUI.DTO
             phoneNumber = std.PhoneNumber;
             email=std.Email;
             subjectList = std.Subjects; //ovo su nepolozeni predmeti
+
+
             average = std.Average(std.Grades); //jos nema ocena
 
         }
@@ -54,20 +55,7 @@ namespace GUI.DTO
         private AdressDTO adressDto;
 
 
-        private List<Grade> gradeDto = new List<Grade>();
-
-        public List<Grade> GradeDto
-        {
-            get { return gradeDto; }
-            set
-            {
-                if (!EqualityComparer<List<Grade>>.Default.Equals(value, gradeDto))
-                {
-                    gradeDto = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
+        
 
         public StudentDTO(AdressDTO adr, IndexDTO ind)
         {
