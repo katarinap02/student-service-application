@@ -96,5 +96,20 @@ namespace GUI.View.Insert
 
 
         }
+
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+
         }
+
+        private void Remove_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Pass_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+    }
 }

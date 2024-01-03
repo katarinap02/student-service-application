@@ -88,7 +88,7 @@
                 </Grid>
 
             </TabItem>
-            <TabItem x:Name="tabItemPassed" Header="Passed" Foreground="Green" Height="20" VerticalAlignment="Bottom">
+            <TabItem x:Name="tabItemPassed" Header="Passed" Foreground="LimeGreen" Height="20" VerticalAlignment="Bottom">
                 <StackPanel Height="425" Orientation="Vertical">
 
                     <Button Content="Cancel grade" Click="Cancel_Click" Width="107" HorizontalAlignment="Left" Height="23"/>
@@ -118,18 +118,19 @@
             </TabItem>
 
 
-            <TabItem x:Name="tabItemFailed" Header="Failed"  Foreground="Red">
+            <TabItem x:Name="tabItemFailed" Header="Failed"  Foreground="HotPink">
                 <StackPanel Height="425" Orientation="Vertical">
-
-                    <Button Content="Cancel grade" Click="Cancel_Click" Width="107" HorizontalAlignment="Left" Height="23"/>
-
+                    <DockPanel LastChildFill="False">
+                        <Button Content="Adding" Click="Add_Click" Width="106" Background="Aqua" Height="23"/>
+                        <Button Content="Remove" Click="Remove_Click" Width="106" Background="LightPink" Height="23"/>
+                        <Button Content="Pass" Click="Pass_Click" Width="106" Background="Aqua" Height="23"/>
+                    </DockPanel>
                     <DataGrid x:Name="dataGridFiled" IsReadOnly="True" AutoGenerateColumns="False" Height="347">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="SUBJECT ID" Width="*" Binding="{Binding IdSubject}" />
                             <DataGridTextColumn Header="SUBJECT NAME" Width="*" Binding="{Binding SubName}" />
                             <DataGridTextColumn Header="ESPB" Width="*" Binding="{Binding Espb}" />
-                            <DataGridTextColumn Header="GRADE" Width="*" Binding="{Binding Grade}" />
-                            <DataGridTextColumn Header="DATE" Width="*" Binding="{Binding Date}" />
+                            
                         </DataGrid.Columns>
                     </DataGrid>
 
