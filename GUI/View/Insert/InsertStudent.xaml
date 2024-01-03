@@ -119,7 +119,32 @@
 
 
             <TabItem x:Name="tabItemFailed" Header="Failed"  Foreground="Red">
+                <StackPanel Height="425" Orientation="Vertical">
 
+                    <Button Content="Cancel grade" Click="Cancel_Click" Width="107" HorizontalAlignment="Left" Height="23"/>
+
+                    <DataGrid x:Name="dataGridFiled" IsReadOnly="True" AutoGenerateColumns="False" Height="347">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="SUBJECT ID" Width="*" Binding="{Binding IdSubject}" />
+                            <DataGridTextColumn Header="SUBJECT NAME" Width="*" Binding="{Binding SubName}" />
+                            <DataGridTextColumn Header="ESPB" Width="*" Binding="{Binding Espb}" />
+                            <DataGridTextColumn Header="GRADE" Width="*" Binding="{Binding Grade}" />
+                            <DataGridTextColumn Header="DATE" Width="*" Binding="{Binding Date}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Average Grade" Height="26" Width="88"/>
+                        <TextBox Text="{Binding StYear, UpdateSourceTrigger=PropertyChanged}" Height="19" Width="83" Margin="10,8,0,0"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Count Espb" Height="26" Width="88"/>
+                        <TextBox Text="{Binding SumEspb, UpdateSourceTrigger=PropertyChanged}" Height="17" Width="83" Margin="10,8,0,0"/>
+                    </StackPanel>
+
+                </StackPanel>
 
             </TabItem>
         </TabControl>
