@@ -25,21 +25,26 @@ namespace GUI.View.Insert
     {
         StudentDTO studentDTO;
         HeadDao headDao;
+        
        // GradeDTO gradeDTO;
         public static RoutedCommand NewCommand = new RoutedCommand();
         public ObservableCollection<GradeDTO> Grades { get; set; }
         public InsertStudent(HeadDao contr, StudentDTO std)
         {
             InitializeComponent();
+          //  CommandBindings.Add(new CommandBinding(NewCommand, Add_Click));
             headDao = contr;
+            
             studentDTO = new StudentDTO(std);
             DataContext= studentDTO;
             Grades = new ObservableCollection<GradeDTO>();
+            //headDao.observerSub.Subscribe(this);
 
             dataGridPassed.ItemsSource = Grades;
 
 
             UpdateGrade(std.ToStudent());
+            
 
         }
 
@@ -74,7 +79,7 @@ namespace GUI.View.Insert
         {
 
 
-            GradeDTO gradeDTO = dataGridPassed.SelectedItem as GradeDTO;
+            GradeDTO gradeDTO = dataGridPassed.SelectedItem as GradeDTO; //obrisemo ocenu
             if (gradeDTO != null)
             {
                  CancelGrade cancelGrade = new CancelGrade(headDao, gradeDTO);

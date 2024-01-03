@@ -19,6 +19,7 @@ public class GradeDao
     {
         _storage = new Storage<Grade>("grade.txt");
         grades = _storage.Load();
+        GradeObserverSub = new ObserverSub();
     }
 
 
@@ -34,6 +35,7 @@ public class GradeDao
         gr.Id = GenerateId(); //generisi id za svaku katedru
         grades.Add(gr);
         _storage.Save(grades);
+        GradeObserverSub.NotifyObservers();
         return gr;
     }
 
@@ -48,6 +50,7 @@ public class GradeDao
         oldgr.date = gr.date;
 
         _storage.Save(grades);
+        GradeObserverSub.NotifyObservers();
         return oldgr;
     }
 
@@ -55,9 +58,11 @@ public class GradeDao
     {
         Grade? grade = GetGradeById(id);
         if (grade == null) return null;
+        GradeObserverSub.NotifyObservers();
 
         grades.Remove(grade);
         _storage.Save(grades);
+        GradeObserverSub.NotifyObservers();
         return grade;
     }
 

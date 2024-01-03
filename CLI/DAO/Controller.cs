@@ -582,6 +582,8 @@ public class HeadDao
         }
 
         System.Console.WriteLine("Grade removed");
+
+        observerSub.NotifyObservers();
     }
 
     
