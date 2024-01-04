@@ -115,7 +115,7 @@ namespace GUI.DTO
         private CLI.Model.Student.Status status;
         
 
-        public CLI.Model.Student.Status StudentStatus
+        public Student.Status StudentStatus
         {
             get { return status; }
             set

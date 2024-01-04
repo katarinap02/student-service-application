@@ -43,12 +43,10 @@
         <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding Year, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
         <Label Grid.Row="4" Grid.Column="1" Margin="10,10,40,4" Content="Semester(Summer or Winter)*"/>
-        <ComboBox x:Name="BoxYear" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Height="32" VerticalAlignment="Top" Margin="61,8,59,0" SelectedValuePath="Tag"
-                  SelectedValue="{Binding subjectDTO.SemesterS, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
-            <ComboBoxItem Content="Summer" Tag="Summer"/>
-            <ComboBoxItem  Content="Winter" Tag="Winter"/>
+        <ComboBox x:Name="comboBoxSemester" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Height="32" VerticalAlignment="Top" Margin="61,8,59,0">
+            <ComboBoxItem x:Name="SemesterSummer">Summer</ComboBoxItem>
+            <ComboBoxItem x:Name="SemesterWinter">Winter</ComboBoxItem>
         </ComboBox>
-
 
 
         <Button Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63" Click="Button_Click">Save</Button>

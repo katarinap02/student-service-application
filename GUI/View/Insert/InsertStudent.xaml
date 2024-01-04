@@ -8,19 +8,28 @@
         Title="Insert Student" Height="514" Width="600">
     <Grid Margin="0,32,0,-6">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="71*"/>
-            <ColumnDefinition Width="529*"/>
+            <ColumnDefinition Width="44*"/>
+            <ColumnDefinition Width="27*"/>
+            <ColumnDefinition Width="24*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="12*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="488*"/>
         </Grid.ColumnDefinitions>
-        <TabControl x:Name="tabControl" Margin="0,-18,0,0" Grid.ColumnSpan="2">
+        <TabControl x:Name="tabControl" Margin="0,-18,0,0" Grid.ColumnSpan="7">
             <TabItem x:Name="tabItemInfo" Header="Info" Foreground="Blue">
                 <Grid>
                     <Grid.Background>
                         <ImageBrush/>
                     </Grid.Background>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="7*"/>
-                        <ColumnDefinition Width="53*"/>
-                        <ColumnDefinition Width="60*"/>
+                        <ColumnDefinition Width="35*"/>
+                        <ColumnDefinition Width="38*"/>
+                        <ColumnDefinition Width="24*"/>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="12*"/>
+                        <ColumnDefinition Width="168*"/>
+                        <ColumnDefinition Width="297*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"></RowDefinition>
@@ -39,51 +48,51 @@
                     </Grid.RowDefinitions>
 
                     <!-- Labels and Text Boxes -->
-                    <Label Grid.Row="0" Grid.Column="1" Margin="10,10,108,4" Content="Name*"/>
-                    <TextBox Grid.Row="0" Grid.Column="2" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
+                    <Label Grid.Row="0" Grid.Column="1" Margin="10,10,108,4" Content="Name*" Grid.ColumnSpan="5"/>
+                    <TextBox Grid.Row="0" Grid.Column="6" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-                    <Label Grid.Row="1" Grid.Column="1" Margin="10,10,108,4" Content="Surname*"/>
-                    <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Surname, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
+                    <Label Grid.Row="1" Grid.Column="1" Margin="10,10,108,4" Content="Surname*" Grid.ColumnSpan="5"/>
+                    <TextBox Grid.Row="1" Grid.Column="6" Text="{Binding Surname, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-                    <Label Grid.Row="2" Grid.Column="1" Margin="10,10,108,4" Content="Birthdate*"/>
-                    <DatePicker Grid.Row="2" Grid.Column="2" Text="{Binding Birthdate, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
+                    <Label Grid.Row="2" Grid.Column="1" Margin="10,10,108,4" Content="Birthdate*" Grid.ColumnSpan="5"/>
+                    <DatePicker Grid.Row="2" Grid.Column="6" Text="{Binding Birthdate, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-                    <Label Grid.Row="3" Grid.Column="1" Margin="10,10,108,4" Content="Adress, city and county*"/>
-                    <TextBox  x:Name ="textBoxAdress1" Grid.Row="3" Grid.Column="2" Text="{Binding AdressDto.Street, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="10,8,235,0"/>
-                    <TextBox  x:Name ="textBoxAdress4" Grid.Row="3" Grid.Column="2" Text="{Binding AdressDto.StreetNm, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="77,8,177,0"/>
-                    <TextBox  x:Name ="textBoxAdress3" Grid.Row="3" Grid.Column="2" Text="{Binding AdressDto.City, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="144,8,98,0"/>
-                    <TextBox  x:Name ="textBoxAdress2" Grid.Row="3" Grid.Column="2" Text="{Binding AdressDto.Country, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="232,8,10,0"/>
+                    <Label Grid.Row="3" Grid.Column="1" Margin="10,10,108,4" Content="Adress, city and county*" Grid.ColumnSpan="5"/>
+                    <TextBox  x:Name ="textBoxAdress1" Grid.Row="3" Grid.Column="6" Text="{Binding AdressDto.Street, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="10,8,235,0"/>
+                    <TextBox  x:Name ="textBoxAdress4" Grid.Row="3" Grid.Column="6" Text="{Binding AdressDto.StreetNm, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="77,8,177,0"/>
+                    <TextBox  x:Name ="textBoxAdress3" Grid.Row="3" Grid.Column="6" Text="{Binding AdressDto.City, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="144,8,98,0"/>
+                    <TextBox  x:Name ="textBoxAdress2" Grid.Row="3" Grid.Column="6" Text="{Binding AdressDto.Country, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="232,8,10,0"/>
 
-                    <Label Grid.Row="4" Grid.Column="1" Margin="10,10,108,4" Content="Phonenumber*"/>
-                    <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding PhoneNumber, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
+                    <Label Grid.Row="4" Grid.Column="1" Margin="10,10,108,4" Content="Phonenumber*" Grid.ColumnSpan="5"/>
+                    <TextBox Grid.Row="4" Grid.Column="6" Text="{Binding PhoneNumber, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-                    <Label Grid.Row="5" Grid.Column="1" Margin="10,10,108,4" Content="Email*"/>
-                    <TextBox Grid.Row="5" Grid.Column="2" Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
+                    <Label Grid.Row="5" Grid.Column="1" Margin="10,10,108,4" Content="Email*" Grid.ColumnSpan="5"/>
+                    <TextBox Grid.Row="5" Grid.Column="6" Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-                    <Label Grid.Row="6" Grid.Column="1" Margin="10,10,108,4" Content="Index*"/>
-                    <TextBox  x:Name ="textBoxIndex1" Grid.Row="6" Grid.Column="2" Text="{Binding Path=IndexDto.Course, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="77,8,185,0"/>
-                    <TextBox  x:Name ="textBoxIndex2" Grid.Row="6" Grid.Column="2" Text="{Binding Path=IndexDto.Number, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="144,8,129,0"/>
-                    <TextBox  x:Name ="textBoxIndex3" Grid.Row="6" Grid.Column="2" Text="{Binding Path=IndexDto.Year, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="200,8,71,0"/>
+                    <Label Grid.Row="6" Grid.Column="1" Margin="10,10,108,4" Content="Index*" Grid.ColumnSpan="5"/>
+                    <TextBox  x:Name ="textBoxIndex1" Grid.Row="6" Grid.Column="6" Text="{Binding Path=IndexDto.Course, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="77,8,185,0"/>
+                    <TextBox  x:Name ="textBoxIndex2" Grid.Row="6" Grid.Column="6" Text="{Binding Path=IndexDto.Number, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="144,8,129,0"/>
+                    <TextBox  x:Name ="textBoxIndex3" Grid.Row="6" Grid.Column="6" Text="{Binding Path=IndexDto.Year, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="200,8,71,0"/>
 
 
-                    <Label Grid.Row="7" Grid.Column="1" Margin="10,10,108,4" Content="Year of enrollment*"/>
-                    <TextBox Grid.Row="7" Grid.Column="2" Text="{Binding StYear, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
+                    <Label Grid.Row="7" Grid.Column="1" Margin="10,10,108,4" Content="Year of enrollment*" Grid.ColumnSpan="5"/>
+                    <TextBox Grid.Row="7" Grid.Column="6" Text="{Binding StYear, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-                    <Label Grid.Row="8" Grid.Column="1" Margin="10,10,108,4" Content="Current Year*"/>
-                    <ComboBox x:Name="BoxYear" Grid.Row="8" Grid.Column="2" Height="32" VerticalAlignment="Top" Margin="61,8,59,0">
+                    <Label Grid.Row="8" Grid.Column="1" Margin="10,10,108,4" Content="Current Year*" Grid.ColumnSpan="5"/>
+                    <ComboBox x:Name="BoxYear" Grid.Row="8" Grid.Column="6" Height="32" VerticalAlignment="Top" Margin="61,8,59,0">
                         <ComboBoxItem x:Name="Item1">I</ComboBoxItem>
                         <ComboBoxItem x:Name="Item2">II</ComboBoxItem>
                         <ComboBoxItem x:Name="Item3">III</ComboBoxItem>
                         <ComboBoxItem x:Name="Item4">IV</ComboBoxItem>
                     </ComboBox>
 
-                    <Label Grid.Row="9" Grid.Column="1" Margin="10,10,108,4" Content="Method of financing*"/>
-                    <ComboBox x:Name="StatusBox" Grid.Row="9" Grid.Column="2" SelectedValue="{Binding StatusS, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" Height="32" VerticalAlignment="Top" Margin="61,8,59,0">
+                    <Label Grid.Row="9" Grid.Column="1" Margin="10,10,108,4" Content="Method of financing*" Grid.ColumnSpan="5"/>
+                    <ComboBox x:Name="comboBoxStatus" Grid.Row="9" Grid.Column="6" Height="32" VerticalAlignment="Top" Margin="61,8,59,0">
                         <ComboBoxItem x:Name="StatusB">B</ComboBoxItem>
                         <ComboBoxItem x:Name="StatusS">S</ComboBoxItem>
                     </ComboBox>
-                    <Button Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63" Click="Button_Click">Save</Button>
-                    <Button Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="99,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67" Click="Button_Exit" Content="Exit"></Button>
+                    <Button Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="5" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63" Click="Button_Click">Save</Button>
+                    <Button Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="99,0,0,0" Grid.Column="6" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67" Click="Button_Exit" Content="Exit"></Button>
 
                 </Grid>
 
@@ -121,7 +130,7 @@
             <TabItem x:Name="tabItemFailed" Header="Failed"  Foreground="HotPink">
                 <StackPanel Height="425" Orientation="Vertical">
                     <DockPanel LastChildFill="False">
-                        <Button Content="Adding" Click="Add_Click" Width="106" Background="Aqua" Height="23"/>
+                        <Button Content="Adding" Click="AddStudent_Click" Width="106" Background="Aqua" Height="23"/>
                         <Button Content="Remove" Click="Remove_Click" Width="106" Background="LightPink" Height="23"/>
                         <Button Content="Pass" Click="Pass_Click" Width="106" Background="Aqua" Height="23"/>
                     </DockPanel>
@@ -132,7 +141,7 @@
                             <DataGridTextColumn Header="ESPB" Width="*" Binding="{Binding Espb}" />
                             <DataGridTextColumn Header="SEMESTER" Width="*" Binding="{Binding Semester}" />
                             <DataGridTextColumn Header="YEAR OF STUDY" Width="*" Binding="{Binding Year}" />
-                            
+
                         </DataGrid.Columns>
                     </DataGrid>
 

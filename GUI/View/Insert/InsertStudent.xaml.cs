@@ -15,6 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using CLI.Model;
 
 namespace GUI.View.Insert
 {
@@ -24,6 +25,7 @@ namespace GUI.View.Insert
     public partial class InsertStudent : Window
     {
         StudentDTO studentDTO;
+        SubjectDTO subjectDTO;
         HeadDao headDao;
         
        // GradeDTO gradeDTO;
@@ -37,6 +39,7 @@ namespace GUI.View.Insert
             headDao = contr;
             
             studentDTO = new StudentDTO(std);
+            subjectDTO = new SubjectDTO();
             DataContext= studentDTO;
             Grades = new ObservableCollection<GradeDTO>();
             Subjects = new ObservableCollection<SubjectDTO>();
@@ -45,11 +48,15 @@ namespace GUI.View.Insert
             dataGridPassed.ItemsSource = Grades;
             dataGridFiled.ItemsSource = Subjects;
 
+            if (std.StudentStatus == Student.Status.B)
+                comboBoxStatus.SelectedItem = StatusB;
+            else
+                comboBoxStatus.SelectedItem = StatusS;
 
             UpdateGrade(std.ToStudent());
             UpdateSubject(std.ToStudent());
             
-
+            
         }
 
         public void UpdateGrade(Student std)
@@ -71,13 +78,21 @@ namespace GUI.View.Insert
 
             if (studentDTO.IsValid)
             {
+                    if(comboBoxStatus.SelectedItem == StatusB)
+                    {
+                        studentDTO.StudentStatus = Student.Status.B;
+                    }
+                    else
+                    {
+                        studentDTO.StudentStatus = Student.Status.S;
+                    }
                     headDao.UpdateStudentHead(studentDTO.ToStudent());
                     Close();
                     MessageBox.Show("Student updated!");
-                }
+            }
             else
             {
-                MessageBox.Show("Student can not be created. Not all fields are valid.");
+                    MessageBox.Show("Student can not be created. Not all fields are valid.");
             }
         }
 
@@ -88,13 +103,23 @@ namespace GUI.View.Insert
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
+           // SubjectDTO subjectDTO = new SubjectDTO(gradeDTO.subject);
+
+            GradeDTO gradeDTO = dataGridPassed.SelectedItem as GradeDTO;   //obrisemo ocenu
+            
 
 
-            GradeDTO gradeDTO = dataGridPassed.SelectedItem as GradeDTO; //obrisemo ocenu
+
             if (gradeDTO != null)
             {
+                  SubjectDTO subjectDTO= new SubjectDTO(gradeDTO.Subject);
+                  Subjects.Add(subjectDTO);
                  CancelGrade cancelGrade = new CancelGrade(headDao, gradeDTO);
-                  cancelGrade.ShowDialog();
+                if (subjectDTO != null)
+                {
+                    Subjects.Add(subjectDTO);
+                }
+                 cancelGrade.ShowDialog();
             }
             else
             {
@@ -107,10 +132,11 @@ namespace GUI.View.Insert
 
 
         }
-
-        private void Add_Click(object sender, RoutedEventArgs e)
+        
+        private void AddStudent_Click(object sender, RoutedEventArgs e)
         {
-
+            AddStudentToSubject addStudentToSubject = new AddStudentToSubject(headDao, studentDTO, Subjects);
+            addStudentToSubject.ShowDialog();
         }
 
         private void Remove_Click(object sender, RoutedEventArgs e)
@@ -122,5 +148,7 @@ namespace GUI.View.Insert
         {
 
         }
+
+        
     }
 }

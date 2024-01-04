@@ -1,0 +1,26 @@
+﻿<Window x:Class="GUI.View.Insert.AddStudentToSubject"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI.View.Insert"
+        mc:Ignorable="d"
+        Title="Adding student to subject" Height="514" Width="600">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
+
+        <DataGrid x:Name="dataGridStudentSubject" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Width="50" Binding="{Binding IndexS}" />
+                <DataGridTextColumn Header="NAME" Width="*" Binding="{Binding Name}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Buttons in the last row -->
+        <Button Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63" Click="Button_ClickAddStudentToSubject" Content="Add"/>
+        <Button Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="400,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67"  Content="Exit"/>
+
+    </Grid>
+</Window>

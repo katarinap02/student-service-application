@@ -2,6 +2,7 @@
 using CLI.Observer;
 using CLI.Storage;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -125,6 +126,60 @@ public class HeadDao
 
 
         return failedSubjects;
+    }
+
+    public List<Subject> getSubjectsForStudent(Student student)  //studentu dodjeljuje predmet koji moze da slusa a koji vec ne slusa
+    {
+        List<Subject> subjectsForStudent = new List<Subject>();
+
+
+        List<StudentSubject> studentSubjects = _studentsubjectsDao.GetAllStudentSubjects();
+
+        foreach (Subject subject in _subjectsDao.GetAllSubjects())
+        {
+            foreach (StudentSubject sb in studentSubjects)
+            {
+
+                if ( sb.SubjectId != subject.Id && sb.StudentId != student.Id && student.StYear>=subject.SYear)
+                {
+                    subjectsForStudent.Add(subject);
+                    break;
+                }
+                    
+                    
+            }
+            //kada dodas studenta u predmet dodaj i vezu student pohadja predmet
+
+            /* foreach (Grade grade in getGradesForStudent(student))
+                    {
+                        if (subject.Id != grade.subject.Id && student.Id!=grade.student.Id)
+                        {
+                            subjectsForStudent.Add(subject);
+                          //  StudentSubject studentSubject = new StudentSubject(student.Id, subject.Id); //dodajem novu vezu
+                            //studentSubjects.Add(studentSubject);
+                        }
+                    }*/
+
+        }
+
+        List<Subject> studentSubjectsCopy = new List<Subject>();
+        foreach (Subject subject in subjectsForStudent)
+        {
+            studentSubjectsCopy.Add(subject); //treba nam kopija liste
+        }
+
+        foreach (Grade grade in getGradesForStudent(student))
+        { 
+            foreach (Subject sub in studentSubjectsCopy)
+            {
+                if (sub.Id == grade.subject.Id && student.Id==grade.student.Id)
+                    subjectsForStudent.Remove(sub);
+            }
+        }
+
+
+        return subjectsForStudent;
+
     }
 
     public void UpdateStudentHead(Student st)
@@ -607,7 +662,7 @@ public class HeadDao
     }
 
 
-    public void RemoveGradeHead(int id) //treba dodati da vraca u listu nepolozenih predmeta
+    public void RemoveGradeHead(int id) //treba dodati da vraca u listu nepolozenih predmeta - dodato :)
     {
         Grade? gr = _gradesDao.GetGradeById(id);
         if (gr is null)
@@ -636,5 +691,12 @@ public class HeadDao
         observerSub.NotifyObservers();
     }
 
+    //StudentSubject
+    //treba mi funkcija koja mi vraca da li postoji veza Student Subject 
+
+    public StudentSubject getStudentSubjectByIdHead(int id) 
+    {
+        return _studentsubjectsDao.GetStudentSubjectByIdSt(id);
+    }
     
 }

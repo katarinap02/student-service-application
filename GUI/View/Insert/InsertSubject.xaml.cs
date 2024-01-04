@@ -10,6 +10,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms.VisualStyles;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -32,12 +33,25 @@ namespace GUI.View.Insert
             subjectDTO = new SubjectDTO(sub);
 
             DataContext = subjectDTO;
+            if (sub.Semester == CLI.Model.Subject.Semester.Summer)
+                comboBoxSemester.SelectedItem = SemesterSummer;
+            else
+                comboBoxSemester.SelectedItem =  SemesterWinter;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-                //subjectDTO.Semester = Subject.Semester.Winter;
-                headDao.UpdateSubjectHead(subjectDTO.ToSubject());
+
+            if (comboBoxSemester.SelectedItem == SemesterSummer)
+            {
+                subjectDTO.Semester = CLI.Model.Subject.Semester.Summer;
+            }
+            else
+            {
+                subjectDTO.Semester = CLI.Model.Subject.Semester.Winter;
+            }
+            //subjectDTO.Semester = Subject.Semester.Winter;
+            headDao.UpdateSubjectHead(subjectDTO.ToSubject());
                 Close();
                 MessageBox.Show("Subject updated!");
 

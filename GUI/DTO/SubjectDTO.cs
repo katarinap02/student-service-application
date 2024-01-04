@@ -30,11 +30,22 @@ namespace GUI.DTO
             //professor = new ProfessorDTO(sb.ProfessorSb);
 
     }
-    public SubjectDTO(SubjectDTO sb)
+        public SubjectDTO(Grade gr)
+        {
+            id = gr.subject.Id;
+            name = gr.subject.Name;
+            semester = gr.subject.SemesterSb;
+            year = gr.subject.SYear;
+            espb = gr.subject.NumEspb;
+           
+            //professor = new ProfessorDTO(sb.ProfessorSb);
+
+        }
+        public SubjectDTO(SubjectDTO sb)
     {
             id = sb.Id;
             name = sb.Name;
-            semesterS = sb.SemesterS;
+            semester = sb.Semester;
             year = sb.Year;
             espb = sb.Espb;
             //professor = sb.Professor;
@@ -213,7 +224,7 @@ namespace GUI.DTO
         public Subject ToSubject()
     {
             
-        return new Subject(id,name, semesterS, year, espb);
+        return new Subject(id,name, semester, year, espb);
     }
 
 

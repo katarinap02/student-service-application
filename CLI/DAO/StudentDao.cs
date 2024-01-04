@@ -52,7 +52,7 @@ public class StudentDao
         oldst.PhoneNumber = st.PhoneNumber;
         oldst.IndexNm = st.IndexNm;
         oldst.StYear = st.StYear;
-
+        oldst.StudentStatus = st.StudentStatus;
 
         _storage.Save(students);
         StudentObserverSub.NotifyObservers();

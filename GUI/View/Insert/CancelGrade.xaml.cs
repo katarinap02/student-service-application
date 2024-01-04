@@ -24,11 +24,13 @@ namespace GUI.View.Insert
        // StudentDTO _studentDTO;
         HeadDao _headDao;
         GradeDTO _gradeDTO;
+        //SubjectDTO _subjectDTO;
         public CancelGrade(HeadDao cnt, GradeDTO gradeDto)
         {
             InitializeComponent();
             _headDao = cnt;
             _gradeDTO = gradeDto;
+            
         }
 
 
@@ -36,6 +38,8 @@ namespace GUI.View.Insert
         private void YesButton_Click(object sender, RoutedEventArgs e)
         {
 
+          //  SubjectDTO subjectDTO = new SubjectDTO(_gradeDTO.GradeC);
+          //dodaj vezu  u Student Subject ako vec nisi, subjecta i studenta cija je bila ocjena jer ce mi inace stajati taj predmet kao moguci za dodavanje u onoj opciji AddStudentForSubject
 
             _headDao.RemoveGradeHead(_gradeDTO.Id);
             MessageBox.Show("Grade is canceled!");

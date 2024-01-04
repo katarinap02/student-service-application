@@ -20,6 +20,8 @@ namespace GUI.DTO
             date = gr.date;
             grade = gr.grade;
 
+            subject = sb;
+
             idSubject = sb.Id;
             espb = sb.NumEspb;
             subName = sb.Name;
@@ -203,6 +205,22 @@ namespace GUI.DTO
                 }
             }
         }
+
+        private Subject subject;
+
+        public Subject Subject
+        {
+            get { return subject; }
+            set
+            {
+                if (value != subject)
+                {
+                    subject = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
 
 
         public GradeDTO()

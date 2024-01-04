@@ -57,7 +57,7 @@ namespace CLI.Model
 
 
         }
-        public Subject(int id, string name, string s, int syear, int numespb)
+      /*  public Subject(int id, string name, string s, int syear, int numespb)
         {
 
             Id = id;
@@ -74,7 +74,7 @@ namespace CLI.Model
 
 
 
-        }
+        }*/
 
         public Subject(string name, Semester s, int syear,  int numespb)
         {
