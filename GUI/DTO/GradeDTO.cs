@@ -222,11 +222,33 @@ namespace GUI.DTO
         }
 
 
+        private Student student;
 
-        public GradeDTO()
-        { }
+        public Student Student
+        {
+            get { return student; }
+            set
+            {
+                if (value != student)
+                {
+                    student = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
 
 
+
+        public GradeDTO(StudentDTO st, SubjectDTO sb)
+        {
+            student = st.ToStudent();
+            subject = sb.ToSubject();
+        }
+
+        public Grade ToGrade()
+        {
+            return new Grade(student, subject, grade, date);
+        }
 
 
         public event PropertyChangedEventHandler? PropertyChanged;

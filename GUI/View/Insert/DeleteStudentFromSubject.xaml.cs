@@ -36,13 +36,13 @@ namespace GUI.View.Insert
         private void YesButton_Click(object sender, RoutedEventArgs e)
         {
             _headDao.RemoveStudentSubjectHead(_studentDTO.Id, _subjectDTO.Id );
-            MessageBox.Show("Student is  deleted from subject!");
+            MessageBox.Show("Student is deleted from subject!");
             Close();
         }
 
         private void NoButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Student is not  deleted from subject!");
+            MessageBox.Show("Student is not deleted from subject!");
             Close();
         }
     }

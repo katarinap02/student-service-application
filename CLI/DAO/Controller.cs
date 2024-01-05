@@ -163,6 +163,22 @@ public class HeadDao
 
         }
 
+        List<Subject> studentSubjectsCp = new List<Subject>();
+        foreach (Subject subject in subjectsForStudent)
+        {
+            studentSubjectsCp.Add(subject); //uklonila sam i one predmete koji se nalaze u listi nepolozenih
+        }
+
+        foreach (Subject sb in getFailedSubjects(student))
+        {
+            foreach (Subject sub in studentSubjectsCp)
+            {
+                if (sub.Id == sb.Id)
+                    subjectsForStudent.Remove(sub);
+            }
+        }
+
+
         List<Subject> studentSubjectsCopy = new List<Subject>();
         foreach (Subject subject in subjectsForStudent)
         {
@@ -619,21 +635,24 @@ public class HeadDao
 
 
 
-    public void AddGradeHead(Grade gd) //ne radi kako treba..., ali ne znam da li ce nam trebati
+    public void AddGradeHead(Grade gd) // ali ne znam da li ce nam trebati
     {
         Subject sb = gd.subject;
         Student st = gd.student;
         if (sb.StudentsF.Contains(st)) //kada dodamo ocenu za neki predmet student se prebacuje iz u listu studenata polozenih predmeta
         {
             sb.StudentsF.Remove(st);
-            sb.StudentsP.Add(st);
+          //    sb.StudentsP.Add(st);
 
         }
         if(st.Subjects.Contains(sb)) // dodala sam pomocnu listu u kojoj cuvamo polozene predmete studenta
         {
             st.Subjects.Remove(sb);
-            st.SubjectsP.Add(sb);
         }
+
+        StudentSubject? removedStudentSubject = _studentsubjectsDao.RemoveStudentSubject(st.Id); //brisemo i vezu
+        
+
         _gradesDao.AddGrade(gd);
 
 

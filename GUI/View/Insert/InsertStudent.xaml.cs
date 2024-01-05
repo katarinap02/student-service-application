@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using CLI.Model;
+using GUI.View.Add;
 
 namespace GUI.View.Insert
 {
@@ -27,6 +28,7 @@ namespace GUI.View.Insert
         StudentDTO studentDTO;
         SubjectDTO subjectDTO;
         HeadDao headDao;
+        StudentDTO pomStd;
         
        // GradeDTO gradeDTO;
         public static RoutedCommand NewCommand = new RoutedCommand();
@@ -37,10 +39,12 @@ namespace GUI.View.Insert
             InitializeComponent();
           //  CommandBindings.Add(new CommandBinding(NewCommand, Add_Click));
             headDao = contr;
+            pomStd = std;
             
             studentDTO = new StudentDTO(std);
             subjectDTO = new SubjectDTO();
             DataContext= studentDTO;
+           // DataContext = subjectDTO;
             Grades = new ObservableCollection<GradeDTO>();
             Subjects = new ObservableCollection<SubjectDTO>();
             //headDao.observerSub.Subscribe(this);
@@ -126,11 +130,6 @@ namespace GUI.View.Insert
                 MessageBox.Show("You didnt select grade to cancel!");
             }
 
-
-
-
-
-
         }
         
         private void AddStudent_Click(object sender, RoutedEventArgs e)
@@ -150,8 +149,23 @@ namespace GUI.View.Insert
         private void Pass_Click(object sender, RoutedEventArgs e)
         {
 
+            SubjectDTO subjectDto = dataGridPassed.SelectedItem as SubjectDTO;   //obrisemo ocenu
+
+            if (subjectDto != null)
+            {
+                AddGrade addGrade = new AddGrade(headDao, subjectDto, studentDTO);
+                addGrade.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You didnt select subject to pass!");
+            }
+
+
         }
 
-        
+
+
+
     }
 }

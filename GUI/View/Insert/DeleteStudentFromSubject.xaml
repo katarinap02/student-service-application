@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI.View.Insert"
         mc:Ignorable="d"
-        Title="DeleteStudentFromSubject" Height="450" Width="800">
+        Title="DeleteStudentFromSubject" Height="164" Width="364">
     <Grid>
         <Grid.Background>
             <ImageBrush/>
@@ -22,7 +22,7 @@
         </Grid.RowDefinitions>
 
 
-        <Label Grid.Row="0" Grid.Column="1" Margin="10,10,27,18" Content="Are you sure you want to delete this Student from Subject?" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <Label Grid.Row="0" Grid.Column="1" Margin="10,10,10,18" Content="Are you sure you want to delete this Student from Subject?" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
 
 
         <Button x:Name="YesButton" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Click="YesButton_Click" Margin="17,0,0,0" Grid.Column="1" Height="36" Width="91" Content="Yes"/>

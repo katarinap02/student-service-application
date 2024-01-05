@@ -1,3 +1,4 @@
-0|7|Deenris|Targerian|7|nans|8|02.01.2024
-3|4|Petar|Petrovic|9|ime|10|03.03.2024
-5|1|Petar|Milenic|22|TEEST|8|12.12.2024
+0|7|Deenris|Targerian|7|nans|8|2/1/2024
+3|4|Petar|Petrovic|9|ime|10|3/3/2024
+5|1|Petar|Milenic|22|TEEST|8|12/12/2024
+6|1|Petar|Milenic|1|ANALIZA I|7|11/11/1111

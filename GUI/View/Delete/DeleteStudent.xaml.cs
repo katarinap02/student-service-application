@@ -32,9 +32,6 @@ namespace GUI
 
 
         }
-
-
-        
         private void YesButton_Click(object sender, RoutedEventArgs e)
         {
 
