@@ -58,25 +58,38 @@ namespace GUI.View.Insert
             SubjectDTO subjectDTO = dataGridStudentSubject.SelectedItem as SubjectDTO;
             if (subjectDTO != null)
             {
-                _failedSubs.Add(subjectDTO);
+                _failedSubs.Add(subjectDTO); //dodajem na listu nepolozenih
+                Subjects.Remove(subjectDTO); // uklanjam sa liste predmeta koje ne pohadja ili nije polozio
+                StudentSubject studentSubject= new StudentSubject(studentDTO.Id, subjectDTO.Id); //dodajem vezu Student-Subject
+                headDao.AddStudentSubjectHead(studentSubject); //dodajem vezu Student-Subject (sa ovim radi to da mi ostane predmet u nepolozenim i kada izadjem iz programa, ali i dalje mi ne radi brisanje)
+                /***vjerovatno je problem do observera i notify)**/
+                Close();
             }
             else
             {
                 MessageBox.Show("You didnt select subject to add!");
             }
+            
 
         }
 
-      /*  private void Button_Exit(object sender, RoutedEventArgs e)
+        private void Button_Exit(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show("Subject not added to student!");
+            Close();
+        }
+    }
 
-        }*/
+        /*  private void Button_Exit(object sender, RoutedEventArgs e)
+          {
+
+          }*/
 
         /* private void Button_Exit(object sender, RoutedEventArgs e)
          {
 
          }*/
-    }
+    
 
     
 }

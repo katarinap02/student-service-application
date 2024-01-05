@@ -82,9 +82,10 @@ public class HeadDao
                 grades.Add(g);
             }
         }
-
+        observerSub.NotifyObservers();
         return grades;
         
+
     }
 
     public List<Subject> getFailedSubjects(Student student) // id studenta za kog gledamo nepolozene predmete
@@ -124,7 +125,7 @@ public class HeadDao
             }
         }
 
-
+        observerSub.NotifyObservers();
         return failedSubjects;
     }
 
@@ -177,7 +178,7 @@ public class HeadDao
             }
         }
 
-
+        observerSub.NotifyObservers();
         return subjectsForStudent;
 
     }
@@ -698,5 +699,14 @@ public class HeadDao
     {
         return _studentsubjectsDao.GetStudentSubjectByIdSt(id);
     }
-    
+    public void AddStudentSubjectHead(StudentSubject studentSubject)
+    {
+        _studentsubjectsDao.AddStudentSubjuect(studentSubject);
+        observerSub.NotifyObservers();
+    }
+    public void RemoveStudentSubjectHead(int idSu, int idSb)
+    {
+        _studentsubjectsDao.RemoveStudentSubject2(idSu, idSb);
+        observerSub.NotifyObservers();
+    }
 }

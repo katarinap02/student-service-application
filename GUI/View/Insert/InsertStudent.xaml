@@ -131,7 +131,7 @@
                 <StackPanel Height="425" Orientation="Vertical">
                     <DockPanel LastChildFill="False">
                         <Button Content="Adding" Click="AddStudent_Click" Width="106" Background="Aqua" Height="23"/>
-                        <Button Content="Remove" Click="Remove_Click" Width="106" Background="LightPink" Height="23"/>
+                        <Button Content="Remove" Click="RemoveStudent_Click" Width="106" Background="LightPink" Height="23"/>
                         <Button Content="Pass" Click="Pass_Click" Width="106" Background="Aqua" Height="23"/>
                     </DockPanel>
                     <DataGrid x:Name="dataGridFiled" IsReadOnly="True" AutoGenerateColumns="False" Height="404">

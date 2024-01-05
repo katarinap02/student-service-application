@@ -30,6 +30,14 @@ public class StudentSubjectDao
     {
         return studentsubjects;
     }
+    public StudentSubject AddStudentSubjuect(StudentSubject ss)
+    {
+        //ss.Id = GenerateId(); //generisi id za svakog profesora
+        studentsubjects.Add(ss);
+        _storage.Save(studentsubjects);
+        //ProfessorObserverSub.NotifyObservers();
+        return ss;
+    }
 
     public StudentSubject? RemoveStudentSubject(int id)
     {
@@ -39,6 +47,20 @@ public class StudentSubjectDao
         studentsubjects.Remove(studentsubject);
         _storage.Save(studentsubjects);
         return studentsubject;
+    }
+    public StudentSubject? RemoveStudentSubject2(int idSt, int idSb)
+    {
+        StudentSubject? studentsubject = GetStudentSubjectByIds(idSt, idSb);
+        if (studentsubject == null) return null;
+
+        studentsubjects.Remove(studentsubject);
+        _storage.Save(studentsubjects);
+        return studentsubject;
+    }
+
+    public StudentSubject? GetStudentSubjectByIds(int studentId, int subjectId)
+    {
+        return studentsubjects.Find(v => v.StudentId == studentId && v.SubjectId == subjectId);
     }
 
     public StudentSubject? GetStudentSubjectByIdSt(int id)

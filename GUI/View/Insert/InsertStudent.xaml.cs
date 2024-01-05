@@ -139,9 +139,12 @@ namespace GUI.View.Insert
             addStudentToSubject.ShowDialog();
         }
 
-        private void Remove_Click(object sender, RoutedEventArgs e)
-        {
 
+        private void RemoveStudent_Click(object sender, RoutedEventArgs e)
+        {
+            SubjectDTO subjectDTO = dataGridFiled.SelectedItem as SubjectDTO;
+            DeleteStudentFromSubject deleteStudentFromSubject = new DeleteStudentFromSubject(headDao, subjectDTO, studentDTO);
+            deleteStudentFromSubject.ShowDialog();
         }
 
         private void Pass_Click(object sender, RoutedEventArgs e)

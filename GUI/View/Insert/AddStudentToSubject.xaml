@@ -11,16 +11,23 @@
             <ImageBrush/>
         </Grid.Background>
 
-        <DataGrid x:Name="dataGridStudentSubject" IsReadOnly="True" AutoGenerateColumns="False">
+        <!-- Define rows -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <!-- Auto-sized row for DataGrid -->
+            <RowDefinition Height="Auto" />
+            <!-- Auto-sized row for buttons at the bottom -->
+        </Grid.RowDefinitions>
+
+        <DataGrid x:Name="dataGridStudentSubject" IsReadOnly="True" AutoGenerateColumns="False" Grid.Row="0">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Width="50" Binding="{Binding IndexS}" />
+                <DataGridTextColumn Header="ID" Width="50" Binding="{Binding Id}" />
                 <DataGridTextColumn Header="NAME" Width="*" Binding="{Binding Name}" />
             </DataGrid.Columns>
         </DataGrid>
 
         <!-- Buttons in the last row -->
-        <Button Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63" Click="Button_ClickAddStudentToSubject" Content="Add"/>
-        <Button Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="400,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67"  Content="Exit"/>
-
+        <Button VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1" Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63" Click="Button_ClickAddStudentToSubject" Content="Add"/>
+        <Button VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1" Margin="400,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67" Click="Button_Exit" Content="Exit"/>
     </Grid>
 </Window>
