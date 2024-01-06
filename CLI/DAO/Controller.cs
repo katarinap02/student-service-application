@@ -72,7 +72,7 @@ public class HeadDao
         
     }
 
-    public List<Grade> getGradesForStudent(Student st) //videcemo da li treba
+    public List<Grade> getGradesForStudent(Student st) 
     {
         List<Grade> grades = new List<Grade>();
         foreach(Grade g in _gradesDao.GetAllGrades())
@@ -413,6 +413,26 @@ public class HeadDao
     {
         _subjectsDao.setProfessor(p, sb);
     }
+
+    public List<Subject> getSubjectsForProfessor(Professor prof) //videcemo da li treba
+    {
+        List<Subject> subjects = new List<Subject>();
+        foreach (Subject s in _subjectsDao.GetAllSubjects())
+        {
+            if(s.ProfessorSb != null) {
+                if (s.ProfessorSb.Id == prof.Id)
+                {
+                    subjects.Add(s);
+                }
+            }
+            
+        }
+        observerSub.NotifyObservers();
+        return subjects;
+
+
+    }
+
 
     // kada budes brisala za subject ne zaboravi da izbrises iz obe liste kod studenta taj subject
     // kod profesora mora da se obrise i iz liste ali i ako nema sefa cela katedra

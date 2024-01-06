@@ -3,6 +3,7 @@ using CLI.Model;
 using GUI.DTO;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,11 @@ namespace GUI
         ProfessorDTO professorDTO;
         AdressDTO adressDTO;
         HeadDao headDao;
+        SubjectDTO subjectDTO;
+
+        public static RoutedCommand NewCommand = new RoutedCommand();
+        public ObservableCollection<SubjectDTO> Subjects { get; set; }
+
         public InsertProfessor(HeadDao contr, ProfessorDTO prof)
         {
             InitializeComponent();
@@ -33,9 +39,21 @@ namespace GUI
 
            
             professorDTO = new ProfessorDTO(prof);
-           // 
+            subjectDTO = new SubjectDTO();
             DataContext = professorDTO;
-           
+
+            Subjects = new ObservableCollection<SubjectDTO>();
+
+            dataGridSubjects.ItemsSource = Subjects;
+
+            UpdateSubject(prof.ToProfessor());
+
+        }
+
+        public void UpdateSubject(Professor prof)
+        {
+            Subjects.Clear();
+            foreach (Subject subject in headDao.getSubjectsForProfessor(prof)) Subjects.Add(new SubjectDTO(subject));
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

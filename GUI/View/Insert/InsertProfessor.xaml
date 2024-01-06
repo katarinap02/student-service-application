@@ -67,7 +67,25 @@
                 </Grid>
 
             </TabItem>
-            <TabItem x:Name="tabItemSubjects" Header="Subjects" Foreground="Green">
+            <TabItem x:Name="tabItemSubjects" Header="Subjects"  Foreground="HotPink">
+                <StackPanel Height="425" Orientation="Vertical">
+                    <DockPanel LastChildFill="False">
+                        <Button Content="Add Subject"  Width="106" Background="LightPink" Height="23"/>
+                        <Button Content="Remove Subject"  Width="106" Background="Aqua" Height="23"/>
+                    </DockPanel>
+                    <DataGrid x:Name="dataGridSubjects" IsReadOnly="True" AutoGenerateColumns="False" Height="404">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="SUBJECT ID" Width="*" Binding="{Binding Id}" />
+                            <DataGridTextColumn Header="SUBJECT NAME" Width="*" Binding="{Binding Name}" />
+                            <DataGridTextColumn Header="SEMESTER" Width="*" Binding="{Binding Semester}" />
+                            <DataGridTextColumn Header="YEAR OF STUDY" Width="*" Binding="{Binding Year}" />
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+
+
+                </StackPanel>
 
             </TabItem>
 

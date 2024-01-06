@@ -13,7 +13,7 @@ namespace GUI.DTO
 {
     public  class ProfessorDTO: INotifyPropertyChanged
     {
-        //FALI NAM BROJ LICNE KARTE!    
+        
         
         public ProfessorDTO(Professor prof)
         {
