@@ -24,14 +24,18 @@ namespace GUI.View.Add
     {
         public DTO.GradeDTO gradeDTO { get; set; }
         private CLI.DAO.HeadDao controller;
+        public StudentDTO studentDTO { get; set; }  
+        public SubjectDTO subjectDTO { get; set; }
         
 
-        public AddGrade(HeadDao cnt, SubjectDTO sb, StudentDTO std)
+        public AddGrade(HeadDao cnt, StudentDTO std, SubjectDTO sb)
         {
             InitializeComponent();
             DataContext = this;
             controller = cnt;
-            gradeDTO = new GradeDTO(std, sb);
+            studentDTO = new StudentDTO(std);
+            subjectDTO = new SubjectDTO(sb);
+            gradeDTO = new GradeDTO(studentDTO, subjectDTO);
             
 
         }

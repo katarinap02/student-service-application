@@ -1,2 +1,1 @@
-3|4|Petar|Petrovic|9|ime|10|03.03.2024
-6|1|Petar|Milenic|1|ANALIZA I|7|11.11.1111
+3|4|Petar|Petrovic|9|ime|10|3/3/2024

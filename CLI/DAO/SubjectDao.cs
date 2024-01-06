@@ -78,9 +78,16 @@ namespace CLI.DAO
             return subjects.Find(subjects => subjects.Id == tId);
         }
 
-        public void setProfessor(Professor professor, Subject sb)
+        public Subject setProfessor(Professor professor, Subject sb)
         {
-            sb.ProfessorSb = professor;
+            Subject? oldsub = GetSubjectById(sb.Id); // sa istim id treba da unesemo nove podatke koji su u sub
+            if (oldsub is null) return null;
+
+            oldsub.ProfessorSb = professor;
+
+            _storage.Save(subjects);
+            SubjectObserverSub.NotifyObservers();
+            return oldsub;
         }
     }
 }

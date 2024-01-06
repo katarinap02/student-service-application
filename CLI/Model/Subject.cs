@@ -41,7 +41,9 @@ namespace CLI.Model
         {
                StudentsP = new List<Student>();
                StudentsF = new List<Student>();
-            ProfessorSb = null; //videcemo za ovo, paziti da ne puca
+               ProfessorSb = null; //videcemo za ovo, paziti da ne puca
+                                //  ProfessorSb = p;
+
         }
 
         public Subject( int id, string name, Semester s, int syear,  int numespb)
@@ -52,7 +54,7 @@ namespace CLI.Model
             SemesterSb = s; //postavljen je inicijalno na letnji
             SYear = syear;
             NumEspb = numespb;
-          //  ProfessorSb = p;
+           
 
 
 
@@ -82,7 +84,7 @@ namespace CLI.Model
             SemesterSb = s; //postavljen je inicijalno na letnji
             SYear = syear;
             NumEspb = numespb;
-          //  ProfessorSb = p;
+            
 
 
 
@@ -114,8 +116,8 @@ namespace CLI.Model
 
 
         };
-            
-         //   csvValues.AddRange(ProfessorSb.ToCSV());
+            //if(ProfessorSb != null)
+            //csvValues.AddRange(ProfessorSb.ToCSV());
             string result = string.Join("|", csvValues); ;
             return result.Split('|');
 

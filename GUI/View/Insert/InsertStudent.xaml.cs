@@ -149,11 +149,11 @@ namespace GUI.View.Insert
         private void Pass_Click(object sender, RoutedEventArgs e)
         {
 
-            SubjectDTO subjectDto = dataGridPassed.SelectedItem as SubjectDTO;   //obrisemo ocenu
+            SubjectDTO subjectDto = dataGridPassed.SelectedItem as SubjectDTO;  
 
             if (subjectDto != null)
             {
-                AddGrade addGrade = new AddGrade(headDao, subjectDto, studentDTO);
+                AddGrade addGrade = new AddGrade(headDao, studentDTO, subjectDto);
                 addGrade.ShowDialog();
             }
             else

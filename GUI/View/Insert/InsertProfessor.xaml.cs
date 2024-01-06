@@ -74,7 +74,7 @@ namespace GUI
 
         private void AddProfessor_Click(object sender, RoutedEventArgs e)
         {
-            AddProfessorToSubject addProfessorToSubject = new AddProfessorToSubject(headDao, professorDTO);
+            AddProfessorToSubject addProfessorToSubject = new AddProfessorToSubject(headDao, professorDTO, Subjects);
             addProfessorToSubject.ShowDialog();
         }
 

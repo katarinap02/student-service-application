@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Security.Claims;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -658,8 +659,20 @@ public class HeadDao
             System.Console.WriteLine("Student removed");
         observerSub.NotifyObservers();
         return true;
+
+
+        
         
 
+    }
+
+    public void AddProfessorToSubject(Subject subject, Professor professor)
+    {
+        if(subject!= null && professor != null) {
+           Subject sb = _subjectsDao.setProfessor(professor, subject); //stari
+            observerSub.NotifyObservers();
+        }
+        
     }
 
     // ----------------------------------------GRADE--------------------------------------------//

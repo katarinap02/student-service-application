@@ -26,7 +26,7 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1" Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63"  Content="Add"/>
-        <Button VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1" Margin="400,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67"  Content="Exit"/>
+        <Button VerticalAlignment="Center" HorizontalAlignment="Left" Click="Button_ClickAddProfessorToSubject" Grid.Row="1" Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63"  Content="Add"/>
+        <Button VerticalAlignment="Center" HorizontalAlignment="Left" Click="Button_Exit" Grid.Row="1" Margin="400,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67"  Content="Exit"/>
     </Grid>
 </Window>
