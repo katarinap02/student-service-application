@@ -433,6 +433,30 @@ public class HeadDao
 
     }
 
+    public List<Subject> getSubjectsWithoutProfessor(Professor prof) 
+    {
+        List<Subject> subjects = new List<Subject>();
+        foreach (Subject s in _subjectsDao.GetAllSubjects())
+        {
+            if (s.ProfessorSb != null)
+            {
+                if (s.ProfessorSb.Id != prof.Id)
+                {
+                    subjects.Add(s);
+                }
+            }
+            else
+            {
+                subjects.Add(s);
+            }
+
+        }
+        observerSub.NotifyObservers();
+        return subjects;
+
+
+    }
+
 
     // kada budes brisala za subject ne zaboravi da izbrises iz obe liste kod studenta taj subject
     // kod profesora mora da se obrise i iz liste ali i ako nema sefa cela katedra

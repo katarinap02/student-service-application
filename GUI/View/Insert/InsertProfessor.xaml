@@ -70,8 +70,8 @@
             <TabItem x:Name="tabItemSubjects" Header="Subjects"  Foreground="HotPink">
                 <StackPanel Height="425" Orientation="Vertical">
                     <DockPanel LastChildFill="False">
-                        <Button Content="Add Subject"  Width="106" Background="LightPink" Height="23"/>
-                        <Button Content="Remove Subject"  Width="106" Background="Aqua" Height="23"/>
+                        <Button Content="Add Subject" Click="AddProfessor_Click" Width="106" Background="LightPink" Height="23"/>
+                        <Button Content="Remove Subject" Click="RemoveProfessor_Click" Width="106" Background="Aqua" Height="23"/>
                     </DockPanel>
                     <DataGrid x:Name="dataGridSubjects" IsReadOnly="True" AutoGenerateColumns="False" Height="404">
                         <DataGrid.Columns>

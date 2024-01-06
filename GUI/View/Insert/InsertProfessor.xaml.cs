@@ -1,6 +1,7 @@
 ﻿using CLI.DAO;
 using CLI.Model;
 using GUI.DTO;
+using GUI.View.Insert;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -69,6 +70,18 @@ namespace GUI
             {
                 MessageBox.Show("Professor can not be created. Not all fields are valid.");
             }
+        }
+
+        private void AddProfessor_Click(object sender, RoutedEventArgs e)
+        {
+            AddProfessorToSubject addProfessorToSubject = new AddProfessorToSubject(headDao, professorDTO);
+            addProfessorToSubject.ShowDialog();
+        }
+
+
+        private void RemoveProfessor_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
 
         private void Button_Exit(object sender, RoutedEventArgs e)
