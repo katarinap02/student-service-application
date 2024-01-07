@@ -60,11 +60,14 @@ class Program
         }
         foreach (Subject sb in subjects.GetAllSubjects())
         {
-            if (sb.ProfessorSb != null)
+            if (sb.idProf != -1)
             {
-               Professor pp = professors.GetProfessorById(sb.ProfessorSb.Id);
-
-               pp.subjects.Add(sb);
+               Professor? pp = professors.GetProfessorById(sb.idProf);
+                if(pp != null) {
+                    pp.subjects.Add(sb);
+                    sb.ProfessorSb = pp;
+                }
+                
                
             }
             

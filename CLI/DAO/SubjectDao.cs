@@ -84,10 +84,20 @@ namespace CLI.DAO
             if (oldsub is null) return null;
 
             oldsub.ProfessorSb = professor;
+            if(professor != null) {
+                oldsub.idProf = professor.Id;
+            }
+            else
+            {
+                oldsub.idProf = -1;
+            }
+            
 
             _storage.Save(subjects);
             SubjectObserverSub.NotifyObservers();
             return oldsub;
         }
+
+        
     }
 }

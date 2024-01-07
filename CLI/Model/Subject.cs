@@ -25,6 +25,8 @@ namespace CLI.Model
 
         public int bind { get; set; }
 
+        public int idProf { get; set; }
+
         public Professor ProfessorSb { get; set; } //predmetni profesor
        
 
@@ -42,7 +44,8 @@ namespace CLI.Model
                StudentsP = new List<Student>();
                StudentsF = new List<Student>();
                ProfessorSb = null; //videcemo za ovo, paziti da ne puca
-                                //  ProfessorSb = p;
+               idProf = -1;
+                               
 
         }
 
@@ -112,7 +115,7 @@ namespace CLI.Model
             List<string> csvValues = new List<string>
             {
                 Id.ToString(), Name, SemesterSb.ToString(),
-                SYear.ToString(), NumEspb.ToString()
+                SYear.ToString(), NumEspb.ToString(), idProf.ToString()
 
 
         };
@@ -143,7 +146,8 @@ namespace CLI.Model
             Name = values[1];
             SemesterSb = Enum.Parse<Semester>(values[2]);
             SYear = int.Parse(values[3]);
-            NumEspb = int.Parse(values[4]);
+            NumEspb = int.Parse(values[4]); 
+            idProf = int.Parse(values[5]);
            // ProfessorSb = new Professor();
           //  ProfessorSb.FromCSV1(new string[] { values[5], values[6], values[7] });
 

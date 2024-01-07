@@ -420,8 +420,8 @@ public class HeadDao
         List<Subject> subjects = new List<Subject>();
         foreach (Subject s in _subjectsDao.GetAllSubjects())
         {
-            if(s.ProfessorSb != null) {
-                if (s.ProfessorSb.Id == prof.Id)
+            if(s.idProf != -1) {
+                if (s.idProf == prof.Id)
                 {
                     subjects.Add(s);
                 }
@@ -439,9 +439,9 @@ public class HeadDao
         List<Subject> subjects = new List<Subject>();
         foreach (Subject s in _subjectsDao.GetAllSubjects())
         {
-            if (s.ProfessorSb != null)
+            if (s.idProf != -1)
             {
-                if (s.ProfessorSb.Id != prof.Id)
+                if (s.idProf != prof.Id)
                 {
                     subjects.Add(s);
                 }
@@ -784,5 +784,14 @@ public class HeadDao
     {
         _studentsubjectsDao.RemoveStudentSubject2(idSu, idSb);
         observerSub.NotifyObservers();
+    }
+
+    public void RemoveProfessorFromSubject(int idSb)
+    {
+        Subject? sub = _subjectsDao.GetSubjectById(idSb);
+        if (sub != null) {
+            _subjectsDao.setProfessor(null, sub);
+        }
+        
     }
 }

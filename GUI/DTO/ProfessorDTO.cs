@@ -26,6 +26,7 @@ namespace GUI.DTO
             email = prof.Email; 
             title = prof.Title;
             year = prof.YearS;
+            subjectList = prof.subjects; 
         }
         public ProfessorDTO(ProfessorDTO prof)
         {
@@ -197,6 +198,23 @@ namespace GUI.DTO
                 }
             }
         }
+
+        private List<Subject> subjectList = new List<Subject>();
+
+        public List<Subject> SubjectList
+        {
+            get { return subjectList; }
+            set
+            {
+                if (!EqualityComparer<List<Subject>>.Default.Equals(value, subjectList))
+                {
+                    subjectList = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+
         // public Professor(string name, string surname, DateOnly birthdate, Adress adress, string phonenumber, string email,
         // string title, int styear)
 

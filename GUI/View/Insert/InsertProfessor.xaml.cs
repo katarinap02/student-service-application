@@ -81,7 +81,9 @@ namespace GUI
 
         private void RemoveProfessor_Click(object sender, RoutedEventArgs e)
         {
-            
+            SubjectDTO subjectDto = dataGridSubjects.SelectedItem as SubjectDTO;
+            DeleteProfessorFromSubject deleteProfessorFromSubject = new DeleteProfessorFromSubject(headDao, subjectDto, professorDTO);
+            deleteProfessorFromSubject.ShowDialog();
         }
 
         private void Button_Exit(object sender, RoutedEventArgs e)
