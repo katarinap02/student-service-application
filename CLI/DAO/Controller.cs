@@ -699,15 +699,19 @@ public class HeadDao
         if (sb.StudentsF.Contains(st)) //kada dodamo ocenu za neki predmet student se prebacuje iz u listu studenata polozenih predmeta
         {
             sb.StudentsF.Remove(st);
-          //    sb.StudentsP.Add(st);
+            sb.StudentsP.Add(st);
 
         }
         if(st.Subjects.Contains(sb)) // dodala sam pomocnu listu u kojoj cuvamo polozene predmete studenta
         {
             st.Subjects.Remove(sb);
+            st.SubjectsP.Add(sb); //*************************
+          
         }
 
-        StudentSubject? removedStudentSubject = _studentsubjectsDao.RemoveStudentSubject(st.Id); //brisemo i vezu
+
+        StudentSubject studentSubject = new StudentSubject(st.Id,sb.Id);
+        _studentsubjectsDao.AddStudentSubjuect(studentSubject); //brisemo i vezu?? ja sam stavila da dodajem vezu
         
 
         _gradesDao.AddGrade(gd);
@@ -742,6 +746,11 @@ public class HeadDao
     public void RemoveGradeHead(int id) //treba dodati da vraca u listu nepolozenih predmeta - dodato :)
     {
         Grade? gr = _gradesDao.GetGradeById(id);
+        Subject sb = gr.subject;
+        Student st = gr.student;
+
+
+
         if (gr is null)
         {
             System.Console.WriteLine("Grade not found");
@@ -755,13 +764,29 @@ public class HeadDao
 
             }
         }
+        if (sb.StudentsP.Contains(st)) //kada dodamo ocenu za neki predmet student se prebacuje iz u listu studenata polozenih predmeta
+        {
+            sb.StudentsP.Remove(st);
+            //sb.StudentsF.Add(st);
 
-            Grade? removedGrade = _gradesDao.RemoveGrade(id);
+        }
+
+        if (st.SubjectsP.Contains(sb)) 
+        {
+            st.SubjectsP.Remove(sb);
+           // st.Subjects.Add(sb); //*************************
+
+        }
+
+
+
+        Grade? removedGrade = _gradesDao.RemoveGrade(id);
         if (removedGrade is null)
         {
             System.Console.WriteLine("Grade not found");
             return;
         }
+
 
         System.Console.WriteLine("Grade removed");
 

@@ -116,8 +116,8 @@ namespace GUI.View.Insert
 
             if (gradeDTO != null)
             {
-                  SubjectDTO subjectDTO= new SubjectDTO(gradeDTO.Subject);
-                  Subjects.Add(subjectDTO);
+                 // SubjectDTO subjectDTO= new SubjectDTO(gradeDTO.Subject);  //OVAJ DIO MI UOPSTE NIJE TREBAO JER BRISANJEM OCJENE, U 72.LINIJI KODA  SAMO CE SE POKUOITI veza STUDENTSUBJECT KOJA NEMA OCJENU :(
+                 // Subjects.Add(subjectDTO);
                  CancelGrade cancelGrade = new CancelGrade(headDao, gradeDTO);
                 if (subjectDTO != null)
                 {
