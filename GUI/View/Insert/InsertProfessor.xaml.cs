@@ -103,7 +103,47 @@ namespace GUI
 
         private void Search_Click(object sender, RoutedEventArgs e)
         {
+           
+            string searchTerm = textboxSearch.Text.ToLower();
+            string[] resultArray = searchTerm.Split(',').Select(s => s.Trim()).ToArray(); //trimujem, izbacujem whitespaces
+            //treba dodati switch case da mogu da pretrazujem na razlicitim tabovima
 
-        }
+               
+                    if (resultArray.Length > 0)
+                    {
+                        if (resultArray.Length > 3)
+                        {
+                            MessageBox.Show("You input more than three words!");
+                        }
+                        else
+                        {
+                            if (resultArray.Length == 1)
+                            {
+                                var filtered = Students.Where(student => student.Surname.ToLower().Contains(resultArray[0])).ToList();
+                                dataGridStudents.ItemsSource = filtered;
+                            }
+                            else if (resultArray.Length == 2)
+                            {
+                                var filtered = Students.Where(student =>
+                                student.Surname.ToLower().Contains(resultArray[0]) &&
+                                student.Name.ToLower().Contains(resultArray[1])).ToList();
+                                dataGridStudents.ItemsSource = filtered;
+                            }
+                            else if (resultArray.Length == 3)
+                            {
+                                var filtered = Students.Where(student =>
+                                student.IndexS.ToLower().Contains(resultArray[0]) &&
+                                student.Name.ToLower().Contains(resultArray[1]) &&
+                                student.Surname.ToLower().Contains(resultArray[2])).ToList();
+                                dataGridStudents.ItemsSource = filtered;
+                            }
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please input one, two or three words to search!");
+                    }
+            }
     }
 }
