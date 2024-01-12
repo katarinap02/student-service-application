@@ -296,6 +296,36 @@ public class HeadDao
         observerSub.NotifyObservers();
 
     }
+    //*****************STUDENTI KOJI SLUSAJU PREDMET KOD PROFESORA********************//
+    public List<Student> ProfessorTeachesStudents(Professor professor)
+    {
+        List<Student> _students = new List<Student>();
+        foreach (StudentSubject studentSubject in _studentsubjectsDao.GetAllStudentSubjects())
+        {
+            Student student = new Student();
+            student = _studentsDao.GetStudentById(studentSubject.StudentId);
+            Subject subject= new Subject();
+            subject= _subjectsDao.GetSubjectById(studentSubject.SubjectId);
+            if (subject != null && student != null)
+            {
+                if (subject.idProf == professor.Id)
+                {
+                    _students.Add(student);
+                }
+            }
+        }
+
+       
+
+        //nisam dodala provjeru toga da li je student polozio taj predmet jer ako ga je polozio onda ga ni ne slusa kod tog profesora
+
+
+        List<Student> _studentsList = new List<Student>();
+        _studentsList= _students.Distinct().ToList(); //funckija koja uklanja duplikate
+
+        return _studentsList;
+
+    }
 
     public void SubscribeSubject(IObserver observer)
     {
@@ -457,6 +487,7 @@ public class HeadDao
 
 
     }
+
 
 
     // kada budes brisala za subject ne zaboravi da izbrises iz obe liste kod studenta taj subject

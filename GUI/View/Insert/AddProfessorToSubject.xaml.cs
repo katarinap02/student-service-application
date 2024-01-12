@@ -55,7 +55,8 @@ namespace GUI.View.Insert
             if (subjectDTO != null)
             {
                 profSubs.Add(subjectDTO); //dodajem na listu sa profesorom
-                Subjects.Remove(subjectDTO); // uklanjam sa liste predmeta koje ne pohadja ili nije polozio
+                Subjects.Remove(subjectDTO);
+                 // uklanjam sa liste predmeta koje ne pohadja ili nije polozio
                 headDao.AddProfessorToSubject(subjectDTO.ToSubject(), professorDTO.ToProfessor());
                 Close();
             }

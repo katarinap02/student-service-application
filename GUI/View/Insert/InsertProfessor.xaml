@@ -89,6 +89,30 @@
 
             </TabItem>
 
+            <TabItem x:Name="tabItemStudents" Header="Students"  Foreground="LimeGreen">
+
+                <StackPanel Height="425" Orientation="Vertical">
+                    <!-- Search Box -->
+                        <Grid HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10">
+                        <DockPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10">
+                            <TextBox Width="150" Height="25" Margin="0,0,10,0" VerticalAlignment="Top"/>
+                            <Button x:Name="buttonSearch" Width="40" Click="Search_Click">Search</Button>
+                        </DockPanel>
+                    </Grid>
+                        <DataGrid x:Name="dataGridStudents" IsReadOnly="True" AutoGenerateColumns="False" Height="404">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="STUDENT ID" Width="*" Binding="{Binding Id}" />
+                            <DataGridTextColumn Header="STUDENT NAME" Width="*" Binding="{Binding Name}" />
+                            <DataGridTextColumn Header="STUDENT SURNAME" Width="*" Binding="{Binding Surname}" />
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+
+
+                </StackPanel>
+
+            </TabItem>
         </TabControl>
 
     </Grid>
