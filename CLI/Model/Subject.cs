@@ -49,7 +49,7 @@ namespace CLI.Model
 
         }
 
-        public Subject( int id, string name, Semester s, int syear,  int numespb)
+        public Subject( int id, string name, Semester s, int syear,  int numespb, int idPr)
         {
        
             Id = id; 
@@ -57,7 +57,7 @@ namespace CLI.Model
             SemesterSb = s; //postavljen je inicijalno na letnji
             SYear = syear;
             NumEspb = numespb;
-           
+            idProf = idPr;
 
 
 
@@ -87,7 +87,7 @@ namespace CLI.Model
             SemesterSb = s; //postavljen je inicijalno na letnji
             SYear = syear;
             NumEspb = numespb;
-            
+           // idProf = idPr;
 
 
 

@@ -819,4 +819,6 @@ public class HeadDao
         }
         
     }
+    //***********************FUNKCIJA ZA SETOVANJE IDPROFESORA U SUBJECTU**********************//
+  
 }

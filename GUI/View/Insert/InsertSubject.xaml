@@ -22,6 +22,7 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
             
 
 
@@ -47,7 +48,14 @@
             <ComboBoxItem x:Name="SemesterSummer">Summer</ComboBoxItem>
             <ComboBoxItem x:Name="SemesterWinter">Winter</ComboBoxItem>
         </ComboBox>
-        
+
+        <Label Grid.Row="5" Grid.Column="1" Margin="10,10,108,4" Content="Professor*"/>
+        <TextBox x:Name="textBoxProfessor" Grid.Row="5" Grid.Column="2" Text="{Binding ProfessorName, UpdateSourceTrigger=PropertyChanged, FallbackValue='',Mode=TwoWay}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
+        <StackPanel Grid.Row="5" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,15,10,0">
+            <Button x:Name = "buttonAddProfessor" Width="20" Height="20"  Click="Button_AddProfessortoSubject">+</Button>
+            <Button Width="20" Height="20"  Click="Button_RemoveProfesssorfromSubject">-</Button>
+        </StackPanel>
+
 
         <Button Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63" Click="Button_Click">Save</Button>
         <Button Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="99,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67" Click="Button_Exit" Content="Exit"></Button>

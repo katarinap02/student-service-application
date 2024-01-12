@@ -27,6 +27,19 @@ namespace GUI.DTO
             semester = sb.SemesterSb;
             year = sb.SYear;
             espb = sb.NumEspb;
+            professorId = sb.idProf;
+            Professor professor = new Professor();
+            ProfessorDao professorDao = new ProfessorDao();
+            professor = professorDao.GetProfessorById(professorId);
+            if (professorId != -1)
+            {
+                professorName = professor.Name;
+            }
+            else
+            {
+                professorName = "";
+            }
+            
             //professor = new ProfessorDTO(sb.ProfessorSb);
 
     }
@@ -37,7 +50,8 @@ namespace GUI.DTO
             semester = gr.subject.SemesterSb;
             year = gr.subject.SYear;
             espb = gr.subject.NumEspb;
-           
+            professorId = gr.subject.idProf;
+
             //professor = new ProfessorDTO(sb.ProfessorSb);
 
         }
@@ -48,6 +62,8 @@ namespace GUI.DTO
             semester = sb.Semester;
             year = sb.Year;
             espb = sb.Espb;
+            professorId = sb.ProfessorId;
+            professorName=sb.ProfessorName;
             //professor = sb.Professor;
         }
 
@@ -118,8 +134,33 @@ namespace GUI.DTO
 
 
 
+        private int professorId;
+        public int ProfessorId
+        {
+            get { return professorId; }
+            set
+            {
+                if (value != professorId)
+                {
+                    professorId = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
 
-
+        private string professorName;
+        public string ProfessorName
+        {
+            get { return professorName; }
+            set
+            {
+                if (value != professorName)
+                {
+                    professorName = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
 
 
 
@@ -224,7 +265,7 @@ namespace GUI.DTO
         public Subject ToSubject()
     {
             
-        return new Subject(id,name, semester, year, espb);
+        return new Subject(id,name, semester, year, espb, professorId);
     }
 
 

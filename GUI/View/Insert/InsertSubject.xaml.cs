@@ -37,6 +37,8 @@ namespace GUI.View.Insert
                 comboBoxSemester.SelectedItem = SemesterSummer;
             else
                 comboBoxSemester.SelectedItem =  SemesterWinter;
+            if(subjectDTO.Id!=-1)
+                buttonAddProfessor.IsEnabled = false;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -63,6 +65,18 @@ namespace GUI.View.Insert
         {
             Close();
             MessageBox.Show("Subject is not updated!");
+        }
+
+        private void Button_AddProfessortoSubject(object sender, RoutedEventArgs e)
+        {
+            AddProfessorInSubject addProfessorInSubject= new AddProfessorInSubject(headDao, subjectDTO);
+            addProfessorInSubject.ShowDialog();
+            
+        }
+
+        private void Button_RemoveProfesssorfromSubject(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
