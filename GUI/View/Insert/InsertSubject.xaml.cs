@@ -37,8 +37,16 @@ namespace GUI.View.Insert
                 comboBoxSemester.SelectedItem = SemesterSummer;
             else
                 comboBoxSemester.SelectedItem =  SemesterWinter;
-            if(subjectDTO.Id!=-1)
+            if (subjectDTO.ProfessorId != -1)
+            {
                 buttonAddProfessor.IsEnabled = false;
+                buttonRemoveProfessor.IsEnabled = true;
+            }
+            else
+            {
+                buttonAddProfessor.IsEnabled = true;
+                buttonRemoveProfessor.IsEnabled = false;
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -76,7 +84,8 @@ namespace GUI.View.Insert
 
         private void Button_RemoveProfesssorfromSubject(object sender, RoutedEventArgs e)
         {
-
+            DeleteProfessorInSubject deleteProfessorInSubject = new DeleteProfessorInSubject(headDao,subjectDTO);
+            deleteProfessorInSubject.ShowDialog();
         }
     }
 }

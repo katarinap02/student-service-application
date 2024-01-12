@@ -70,7 +70,7 @@ namespace GUI.View.Insert
 
         private void Button_ClickRemoveProfessor(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("Professor is not added!");
         }
     }
 }

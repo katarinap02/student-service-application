@@ -53,7 +53,7 @@
         <TextBox x:Name="textBoxProfessor" Grid.Row="5" IsReadOnly="True" Grid.Column="2" Text="{Binding ProfessorName, UpdateSourceTrigger=PropertyChanged, FallbackValue='',Mode=TwoWay}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
         <StackPanel Grid.Row="5" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,15,10,0">
             <Button x:Name = "buttonAddProfessor" Width="20" Height="20"  Click="Button_AddProfessortoSubject">+</Button>
-            <Button Width="20" Height="20"  Click="Button_RemoveProfesssorfromSubject">-</Button>
+            <Button  x:Name = "buttonRemoveProfessor" Width="20" Height="20"  Click="Button_RemoveProfesssorfromSubject">-</Button>
         </StackPanel>
 
 

@@ -676,6 +676,17 @@ public class HeadDao
         
     }
 
+    public void RemoveProfessorFromSubject(Subject subject)
+    {
+        if (subject != null)
+        {
+            Subject sb = _subjectsDao.setProfessor(null, subject); //stari
+
+        }
+        observerSub.NotifyObservers();
+
+    }
+
     // ----------------------------------------GRADE--------------------------------------------//
 
     public void SubscribeGrade(IObserver observer)
