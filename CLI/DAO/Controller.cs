@@ -670,8 +670,9 @@ public class HeadDao
     {
         if(subject!= null && professor != null) {
            Subject sb = _subjectsDao.setProfessor(professor, subject); //stari
-            observerSub.NotifyObservers();
+           
         }
+        observerSub.NotifyObservers();
         
     }
 
@@ -790,6 +791,7 @@ public class HeadDao
 
         System.Console.WriteLine("Grade removed");
 
+      
         observerSub.NotifyObservers();
     }
 
@@ -817,7 +819,7 @@ public class HeadDao
         if (sub != null) {
             _subjectsDao.setProfessor(null, sub);
         }
-        
+        observerSub.NotifyObservers();
     }
     //***********************FUNKCIJA ZA SETOVANJE IDPROFESORA U SUBJECTU**********************//
   
