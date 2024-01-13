@@ -776,25 +776,12 @@ public class HeadDao
     }
     public void MakeNewGradeHead(Grade gd, Subject sb, Student st) // ali ne znam da li ce nam trebati
     {
-       /* Subject sb = gd.subject;
-        Student st = gd.student;
-        if (sb.StudentsF.Contains(st)) //kada dodamo ocenu za neki predmet student se prebacuje iz u listu studenata polozenih predmeta
-        {
-            sb.StudentsF.Remove(st);
-            sb.StudentsP.Add(st);
 
-        }
-        if (st.Subjects.Contains(sb)) // dodala sam pomocnu listu u kojoj cuvamo polozene predmete studenta
-        {
-            st.Subjects.Remove(sb);
-            st.SubjectsP.Add(sb); //*************************
-
-        }*/
+        //  StudentSubject studentSubject = new StudentSubject(st.Id, sb.Id);
+        //  _studentsubjectsDao.AddStudentSubjuect(studentSubject); //ovo ne treba jer veza vec postoji
 
 
-        StudentSubject studentSubject = new StudentSubject(st.Id, sb.Id);
-        _studentsubjectsDao.AddStudentSubjuect(studentSubject); //brisemo i vezu?? ja sam stavila da dodajem vezu
-
+        
 
         _gradesDao.MakeNewGrade(gd, sb, st);
 
@@ -831,7 +818,7 @@ public class HeadDao
         Subject sb = gr.subject;
         Student st = gr.student;
 
-
+        
 
         if (gr is null)
         {
@@ -846,19 +833,9 @@ public class HeadDao
 
             }
         }
-        if (sb.StudentsP.Contains(st)) //kada dodamo ocenu za neki predmet student se prebacuje iz u listu studenata polozenih predmeta
-        {
-            sb.StudentsP.Remove(st);
-            //sb.StudentsF.Add(st);
 
-        }
-
-        if (st.SubjectsP.Contains(sb)) 
-        {
-            st.SubjectsP.Remove(sb);
-           // st.Subjects.Add(sb); //*************************
-
-        }
+       // StudentSubject studentSubject = new StudentSubject(st.Id, sb.Id);
+       // _studentsubjectsDao.AddStudentSubjuect(studentSubject); //ovo ne treba jer veza vec postoji
 
 
 

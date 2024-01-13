@@ -25,8 +25,8 @@
 
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="1" Margin="10,10,108,4" Content="Id*"/>
-        <TextBox x:Name ="textBoxSubId" Grid.Row="0" Grid.Column="2" IsReadOnly ="True" Text="{Binding subjectDTO.Id, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
+        <Label Grid.Row="0" Grid.Column="1" Margin="10,10,108,4" Content="Code*"/>
+        <TextBox x:Name ="textBoxSubId" Grid.Row="0" Grid.Column="2" IsReadOnly ="True" Text="{Binding subjectDTO.Code, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
         <Label Grid.Row="1" Grid.Column="1" Margin="10,10,108,4" Content="Name*"/>
         <TextBox x:Name ="textBoxSubName" Grid.Row="1" Grid.Column="2" IsReadOnly ="True" Text="{Binding subjectDTO.Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>

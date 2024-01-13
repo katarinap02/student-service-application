@@ -22,7 +22,8 @@ namespace GUI.DTO
 
             subject = sb;
 
-            idSubject = sb.Id;
+            idSub = sb.Id;
+            idSubject = sb.Code;
             espb = sb.NumEspb;
             subName = sb.Name;
             subYear = sb.SYear;
@@ -40,6 +41,7 @@ namespace GUI.DTO
             date = gr.Date;
             grade = gr.Grade;
 
+            idSub = gr.IdSub;
             idSubject = gr.IdSubject;
             espb = gr.Espb;
             subName = gr.SubName;
@@ -114,8 +116,8 @@ namespace GUI.DTO
         }
 
 
-        private int idSubject;
-        public int IdSubject
+        private string idSubject;
+        public string IdSubject
         {
             get { return idSubject; }
             set
@@ -123,6 +125,20 @@ namespace GUI.DTO
                 if (value != idSubject)
                 {
                     idSubject = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        private int idSub;
+        public int IdSub
+        {
+            get { return idSub; }
+            set
+            {
+                if (value != idSub)
+                {
+                    idSub = value;
                     OnPropertyChanged();
                 }
             }
@@ -286,7 +302,7 @@ namespace GUI.DTO
         }
         public Grade ToGrade()
         {
-            return new Grade(id,student, subject, grade, date);
+            return new Grade(id, student, subject, grade, date);
         }
 
 

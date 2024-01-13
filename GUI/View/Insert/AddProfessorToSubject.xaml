@@ -21,7 +21,7 @@
 
         <DataGrid x:Name="dataGridProfessorSubject" IsReadOnly="True" AutoGenerateColumns="False" Grid.Row="0">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Width="50" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="CODE" Width="50" Binding="{Binding Code}" />
                 <DataGridTextColumn Header="NAME" Width="*" Binding="{Binding Name}" />
             </DataGrid.Columns>
         </DataGrid>

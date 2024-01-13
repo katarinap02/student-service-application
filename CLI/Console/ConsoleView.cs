@@ -433,7 +433,7 @@ public class ConsoleView
     private void PrintSubjects(List<Subject> subjects) 
     {
         System.Console.WriteLine("SUBJECT: ");
-        string header = $"ID: {"",6} | Name: {"",10} | Semester: {"",15} | Year: {"",10} | ESPB: {"",5} | Proffesors's Name: {"",10}| Professor's Surname: {"",10} |"+
+        string header = $"ID: {"",6} | Name: {"",10} | Semester: {"",15} | Year: {"",10} | ESPB: {"",5} | Code: {"",20} | Proffesors's Name: {"",10}| Professor's Surname: {"",10} |"+
                         $" \nStudents:  |*************************************************************************************************************************************************";
         System.Console.WriteLine(header);
         foreach (Subject v2 in subjects)
@@ -464,6 +464,9 @@ public class ConsoleView
         System.Console.WriteLine("Enter subject's espb: ");
         int espb = ConsoleViewUtils.SafeInputInt();
 
+        System.Console.WriteLine("Enter subject's code: ");
+        string code = ConsoleViewEmpty.SafeInputEmpty();
+
         System.Console.WriteLine("Enter Proffesor's ID: ");
         int Idpf = ConsoleViewUtils.SafeInputInt();
 
@@ -476,7 +479,7 @@ public class ConsoleView
        // Model.Professor professor = _professorsDao.FindProfessorById(_professorsDao.GetAllProfessors(), Idpf);
         
 
-        return new Subject(name, semester, year, espb);
+        return new Subject(name, semester, year, espb,code);
     }
 
     private void UpdateSubject() //azuriraj profesore

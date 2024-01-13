@@ -46,6 +46,7 @@ namespace CLI.DAO
             oldsub.SYear = sub.SYear;
             oldsub.NumEspb= sub.NumEspb;
             oldsub.SemesterSb= sub.SemesterSb;
+            oldsub.Code = sub.Code;
 
             _storage.Save(subjects);
             SubjectObserverSub.NotifyObservers();

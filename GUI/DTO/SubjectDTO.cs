@@ -27,6 +27,7 @@ namespace GUI.DTO
             semester = sb.SemesterSb;
             year = sb.SYear;
             espb = sb.NumEspb;
+            code = sb.Code;
             professorId = sb.idProf;
             Professor professor = new Professor();
             ProfessorDao professorDao = new ProfessorDao();
@@ -50,6 +51,7 @@ namespace GUI.DTO
             semester = gr.subject.SemesterSb;
             year = gr.subject.SYear;
             espb = gr.subject.NumEspb;
+            code = gr.subject.Code;
             professorId = gr.subject.idProf;
 
             //professor = new ProfessorDTO(sb.ProfessorSb);
@@ -62,6 +64,7 @@ namespace GUI.DTO
             semester = sb.Semester;
             year = sb.Year;
             espb = sb.Espb;
+            code = sb.Code;
             professorId = sb.ProfessorId;
             professorName=sb.ProfessorName;
             //professor = sb.Professor;
@@ -82,7 +85,24 @@ namespace GUI.DTO
         }
     }
 
-    private string name;
+        private string code;
+        public string Code
+        {
+            get
+            {
+                return code;
+            }
+            set
+            {
+                if (value != code)
+                {
+                    code = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        private string name;
     public string Name
     {
         get
@@ -265,7 +285,7 @@ namespace GUI.DTO
         public Subject ToSubject()
     {
             
-        return new Subject(id,name, semester, year, espb, professorId);
+        return new Subject(id,name, semester, year, espb, code);
     }
 
 

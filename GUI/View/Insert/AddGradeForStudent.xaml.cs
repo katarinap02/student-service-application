@@ -37,7 +37,7 @@ namespace GUI.View.Insert
             controller = cnt;
             subjectDTO = new SubjectDTO(sub);
             studentDTO = new StudentDTO(std);
-           gradeDTO = new GradeDTO( studentDTO, subjectDTO);
+           gradeDTO = new GradeDTO(studentDTO, subjectDTO);
 
 
             

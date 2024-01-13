@@ -42,7 +42,7 @@ public class GradeDao
     {
         gr.Id = GenerateId();
         gr.subject = sb;
-        gr.student = st;//generisi id za svaku katedru
+        gr.student = st;
         grades.Add(gr);
         _storage.Save(grades);
         GradeObserverSub.NotifyObservers();

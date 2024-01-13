@@ -25,6 +25,8 @@ namespace CLI.Model
 
         public int bind { get; set; }
 
+        public string Code { get; set; }
+
         public int idProf { get; set; }
 
         public Professor ProfessorSb { get; set; } //predmetni profesor
@@ -49,7 +51,7 @@ namespace CLI.Model
 
         }
 
-        public Subject( int id, string name, Semester s, int syear,  int numespb, int idPr)
+        public Subject( int id, string name, Semester s, int syear,  int numespb, string c)
         {
        
             Id = id; 
@@ -57,7 +59,8 @@ namespace CLI.Model
             SemesterSb = s; //postavljen je inicijalno na letnji
             SYear = syear;
             NumEspb = numespb;
-            idProf = idPr;
+            //idProf = idPr;
+            Code = c;
 
 
 
@@ -81,12 +84,13 @@ namespace CLI.Model
 
         }*/
 
-        public Subject(string name, Semester s, int syear,  int numespb)
+        public Subject(string name, Semester s, int syear,  int numespb, string c)
         {
             Name = name;
             SemesterSb = s; //postavljen je inicijalno na letnji
             SYear = syear;
             NumEspb = numespb;
+            Code = c;
            // idProf = idPr;
 
 
@@ -95,7 +99,7 @@ namespace CLI.Model
         public override string ToString()
         {
             string s;
-            s= $"ID: {Id,6} | Name: {Name,10} | Semester: {SemesterSb,15} | Year: {SYear,10} | ESPB: {NumEspb,5}  |"+
+            s= $"ID: {Id,6} | Name: {Name,10} | Semester: {SemesterSb,15} | Year: {SYear,10} | ESPB: {NumEspb,5}  | Code: {Code,20} |" +
             $" \nStudents:  |";
             if (StudentsF != null)
             {
@@ -115,7 +119,7 @@ namespace CLI.Model
             List<string> csvValues = new List<string>
             {
                 Id.ToString(), Name, SemesterSb.ToString(),
-                SYear.ToString(), NumEspb.ToString(), idProf.ToString()
+                SYear.ToString(), NumEspb.ToString(),  Code ,idProf.ToString()
 
 
         };
@@ -147,7 +151,8 @@ namespace CLI.Model
             SemesterSb = Enum.Parse<Semester>(values[2]);
             SYear = int.Parse(values[3]);
             NumEspb = int.Parse(values[4]); 
-            idProf = int.Parse(values[5]);
+            Code = values[5];
+            idProf = int.Parse(values[6]);
            // ProfessorSb = new Professor();
           //  ProfessorSb.FromCSV1(new string[] { values[5], values[6], values[7] });
 

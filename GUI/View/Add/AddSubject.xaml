@@ -22,6 +22,7 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
 
 
         </Grid.RowDefinitions>
@@ -45,12 +46,14 @@
             <ComboBoxItem  Content="Winter" Tag="Winter"/>
         </ComboBox>
 
+        <Label Grid.Row="4" Grid.Column="1" Margin="10,10,108,4" Content="Code*"/>
+        <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding Path=subjectDTO.Code, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
 
 
 
-        <Button Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63" Click="Button_Click">Save</Button>
-        <Button Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="99,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67" Click="Button_Exit" Content="Exit"></Button>
+        <Button Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63" Click="Button_Click">Save</Button>
+        <Button Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="99,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67" Click="Button_Exit" Content="Exit"></Button>
 
 
     </Grid>

@@ -75,7 +75,7 @@
                     </DockPanel>
                     <DataGrid x:Name="dataGridSubjects" IsReadOnly="True" AutoGenerateColumns="False" Height="404">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="SUBJECT ID" Width="*" Binding="{Binding Id}" />
+                            <DataGridTextColumn Header="SUBJECT CODE" Width="*" Binding="{Binding Code}" />
                             <DataGridTextColumn Header="SUBJECT NAME" Width="*" Binding="{Binding Name}" />
                             <DataGridTextColumn Header="SEMESTER" Width="*" Binding="{Binding Semester}" />
                             <DataGridTextColumn Header="YEAR OF STUDY" Width="*" Binding="{Binding Year}" />
