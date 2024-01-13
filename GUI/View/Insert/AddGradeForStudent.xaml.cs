@@ -15,37 +15,44 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace GUI.View.Add
+namespace GUI.View.Insert
 {
     /// <summary>
-    /// Interaction logic for AddGrade.xaml
+    /// Interaction logic for AddGradeForStudent.xaml
     /// </summary>
-    public partial class AddGrade : Window
+    public partial class AddGradeForStudent : Window
     {
-        public DTO.GradeDTO gradeDTO { get; set; }
-        private CLI.DAO.HeadDao controller;
-        public StudentDTO studentDTO { get; set; }  
+       
+        public GradeDTO gradeDTO { get; set; }
+        private HeadDao controller;
+        public StudentDTO studentDTO { get; set; }
         public SubjectDTO subjectDTO { get; set; }
-        
 
-        public AddGrade(HeadDao cnt, StudentDTO std, SubjectDTO sb)
+
+        public AddGradeForStudent(HeadDao cnt, StudentDTO std, SubjectDTO sub)
         {
             InitializeComponent();
+
             DataContext = this;
             controller = cnt;
+            subjectDTO = new SubjectDTO(sub);
             studentDTO = new StudentDTO(std);
-            subjectDTO = new SubjectDTO(sb);
-          //  gradeDTO = new GradeDTO(studentDTO, subjectDTO);
+           gradeDTO = new GradeDTO( studentDTO, subjectDTO);
+
+
             
 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+           
+          //  Grade grade= new Grade(studentDTO.ToStudent, subje);
             
-                //controller.AddGradeHead(GradeDTO.ToGrade());
-                MessageBox.Show("Grade added!");
-                Close();
+            controller.MakeNewGradeHead(gradeDTO.ToGrade(), subjectDTO.ToSubject(), studentDTO.ToStudent());
+
+            MessageBox.Show("Grade added!");
+            Close();
 
 
 
@@ -57,5 +64,6 @@ namespace GUI.View.Add
             MessageBox.Show("Grade not added!");
         }
 
+    
     }
 }

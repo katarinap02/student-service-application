@@ -38,7 +38,16 @@ public class GradeDao
         GradeObserverSub.NotifyObservers();
         return gr;
     }
-
+    public Grade MakeNewGrade(Grade gr, Subject sb, Student st)
+    {
+        gr.Id = GenerateId();
+        gr.subject = sb;
+        gr.student = st;//generisi id za svaku katedru
+        grades.Add(gr);
+        _storage.Save(grades);
+        GradeObserverSub.NotifyObservers();
+        return gr;
+    }
     public Grade? UpdateGrade(Grade gr)
     {
         Grade? oldgr = GetGradeById(gr.Id); // sa istim id treba da unesemo nove podatke koji su u st

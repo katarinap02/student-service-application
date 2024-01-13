@@ -308,10 +308,22 @@ public class HeadDao
             subject= _subjectsDao.GetSubjectById(studentSubject.SubjectId);
             if (subject != null && student != null)
             {
-                if (subject.idProf == professor.Id)
+
+                foreach(Grade grade in _gradesDao.GetAllGrades())
                 {
-                    _students.Add(student);
+
+                    if (grade.subject.Id != subject.Id)   //necemo da nam se prikazuju ucenici koji imaju ocjenu iz tog predmeta, jer ako su ga polozili vise ga ne slusaju
+                    {
+
+                        if (subject.idProf == professor.Id)
+                        {
+                            _students.Add(student);
+                        }
+                    }
                 }
+
+
+                
             }
         }
 
@@ -759,8 +771,35 @@ public class HeadDao
 
         _gradesDao.AddGrade(gd);
 
+        observerSub.NotifyObservers();
 
-        
+    }
+    public void MakeNewGradeHead(Grade gd, Subject sb, Student st) // ali ne znam da li ce nam trebati
+    {
+       /* Subject sb = gd.subject;
+        Student st = gd.student;
+        if (sb.StudentsF.Contains(st)) //kada dodamo ocenu za neki predmet student se prebacuje iz u listu studenata polozenih predmeta
+        {
+            sb.StudentsF.Remove(st);
+            sb.StudentsP.Add(st);
+
+        }
+        if (st.Subjects.Contains(sb)) // dodala sam pomocnu listu u kojoj cuvamo polozene predmete studenta
+        {
+            st.Subjects.Remove(sb);
+            st.SubjectsP.Add(sb); //*************************
+
+        }*/
+
+
+        StudentSubject studentSubject = new StudentSubject(st.Id, sb.Id);
+        _studentsubjectsDao.AddStudentSubjuect(studentSubject); //brisemo i vezu?? ja sam stavila da dodajem vezu
+
+
+        _gradesDao.MakeNewGrade(gd, sb, st);
+
+        observerSub.NotifyObservers();
+
     }
 
     public void UpdateGreadHead(Grade g)

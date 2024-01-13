@@ -238,16 +238,55 @@ namespace GUI.DTO
         }
 
 
+        private StudentDTO studentDTO;
+
+
+        public StudentDTO StudentDTO
+        {
+            get { return studentDTO; }
+            set
+            {
+                if (value != studentDTO)
+                {
+                    studentDTO = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+
+
+        private SubjectDTO subjectDTO;
+
+        public SubjectDTO SubjectDTO
+        { 
+            get { return subjectDTO; }
+            set
+            {
+                if (value != subjectDTO)
+                {
+                    subjectDTO = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+
 
         public GradeDTO(StudentDTO st, SubjectDTO sb)
         {
-            student = st.ToStudent();
-            subject = sb.ToSubject();
-        }
 
+            studentDTO = st;
+            subjectDTO = sb;
+        }
+        public GradeDTO()
+        {
+
+            ;
+        }
         public Grade ToGrade()
         {
-            return new Grade(student, subject, grade, date);
+            return new Grade(id,student, subject, grade, date);
         }
 
 
