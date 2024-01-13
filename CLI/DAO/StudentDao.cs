@@ -88,7 +88,46 @@ public class StudentDao
         return students.Find(student => student.Id == targetId);
     }
 
-   
+    public List<Student> GetAllStudents(int page, string sortCriteria, int sortDirection)
+    {
+        IEnumerable<Student> _students = students;
+        int pageSize = 16;
+
+        // sortiraj vehicles ukoliko je sortCriteria naveden
+        switch (sortCriteria)
+        {
+            
+            case "Name":
+                _students = students.OrderBy(x => x.Name);
+                break;
+            case "Surname":
+                _students = students.OrderBy(x => x.Surname);
+                break;
+            case "Index":
+                _students = students.OrderBy(x => x.IndexNm);
+                break;
+            case "StYear":
+                _students = students.OrderBy(x => x.StYear);
+                break;
+            case "StudentStatus":
+                _students = students.OrderBy(x => x.StudentStatus);
+                break;
+            case "AverageNm":
+                _students = students.OrderBy(x => x.AverageNm);
+                break;
+        }
+
+        // promeni redosled ukoliko ima potrebe za tim
+        if (sortDirection != 0)
+            _students = _students.Reverse();
+
+        // paginacija
+        _students = _students.Skip((page - 1) * pageSize).Take(pageSize);
+
+        return _students.ToList();
+    }
+
+
 
 
 }

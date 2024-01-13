@@ -24,6 +24,8 @@ namespace CLI.Model
         public Index IndexNm { get; set; }
         public int StYear { get; set; }
 
+        public double AverageNm { get; set; }
+
         
 
         public List<Subject> Subjects { get; set; } // lista nepolozenih predmeta
