@@ -1,5 +1,6 @@
 ﻿using CLI.DAO;
 using CLI.Model;
+using CLI.Observer;
 using GUI.DTO;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,7 @@ namespace GUI.View.Insert
     public partial class AddStudentToSubject : Window
     {
         HeadDao headDao;
+        public ObserverSub observerSub;
         StudentDTO studentDTO;
         SubjectDTO subjectDTO;
         ObservableCollection<SubjectDTO> _failedSubs;
@@ -37,7 +39,7 @@ namespace GUI.View.Insert
             headDao = cnt;
             Subjects = new ObservableCollection<SubjectDTO>();
             _failedSubs = failedSubs;
-
+            observerSub = new ObserverSub();
             dataGridStudentSubject.ItemsSource = Subjects;
 
             UpdateStudentSubject(stdDTO.ToStudent());
@@ -58,11 +60,14 @@ namespace GUI.View.Insert
             SubjectDTO subjectDTO = dataGridStudentSubject.SelectedItem as SubjectDTO;
             if (subjectDTO != null)
             {
-                _failedSubs.Add(subjectDTO); //dodajem na listu nepolozenih
+                
+               _failedSubs.Add(subjectDTO);
+                //dodajem na listu nepolozenih
                 Subjects.Remove(subjectDTO); // uklanjam sa liste predmeta koje ne pohadja ili nije polozio
                 StudentSubject studentSubject= new StudentSubject(studentDTO.Id, subjectDTO.Id); //dodajem vezu Student-Subject
                 headDao.AddStudentSubjectHead(studentSubject); //dodajem vezu Student-Subject (sa ovim radi to da mi ostane predmet u nepolozenim i kada izadjem iz programa, ali i dalje mi ne radi brisanje)
                 /***vjerovatno je problem do observera i notify)**/
+                //observerSub.NotifyObservers();
                 Close();
             }
             else

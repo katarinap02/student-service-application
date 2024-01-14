@@ -97,14 +97,14 @@
                 </Grid>
 
             </TabItem>
-            <TabItem x:Name="tabItemPassed" Header="Passed" Foreground="LimeGreen" Height="20" VerticalAlignment="Bottom">
+            <TabItem x:Name="tabItemPassed" Header="Passed" Foreground="LimeGreen" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="-2,0,0,0" Width="52">
                 <StackPanel Height="425" Orientation="Vertical">
 
                     <Button Content="Cancel grade" Click="Cancel_Click" Width="107" HorizontalAlignment="Left" Height="23"/>
 
                     <DataGrid x:Name="dataGridPassed" IsReadOnly="True" AutoGenerateColumns="False" Height="347">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="SUBJECT ID" Width="*" Binding="{Binding IdSubject}" />
+                            <DataGridTextColumn Header="SUBJECT CODE" Width="*" Binding="{Binding Id}" />
                             <DataGridTextColumn Header="SUBJECT NAME" Width="*" Binding="{Binding SubName}" />
                             <DataGridTextColumn Header="ESPB" Width="*" Binding="{Binding Espb}" />
                             <DataGridTextColumn Header="GRADE" Width="*" Binding="{Binding Grade}" />
@@ -136,7 +136,7 @@
                     </DockPanel>
                     <DataGrid x:Name="dataGridFiled" IsReadOnly="True" AutoGenerateColumns="False" Height="404">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="CODE" Width="*" Binding="{Binding Code}" />
+                            <DataGridTextColumn Header="SUBJECT CODE" Width="*" Binding="{Binding Code}" />
                             <DataGridTextColumn Header="SUBJECT NAME" Width="*" Binding="{Binding Name}" />
                             <DataGridTextColumn Header="ESPB" Width="*" Binding="{Binding Espb}" />
                             <DataGridTextColumn Header="SEMESTER" Width="*" Binding="{Binding Semester}" />

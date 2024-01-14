@@ -1,5 +1,9 @@
-0|1|Petar|Milenic|2|baze podataka 1|7|12/12/2021
-1|1|Petar|Milenic|1|ANALIZA I|9|1/1/0001
-2|7|Deenris|Targerian|9|ime|8|1/1/0001
-3|4|Petar|Petrovic|13|IMEEE|8|1/1/0001
-5|27|sssss|lepo|0|aa|6|1/1/0001
+2|7|Deenris|Targerian|9|ime|8|01.01.0001
+3|4|Petar|Petrovic|13|IMEEE|8|01.01.0001
+5|27|sssss|lepo|0|aa|6|01.01.0001
+8|1|Petar|Milenic|8|predme|10|01.01.0001
+9|1|Petar|Milenic|10|oisisi|8|01.01.0001
+10|1|Petar|Milenic|0|PREDMET|8|01.01.0001
+11|1|Petar|Milenic|19|aa|8|01.01.0001
+12|1|Petar|Milenic|9|ime|10|01.01.2020
+13|1|Petar|Milenic|16|ime|8|01.01.0001

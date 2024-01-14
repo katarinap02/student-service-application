@@ -28,6 +28,7 @@ namespace GUI.DTO
             subName = sb.Name;
             subYear = sb.SYear;
             subSemester = sb.SemesterSb.ToString();
+            
 
             stId = gr.student.Id;
             sumEspb = sumEspb + sb.NumEspb;
@@ -47,7 +48,7 @@ namespace GUI.DTO
             subName = gr.SubName;
             subSemester = gr.SubSemester;
             subYear = gr.subYear;
-
+        
             stId = gr.StId;
             sumEspb = gr.SumEspb;
 
@@ -80,8 +81,6 @@ namespace GUI.DTO
                 }
             }
         }
-
-
 
 
 

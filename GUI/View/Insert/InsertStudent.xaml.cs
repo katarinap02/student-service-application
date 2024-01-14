@@ -37,14 +37,14 @@ namespace GUI.View.Insert
         public InsertStudent(HeadDao contr, StudentDTO std)
         {
             InitializeComponent();
-          //  CommandBindings.Add(new CommandBinding(NewCommand, Add_Click));
+          
             headDao = contr;
             pomStd = std;
             
             studentDTO = new StudentDTO(std);
             subjectDTO = new SubjectDTO();
             DataContext= studentDTO;
-           // DataContext = subjectDTO;
+          
             Grades = new ObservableCollection<GradeDTO>();
             Subjects = new ObservableCollection<SubjectDTO>();
             //headDao.observerSub.Subscribe(this);
