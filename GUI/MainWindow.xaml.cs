@@ -24,6 +24,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Collections.ObjectModel;
+using GUI.View.Show;
 
 namespace GUI 
 {
@@ -36,6 +37,8 @@ namespace GUI
         public ObservableCollection<StudentDTO> Students { get; }
         public ObservableCollection<ProfessorDTO> Professors { get; }
         public ObservableCollection<SubjectDTO> Subjects { get; set; }
+
+        
 
         List<ProfessorDTO> professorDtos;
         List<StudentDTO> studentDtos;
@@ -51,6 +54,7 @@ namespace GUI
             Students = new ObservableCollection<StudentDTO>();
             Professors = new ObservableCollection<ProfessorDTO>();
             Subjects = new ObservableCollection<SubjectDTO>();
+            
             headDao = new HeadDao();
             headDao.observerSub.Subscribe(this);
             timer = new DispatcherTimer();
@@ -61,6 +65,7 @@ namespace GUI
             dataGridProfessor.ItemsSource = Professors;
             dataGridStudent.ItemsSource = Students;
             dataGridSubject.ItemsSource = Subjects;
+            
            
             
             Update();
@@ -199,6 +204,19 @@ namespace GUI
                 tabControl.SelectedItem = studentTabItem;
             }
         }
+
+        private void Ch_Click(object sender, RoutedEventArgs e)
+        {
+            TabItem currentTab = tabControl.SelectedItem as TabItem;
+
+            if (currentTab != null)
+            {
+                ShowChair showChair = new ShowChair(headDao);
+                showChair.ShowDialog();
+            }
+        }
+
+
 
 
         private void Add_Click(object sender, RoutedEventArgs e)

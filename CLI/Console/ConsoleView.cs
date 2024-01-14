@@ -578,7 +578,7 @@ public class ConsoleView
     private void PrintChairs(List<Chair> chairs)
     {
         System.Console.WriteLine("CHAIR: ");
-        string header = $"ID: {"",6} | Name: {"",21} | Chief's Name: {"",10}| Chief's Surname: {"",10} | Professors: {"",50}" +
+        string header = $"ID: {"",6} | Name: {"",21} | Professors: {"",50}" +
                         $"\n******************************************************\n";
 
 
@@ -601,7 +601,7 @@ public class ConsoleView
         System.Console.WriteLine("Enter Chair's name: ");
         string name = ConsoleViewEmpty.SafeInputEmpty();
 
-        System.Console.WriteLine("Enter Chief's ID (one of Professor's): ");
+       /* System.Console.WriteLine("Enter Chief's ID (one of Professor's): ");
         int Idst = ConsoleViewUtils.SafeInputInt();
 
         while ((_professorsDao.FindProfessorById(_professorsDao.GetAllProfessors(), Idst)) == null)
@@ -611,9 +611,9 @@ public class ConsoleView
         }
 
         Model.Professor professor = _professorsDao.FindProfessorById(_professorsDao.GetAllProfessors(), Idst);
+       */
 
-
-        return new Chair(name, professor);
+        return new Chair(name);
     }
 
     private void UpdateChair() //azuriraj katedru (promijeni ime)

@@ -104,7 +104,7 @@
 
                     <DataGrid x:Name="dataGridPassed" IsReadOnly="True" AutoGenerateColumns="False" Height="347">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="CODE" Width="*" Binding="{Binding IdSubject}" />
+                            <DataGridTextColumn Header="SUBJECT ID" Width="*" Binding="{Binding IdSubject}" />
                             <DataGridTextColumn Header="SUBJECT NAME" Width="*" Binding="{Binding SubName}" />
                             <DataGridTextColumn Header="ESPB" Width="*" Binding="{Binding Espb}" />
                             <DataGridTextColumn Header="GRADE" Width="*" Binding="{Binding Grade}" />

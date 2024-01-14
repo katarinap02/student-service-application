@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI.View.Insert"
         mc:Ignorable="d"
-        Title="DeleteProfessorInSubject" Height="450" Width="800">
+        Title="DeleteProfessorInSubject" Height="164" Width="364">
     <Grid>
         <Grid.Background>
             <ImageBrush/>

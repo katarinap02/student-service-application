@@ -623,10 +623,13 @@ public class HeadDao
 
         foreach (Chair ch in _chairsDao.GetAllChairs()) //promenimo u oceni studenta
         {
+            if(ch.Chief != null)
+            { 
             if (ch.Chief.Id == olds.Id)
             {
                 ch.Chief = pr;
                 _chairsDao.UpdateChair(ch); //ovo mora da bi odradio i u fajlu
+            }
             }
         }
         observerSub.NotifyObservers();
