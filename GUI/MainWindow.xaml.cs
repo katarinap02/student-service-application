@@ -469,7 +469,7 @@ namespace GUI
                             {
                                 var filtered = Subjects.Where(subject =>
                                 subject.Name.ToLower().Contains(resultArray[0]) &&
-                                subject.Id.ToString().ToLower().Contains(resultArray[1])).ToList();
+                                subject.Code.ToString().ToLower().Contains(resultArray[1])).ToList();
                                 dataGridSubject.ItemsSource = filtered;
                             }
 

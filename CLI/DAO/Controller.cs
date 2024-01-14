@@ -901,16 +901,10 @@ public class HeadDao
             {
                 foreach (ChairProfessor ch in _chairprofessorDao.GetAllChairProfessor())
                 {
-
-                    if (ch.ChairId == chair.Id && ch.ProfessorId == p.Id && p.YearS > 5)
+                    if (ch.ChairId == chair.Id && ch.ProfessorId == p.Id)
                     {
-                         if (p.Title == "redovni" || p.Title == "vanredni")
-                         {
                         professor.Add(p);
-                         }
-
                     }
-
                 }
             }
         }
@@ -919,18 +913,45 @@ public class HeadDao
             
     }
 
-    public void AddProfessorToChair(int id, Professor p)
+    public bool AddProfessorToChair(int id, Professor p)
     {
         Chair? ch = _chairsDao.GetChairById(id);
-        if(ch != null && p!= null) {
-            Chair chair =_chairsDao.setProfessor(p, ch);
+        if(ch != null && p!= null && p.YearS > 5) {
+            if (p.Title == "redovni" || p.Title == "vanredni")
+            {
+                Chair chair =_chairsDao.setProfessor(p, ch);
+                observerSub.NotifyObservers();
+                return true;
+            }
         }
 
-        
+        return false;
+    }
 
-    
-         observerSub.NotifyObservers();
-        
+    public List<Subject> GetAllSubjectsForChair(int id) //trazi predmete za sve profesore neke katedre
+    {
+        List<Subject> subjects = new List<Subject>();
+        Chair? chair = _chairsDao.GetChairById(id);
+        if(chair!= null)
+        {
+            foreach (Professor p in _professorsDao.GetAllProfessors())
+            {
+                foreach (ChairProfessor ch in _chairprofessorDao.GetAllChairProfessor())
+                {
+                    if (ch.ChairId == chair.Id && ch.ProfessorId == p.Id) //nasli smo sve profesore
+                    {
+                        foreach(Subject s in _subjectsDao.GetAllSubjects())
+                        {
+                            if(s.Id == p.Id)
+                                subjects.Add(s);
+                        }
+                    }
+                }
+            }
+        }
+
+        return subjects;
+
     }
 
 }
