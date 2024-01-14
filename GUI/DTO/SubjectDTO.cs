@@ -34,7 +34,7 @@ namespace GUI.DTO
             professor = professorDao.GetProfessorById(professorId);
             if (professorId != -1)
             {
-                professorName = professor.Name;
+                professorName = professor.Name +" "+ professor.Surname; //dodala sam da uzme i prezime
             }
             else
             {

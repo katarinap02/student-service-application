@@ -20,6 +20,7 @@ public class ChairDao
     {
         _storage = new Storage<Chair>("chair.txt");
         chairs = _storage.Load();
+        ChairObserverSub = new ObserverSub();
     }
 
   
@@ -35,6 +36,7 @@ public class ChairDao
         ca.Id = GenerateId(); //generisi id za svaku katedru
         chairs.Add(ca);
         _storage.Save(chairs);
+        ChairObserverSub.NotifyObservers();
         return ca;
     }
 
@@ -47,6 +49,7 @@ public class ChairDao
        
 
         _storage.Save(chairs);
+        ChairObserverSub.NotifyObservers();
         return oldca;
     }
 
@@ -54,9 +57,11 @@ public class ChairDao
     {
         Chair? chair = GetChairById(id);
         if (chair == null) return null;
+        ChairObserverSub.NotifyObservers();
 
         chairs.Remove(chair);
         _storage.Save(chairs);
+        ChairObserverSub.NotifyObservers();
         return chair;
     }
 
@@ -72,5 +77,26 @@ public class ChairDao
     public Model.Chair FindChairById(List<Chair> chairs, int targetId)
     {
         return chairs.Find(chairs => chairs.Id == targetId);
+    }
+
+    public Chair setProfessor(Professor professor, Chair ch)
+    {
+        Chair? oldch = GetChairById(ch.Id); // sa istim id treba da unesemo nove podatke koji su u sub
+        if (oldch is null) return null;
+
+        oldch.Chief = professor;
+        if (professor != null)
+        {
+            oldch.IdChef = professor.Id;
+        }
+        else
+        {
+            oldch.IdChef = -1;
+        }
+
+
+        _storage.Save(chairs);
+        ChairObserverSub.NotifyObservers();
+        return oldch;
     }
 }

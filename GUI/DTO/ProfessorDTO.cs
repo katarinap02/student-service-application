@@ -27,6 +27,7 @@ namespace GUI.DTO
             title = prof.Title;
             year = prof.YearS;
             subjectList = prof.subjects; 
+            nameSurname = prof.Name + " " +prof.Surname;
         }
         public ProfessorDTO(ProfessorDTO prof)
         {
@@ -39,6 +40,7 @@ namespace GUI.DTO
             email = prof.Email;
             title = prof.Title;
             year = prof.Year;
+            nameSurname = prof.NameSurname;
         }
 
 
@@ -86,6 +88,23 @@ namespace GUI.DTO
                 if (value != surname)
                 {
                     surname = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        private string nameSurname;
+        public string NameSurname
+        {
+            get
+            {
+                return nameSurname;
+            }
+            set
+            {
+                if (value != nameSurname)
+                {
+                    nameSurname = value;
                     OnPropertyChanged();
                 }
             }

@@ -1,4 +1,5 @@
 ﻿using CLI.DAO;
+using CLI.Model;
 using CLI.Observer;
 using GUI.DTO;
 using GUI.View.Insert;
@@ -35,8 +36,19 @@ namespace GUI.View.Show
             InitializeComponent();
 
             headDao = contr;
-            Chairs = new ObservableCollection<ChairDTO>();
             chairDTO = new ChairDTO();
+            //headDao.observerSub.Subscribe(this);
+            Chairs = new ObservableCollection<ChairDTO>();
+            
+
+            dataGridChair.ItemsSource = Chairs;
+            UpdateChair();
+        }
+
+        public void UpdateChair()
+        {
+            Chairs.Clear();
+            foreach (Chair chair in headDao.GetAllChairsHead()) Chairs.Add(new ChairDTO(chair));
         }
 
 
@@ -44,11 +56,23 @@ namespace GUI.View.Show
         private void Button_Exit(object sender, RoutedEventArgs e)
         {
             Close();
-            MessageBox.Show("Subject is not updated!");
         }
 
         private void Button_AddProfessortoChair(object sender, RoutedEventArgs e)
         {
+            ChairDTO chairDTO = dataGridChair.SelectedItem as ChairDTO;   //obrisemo ocenu
+
+            if (chairDTO != null)
+            {
+
+                AddChefToChair addChefToChair = new AddChefToChair(headDao, chairDTO);
+                addChefToChair.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You didnt select chair!");
+            }
+
             
 
         }

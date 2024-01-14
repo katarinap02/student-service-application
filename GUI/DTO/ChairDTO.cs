@@ -1,4 +1,5 @@
-﻿using CLI.Model;
+﻿using CLI.DAO;
+using CLI.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,17 @@ namespace GUI.DTO
             id = ch.Id;
             name = ch.CName;
             professorId = ch.IdChef;
+            Professor professor = new Professor();
+            ProfessorDao professorDao = new ProfessorDao();
+            professor = professorDao.GetProfessorById(professorId);
+            if (professorId != -1)
+            {
+                professorName = professor.Name +" "+ professor.Surname; //dodala sam da uzme i prezime
+            }
+            else
+            {
+                professorName = "";
+            }
 
         }
 
@@ -27,6 +39,7 @@ namespace GUI.DTO
             id = ch.Id;
             name = ch.Name;
             professorId = ch.ProfessorId;
+            professorName = ch.ProfessorName;
 
         }
 
@@ -71,6 +84,20 @@ namespace GUI.DTO
                 if (value != name)
                 {
                     name = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        private string professorName;
+        public string ProfessorName
+        {
+            get { return professorName; }
+            set
+            {
+                if (value != professorName)
+                {
+                    professorName = value;
                     OnPropertyChanged();
                 }
             }

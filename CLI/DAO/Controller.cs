@@ -10,6 +10,7 @@ using System.Security.Claims;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace CLI.DAO;
 
@@ -512,6 +513,11 @@ public class HeadDao
         _chairsDao.ChairObserverSub.Subscribe(observer);
     }
 
+    public List<Chair> GetAllChairsHead()
+    {
+        return _chairsDao.GetAllChairs();
+    }
+
     public void AddChairHead(Chair ch)
     {
         _chairsDao.AddChair(ch);
@@ -595,9 +601,6 @@ public class HeadDao
     public List<Professor> GetAllProfessorsHead()
     {
        return  _professorsDao.GetAllProfessors();
-
-
-
     }
     public void UpdateProfessorHead(Professor pr)
     {
@@ -883,5 +886,51 @@ public class HeadDao
         observerSub.NotifyObservers();
     }
     //***********************FUNKCIJA ZA SETOVANJE IDPROFESORA U SUBJECTU**********************//
-  
+
+
+
+
+    //*************************FUNKCIJA ZA TRAZENJE PROFESORA SA KATEDRE SA USLOVIMA**************
+
+    public List<Professor> GetAllChairChef(int id)
+    {
+        List<Professor> professor = new List<Professor>();
+        Chair? chair = _chairsDao.GetChairById(id);
+        if(chair != null) {
+            foreach (Professor p in _professorsDao.GetAllProfessors())
+            {
+                foreach (ChairProfessor ch in _chairprofessorDao.GetAllChairProfessor())
+                {
+
+                    if (ch.ChairId == chair.Id && ch.ProfessorId == p.Id && p.YearS > 5)
+                    {
+                         if (p.Title == "redovni" || p.Title == "vanredni")
+                         {
+                        professor.Add(p);
+                         }
+
+                    }
+
+                }
+            }
+        }
+        observerSub.NotifyObservers();
+        return professor;
+            
+    }
+
+    public void AddProfessorToChair(int id, Professor p)
+    {
+        Chair? ch = _chairsDao.GetChairById(id);
+        if(ch != null && p!= null) {
+            Chair chair =_chairsDao.setProfessor(p, ch);
+        }
+
+        
+
+    
+         observerSub.NotifyObservers();
+        
+    }
+
 }
