@@ -1012,4 +1012,26 @@ public class HeadDao
 
     }
 
+
+    //////////////**********************AVERAGE***************//////////////////////////
+    
+    public double getAverageForStudent(Student student)
+    {
+        int sum = 0;
+        int count = 0;
+        foreach (Grade g in  _gradesDao.GetAllGrades())
+        {
+            if(g.student.Id == student.Id)
+            {
+                sum = sum + g.grade;
+                count++;
+            }
+        }
+        if (count == 0)
+            return 0;
+
+        double av = (double)sum / count;
+        return av;
+    }
+
 }

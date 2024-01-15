@@ -48,7 +48,7 @@ namespace CLI.Model
        {
            if (grades == null || grades.Count == 0)
            {
-
+                
                return 0;
            }
 
@@ -80,6 +80,7 @@ namespace CLI.Model
             IndexNm = indexnm;
             StYear = styear;
             StudentStatus = s;
+            AverageNm = Average(Grades);
             Subjects = new List<Subject>();
             
 
@@ -96,6 +97,7 @@ namespace CLI.Model
             IndexNm = indexnm;
             StYear = styear;
             StudentStatus = s;
+            AverageNm = Average(Grades);
             Subjects = new List<Subject>();
             
 

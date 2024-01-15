@@ -9,7 +9,7 @@ using CLI.Model;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
-
+using CLI.DAO;
 
 namespace GUI.DTO
 {
@@ -30,8 +30,8 @@ namespace GUI.DTO
             email=std.Email;
             subjectList = std.Subjects; //ovo su nepolozeni predmeti
 
-
-            average = std.Average(std.Grades); //jos nema ocena
+            HeadDao controller = new HeadDao();
+            average = controller.getAverageForStudent(std);
 
         }
         public StudentDTO(StudentDTO std)
