@@ -34,6 +34,8 @@ namespace GUI.View.Insert
         public static RoutedCommand NewCommand = new RoutedCommand();
         public ObservableCollection<GradeDTO> Grades { get; set; }
         public ObservableCollection<SubjectDTO> Subjects { get; set; }
+
+        public ObservableCollection<ProfessorDTO> Professors { get; set; }
         public InsertStudent(HeadDao contr, StudentDTO std)
         {
             InitializeComponent();
@@ -47,10 +49,12 @@ namespace GUI.View.Insert
           
             Grades = new ObservableCollection<GradeDTO>();
             Subjects = new ObservableCollection<SubjectDTO>();
+            Professors = new ObservableCollection<ProfessorDTO>();
             //headDao.observerSub.Subscribe(this);
 
             dataGridPassed.ItemsSource = Grades;
             dataGridFiled.ItemsSource = Subjects;
+            dataGridProf.ItemsSource = Professors;
 
             if (std.StudentStatus == Student.Status.B)
                 comboBoxStatus.SelectedItem = StatusB;
@@ -59,8 +63,15 @@ namespace GUI.View.Insert
 
             UpdateGrade(std.ToStudent());
             UpdateSubject(std.ToStudent());
+            UpdateSubjectProfessor(std.ToStudent());
             
             
+        }
+
+        public void UpdateSubjectProfessor(Student std)
+        {
+            Professors.Clear();
+            foreach (Professor professor in headDao.getProfessorForStudent(std)) Professors.Add(new ProfessorDTO(professor));
         }
 
         public void UpdateGrade(Student std)

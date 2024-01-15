@@ -339,7 +339,7 @@ namespace GUI.DTO
                 }
                 return null;
             }
-        }//cao Kaca : )
+        }
 
         private readonly string[] _validatedProperties = { "Surname", "Name", "PhoneNumber", "Email", "StYear" };
 
