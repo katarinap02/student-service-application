@@ -485,5 +485,13 @@ namespace GUI
 
             }
         }
+
+        private void ChooseSubject_Click(object sender, RoutedEventArgs e)
+
+        {
+            SubjectDTO subjectDTO = dataGridSubject.SelectedItem as SubjectDTO;
+            ShowOtherSubjects showOtherSubjects= new ShowOtherSubjects(headDao, subjectDTO);
+            showOtherSubjects.ShowDialog();
+        }
     }
 }

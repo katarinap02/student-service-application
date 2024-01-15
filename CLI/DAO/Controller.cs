@@ -6,9 +6,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Security.Claims;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
@@ -200,7 +202,30 @@ public class HeadDao
         return subjectsForStudent;
 
     }
+    public List<Student> studentsfrombothSubjects(Subject sub1, Subject sub2)
+    {
+        List<Student> students = new List<Student>();
 
+        foreach (StudentSubject ss1 in _studentsubjectsDao.GetAllStudentSubjects())
+        {
+            if (ss1.SubjectId == sub1.Id)
+            {
+
+                foreach (StudentSubject ss2 in _studentsubjectsDao.GetAllStudentSubjects())
+                {
+                    if(ss2.SubjectId== sub2.Id && ss2.StudentId==ss1.StudentId)
+                        students.Add(_studentsDao.GetStudentById(ss1.StudentId));
+                }
+            }
+        }
+
+        List<Student> _studentsList = new List<Student>();
+        _studentsList = students.Distinct().ToList();
+
+        return _studentsList;
+
+
+    }
     public void UpdateStudentHead(Student st)
     {
         Student? olds = _studentsDao.UpdateStudent(st);
@@ -735,6 +760,34 @@ public class HeadDao
         observerSub.NotifyObservers();
 
     }
+    public List<Subject> anotherSubjects(Subject sub)
+    {
+
+        /*List <Subject> anotherSubjects = _subjectsDao.GetAllSubjects().Where(item => !item.Equals(sub)).ToList();
+        observerSub.NotifyObservers();
+        return anotherSubjects;*/
+        /* List<Subject> newList = new List<Subject>(_subjectsDao.GetAllSubjects());
+         newList.Remove(sub);
+         return newList;*/
+        /* List<Subject> list = new List<Subject>();
+         list = _subjectsDao.GetAllSubjects();
+         list.RemoveAll(item => item.Equals(sub));
+         List<Subject> list2 = list.RemoveAll(item => item.Equals(sub));
+         list.RemoveAll(item => item.Equals(sub));
+         return list;*/
+        List<Subject> list = new List<Subject>();
+        foreach (Subject subject in _subjectsDao.GetAllSubjects())
+        {
+            if(sub.Id!=subject.Id)
+            {
+                list.Add(subject);
+            }
+        }
+
+        return list;
+
+    }
+   // List<T> newList = originalList.Where(item => !item.Equals(elementToRemove)).ToList();
 
     // ----------------------------------------GRADE--------------------------------------------//
 

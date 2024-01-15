@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Background="LightPink"
-        Title="Studentska Sluzba" Height="Auto" Width="Auto" >
+        Title="Studentska Sluzba" Height="424" Width="882" >
 
     <Window.Icon >
         <BitmapImage UriSource="Resources/catgradd.jpg" DecodePixelWidth="94" DecodePixelHeight="94"/>
@@ -118,6 +118,7 @@
                 </Button>
                 <Button x:Name="buttonChair" DockPanel.Dock="Left" Click="Ch_Click" Content="Chair" Background="Transparent" BorderBrush="Transparent" Height="20"/>
 
+
             </DockPanel>
             <DockPanel LastChildFill="False" Margin="0,0,15,0" Grid.ColumnSpan="3">
                 <Button x:Name="buttonSearch" DockPanel.Dock="Right" Width="40" Click="Search_Click">Search</Button>
@@ -159,22 +160,31 @@
                         </DataGrid.Columns>
                     </DataGrid>
                 </TabItem>
-                <TabItem x:Name="tabItemSubject" Header="Subject" Background="AntiqueWhite"  Foreground="Violet">
-                    <DataGrid x:Name="dataGridSubject" IsReadOnly="True" AutoGenerateColumns="False" >
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="CODE" Width="*" Binding="{Binding Code}"/>
-                            <DataGridTextColumn Header="NAME" Width="*" Binding="{Binding Name}"/>
-                            <DataGridTextColumn Header="ESPB" Width="*" Binding="{Binding Espb}"/>
-                            <DataGridTextColumn Header="YEAR OF STUDY" Width="*" Binding="{Binding Year}"/>
-                            <DataGridTextColumn Header="SEMESTER" Width="*" Binding="{Binding Semester}"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
-
+                <TabItem x:Name="tabItemSubject" Header="Subject" Background="AntiqueWhite" Foreground="Violet">
+                    <StackPanel>
+                        <Grid HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10">
+                            <DockPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10">
+                                <Button x:Name="buttonSubjects" Width="150" Height="30" Content="Choose another subject" Background="Beige" Click="ChooseSubject_Click"/>
+                            </DockPanel>
+                        </Grid>
+                        <DataGrid x:Name="dataGridSubject" IsReadOnly="True" AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="CODE" Width="*" Binding="{Binding Code}"/>
+                                <DataGridTextColumn Header="NAME" Width="*" Binding="{Binding Name}"/>
+                                <DataGridTextColumn Header="ESPB" Width="*" Binding="{Binding Espb}"/>
+                                <DataGridTextColumn Header="YEAR OF STUDY" Width="*" Binding="{Binding Year}"/>
+                                <DataGridTextColumn Header="SEMESTER" Width="*" Binding="{Binding Semester}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
                 </TabItem>
+
+
 
 
             </TabControl>
         </Grid>
+
 
     </DockPanel>
 </Window>
