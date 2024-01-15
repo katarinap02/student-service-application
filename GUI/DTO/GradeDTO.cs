@@ -85,7 +85,7 @@ namespace GUI.DTO
 
 
 
-        private int sumEspb = 0;
+        private int sumEspb;
         public int SumEspb
         {
             get { return sumEspb; }

@@ -32,6 +32,7 @@ namespace GUI.DTO
 
             HeadDao controller = new HeadDao();
             average = controller.getAverageForStudent(std);
+            countEspb = controller.getCountEspbForStudent(std);
 
         }
         public StudentDTO(StudentDTO std)
@@ -48,6 +49,7 @@ namespace GUI.DTO
             email = std.Email;
            // subjectList = std.SubjectList;
             average = std.Average; //jos nema ocena
+            countEspb = std.CountEspb;
 
         }
 
@@ -141,6 +143,20 @@ namespace GUI.DTO
                 if (value != average)
                 {
                     average = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        private int countEspb;
+        public int CountEspb
+        {
+            get { return countEspb; }
+            set
+            {
+                if (value != countEspb)
+                {
+                    countEspb = value;
                     OnPropertyChanged();
                 }
             }

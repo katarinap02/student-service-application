@@ -1013,7 +1013,7 @@ public class HeadDao
     }
 
 
-    //////////////**********************AVERAGE***************//////////////////////////
+    //////////////**********************AVERAGE ++  COUNT ESPB ***************//////////////////////////
     
     public double getAverageForStudent(Student student)
     {
@@ -1032,6 +1032,23 @@ public class HeadDao
 
         double av = (double)sum / count;
         return av;
+    }
+
+    public int getCountEspbForStudent(Student student)
+    {
+       
+        int sum = 0;
+        foreach (Grade g in _gradesDao.GetAllGrades())
+        {
+            if (g.student.Id == student.Id)
+            {
+                sum = sum + g.subject.NumEspb;
+                
+            }
+        }
+        return sum;
+
+       
     }
 
 }

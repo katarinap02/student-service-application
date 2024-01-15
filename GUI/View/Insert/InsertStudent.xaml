@@ -104,7 +104,7 @@
 
                     <DataGrid x:Name="dataGridPassed" IsReadOnly="True" AutoGenerateColumns="False" Height="347">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="SUBJECT CODE" Width="*" Binding="{Binding Id}" />
+                            <DataGridTextColumn Header="SUBJECT CODE" Width="*" Binding="{Binding IdSubject}" />
                             <DataGridTextColumn Header="SUBJECT NAME" Width="*" Binding="{Binding SubName}" />
                             <DataGridTextColumn Header="ESPB" Width="*" Binding="{Binding Espb}" />
                             <DataGridTextColumn Header="GRADE" Width="*" Binding="{Binding Grade}" />
@@ -115,12 +115,12 @@
 
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Average Grade" Height="26" Width="88"/>
-                        <TextBox Text="{Binding StYear, UpdateSourceTrigger=PropertyChanged}" Height="19" Width="83" Margin="10,8,0,0"/>
+                        <TextBox Text="{Binding Average, UpdateSourceTrigger=PropertyChanged}" Height="19" Width="83" Margin="10,8,0,0"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Count Espb" Height="26" Width="88"/>
-                        <TextBox Text="{Binding SumEspb, UpdateSourceTrigger=PropertyChanged}" Height="17" Width="83" Margin="10,8,0,0"/>
+                        <TextBox Text="{Binding CountEspb, UpdateSourceTrigger=PropertyChanged}" Height="17" Width="83" Margin="10,8,0,0"/>
                     </StackPanel>
 
                 </StackPanel>

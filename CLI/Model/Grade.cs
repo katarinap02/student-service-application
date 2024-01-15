@@ -65,6 +65,8 @@ namespace CLI.Model
             student.ToCSV1()[2],
             subject.ToCSV1()[0],
             subject.ToCSV1()[1],
+            subject.ToCSV1()[2],
+            subject.ToCSV1()[3],
             grade.ToString(),
             date.ToString()
 
@@ -79,9 +81,9 @@ namespace CLI.Model
             student = new Student();
             student.FromCSV1(new string[] { values[1], values[2], values[3] });
             subject = new Subject();
-            subject.FromCSV1(new string[] { values[4], values[5] });
-            grade = int.Parse(values[6]);
-            date = DateOnly.Parse(values[7]); 
+            subject.FromCSV1(new string[] { values[4], values[5], values[6], values[7] });
+            grade = int.Parse(values[8]);
+            date = DateOnly.Parse(values[9]); 
 
         }
     }

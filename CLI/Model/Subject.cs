@@ -135,7 +135,9 @@ namespace CLI.Model
             string[] csvValues =
             {
                 Id.ToString(),
-                Name
+                Name,
+                Code,
+                NumEspb.ToString()
                 
 
 
@@ -161,7 +163,9 @@ namespace CLI.Model
         {
             Id = int.Parse(values[0]);
             Name = values[1];
-            
+            Code = values[2];
+            NumEspb = int.Parse(values[3]);
+
 
         }
 
