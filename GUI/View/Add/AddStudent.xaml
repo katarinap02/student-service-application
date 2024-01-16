@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI.View.Add" xmlns:dto="clr-namespace:GUI.DTO" d:DataContext="{d:DesignInstance Type=dto:StudentDTO}"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="Add Student" Height="500" Width="635">
     <Window.Resources>
     <ControlTemplate x:Key="ValidationTemplate">

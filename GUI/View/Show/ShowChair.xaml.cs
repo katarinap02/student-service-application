@@ -23,7 +23,7 @@ namespace GUI.View.Show
     /// <summary>
     /// Interaction logic for ShowChair.xaml
     /// </summary>
-    public partial class ShowChair : Window
+    public partial class ShowChair : Window, IObserver
     {
         public static RoutedCommand NewCommand = new RoutedCommand();
 
@@ -37,7 +37,7 @@ namespace GUI.View.Show
 
             headDao = contr;
             chairDTO = new ChairDTO();
-            //headDao.observerSub.Subscribe(this);
+            headDao.observerSub.Subscribe(this);
             Chairs = new ObservableCollection<ChairDTO>();
             
 
@@ -75,6 +75,11 @@ namespace GUI.View.Show
 
             
 
+        }
+
+        public void Update()
+        {
+            UpdateChair();
         }
     }
 }
