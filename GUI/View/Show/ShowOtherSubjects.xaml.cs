@@ -47,7 +47,7 @@ namespace GUI.View.Show
         
              Subjects.Clear();
              foreach (Subject subject in headDao.anotherSubjects(subjectDTO.ToSubject())) Subjects.Add(new SubjectDTO(subject));
-           // foreach (Subject subject in headDao.GetAllSubjectsHead()) Subjects.Add(new SubjectDTO(subject));
+          
         }
 
         private void Button_ClickShowStudents_1(object sender, RoutedEventArgs e)
@@ -59,6 +59,11 @@ namespace GUI.View.Show
 
         private void Button_ClickShowStudents_2(object sender, RoutedEventArgs e)
         {
+
+            SubjectDTO subject2DTO = dataGridAnotherSubjects.SelectedItem as SubjectDTO;
+            ShowStudents2 showStudents2= new ShowStudents2(headDao,subjectDTO, subject2DTO);
+            showStudents2.ShowDialog();
+
 
         }
     }

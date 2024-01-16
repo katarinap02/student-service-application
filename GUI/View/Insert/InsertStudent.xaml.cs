@@ -164,8 +164,7 @@ namespace GUI.View.Insert
 
             if (subjectDto != null)
             {
-               // AddGrade addGrade = new AddGrade(headDao, studentDTO, subjectDto);
-               // addGrade.ShowDialog();
+               
                AddGradeForStudent addGradeForStudent= new AddGradeForStudent(headDao, studentDTO, subjectDto);
                 addGradeForStudent.ShowDialog();
             }
@@ -177,8 +176,9 @@ namespace GUI.View.Insert
 
         }
 
+        private void tabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
-
-
+        }
     }
 }

@@ -19,38 +19,35 @@ using System.Windows.Shapes;
 namespace GUI.View.Show
 {
     /// <summary>
-    /// Interaction logic for ShowStudents1.xaml
+    /// Interaction logic for ShowStudents2.xaml
     /// </summary>
-    /// 
-
-    public partial class ShowStudents1 : Window
+    public partial class ShowStudents2 : Window
     {
-
         HeadDao headDao;
-        SubjectDTO subject1DTO;
-        SubjectDTO subject2DTO;
+        SubjectDTO subjectDTO1;
+        SubjectDTO subjectDTO2;
         StudentDTO studentDTO;
         public ObservableCollection<StudentDTO> Students { get; set; }
-        public ShowStudents1(HeadDao cnt,SubjectDTO sub1, SubjectDTO sub2)
+        public ShowStudents2(HeadDao cnt, SubjectDTO sub1, SubjectDTO sub2)
         {
             InitializeComponent();
-
             headDao = cnt;
-            subject1DTO = sub1;
-            subject2DTO = sub2;
+            subjectDTO1 = sub1;
+            subjectDTO2 = sub2;
             studentDTO = new StudentDTO();
             Students = new ObservableCollection<StudentDTO>();
-            dataGridShowStudents1.ItemsSource = Students;
+            dataGridShowStudents2.ItemsSource = Students;
+
             UpdateStudents();
-
-
-
+            
         }
         public void UpdateStudents()
         {
 
-             Students.Clear();
-             foreach (Student student in headDao.studentsfrombothSubjects(subject1DTO.ToSubject(), subject2DTO.ToSubject())) Students.Add(new StudentDTO(student));
+            Students.Clear();
+     
+            foreach (Student student in headDao.passedFailedSubjects(subjectDTO1.ToSubject(), subjectDTO2.ToSubject())) Students.Add(new StudentDTO(student));
         }
     }
+
 }

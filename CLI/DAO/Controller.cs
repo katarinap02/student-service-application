@@ -232,6 +232,45 @@ public class HeadDao
 
 
     }
+    public List<Student> passedFailedSubjects(Subject sub1, Subject sub2)
+    {
+        List<Student> students = new List<Student>();
+
+        foreach (Grade gr in _gradesDao.GetAllGrades())
+        {
+            if (gr.subject.Id == sub1.Id)
+            {
+               
+                foreach (StudentSubject ss2 in _studentsubjectsDao.GetAllStudentSubjects())
+                {
+                    if (ss2.SubjectId == sub2.Id && ss2.StudentId == gr.student.Id)
+                        students.Add(_studentsDao.GetStudentById(ss2.StudentId));
+                }
+            }
+            else if(gr.subject.Id == sub2.Id)
+
+            {
+
+                foreach (StudentSubject ss1 in _studentsubjectsDao.GetAllStudentSubjects())
+                {
+                    if (ss1.SubjectId == sub1.Id && ss1.StudentId == gr.student.Id)
+                        students.Add(_studentsDao.GetStudentById(ss1.StudentId));
+                }
+            }
+        }
+
+        List<Student> _studentsList = new List<Student>();
+        _studentsList = students.Distinct().ToList();
+
+
+
+
+
+
+        return _studentsList;
+
+
+    }
     public void UpdateStudentHead(Student st)
     {
         Student? olds = _studentsDao.UpdateStudent(st);
@@ -844,8 +883,8 @@ public class HeadDao
     public void MakeNewGradeHead(Grade gd, Subject sb, Student st) // ali ne znam da li ce nam trebati
     {
 
-        //  StudentSubject studentSubject = new StudentSubject(st.Id, sb.Id);
-        //  _studentsubjectsDao.AddStudentSubjuect(studentSubject); //ovo ne treba jer veza vec postoji
+         // StudentSubject studentSubject = new StudentSubject(st.Id, sb.Id);
+          _studentsubjectsDao.RemoveStudentSubject2(st.Id, sb.Id); //ovo ne treba jer veza vec postoji
 
 
 
@@ -901,8 +940,9 @@ public class HeadDao
             }
         }
 
-        // StudentSubject studentSubject = new StudentSubject(st.Id, sb.Id);
-        // _studentsubjectsDao.AddStudentSubjuect(studentSubject); //ovo ne treba jer veza vec postoji
+         StudentSubject studentSubject = new StudentSubject(st.Id, sb.Id);
+         _studentsubjectsDao.AddStudentSubjuect(studentSubject);
+       // observerSub.NotifyObservers();
 
 
 
