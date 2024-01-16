@@ -5,7 +5,7 @@
 5|nans|Winter|2023|7|FF|3
 5|nans|Summer|2023|7|GG|-1
 7|nans|Winter|2023|7|HH|-1
-8|predme|Summer|2023|5|MM|0
+8|predme|Summer|2023|5|MM|-1
 9|ime|Summer|1212|12|NN|10
 10|oisisi|Summer|2023|8|FF|15
 11|a|Summer|1|1|LL|-1

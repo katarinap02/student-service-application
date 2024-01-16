@@ -493,5 +493,10 @@ namespace GUI
             ShowOtherSubjects showOtherSubjects= new ShowOtherSubjects(headDao, subjectDTO);
             showOtherSubjects.ShowDialog();
         }
+
+        private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -9,6 +9,20 @@
         Background="LightPink"
         Title="Studentska Sluzba" Height="424" Width="882" >
 
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Delete" Executed="Delete_Click"/>
+        <CommandBinding Command="ApplicationCommands.New" Executed="Add_Click"/>
+        <CommandBinding Command="ApplicationCommands.Open" Executed="Edit_Click"/>
+        <!--<CommandBinding Command="ApplicationCommands.Save" Executed="Save_Click"/>-->
+    </Window.CommandBindings>
+
+    <Window.InputBindings>
+        <KeyBinding Key="D" Modifiers="Control" Command="ApplicationCommands.Delete"/>
+        <KeyBinding Key="N" Modifiers="Control" Command="ApplicationCommands.New"/>
+        <KeyBinding Key="E" Modifiers="Control" Command="ApplicationCommands.Open"/>
+        <!--<KeyBinding Key="S" Modifiers="Control" Command="ApplicationCommands.Save"/>-->
+    </Window.InputBindings>
+
     <Window.Icon >
         <BitmapImage UriSource="Resources/catgradd.jpg" DecodePixelWidth="94" DecodePixelHeight="94"/>
     </Window.Icon>
