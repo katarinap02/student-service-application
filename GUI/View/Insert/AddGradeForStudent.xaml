@@ -45,7 +45,8 @@
 
         <Label Grid.Row="3" Grid.Column="1" Margin="10,20,96,10" Content="Date*"/>
         <DatePicker x:Name="datePickerDate" Grid.Row="3" Grid.Column="2" SelectedDate="{Binding gradeDTO.Date, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="27" VerticalAlignment="Top" Margin="38,20,48,0"/>
-
+        
+        
         <Button Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="44,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="73" Click="Button_Click">Save</Button>
         <Button Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="70" Click="Button_Exit" Content="Exit"/>
 

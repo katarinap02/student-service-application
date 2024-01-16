@@ -9,6 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <EmbeddedResource Remove="Properties\NewFile2.resx" />
+    <EmbeddedResource Remove="Properties\Resource.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Localization\NewFile2.txt" />
+    <None Remove="Properties\NewFile2.txt" />
+    <None Remove="Properties\Resource.txt" />
+    <None Remove="Properties\Resources.en-US.txt" />
     <None Remove="Resources\catgradd.jpg" />
     <None Remove="Resources\cross.png" />
     <None Remove="Resources\edit.png" />
@@ -61,6 +70,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
 
 </Project>

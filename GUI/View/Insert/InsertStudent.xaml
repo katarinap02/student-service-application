@@ -118,12 +118,12 @@
 
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Average Grade" Height="26" Width="88"/>
-                        <TextBox Text="{Binding Average, UpdateSourceTrigger=PropertyChanged}" Height="19" Width="83" Margin="10,8,0,0"/>
+                        <TextBox x:Name="AverageBox" IsReadOnly="True" Height="19" Width="83" Margin="10,8,0,0"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Count Espb" Height="26" Width="88"/>
-                        <TextBox Text="{Binding CountEspb, UpdateSourceTrigger=PropertyChanged}" Height="17" Width="83" Margin="10,8,0,0"/>
+                        <TextBox x:Name="CountEspb" IsReadOnly="True" Height="17" Width="83" Margin="10,8,0,0"/>
                     </StackPanel>
 
                 </StackPanel>

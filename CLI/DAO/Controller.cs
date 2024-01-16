@@ -5,6 +5,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Security.Claims;
@@ -979,7 +980,7 @@ public class HeadDao
             return 0;
 
         double av = (double)sum / count;
-        observerSub.NotifyObservers();
+       // observerSub.NotifyObservers();
         return av;
     }
 
@@ -995,7 +996,6 @@ public class HeadDao
 
             }
         }
-        observerSub.NotifyObservers();
         return sum;
 
 
@@ -1025,4 +1025,35 @@ public class HeadDao
 
 
     }
+
+
+    ////////////////***************PROFESOR IMENA I PREZIMENA *********************//////////////
+    
+    public string getProfessorNameSurname(Subject subject)
+    {
+        String profNameSurname = "";
+        if(subject != null)
+        {
+            if(subject.idProf == -1)
+            {
+                profNameSurname = "";
+            }
+            else
+            {
+                Professor? prof = _professorsDao.GetProfessorById(subject.idProf);
+                if(prof != null)
+                {
+                    profNameSurname = prof.Name + " " + prof.Surname;
+                }
+            }
+        }
+
+        return profNameSurname;
+
+    }
+    public int getSubjectProfessorId(Subject subject)
+    {
+        return subject.idProf;
+    }
+
 }

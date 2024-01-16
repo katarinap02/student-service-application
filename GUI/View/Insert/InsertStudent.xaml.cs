@@ -31,12 +31,15 @@ namespace GUI.View.Insert
         HeadDao headDao;
         StudentDTO pomStd;
         
-       // GradeDTO gradeDTO;
+
+        // GradeDTO gradeDTO;
         public static RoutedCommand NewCommand = new RoutedCommand();
         public ObservableCollection<GradeDTO> Grades { get; set; }
         public ObservableCollection<SubjectDTO> Subjects { get; set; }
 
         public ObservableCollection<ProfessorDTO> Professors { get; set; }
+
+        
         public InsertStudent(HeadDao contr, StudentDTO std)
         {
             InitializeComponent();
@@ -65,8 +68,20 @@ namespace GUI.View.Insert
             UpdateGrade(std.ToStudent());
             UpdateSubject(std.ToStudent());
             UpdateSubjectProfessor(std.ToStudent());
-            
-            
+            AverageBox.Text = getAverage(std.ToStudent()).ToString();
+            CountEspb.Text = getCount(std.ToStudent()).ToString();
+
+
+        }
+
+        public int getCount(Student std)
+        {
+            return headDao.getCountEspbForStudent(std);
+        }
+
+        public double getAverage(Student std)
+        {
+            return headDao.getAverageForStudent(std);
         }
 
         public void UpdateSubjectProfessor(Student std)
@@ -174,6 +189,10 @@ namespace GUI.View.Insert
                 MessageBox.Show("You didnt select subject to pass!");
             }
 
+            
+
+            
+
 
         }
 
@@ -187,6 +206,8 @@ namespace GUI.View.Insert
             UpdateGrade(pomStd.ToStudent());
             UpdateSubject(pomStd.ToStudent());
             UpdateSubjectProfessor(pomStd.ToStudent());
+            AverageBox.Text = getAverage(studentDTO.ToStudent()).ToString();
+            CountEspb.Text = getCount(studentDTO.ToStudent()).ToString();
         }
     }
 }

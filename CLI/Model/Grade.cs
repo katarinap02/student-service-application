@@ -57,6 +57,8 @@ namespace CLI.Model
 
         public string[] ToCSV()
         {
+            
+
             string[] csvValues =
             {
                 Id.ToString(),

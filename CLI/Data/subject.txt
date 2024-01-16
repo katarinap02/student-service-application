@@ -1,5 +1,5 @@
 0|PREDMET|Winter|4|10|AA|-1
-1|ANALIZA I|Winter|2022|9|BB|-1
+1|ANALIZA I|Winter|2022|9|BB|12
 2|baze podataka 1|Winter|3|8|CC|10
 3|klfdsj|Winter|3|3|DD|-1
 5|nans|Winter|2023|7|FF|3
@@ -12,9 +12,9 @@
 13|IMEEE|Winter|2021|1|KK|10
 14|PREDMET|Summer|4|9|JJ|-1
 16|ime|Summer|1|12|WW|10
-18|ime|Winter|2021|9|RR|-1
+18|ime|Winter|2021|9|RR|13
 19|aa|Summer|5|5|TT|-1
 21|11|Summer|1|1|SS|-1
-22|TEEST|Summer|33|4|OO|-1
-24|DFSDFS|Summer|2|8|UU|22
+22|TEEST|Summer|33|4|OO|15
+24|DFSDFS|Summer|2|8|UU|-1
 25|pred|Summer|2|6|RR|-1
