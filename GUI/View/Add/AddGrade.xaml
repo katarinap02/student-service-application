@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
          xmlns:local="clr-namespace:GUI.View.Add" xmlns:dto="clr-namespace:GUI.DTO" d:DataContext="{d:DesignInstance Type=dto:GradeDTO}"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="AddGrade" Height="300" Width="400">
     <Grid>
         <Grid.Background>

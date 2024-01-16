@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI" xmlns:dto="clr-namespace:GUI.DTO" d:DataContext="{d:DesignInstance Type=dto:SubjectDTO}"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="Add Subject" Height="320" Width="600">
          
     <Grid>

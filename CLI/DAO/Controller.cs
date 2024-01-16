@@ -27,8 +27,6 @@ public class HeadDao
     private readonly ChairProfessorDao _chairprofessorDao;
 
     public ObserverSub observerSub;
-
-
     public HeadDao()
     {
         _studentsDao = new StudentDao();
@@ -52,7 +50,6 @@ public class HeadDao
         _chairprofessorDao = chairprofessorDao;
         observerSub = new ObserverSub();
     }
-
     public void SubscribeStudent(IObserver observer)
     {
         _studentsDao.StudentObserverSub.Subscribe(observer);
@@ -61,14 +58,8 @@ public class HeadDao
     public void AddStudentHead(Student st)
     {
         _studentsDao.AddStudent(st);
-
-
-
-
         observerSub.NotifyObservers();
     }
-
-
 
     public List<Student> GetAllStudentsHead()
     {
@@ -86,12 +77,11 @@ public class HeadDao
                 grades.Add(g);
             }
         }
-        observerSub.NotifyObservers();
+        //observerSub.NotifyObservers();
         return grades;
 
 
     }
-
     public List<Subject> getFailedSubjects(Student student) // id studenta za kog gledamo nepolozene predmete
     {
         List<Subject> failedSubjects = new List<Subject>();
@@ -118,8 +108,6 @@ public class HeadDao
                 list2.Add(subject); //treba nam kopija liste
             }
 
-
-
             foreach (Grade grade in getGradesForStudent(student)) //zatim izbacimo one koji imaju trenutno ocenu
             {
                 foreach (Subject sub in list2)
@@ -130,10 +118,9 @@ public class HeadDao
             }
         }
 
-        observerSub.NotifyObservers();
+        //observerSub.NotifyObservers();
         return failedSubjects;
     }
-
     public List<Subject> getSubjectsForStudent(Student student)  //studentu dodjeljuje predmet koji moze da slusa a koji vec ne slusa
     {
         List<Subject> subjectsForStudent = new List<Subject>();
@@ -154,17 +141,6 @@ public class HeadDao
 
 
             }
-            //kada dodas studenta u predmet dodaj i vezu student pohadja predmet
-
-            /* foreach (Grade grade in getGradesForStudent(student))
-                    {
-                        if (subject.Id != grade.subject.Id && student.Id!=grade.student.Id)
-                        {
-                            subjectsForStudent.Add(subject);
-                          //  StudentSubject studentSubject = new StudentSubject(student.Id, subject.Id); //dodajem novu vezu
-                            //studentSubjects.Add(studentSubject);
-                        }
-                    }*/
 
         }
 
@@ -223,11 +199,6 @@ public class HeadDao
         List<Student> _studentsList = new List<Student>();
         _studentsList = students.Distinct().ToList();
 
-
-
-
-
-
         return _studentsList;
 
 
@@ -261,11 +232,6 @@ public class HeadDao
 
         List<Student> _studentsList = new List<Student>();
         _studentsList = students.Distinct().ToList();
-
-
-
-
-
 
         return _studentsList;
 
@@ -307,8 +273,6 @@ public class HeadDao
         }
         observerSub.NotifyObservers();
     }
-
-
     public void RemoveStudentHead(int id)
     {
         Student? st = _studentsDao.GetStudentById(id);
@@ -398,11 +362,6 @@ public class HeadDao
             }
         }
 
-
-
-        //nisam dodala provjeru toga da li je student polozio taj predmet jer ako ga je polozio onda ga ni ne slusa kod tog profesora
-
-
         List<Student> _studentsList = new List<Student>();
         _studentsList = _students.Distinct().ToList(); //funckija koja uklanja duplikate
 
@@ -421,7 +380,6 @@ public class HeadDao
         observerSub.NotifyObservers();
 
     }
-
     public List<Subject> GetAllSubjectsHead()
     {
         return _subjectsDao.GetAllSubjects();
@@ -432,7 +390,6 @@ public class HeadDao
     {
         return _subjectsDao.GetSubjectById(id);
     }
-
     public void UpdateSubjectHead(Subject sb)
     {
         Subject? olds = _subjectsDao.UpdateSubject(sb);
@@ -522,7 +479,6 @@ public class HeadDao
         System.Console.WriteLine("Subject removed");
 
     }
-
     public void setProfessor(Professor p, Subject sb)
     {
         _subjectsDao.setProfessor(p, sb);
@@ -545,9 +501,7 @@ public class HeadDao
         observerSub.NotifyObservers();
         return subjects;
 
-
     }
-
     public List<Subject> getSubjectsWithoutProfessor(Professor prof)
     {
         List<Subject> subjects = new List<Subject>();
@@ -568,15 +522,7 @@ public class HeadDao
         }
         observerSub.NotifyObservers();
         return subjects;
-
-
     }
-
-
-
-    // kada budes brisala za subject ne zaboravi da izbrises iz obe liste kod studenta taj subject
-    // kod profesora mora da se obrise i iz liste ali i ako nema sefa cela katedra
-
     // ------------------------------------------CHAIR--------------------------------------------//
 
     public void SubscribeChair(IObserver observer)
@@ -593,7 +539,6 @@ public class HeadDao
     {
         _chairsDao.AddChair(ch);
     }
-
     public void UpdateChairHead(Chair ch)
     {
         Chair? oldchair = _chairsDao.UpdateChair(ch);
@@ -615,7 +560,6 @@ public class HeadDao
             }
         }
     }
-
     public void RemoveChairHead(int id)
     {
         Chair? ch = _chairsDao.GetChairById(id);
@@ -650,8 +594,6 @@ public class HeadDao
     }
 
     //-----------------------------------------PROFESSOR-----------------------------------------//
-
-
     public void SubscribeProfessor(IObserver observer)
     {
         _professorsDao.ProfessorObserverSub.Subscribe(observer);
@@ -691,8 +633,6 @@ public class HeadDao
                 ch.Professors.Add(pr);  // ubaci ponovo kad je odradjen upgrade
 
             }
-
-
         }
 
         foreach (Chair ch in _chairsDao.GetAllChairs()) //promenimo u oceni studenta
@@ -729,60 +669,36 @@ public class HeadDao
                 return false;
             }
 
-
-
-            /*  StudentSubject? removedStudentSubject = _studentsubjectsDao.RemoveStudentSubject(id); //brisemo i vezu
-              if (removedStudentSubject is null)
-              {
-                  continue ;
-              }*/
         }
 
         foreach (Chair ch in _chairsDao.GetAllChairs())
         {
-            if (ch.Chief.Id == pr.Id)
+            if (ch.IdChef == pr.Id)
             {
                 return false;
             }
         }
 
-
-
         foreach (Subject sb in _subjectsDao.GetAllSubjects())
         {
-            if (sb.ProfessorSb != null)
-            {
-
-
-                if (sb.ProfessorSb.Id == pr.Id)
+                if (sb.idProf == pr.Id)
                 {
                     return false;
                 }
-            }
+            
         }
 
-
-        /*   foreach (Grade g in gr)
-           {
-               Grade? removedgrade = _gradesDao.RemoveGrade(g.Id);
-               if (removedgrade is null)
-               { continue; }
-           }*/
 
         Professor? removedpr = _professorsDao.RemoveProfessor(id); //tek kad smo obrisali sve veze obrisemo i studenta
         if (removedpr is null)
         {
-            System.Console.WriteLine("Student not found");
+            System.Console.WriteLine("Professor not found");
             return false;
         }
 
-        System.Console.WriteLine("Student removed");
+        System.Console.WriteLine("Professor removed");
         observerSub.NotifyObservers();
         return true;
-
-
-
-
 
     }
 
@@ -847,12 +763,7 @@ public class HeadDao
     {
         return _gradesDao.GetAllGrades();
 
-
-
     }
-
-
-
     public void AddGradeHead(Grade gd) // ali ne znam da li ce nam trebati
     {
         Subject sb = gd.subject;
@@ -886,15 +797,11 @@ public class HeadDao
          // StudentSubject studentSubject = new StudentSubject(st.Id, sb.Id);
           _studentsubjectsDao.RemoveStudentSubject2(st.Id, sb.Id); //ovo ne treba jer veza vec postoji
 
-
-
-
         _gradesDao.MakeNewGrade(gd, sb, st);
 
         observerSub.NotifyObservers();
 
     }
-
     public void UpdateGreadHead(Grade g)
     {
         Grade? oldg = _gradesDao.UpdateGrade(g);
@@ -916,8 +823,6 @@ public class HeadDao
             }
         }
     }
-
-
     public void RemoveGradeHead(int id) //treba dodati da vraca u listu nepolozenih predmeta - dodato :)
     {
         Grade? gr = _gradesDao.GetGradeById(id);
@@ -988,9 +893,6 @@ public class HeadDao
         observerSub.NotifyObservers();
     }
     //***********************FUNKCIJA ZA SETOVANJE IDPROFESORA U SUBJECTU**********************//
-
-
-
 
     //*************************FUNKCIJA ZA TRAZENJE PROFESORA SA KATEDRE SA USLOVIMA**************
 
@@ -1118,7 +1020,7 @@ public class HeadDao
                 }
             }
         }
-        observerSub.NotifyObservers();
+        //observerSub.NotifyObservers();
         return professors;
 
 

@@ -1,5 +1,6 @@
 ﻿using CLI.DAO;
 using CLI.Model;
+using CLI.Observer;
 using GUI.DTO;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,8 @@ namespace GUI.View.Add
         private CLI.DAO.HeadDao controller;
         public StudentDTO studentDTO { get; set; }  
         public SubjectDTO subjectDTO { get; set; }
+
+     
         
 
         public AddGrade(HeadDao cnt, StudentDTO std, SubjectDTO sb)
@@ -35,7 +38,10 @@ namespace GUI.View.Add
             controller = cnt;
             studentDTO = new StudentDTO(std);
             subjectDTO = new SubjectDTO(sb);
+            
           //  gradeDTO = new GradeDTO(studentDTO, subjectDTO);
+          
+            
             
 
         }
@@ -57,5 +63,6 @@ namespace GUI.View.Add
             MessageBox.Show("Grade not added!");
         }
 
+        
     }
 }

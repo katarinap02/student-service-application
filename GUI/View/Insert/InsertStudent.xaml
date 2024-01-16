@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI.View.Insert"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="Insert Student" Height="514" Width="600">
     <Grid Margin="0,32,0,-6">
         <Grid.ColumnDefinitions>

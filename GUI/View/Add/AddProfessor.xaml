@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI" xmlns:dto="clr-namespace:GUI.DTO" d:DataContext="{d:DesignInstance Type=dto:ProfessorDTO}"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
            Title="Add Professor" Height="472" Width="598">
     <Grid>
         <Grid.Background>

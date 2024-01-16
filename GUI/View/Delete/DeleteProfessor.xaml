@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="Delete Professor" Height="164" Width="328">
     <Grid>
         <Grid.Background>

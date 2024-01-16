@@ -17,13 +17,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using CLI.Model;
 using GUI.View.Add;
+using CLI.Observer;
 
 namespace GUI.View.Insert
 {
     /// <summary>
     /// Interaction logic for InsertStudent.xaml
     /// </summary>
-    public partial class InsertStudent : Window
+    public partial class InsertStudent : Window, IObserver
     {
         StudentDTO studentDTO;
         SubjectDTO subjectDTO;
@@ -50,7 +51,7 @@ namespace GUI.View.Insert
             Grades = new ObservableCollection<GradeDTO>();
             Subjects = new ObservableCollection<SubjectDTO>();
             Professors = new ObservableCollection<ProfessorDTO>();
-            //headDao.observerSub.Subscribe(this);
+            headDao.observerSub.Subscribe(this);
 
             dataGridPassed.ItemsSource = Grades;
             dataGridFiled.ItemsSource = Subjects;
@@ -179,6 +180,13 @@ namespace GUI.View.Insert
         private void tabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        public void Update()
+        {
+            UpdateGrade(pomStd.ToStudent());
+            UpdateSubject(pomStd.ToStudent());
+            UpdateSubjectProfessor(pomStd.ToStudent());
         }
     }
 }
