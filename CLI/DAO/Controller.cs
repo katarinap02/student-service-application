@@ -498,7 +498,7 @@ public class HeadDao
             }
 
         }
-        observerSub.NotifyObservers();
+        //observerSub.NotifyObservers();
         return subjects;
 
     }
@@ -520,7 +520,7 @@ public class HeadDao
             }
 
         }
-        observerSub.NotifyObservers();
+       // observerSub.NotifyObservers();
         return subjects;
     }
     // ------------------------------------------CHAIR--------------------------------------------//

@@ -1,5 +1,6 @@
 ﻿using CLI.DAO;
 using CLI.Model;
+using CLI.Observer;
 using GUI.DTO;
 using GUI.View.Insert;
 using System;
@@ -22,7 +23,7 @@ namespace GUI
     /// <summary>
     /// Interaction logic for InsertProfessor.xaml
     /// </summary>
-    public partial class InsertProfessor : Window
+    public partial class InsertProfessor : Window, IObserver
     {
         ProfessorDTO professorDTO;
         AdressDTO adressDTO;
@@ -46,7 +47,7 @@ namespace GUI
 
             Subjects = new ObservableCollection<SubjectDTO>();
             Students = new ObservableCollection<StudentDTO>();
-
+            headDao.observerSub.Subscribe(this);
             dataGridSubjects.ItemsSource = Subjects;
             dataGridStudents.ItemsSource = Students;
 
@@ -145,5 +146,11 @@ namespace GUI
                         MessageBox.Show("Please input one, two or three words to search!");
                     }
             }
+
+        public void Update()
+        {
+            UpdateSubject(professorDTO.ToProfessor());
+            UpdateStudent(professorDTO.ToProfessor());
+        }
     }
 }
