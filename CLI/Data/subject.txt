@@ -3,13 +3,11 @@
 2|baze podataka 1|Winter|3|8|CC|10
 3|klfdsj|Winter|3|3|DD|-1
 5|nans|Winter|2023|7|FF|3
-5|nans|Summer|2023|7|GG|-1
 7|nans|Winter|2023|7|HH|-1
 8|predme|Summer|2023|5|MM|-1
 9|ime|Summer|1212|12|NN|10
 10|oisisi|Summer|2023|8|FF|15
 11|a|Summer|1|1|LL|-1
-13|IMEEE|Winter|2021|1|KK|10
 14|PREDMET|Summer|4|9|JJ|-1
 16|ime|Summer|1|12|WW|10
 18|ime|Winter|2021|9|RR|13

@@ -127,7 +127,8 @@
             <DockPanel Grid.Column="0" LastChildFill="False" Margin="15,0,0,0" Grid.ColumnSpan="3">
                 <!--<Label x:Name="NameLabel" Content="STUDENTSKA SLUZBA" FontWeight="ExtraBold" />-->
                 <Button x:Name="buttonAdd" DockPanel.Dock="Left" Width="30" Click="Add_Click" Background="Transparent" BorderBrush="Transparent">
-                    <Image Source="Resources/new.png" Width="20" Height="18" />
+          
+                <Image Source="Resources/new.png" Width="20" Height="18" />
                 </Button>
 
                 <Button x:Name="buttonEdit" DockPanel.Dock="Left" Width="30" Click="Edit_Click" Background="Transparent" BorderBrush="Transparent">

@@ -178,7 +178,7 @@ namespace GUI
         {
             TabItem currentTab = tabControl.SelectedItem as TabItem;
 
-            if (!currentTab.Header.Equals("Professor"))
+            if (!currentTab.Header.Equals("Professor") || !currentTab.Header.Equals("Profesor"))
             {
                 TabItem studentTabItem = tabControl.Items.OfType<TabItem>().FirstOrDefault(tab => tab.Header.Equals("Professor"));
 
@@ -199,7 +199,7 @@ namespace GUI
         {
             TabItem currentTab = tabControl.SelectedItem as TabItem;
 
-            if (!currentTab.Header.Equals("Subject"))
+            if (!currentTab.Header.Equals("Subject") || !currentTab.Header.Equals("Predmet"))
             {
                 TabItem studentTabItem = tabControl.Items.OfType<TabItem>().FirstOrDefault(tab => tab.Header.Equals("Subject"));
 
@@ -242,7 +242,7 @@ namespace GUI
                     addStudent.ShowDialog();
                 }
                
-                else if(currentTab.Header.Equals("Professor"))
+                else if(currentTab.Header.Equals("Professor") || currentTab.Header.Equals("Profesor"))
                 {
                     //MessageBox.Show("Selected tab: " + (tabControl.SelectedItem as TabItem).Header);
                     AddProfessor addProfessor = new AddProfessor(headDao);
@@ -280,7 +280,7 @@ namespace GUI
                     }
                 }
 
-                else if (currentTab.Header.Equals("Professor"))
+                else if (currentTab.Header.Equals("Professor") || currentTab.Header.Equals("Profesor"))
                 {
                    ProfessorDTO professorDTO = dataGridProfessor.SelectedItem as ProfessorDTO;
 
@@ -365,11 +365,35 @@ namespace GUI
                             MessageBox.Show("You didnt select professor to delete!");
                         }
                         break;
+                    case "Profesor":
+                        ProfessorDTO professorDTO1 = dataGridProfessor.SelectedItem as ProfessorDTO;
+                        if (professorDTO1 != null)
+                        {
+                            DeleteProfessor deleteProfessor = new DeleteProfessor(headDao, professorDTO1);
+                            deleteProfessor.ShowDialog();
+                        }
+                        else
+                        {
+                            MessageBox.Show("You didnt select professor to delete!");
+                        }
+                        break;
                     case "Subject":
                         SubjectDTO subjectDTO = dataGridSubject.SelectedItem as SubjectDTO;
                         if (subjectDTO != null)
                         {
                             DeleteSubject deleteSubject = new DeleteSubject(headDao, subjectDTO);
+                            deleteSubject.ShowDialog();
+                        }
+                        else
+                        {
+                            MessageBox.Show("You didnt select subject to delete!");
+                        }
+                        break;
+                    case "Predmet":
+                        SubjectDTO subjectDTO1 = dataGridSubject.SelectedItem as SubjectDTO;
+                        if (subjectDTO1 != null)
+                        {
+                            DeleteSubject deleteSubject = new DeleteSubject(headDao, subjectDTO1);
                             deleteSubject.ShowDialog();
                         }
                         else
@@ -462,7 +486,68 @@ namespace GUI
                         MessageBox.Show("Please input one or two words to search!");
                     }
                     break;
+                case "Profesor":
+                    if (resultArray.Length > 0)
+                    {
+                        if (resultArray.Length > 2)
+                        {
+                            MessageBox.Show("You input more than two words!");
+                        }
+                        else
+                        {
+                            if (resultArray.Length == 1)
+                            {
+                                var filtered = Professors.Where(professor => professor.Surname.ToLower().Contains(resultArray[0])).ToList();
+                                dataGridProfessor.ItemsSource = filtered;
+                            }
+                            else if (resultArray.Length == 2)
+                            {
+                                var filtered = Professors.Where(professor =>
+                                professor.Surname.ToLower().Contains(resultArray[0]) &&
+                                professor.Name.ToLower().Contains(resultArray[1])).ToList();
+                                dataGridProfessor.ItemsSource = filtered;
+                            }
+
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please input one or two words to search!");
+                    }
+                    break;
                 case "Subject":
+                    if (resultArray.Length > 0)
+                    {
+                        if (resultArray.Length > 2)
+                        {
+                            MessageBox.Show("You input more than two words!");
+                        }
+                        else
+                        {
+                            if (resultArray.Length == 1)
+                            {
+                                var filtered = Subjects.Where(subject => subject.Name.ToLower().Contains(resultArray[0])).ToList();
+                                dataGridSubject.ItemsSource = filtered;
+                            }
+                            else if (resultArray.Length == 2)
+                            {
+                                var filtered = Subjects.Where(subject =>
+                                subject.Name.ToLower().Contains(resultArray[0]) &&
+                                subject.Code.ToString().ToLower().Contains(resultArray[1])).ToList();
+                                dataGridSubject.ItemsSource = filtered;
+                            }
+
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please input one or two words to search!");
+                    }
+                    break;
+
+                case "Predmet":
                     if (resultArray.Length > 0)
                     {
                         if (resultArray.Length > 2)
