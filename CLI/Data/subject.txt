@@ -14,7 +14,7 @@
 16|ime|Summer|1|12|WW|10
 18|ime|Winter|2021|9|RR|13
 19|aa|Summer|5|5|TT|-1
-21|11|Summer|1|1|SS|-1
-22|TEEST|Summer|33|4|OO|15
+21|11|Summer|1|1|SS|15
+22|TEEST|Summer|33|4|OO|14
 24|DFSDFS|Summer|2|8|UU|-1
 25|pred|Summer|2|6|RR|-1

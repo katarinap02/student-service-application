@@ -45,13 +45,15 @@ namespace GUI.View.Insert
             pomId = getProfId(subjectDTO.ToSubject());
             UnableButtons(pomId);
 
-           
-             textBoxProfessor.Text = getProfName(subjectDTO.ToSubject());
+            
+            
+
+             textBoxProfessor.Text = subjectDTO.ProfessorName;
         }
 
         private void UnableButtons(int id)
         {
-            if (id != -1)
+            if (subjectDTO.ProfessorId != -1)
             {
                 buttonAddProfessor.IsEnabled = false;
                 buttonRemoveProfessor.IsEnabled = true;
@@ -114,9 +116,8 @@ namespace GUI.View.Insert
 
         public void Update()
         {
-             textBoxProfessor.Text = getProfName(subjectDTO.ToSubject());
-           // headDao.UpdateSubjectHead(subjectDTO.ToSubject());
-            pomId = getProfId(subjectDTO.ToSubject());
+            textBoxProfessor.Text = subjectDTO.ProfessorName;
+           // pomId = getProfId(subjectDTO.ToSubject());
             UnableButtons(pomId);
         }
     }
