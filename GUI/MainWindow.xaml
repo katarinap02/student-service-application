@@ -3,11 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GUI"
+        xmlns:local="clr-namespace:GUI.Localization"
+        xmlns:ns="clr-namespace:GUI.Localization"  
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Background="LightPink"
-        Title="Studentska Sluzba" Height="424" Width="882" >
+        Title="Studentska Sluzba" Height="424" Width="882"
+        KeyDown="Window_KeyDown">
 
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Delete" Executed="Delete_Click"/>
@@ -31,7 +33,7 @@
 
         <DockPanel DockPanel.Dock="Bottom" Height="20">
             <StatusBar Height="Auto" Width="797">
-                <TextBlock x:Name="statusTextBlock" DockPanel.Dock="Left" Text="Student services" Width="94"/>
+                <TextBlock x:Name="statusTextBlock" DockPanel.Dock="Left" Text="{ns:Loc Student services}" Width="94"/>
                 <TextBlock x:Name="TextBlockOpen" DockPanel.Dock="Left" Width="94">
                     <TextBlock.Style>
                         <Style TargetType="TextBlock">
@@ -59,8 +61,8 @@
             </StatusBar>
         </DockPanel>
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="File">
-                <MenuItem Header="New" InputGestureText="Ctrl+N" Click="Add_Click">
+            <MenuItem Header="{ns:Loc File}">
+                <MenuItem Header="{ns:Loc Add}" InputGestureText="Ctrl+N" Click="Add_Click">
                     <MenuItem.Icon>
                         <Image Source="Resources/new.png" Width="16" Height="16"/>
                     </MenuItem.Icon>
@@ -68,44 +70,48 @@
                         <KeyBinding Key="N" Modifiers="Ctrl"/>
                     </MenuItem.InputBindings>
                 </MenuItem>
-                <MenuItem Header="Save" InputGestureText="Ctrl+S">
+                <MenuItem Header="{ns:Loc Save}" InputGestureText="Ctrl+S">
                     <MenuItem.Icon>
                         <Image Source="Resources/save.png" Width="16" Height="16"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="Open" InputGestureText="Ctrl+O">
+                <MenuItem Header="{ns:Loc Open}" InputGestureText="Ctrl+O">
                     <MenuItem.Icon>
                         <Image Source="Resources/open.png" Width="16" Height="16"/>
                     </MenuItem.Icon>
-                    <MenuItem Header="Students" Click="St_Click" ></MenuItem>
-                    <MenuItem Header="Subjects" Click="Sb_Click" ></MenuItem>
-                    <MenuItem Header="Professors" Click="Pf_Click" ></MenuItem>
-                    <MenuItem Header="Chairs" Click="Ch_Click" ></MenuItem>
+                    <MenuItem Header="{ns:Loc Students}" Click="St_Click" ></MenuItem>
+                    <MenuItem Header="{ns:Loc Subjects}" Click="Sb_Click" ></MenuItem>
+                    <MenuItem Header="{ns:Loc Professors}" Click="Pf_Click" ></MenuItem>
+                    <MenuItem Header="{ns:Loc Chairs}" Click="Ch_Click" ></MenuItem>
                 </MenuItem>
-                <MenuItem Header="Close" InputGestureText="Ctrl+C" Click="Close_Click">
+                <MenuItem Header="{ns:Loc Close}" InputGestureText="Ctrl + X" Click="Close_Click">
                     <MenuItem.Icon>
                         <Image Source="Resources/cross.png" Width="16" Height="16"/>
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="Edit">
-                <MenuItem Header="Edit" InputGestureText="Ctrl+E" Click="Edit_Click">
+            <MenuItem Header="{ns:Loc Edit}">
+                <MenuItem Header="{ns:Loc Edit}" InputGestureText="Ctrl+E" Click="Edit_Click">
                     <MenuItem.Icon>
                         <Image Source="Resources/edit.png" Width="16" Height="16"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="Delete" InputGestureText="Ctrl+D"  Click="Delete_Click">
+                <MenuItem Header="{ns:Loc Delete}" InputGestureText="Ctrl+D"  Click="Delete_Click">
                     <MenuItem.Icon>
                         <Image Source="Resources/trash.png" Width="16" Height="16"/>
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="Help">
-                <MenuItem Header="About"  InputGestureText="Ctrl+H" Click="About_Click" >
+            <MenuItem Header="{ns:Loc Help}">
+                <MenuItem Header="{ns:Loc About}"  InputGestureText="Ctrl+H" Click="About_Click" >
                     <MenuItem.Icon>
                         <Image Source="Resources/info.png" Width="16" Height="16"/>
                     </MenuItem.Icon>
                 </MenuItem>
+            </MenuItem>
+            <MenuItem Header="{ns:Loc Localization}">
+                <MenuItem Header="Serbian" Click="MenuItem_Click_Serbian" InputGestureText="Ctrl + R"></MenuItem>
+                <MenuItem Header="English" Click="MenuItem_Click_English" InputGestureText="Ctrl + G"></MenuItem>
             </MenuItem>
             <Menu/>
 
@@ -130,12 +136,12 @@
                 <Button x:Name="buttonDelete" DockPanel.Dock="Left" Width="40" Click="Delete_Click" Background="Transparent" BorderBrush="Transparent">
                     <Image Source="Resources/trash.png" Width="20" Height="18" />
                 </Button>
-                <Button x:Name="buttonChair" DockPanel.Dock="Left" Click="Ch_Click" Content="Chair" Background="Transparent" BorderBrush="Transparent" Height="20"/>
+                <Button x:Name="buttonChair" DockPanel.Dock="Left" Click="Ch_Click" Content="{ns:Loc Chair}" Background="Transparent" BorderBrush="Transparent" Height="20"/>
 
 
             </DockPanel>
             <DockPanel LastChildFill="False" Margin="0,0,15,0" Grid.ColumnSpan="3">
-                <Button x:Name="buttonSearch" DockPanel.Dock="Right" Width="40" Click="Search_Click">Search</Button>
+                <Button x:Name="buttonSearch" DockPanel.Dock="Right" Width="40" Click="Search_Click" Content="{ns:Loc Search}"></Button>
                 <TextBox x:Name="textboxSearch" DockPanel.Dock="Right" Width="150"></TextBox>
 
             </DockPanel>
@@ -143,20 +149,22 @@
         </Grid>
         <Grid Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" Height="{Binding Path=ActualHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="94*"/>
+                <ColumnDefinition Width="104*"/>
+                <ColumnDefinition Width="51*"/>
+                <ColumnDefinition Width="24*"/>
                 <ColumnDefinition Width="703*"/>
             </Grid.ColumnDefinitions>
-            <TabControl x:Name="tabControl" Grid.ColumnSpan="2">
-                <TabItem x:Name="tabItemStudent" Header="Student" Background="AntiqueWhite" Foreground="LightPink">
+            <TabControl x:Name="tabControl" Grid.ColumnSpan="4">
+                <TabItem x:Name="tabItemStudent" Header="{ns:Loc Student}" Background="AntiqueWhite" Foreground="LightPink">
                     <DataGrid x:Name="dataGridStudent" IsReadOnly="True" AutoGenerateColumns="False" >
                         <DataGrid.Columns >
-                            <DataGridTextColumn Header="INDEX" Width="*" Binding="{Binding IndexS}"/>
+                            <DataGridTextColumn Header="{ns:Loc INDEX}" Width="*" Binding="{Binding IndexS}"/>
 
-                            <DataGridTextColumn Header="NAME" Width="*" Binding="{Binding Name}"/>
-                            <DataGridTextColumn Header="SURNAME" Width="*" Binding="{Binding Surname}"/>
-                            <DataGridTextColumn Header="YEAR" Width="*" Binding="{Binding StYear}"/>
-                            <DataGridTextColumn Header="STATUS" Width="*" Binding="{Binding StudentStatus}"/>
-                            <DataGridTextColumn Header="AVERAGE" Width="*" Binding="{Binding Average}"/>
+                            <DataGridTextColumn Header="{ns:Loc NAME}" Width="*" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Header="{ns:Loc SURNAME}" Width="*" Binding="{Binding Surname}"/>
+                            <DataGridTextColumn Header="{ns:Loc YEAR}" Width="*" Binding="{Binding StYear}"/>
+                            <DataGridTextColumn Header="{ns:Loc STATUS}" Width="*" Binding="{Binding StudentStatus}"/>
+                            <DataGridTextColumn Header="{ns:Loc AVERAGE}" Width="*" Binding="{Binding Average}"/>
 
 
 
@@ -164,30 +172,30 @@
                     </DataGrid>
 
                 </TabItem>
-                <TabItem x:Name="tabItemProfessor" Header="Professor" Background="AntiqueWhite" Foreground="DeepSkyBlue">
+                <TabItem x:Name="tabItemProfessor" Header="{ns:Loc Professor}" Background="AntiqueWhite" Foreground="DeepSkyBlue">
                     <DataGrid x:Name="dataGridProfessor" IsReadOnly="True" AutoGenerateColumns="False" >
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="NAME" Width="*" Binding="{Binding Name}"/>
-                            <DataGridTextColumn Header="SURNAME" Width="*" Binding="{Binding Surname}"/>
-                            <DataGridTextColumn Header="EMAIL" Width="*" Binding="{Binding Email}"/>
-                            <DataGridTextColumn Header="TITLE" Width="*" Binding="{Binding Title}"/>
+                            <DataGridTextColumn Header="{ns:Loc NAME}" Width="*" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Header="{ns:Loc SURNAME}" Width="*" Binding="{Binding Surname}"/>
+                            <DataGridTextColumn Header="{ns:Loc EMAIL}" Width="*" Binding="{Binding Email}"/>
+                            <DataGridTextColumn Header="{ns:Loc TITLE}" Width="*" Binding="{Binding Title}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </TabItem>
-                <TabItem x:Name="tabItemSubject" Header="Subject" Background="AntiqueWhite" Foreground="Violet">
+                <TabItem x:Name="tabItemSubject" Header="{ns:Loc Subject}" Background="AntiqueWhite" Foreground="Violet">
                     <StackPanel>
                         <Grid HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10">
                             <DockPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10">
-                                <Button x:Name="buttonSubjects" Width="150" Height="30" Content="Choose another subject" Background="Beige" Click="ChooseSubject_Click"/>
+                                <Button x:Name="buttonSubjects" Width="150" Height="30" Content="{ns:Loc Choose another subject}" Background="Beige" Click="ChooseSubject_Click"/>
                             </DockPanel>
                         </Grid>
                         <DataGrid x:Name="dataGridSubject" IsReadOnly="True" AutoGenerateColumns="False">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="CODE" Width="*" Binding="{Binding Code}"/>
-                                <DataGridTextColumn Header="NAME" Width="*" Binding="{Binding Name}"/>
-                                <DataGridTextColumn Header="ESPB" Width="*" Binding="{Binding Espb}"/>
-                                <DataGridTextColumn Header="YEAR OF STUDY" Width="*" Binding="{Binding Year}"/>
-                                <DataGridTextColumn Header="SEMESTER" Width="*" Binding="{Binding Semester}"/>
+                                <DataGridTextColumn Header="{ns:Loc CODE}" Width="*" Binding="{Binding Code}"/>
+                                <DataGridTextColumn Header="{ns:Loc NAME}" Width="*" Binding="{Binding Name}"/>
+                                <DataGridTextColumn Header="{ns:Loc ESPB}" Width="*" Binding="{Binding Espb}"/>
+                                <DataGridTextColumn Header="{ns:Loc YEAR OF STUDY}" Width="*" Binding="{Binding Year}"/>
+                                <DataGridTextColumn Header="{ns:Loc SEMESTER}" Width="*" Binding="{Binding Semester}"/>
                             </DataGrid.Columns>
                         </DataGrid>
                     </StackPanel>

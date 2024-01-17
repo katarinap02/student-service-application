@@ -1,4 +1,4 @@
-﻿using LocalizationExample.Localization;
+﻿using GUI.Localization;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -16,7 +16,7 @@ namespace GUI
     {
         public void ChangeLanguage(string lang)
         {
-           // TranslationSource.Instance.CurrentCulture = new System.Globalization.CultureInfo(lang);
+            TranslationSource.Instance.CurrentCulture = new System.Globalization.CultureInfo(lang);
         }
     }
 }

@@ -169,8 +169,15 @@ namespace GUI.View.Insert
         private void RemoveStudent_Click(object sender, RoutedEventArgs e)
         {
             SubjectDTO subjectDTO = dataGridFiled.SelectedItem as SubjectDTO;
-            DeleteStudentFromSubject deleteStudentFromSubject = new DeleteStudentFromSubject(headDao, subjectDTO, studentDTO);
-            deleteStudentFromSubject.ShowDialog();
+            if (subjectDTO != null)
+            {
+                DeleteStudentFromSubject deleteStudentFromSubject = new DeleteStudentFromSubject(headDao, subjectDTO, studentDTO);
+                deleteStudentFromSubject.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You didn't select subject to delete!");
+            }
         }
 
         private void Pass_Click(object sender, RoutedEventArgs e)

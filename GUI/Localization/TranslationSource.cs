@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
-using System.Resources;
 using System.Text;
+using System.Resources;
 using System.Threading.Tasks;
 using System.Windows.Data;
 
-namespace LocalizationExample.Localization
+namespace GUI.Localization
 {
-   /* class TranslationSource : INotifyPropertyChanged
+     class TranslationSource: INotifyPropertyChanged
     {
         private static readonly TranslationSource instance = new TranslationSource();
         public static TranslationSource Instance
@@ -20,15 +20,15 @@ namespace LocalizationExample.Localization
 
 
 
-      //  private readonly ResourceManager resourceManager = Properties.Resources.ResourceManager;
+        private readonly ResourceManager resourceManager = Properties.Resources.ResourceManager;
         private CultureInfo currentCulture = null;
 
         public string this[string key]
         {
-          /*  get
+            get
             {
-               // string retVal = this.resourceManager.GetString(key, this.currentCulture);
-              //  return retVal;
+                string retVal = this.resourceManager.GetString(key, this.currentCulture);
+                return retVal;
             }
         }
 
@@ -60,5 +60,6 @@ namespace LocalizationExample.Localization
             this.Mode = BindingMode.OneWay;
             this.Source = TranslationSource.Instance;
         }
-    }*/
+    }
 }
+

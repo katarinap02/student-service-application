@@ -53,17 +53,31 @@ namespace GUI.View.Show
         private void Button_ClickShowStudents_1(object sender, RoutedEventArgs e)
         {
             SubjectDTO subject2DTO = dataGridAnotherSubjects.SelectedItem as SubjectDTO;
-            ShowStudents1 showStudents1 = new ShowStudents1(headDao,subjectDTO, subject2DTO);
-            showStudents1.ShowDialog();
+            if (subject2DTO != null)
+            {
+                ShowStudents1 showStudents1 = new ShowStudents1(headDao, subjectDTO, subject2DTO);
+                showStudents1.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You didn't select another subjext!");
+            }
         }
 
         private void Button_ClickShowStudents_2(object sender, RoutedEventArgs e)
         {
 
             SubjectDTO subject2DTO = dataGridAnotherSubjects.SelectedItem as SubjectDTO;
-            ShowStudents2 showStudents2= new ShowStudents2(headDao,subjectDTO, subject2DTO);
-            showStudents2.ShowDialog();
+            if (subject2DTO != null)
+            {
+                ShowStudents2 showStudents2 = new ShowStudents2(headDao, subjectDTO, subject2DTO);
+                showStudents2.ShowDialog();
+            }
 
+            else
+            {
+                MessageBox.Show("You didn't select another subjext!");
+            }
 
         }
     }

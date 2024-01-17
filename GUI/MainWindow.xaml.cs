@@ -23,7 +23,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using GUI.Localization;
 using System.Collections.ObjectModel;
+
 using GUI.View.Show;
 
 namespace GUI 
@@ -33,6 +35,12 @@ namespace GUI
     /// </summary>
     public partial class MainWindow : Window, IObserver
     {
+        private App app;
+
+        private const string SRB = "sr-RS";
+
+        private const string ENG = "en-US";
+
         public static RoutedCommand NewCommand = new RoutedCommand();
         public ObservableCollection<StudentDTO> Students { get; }
         public ObservableCollection<ProfessorDTO> Professors { get; }
@@ -50,7 +58,10 @@ namespace GUI
                 
             InitializeComponent();
             SetWindowSize();
-            CommandBindings.Add(new CommandBinding(NewCommand, Add_Click));
+            this.DataContext = this;
+            app = (App)Application.Current;
+            app.ChangeLanguage(SRB);
+         
             Students = new ObservableCollection<StudentDTO>();
             Professors = new ObservableCollection<ProfessorDTO>();
             Subjects = new ObservableCollection<SubjectDTO>();
@@ -490,13 +501,48 @@ namespace GUI
 
         {
             SubjectDTO subjectDTO = dataGridSubject.SelectedItem as SubjectDTO;
-            ShowOtherSubjects showOtherSubjects= new ShowOtherSubjects(headDao, subjectDTO);
-            showOtherSubjects.ShowDialog();
+            if (subjectDTO != null)
+            {
+                ShowOtherSubjects showOtherSubjects = new ShowOtherSubjects(headDao, subjectDTO);
+                showOtherSubjects.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You didn't select subject!");
+            }
         }
 
         private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
         {
 
+        }
+
+        private void MenuItem_Click_Serbian(object sender, RoutedEventArgs e)
+        {
+            app.ChangeLanguage(SRB);
+        }
+
+        private void MenuItem_Click_English(object sender, RoutedEventArgs e)
+        {
+            app.ChangeLanguage(ENG);
+        }
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            /*if (Keyboard.IsKeyDown(Key.LeftCtrl) && Keyboard.IsKeyDown(Key.N))
+                MenuItem_Click_New(sender, e);
+            else if (Keyboard.IsKeyDown(Key.LeftCtrl) && Keyboard.IsKeyDown(Key.D))
+                MenuItem_Click_Delete(sender, e);*/
+             if (Keyboard.IsKeyDown(Key.LeftCtrl) && Keyboard.IsKeyDown(Key.X))
+               Close_Click(sender, e);
+             else if (Keyboard.IsKeyDown(Key.LeftCtrl) && Keyboard.IsKeyDown(Key.R))
+                MenuItem_Click_Serbian(sender, e);
+            else if (Keyboard.IsKeyDown(Key.LeftCtrl) && Keyboard.IsKeyDown(Key.G))
+                MenuItem_Click_English(sender, e);
+        }
+
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+            App.Current.Shutdown();
         }
     }
 }
