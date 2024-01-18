@@ -126,11 +126,20 @@
   <data name="Add Student" xml:space="preserve">
     <value>Add Student</value>
   </data>
+  <data name="Add Subject" xml:space="preserve">
+    <value>Add Subject</value>
+  </data>
   <data name="Adding" xml:space="preserve">
     <value>Adding</value>
   </data>
-  <data name="Adress city and county*" xml:space="preserve">
-    <value>Adress city and county*</value>
+  <data name="Adding Chef" xml:space="preserve">
+    <value>Adding Chef</value>
+  </data>
+  <data name="Adress city and country*" xml:space="preserve">
+    <value>Adress city and country*</value>
+  </data>
+  <data name="Adress, city and country*" xml:space="preserve">
+    <value>Adress, city and country*</value>
   </data>
   <data name="Are you sure you want to cancel this grade?" xml:space="preserve">
     <value>Are you sure you want to cancel this grade?</value>
@@ -171,8 +180,17 @@
   <data name="Chair" xml:space="preserve">
     <value>Chair</value>
   </data>
+  <data name="CHAIR ID" xml:space="preserve">
+    <value>CHAIR ID</value>
+  </data>
+  <data name="CHAIR NAME" xml:space="preserve">
+    <value>CHAIR NAME</value>
+  </data>
   <data name="Chairs" xml:space="preserve">
     <value>Chairs</value>
+  </data>
+  <data name="CHEF" xml:space="preserve">
+    <value>CHEF</value>
   </data>
   <data name="Choose another subject" xml:space="preserve">
     <value>Choose another subject</value>
@@ -273,6 +291,9 @@
   <data name="Passed" xml:space="preserve">
     <value>Passed</value>
   </data>
+  <data name="Phone number ( format:06******** )" xml:space="preserve">
+    <value>Phone number ( format:06******** )</value>
+  </data>
   <data name="Phonenumber ( format: 06******** )" xml:space="preserve">
     <value>Phonenumber ( format: 06******** )</value>
   </data>
@@ -285,6 +306,9 @@
   <data name="Remove" xml:space="preserve">
     <value>Remove</value>
   </data>
+  <data name="Remove Subject" xml:space="preserve">
+    <value>Remove subject</value>
+  </data>
   <data name="Save" xml:space="preserve">
     <value>Save</value>
   </data>
@@ -292,7 +316,7 @@
     <value>Search</value>
   </data>
   <data name="SEMESTER" xml:space="preserve">
-    <value>Semester</value>
+    <value>SEMESTER</value>
   </data>
   <data name="Semester(Summer or Winter)*" xml:space="preserve">
     <value>Semester(Summer or Winter)*</value>
@@ -306,8 +330,17 @@
   <data name="Student" xml:space="preserve">
     <value>Student</value>
   </data>
+  <data name="STUDENT ID" xml:space="preserve">
+    <value>STUDENT ID</value>
+  </data>
+  <data name="STUDENT NAME" xml:space="preserve">
+    <value>STUDENT NAME</value>
+  </data>
   <data name="Student services" xml:space="preserve">
     <value>Student services</value>
+  </data>
+  <data name="STUDENT SURNAME" xml:space="preserve">
+    <value>STUDENT SURNAME</value>
   </data>
   <data name="Students" xml:space="preserve">
     <value>Students</value>
@@ -339,6 +372,9 @@
   <data name="TITLE" xml:space="preserve">
     <value>Title</value>
   </data>
+  <data name="Title*" xml:space="preserve">
+    <value>Title*</value>
+  </data>
   <data name="YEAR" xml:space="preserve">
     <value>Year of study</value>
   </data>
@@ -346,10 +382,13 @@
     <value>Year of enrollment*</value>
   </data>
   <data name="YEAR OF STUDY" xml:space="preserve">
-    <value>Year of study</value>
+    <value>YEAR OF STUDY</value>
   </data>
   <data name="Year*" xml:space="preserve">
     <value>Year*</value>
+  </data>
+  <data name="Years of service*" xml:space="preserve">
+    <value>Years of service*</value>
   </data>
   <data name="Yes" xml:space="preserve">
     <value>Yes</value>

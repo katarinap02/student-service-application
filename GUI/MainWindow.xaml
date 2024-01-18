@@ -142,7 +142,7 @@
 
             </DockPanel>
             <DockPanel LastChildFill="False" Margin="0,0,15,0" Grid.ColumnSpan="3">
-                <Button x:Name="buttonSearch" DockPanel.Dock="Right" Width="40" Click="Search_Click" Content="{ns:Loc Search}"></Button>
+                <Button x:Name="buttonSearch" DockPanel.Dock="Right" Width="50" Click="Search_Click" Content="{ns:Loc Search}"></Button>
                 <TextBox x:Name="textboxSearch" DockPanel.Dock="Right" Width="150"></TextBox>
 
             </DockPanel>

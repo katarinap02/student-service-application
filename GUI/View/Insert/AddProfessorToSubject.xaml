@@ -23,12 +23,12 @@
 
         <DataGrid x:Name="dataGridProfessorSubject" IsReadOnly="True" AutoGenerateColumns="False" Grid.Row="0">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="CODE" Width="50" Binding="{Binding Code}" />
-                <DataGridTextColumn Header="NAME" Width="*" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="{ns:Loc CODE}" Width="100" Binding="{Binding Code}" />
+                <DataGridTextColumn Header="{ns:Loc NAME}" Width="*" Binding="{Binding Name}" />
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button VerticalAlignment="Center" HorizontalAlignment="Left" Click="Button_ClickAddProfessorToSubject" Grid.Row="1" Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63"  Content="Add"/>
-        <Button VerticalAlignment="Center" HorizontalAlignment="Left" Click="Button_Exit" Grid.Row="1" Margin="400,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67"  Content="Exit"/>
+        <Button VerticalAlignment="Center" HorizontalAlignment="Left" Click="Button_ClickAddProfessorToSubject" Grid.Row="1" Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63"  Content="{ns:Loc Add}"/>
+        <Button VerticalAlignment="Center" HorizontalAlignment="Left" Click="Button_Exit" Grid.Row="1" Margin="400,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67"  Content="{ns:Loc Exit}"/>
     </Grid>
 </Window>

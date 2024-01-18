@@ -23,7 +23,7 @@
 
         <DataGrid x:Name="dataGridProfessorSubject" IsReadOnly="True" AutoGenerateColumns="False" Grid.Row="0">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="NAME" Width="*" Binding="{Binding NameSurname}" />
+                <DataGridTextColumn Header="{ns:Loc NAME}" Width="*" Binding="{Binding NameSurname}" />
             </DataGrid.Columns>
         </DataGrid>
 

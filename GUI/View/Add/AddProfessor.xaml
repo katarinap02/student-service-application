@@ -35,35 +35,35 @@
         </Grid.RowDefinitions>
 
         <!-- Labels and Text Boxes -->
-        <Label Grid.Row="0" Grid.Column="1" Margin="10,10,108,4" Content="Name*"/>
+        <Label Grid.Row="0" Grid.Column="1" Margin="10,10,108,4" Content="{ns:Loc Name*}"/>
         <TextBox Grid.Row="0" Grid.Column="2" Text="{Binding Path=professorDTO.Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-        <Label Grid.Row="1" Grid.Column="1" Margin="10,10,108,4" Content="Surname*"/>
+        <Label Grid.Row="1" Grid.Column="1" Margin="10,10,108,4" Content="{ns:Loc Surname*}"/>
         <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=professorDTO.Surname, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-        <Label Grid.Row="2" Grid.Column="1" Margin="10,10,108,4" Content="Birthdate*"/>
+        <Label Grid.Row="2" Grid.Column="1" Margin="10,10,108,4" Content="{ns:Loc Birthdate*}"/>
         <DatePicker x:Name="datePickerBirthdate"  Grid.Row="2" Grid.Column="2" Text="{Binding Path=professorDTO.Birthdate, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-        <Label Grid.Row="4" Grid.Column="1" Margin="1,1,0,0" Content="Phone number ( format:06******** )"/>
+        <Label Grid.Row="4" Grid.Column="1" Margin="1,1,0,0" Content="{ns:Loc Phone number ( format:06******** )}"/>
         <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding Path=professorDTO.Phonenumber, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-        <Label Grid.Row="5" Grid.Column="1" Margin="10,10,108,4" Content="Email*"/>
+        <Label Grid.Row="5" Grid.Column="1" Margin="10,10,108,4" Content="{ns:Loc Email*}"/>
         <TextBox Grid.Row="5" Grid.Column="2" Text="{Binding Path=professorDTO.Email, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-        <Label Grid.Row="6" Grid.Column="1" Margin="10,10,108,4" Content="Title*"/>
+        <Label Grid.Row="6" Grid.Column="1" Margin="10,10,108,4" Content="{ns:Loc Title*}"/>
         <TextBox Grid.Row="6" Grid.Column="2" Text="{Binding Path=professorDTO.Title, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-        <Label Grid.Row="7" Grid.Column="1" Margin="10,10,108,4" Content="Years of service*"/>
+        <Label Grid.Row="7" Grid.Column="1" Margin="10,10,108,4" Content="{ns:Loc Years of service*}"/>
         <TextBox Grid.Row="7" Grid.Column="2" Text="{Binding Path=professorDTO.Year, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
-        <Label Grid.Row="3" Grid.Column="1" Margin="10,10,108,4" Content="Adress, city and county*"/>
+        <Label Grid.Row="3" Grid.Column="1" Margin="10,10,108,4" Content="Adress, city and country*"/>  
         <TextBox  x:Name ="textBoxAdress1" Grid.Row="3" Grid.Column="2" Text="{Binding Path=adressDTO.Street, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="10,8,235,0"/>
         <TextBox  x:Name ="textBoxAdress4" Grid.Row="3" Grid.Column="2" Text="{Binding Path=adressDTO.StreetNm, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="80,8,185,0"/>
         <TextBox  x:Name ="textBoxAdress3" Grid.Row="3" Grid.Column="2" Text="{Binding Path=adressDTO.City, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="144,8,98,0"/>
         <TextBox  x:Name ="textBoxAdress2" Grid.Row="3" Grid.Column="2" Text="{Binding Path=adressDTO.Country, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="232,8,10,0"/>
 
 
-        <Button Grid.Row="8" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63" Click="Button_Click">Save</Button>
-        <Button Grid.Row="8" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="99,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67" Click="Button_Exit" Content="Exit"></Button>
+        <Button Grid.Row="8" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63" Click="Button_Click" Content="{ns:Loc Save}"></Button>
+        <Button Grid.Row="8" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="99,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67" Click="Button_Exit" Content="{ns:Loc Exit}"></Button>
 
     </Grid>
 </Window>

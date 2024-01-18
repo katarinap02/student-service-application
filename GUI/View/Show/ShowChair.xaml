@@ -22,14 +22,14 @@
             <TabItem x:Name="tabItemChair"   Foreground="HotPink">
                 <StackPanel Height="425" Orientation="Vertical">
                     <DockPanel LastChildFill="False">
-                        <Button Content="Adding Chef" Click="Button_AddProfessortoChair" Width="106" Background="Aqua" Height="23"/>
-                        <Button Content="Close" Click="Button_Exit" Width="106" Background="LightPink" Height="23"/>
+                        <Button Content="{ns:Loc Adding Chef}" Click="Button_AddProfessortoChair" Width="150" Background="Aqua" Height="23"/>
+                        <Button Content="{ns:Loc Close}" Click="Button_Exit" Width="106" Background="LightPink" Height="23"/>
                     </DockPanel>
                     <DataGrid x:Name="dataGridChair" IsReadOnly="True" AutoGenerateColumns="False" Height="404">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="CHAIR ID" Width="*" Binding="{Binding Id}" />
-                            <DataGridTextColumn Header="CHAIR NAME" Width="*" Binding="{Binding Name}" />
-                            <DataGridTextColumn Header="CHEF" Width="*" Binding="{Binding ProfessorName}" />
+                            <DataGridTextColumn Header="{ns:Loc CHAIR ID}" Width="*" Binding="{Binding Id}" />
+                            <DataGridTextColumn Header="{ns:Loc CHAIR NAME}" Width="*" Binding="{Binding Name}" />
+                            <DataGridTextColumn Header="{ns:Loc CHEF}" Width="*" Binding="{Binding ProfessorName}" />
 
                         </DataGrid.Columns>
                     </DataGrid>

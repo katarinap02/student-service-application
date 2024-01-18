@@ -4,7 +4,7 @@
 3|klfdsj|Winter|3|3|DD|-1
 5|nans|Winter|2023|7|FF|3
 7|nans|Winter|2023|7|HH|-1
-9|ime|Summer|1212|12|XX|10
+9|ime|Summer|1212|12|XX|1
 10|oisisi|Summer|2023|8|FF|15
 11|a|Summer|1|1|LL|-1
 14|PREDMET|Summer|4|9|JJ|-1
