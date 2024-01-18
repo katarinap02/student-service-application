@@ -24,11 +24,11 @@
         </Grid.RowDefinitions>
 
 
-        <Label Grid.Row="0" Grid.Column="1" Margin="10,10,10,18" Content="Are you sure you want to delete this Student from Subject?" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <Label Grid.Row="0" Grid.Column="1" Margin="10,10,0,18" Content="{ns:Loc Are you sure you want to delete this Student from Subject?}"  Grid.ColumnSpan="2" Grid.RowSpan="2"/>
 
 
-        <Button x:Name="YesButton" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Click="YesButton_Click" Margin="17,0,0,0" Grid.Column="1" Height="36" Width="91" Content="Yes"/>
-        <Button x:Name="NoButton" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Click="NoButton_Click" Margin="40,0,0,0" Grid.Column="2" Height="36" Width="91" Content="No"/>
+        <Button x:Name="YesButton" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Click="YesButton_Click" Margin="17,0,0,0" Grid.Column="1" Height="36" Width="91" Content="{ns:Loc Yes}"/>
+        <Button x:Name="NoButton" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Click="NoButton_Click" Margin="40,0,0,0" Grid.Column="2" Height="36" Width="91" Content="{ns:Loc No}"/>
 
     </Grid>
 </Window>

@@ -27,14 +27,14 @@
 
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="1" Margin="10,10,108,4" Content="Code*"/>
+        <Label Grid.Row="0" Grid.Column="1" Margin="10,10,108,4" Content="{ns:Loc Code*}"/>
         <TextBox x:Name ="textBoxSubId" Grid.Row="0" Grid.Column="2" IsReadOnly ="True" Text="{Binding subjectDTO.Code, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-        <Label Grid.Row="1" Grid.Column="1" Margin="10,10,108,4" Content="Name*"/>
+        <Label Grid.Row="1" Grid.Column="1" Margin="10,10,108,4" Content="{ns:Loc Name*}"/>
         <TextBox x:Name ="textBoxSubName" Grid.Row="1" Grid.Column="2" IsReadOnly ="True" Text="{Binding subjectDTO.Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
 
-        <Label Grid.Row="2" Grid.Column="1" Margin="10,10,88,10" Content="Grade*" RenderTransformOrigin="0.5,0.5">
+        <Label Grid.Row="2" Grid.Column="1" Margin="10,10,88,10" Content="{ns:Loc Grade*}" RenderTransformOrigin="0.5,0.5">
         </Label>
         <ComboBox SelectedValuePath="Tag" Grid.Row="2" Grid.Column="2" Text="{Binding gradeDTO.Grade, UpdateSourceTrigger=PropertyChanged}" Height="36" VerticalAlignment="Center" Margin="65,0,59,0">
             <ComboBoxItem Content="6" Tag="6"></ComboBoxItem>
@@ -44,11 +44,11 @@
             <ComboBoxItem Content="10" Tag="10"></ComboBoxItem>
         </ComboBox>
 
-        <Label Grid.Row="3" Grid.Column="1" Margin="10,20,96,10" Content="Date*"/>
+        <Label Grid.Row="3" Grid.Column="1" Margin="10,20,96,10" Content="{ns:Loc Date*}"/>
         <DatePicker x:Name="datePickerDate" Grid.Row="3" Grid.Column="2" SelectedDate="{Binding gradeDTO.Date, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="27" VerticalAlignment="Top" Margin="38,20,48,0"/>
 
-        <Button Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="44,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="73" Click="Button_Click">Save</Button>
-        <Button Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="70" Click="Button_Exit" Content="Exit"/>
+        <Button Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="44,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="73" Click="Button_Click" Content="{ns:Loc Save}" ></Button>
+        <Button Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="70" Click="Button_Exit" Content="{ns:Loc Exit}"/>
 
     </Grid>
 </Window>

@@ -1,5 +1,4 @@
-7|4|Petar|Petrovic|1|ANALIZA I|BB|9|9|01.01.0001
-8|7|Deenris|Targerian|9|ime|XX|12|10|01.01.0001
-13|4|Petar|Petrovic|3|klfdsj|DD|3|10|01.01.0001
-23|19|1|1|21|11|SS|1|10|01.01.0001
-24|16|1|1|21|11|SS|1|10|01.01.0001
+7|4|Petar|Petrovic|1|ANALIZA I|BB|9|9|1/1/0001
+8|7|Deenris|Targerian|9|ime|XX|12|10|1/1/0001
+13|4|Petar|Petrovic|3|klfdsj|DD|3|10|1/1/0001
+24|16|1|1|21|11|SS|1|10|1/1/0001
