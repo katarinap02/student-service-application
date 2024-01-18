@@ -52,16 +52,13 @@ namespace GUI.View.Insert
                
                 headDao.AddProfessorToSubject(subjectDTO.ToSubject(), professorDTO.ToProfessor());
                 SubjectDTO subjectDTOPRACENJE = subjectDTO;
-               // subjectDTO.ProfessorId = professorDTO.Id;
+             
 
                 TextBox textBoxProfessor = (TextBox)Application.Current.MainWindow.FindName("textBoxProfessor");
 
-                // Force update on the binding  POSLJEDNJI POKUSAJ DA PRORADI AUTOMATSKI EDIT, ALI OPET NE RADI
-                var bindingExpression = textBoxProfessor?.GetBindingExpression(TextBox.TextProperty);
-                bindingExpression?.UpdateTarget();
+               
 
-               /* TextBox buttonAddProfessor = (TextBox)Application.Current.MainWindow.FindName("buttonAddProfessor");
-                buttonAddProfessor.IsEnabled = false;*/
+               
 
                 Close();
             }

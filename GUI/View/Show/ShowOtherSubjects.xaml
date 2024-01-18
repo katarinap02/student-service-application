@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI.View.Show"
+        xmlns:ns="clr-namespace:GUI.Localization" 
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="ShowOtherSubjects" Height="450" Width="800">
@@ -22,15 +23,15 @@
 
         <DataGrid x:Name="dataGridAnotherSubjects" IsReadOnly="True" AutoGenerateColumns="False" Grid.Row="0">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="CODE" Width="*" Binding="{Binding Code}"/>
-                <DataGridTextColumn Header="NAME" Width="*" Binding="{Binding Name}"/>
-                <DataGridTextColumn Header="ESPB" Width="*" Binding="{Binding Espb}"/>
-                <DataGridTextColumn Header="YEAR OF STUDY" Width="*" Binding="{Binding Year}"/>
-                <DataGridTextColumn Header="SEMESTER" Width="*" Binding="{Binding Semester}"/>
+                <DataGridTextColumn Header="{ns:Loc CODE}" Width="*" Binding="{Binding Code}"/>
+                <DataGridTextColumn Header="{ns:Loc NAME}" Width="*" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="{ns:Loc ESPB}" Width="*" Binding="{Binding Espb}"/>
+                <DataGridTextColumn Header="{ns:Loc YEAR OF STUDY}" Width="*" Binding="{Binding Year}"/>
+                <DataGridTextColumn Header="{ns:Loc SEMESTER}" Width="*" Binding="{Binding Semester}"/>
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button VerticalAlignment="Center" HorizontalAlignment="Left" Click="Button_ClickShowStudents_1" Grid.Row="1" Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="200" Background="PaleGreen"  Content="Students listening both subjects"/>
-        <Button VerticalAlignment="Center" HorizontalAlignment="Left" Click="Button_ClickShowStudents_2" Grid.Row="1" Margin="400,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="210" Background="LightPink" Content="Students that passed just first subject"/>
+        <Button VerticalAlignment="Center" HorizontalAlignment="Left" Click="Button_ClickShowStudents_1" Grid.Row="1" Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="200" Background="PaleGreen"  Content="{ns:Loc Students listening both subjects}"/>
+        <Button VerticalAlignment="Center" HorizontalAlignment="Left" Click="Button_ClickShowStudents_2" Grid.Row="1" Margin="400,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="250" Background="LightPink" Content="{ns:Loc Students that passed just first subject}"/>
     </Grid>
 </Window>

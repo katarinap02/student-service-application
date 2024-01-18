@@ -450,12 +450,23 @@ public class HeadDao
             {
                 s.Subjects.Remove(sb);
             }
-            StudentSubject? removedStudentSubject = _studentsubjectsDao.RemoveStudentSubject(id); //brisemo i vezu
+
+
+
+            StudentSubject? removedStudentSubject = _studentsubjectsDao.RemoveStudentSubjectBySubject(id); //brisemo i vezu
             if (removedStudentSubject is null)
             {
                 continue;
             }
+
+            /*   
+            /*   StudentSubject? removedStudentSubject = _studentsubjectsDao.RemoveStudentSubject2(StudentId,id); //brisemo i vezu
+               if (removedStudentSubject is null)
+               {
+                   continue;
+               }*/
         }
+       
         foreach (Grade g in _gradesDao.GetAllGrades()) //promenimo u oceni studenta
         {
             if (g.subject.Id == sb.Id)

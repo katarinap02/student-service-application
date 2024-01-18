@@ -105,6 +105,7 @@ namespace GUI.View.Insert
         {
             AddProfessorInSubject addProfessorInSubject= new AddProfessorInSubject(headDao, subjectDTO);
             addProfessorInSubject.ShowDialog();
+            Close();
             
         }
 
@@ -112,6 +113,7 @@ namespace GUI.View.Insert
         {
             DeleteProfessorInSubject deleteProfessorInSubject = new DeleteProfessorInSubject(headDao,subjectDTO);
             deleteProfessorInSubject.ShowDialog();
+            Close();
         }
 
         public void Update()

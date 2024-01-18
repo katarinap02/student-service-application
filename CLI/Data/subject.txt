@@ -4,15 +4,11 @@
 3|klfdsj|Winter|3|3|DD|-1
 5|nans|Winter|2023|7|FF|3
 7|nans|Winter|2023|7|HH|-1
-8|predme|Summer|2023|5|MM|-1
-9|ime|Summer|1212|12|NN|10
+9|ime|Summer|1212|12|XX|10
 10|oisisi|Summer|2023|8|FF|15
 11|a|Summer|1|1|LL|-1
 14|PREDMET|Summer|4|9|JJ|-1
 16|ime|Summer|1|12|WW|10
 18|ime|Winter|2021|9|RR|13
-19|aa|Summer|5|5|TT|-1
 21|11|Summer|1|1|SS|15
-22|TEEST|Summer|33|4|OO|14
-24|DFSDFS|Summer|2|8|UU|-1
 25|pred|Summer|2|6|RR|-1

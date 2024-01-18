@@ -48,6 +48,15 @@ public class StudentSubjectDao
         _storage.Save(studentsubjects);
         return studentsubject;
     }
+    public StudentSubject? RemoveStudentSubjectBySubject(int id)
+    {
+        StudentSubject? studentsubject = GetStudentSubjectByIdSb(id);
+        if (studentsubject == null) return null;
+
+        studentsubjects.Remove(studentsubject);
+        _storage.Save(studentsubjects);
+        return studentsubject;
+    }
     public StudentSubject? RemoveStudentSubject2(int idSt, int idSb)
     {
         StudentSubject? studentsubject = GetStudentSubjectByIds(idSt, idSb);
@@ -66,6 +75,10 @@ public class StudentSubjectDao
     public StudentSubject? GetStudentSubjectByIdSt(int id)
     {
         return studentsubjects.Find(v => v.StudentId == id);
+    }
+    public StudentSubject? GetStudentSubjectByIdSb(int id)
+    {
+        return studentsubjects.Find(v => v.SubjectId == id);
     }
 
 }

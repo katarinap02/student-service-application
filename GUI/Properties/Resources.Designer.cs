@@ -79,11 +79,38 @@ namespace GUI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dodaj Studenta.
+        /// </summary>
+        internal static string Add_Student {
+            get {
+                return ResourceManager.GetString("Add Student", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Da li ste sigurni da zelite da obrisete ovaj predmet?.
+        /// </summary>
+        internal static string Are_you_sure_you_want_to_delete_this_Subject_ {
+            get {
+                return ResourceManager.GetString("Are you sure you want to delete this Subject?", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Prosecna ocena.
         /// </summary>
         internal static string AVERAGE {
             get {
                 return ResourceManager.GetString("AVERAGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Datum rodjena*.
+        /// </summary>
+        internal static string Birthdate_ {
+            get {
+                return ResourceManager.GetString("Birthdate*", resourceCulture);
             }
         }
         
@@ -133,6 +160,24 @@ namespace GUI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sifra predmeta*.
+        /// </summary>
+        internal static string Code_ {
+            get {
+                return ResourceManager.GetString("Code*", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trenutna godina studija*.
+        /// </summary>
+        internal static string Current_Year_ {
+            get {
+                return ResourceManager.GetString("Current Year*", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Obrisi.
         /// </summary>
         internal static string Delete {
@@ -160,6 +205,15 @@ namespace GUI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email*.
+        /// </summary>
+        internal static string Email_ {
+            get {
+                return ResourceManager.GetString("Email*", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Engleski.
         /// </summary>
         internal static string English {
@@ -174,6 +228,24 @@ namespace GUI.Properties {
         internal static string ESPB {
             get {
                 return ResourceManager.GetString("ESPB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ESPB*.
+        /// </summary>
+        internal static string ESPB_ {
+            get {
+                return ResourceManager.GetString("ESPB*", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Izlaz.
+        /// </summary>
+        internal static string Exit {
+            get {
+                return ResourceManager.GetString("Exit", resourceCulture);
             }
         }
         
@@ -205,11 +277,29 @@ namespace GUI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Indeks*.
+        /// </summary>
+        internal static string Index_ {
+            get {
+                return ResourceManager.GetString("Index*", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lokalizacija.
         /// </summary>
         internal static string Localization {
             get {
                 return ResourceManager.GetString("Localization", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nacin finansiranja*.
+        /// </summary>
+        internal static string Method_of_financing_ {
+            get {
+                return ResourceManager.GetString("Method of financing*", resourceCulture);
             }
         }
         
@@ -223,6 +313,24 @@ namespace GUI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Naziv*.
+        /// </summary>
+        internal static string Name_ {
+            get {
+                return ResourceManager.GetString("Name*", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ne.
+        /// </summary>
+        internal static string No {
+            get {
+                return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Otvori.
         /// </summary>
         internal static string Open {
@@ -232,11 +340,29 @@ namespace GUI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Broj telefona { format: 06******** }.
+        /// </summary>
+        internal static string Phonenumber___format__06__________ {
+            get {
+                return ResourceManager.GetString("Phonenumber { format: 06******** }", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Profesor.
         /// </summary>
         internal static string Professor {
             get {
                 return ResourceManager.GetString("Professor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Profesor*.
+        /// </summary>
+        internal static string Professor_ {
+            get {
+                return ResourceManager.GetString("Professor*", resourceCulture);
             }
         }
         
@@ -273,6 +399,15 @@ namespace GUI.Properties {
         internal static string SEMESTER {
             get {
                 return ResourceManager.GetString("SEMESTER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Semestar(Letnji ili Zimski)*.
+        /// </summary>
+        internal static string Semester_Summer_or_Winter__ {
+            get {
+                return ResourceManager.GetString("Semester(Summer or Winter)*", resourceCulture);
             }
         }
         
@@ -322,6 +457,24 @@ namespace GUI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Studenti koji slusaju oba predmeta.
+        /// </summary>
+        internal static string Students_listening_both_subjects {
+            get {
+                return ResourceManager.GetString("Students listening both subjects", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Studenti koji su polozili samo jedan predmet.
+        /// </summary>
+        internal static string Students_that_passed_just_first_subject {
+            get {
+                return ResourceManager.GetString("Students that passed just first subject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Predmet.
         /// </summary>
         internal static string Subject {
@@ -349,6 +502,15 @@ namespace GUI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Prezime*.
+        /// </summary>
+        internal static string Surname_ {
+            get {
+                return ResourceManager.GetString("Surname*", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Zvanje.
         /// </summary>
         internal static string TITLE {
@@ -367,11 +529,38 @@ namespace GUI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Godina*.
+        /// </summary>
+        internal static string Year_ {
+            get {
+                return ResourceManager.GetString("Year*", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Godina upisa*.
+        /// </summary>
+        internal static string Year_of_enrollment_ {
+            get {
+                return ResourceManager.GetString("Year of enrollment*", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Godina pohadjanja.
         /// </summary>
         internal static string YEAR_OF_STUDY {
             get {
                 return ResourceManager.GetString("YEAR OF STUDY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Da.
+        /// </summary>
+        internal static string Yes {
+            get {
+                return ResourceManager.GetString("Yes", resourceCulture);
             }
         }
     }

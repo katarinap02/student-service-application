@@ -3,7 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GUI.View.Add" xmlns:dto="clr-namespace:GUI.DTO" d:DataContext="{d:DesignInstance Type=dto:StudentDTO}"
+        xmlns:local="clr-namespace:GUI.View.Add"
+        xmlns:ns="clr-namespace:GUI.Localization" 
+        xmlns:dto="clr-namespace:GUI.DTO" 
+        d:DataContext="{d:DesignInstance Type=dto:StudentDTO}"
+        
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="Add Student" Height="500" Width="635">
@@ -43,26 +47,27 @@
         </Grid.RowDefinitions>
 
         <!-- Labels and Text Boxes -->
-        <Label Grid.Row="0" Grid.Column="1" Margin="10,10,108,4" Content="Name*"/>
+        <Label Grid.Row="0" Grid.Column="1" Margin="10,10,108,4" Content="{ns:Loc Name*}"/>
         <TextBox x:Name ="textBoxName" Grid.Row="0" Grid.Column="2" Text="{Binding Path= studentDTO.Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-        <Label Grid.Row="1" Grid.Column="1" Margin="10,10,108,4" Content="Surname*"/>
+        <Label Grid.Row="1" Grid.Column="1" Margin="10,10,108,4" Content="{ns:Loc Surname*}"/>
         <TextBox x:Name ="textBoxSurname" Grid.Row="1" Grid.Column="2" Text="{Binding Path=studentDTO.Surname, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-        <Label Grid.Row="2" Grid.Column="1" Margin="10,10,108,4" Content="Birthdate*"/>
+        <Label Grid.Row="2" Grid.Column="1" Margin="10,10,108,4" Content="{ns:Loc Birthdate*}"/>
         <DatePicker x:Name="datePickerBirthdate" Grid.Row="2" Grid.Column="2" SelectedDate="{Binding Path=studentDTO.Birthdate, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-        <Label Grid.Row="3" Grid.Column="1" Margin="10,10,108,4" Content="Address, city, and county*"/>
+        
+        <Label Grid.Row="3" Grid.Column="1" Margin="10,10,108,4" Content="Address, city and county*"/>   
         <TextBox  x:Name="textBoxAddress1" Grid.Row="3" Grid.Column="2" Text="{Binding Path=adressDTO.Street, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="10,8,235,0"/>
         <TextBox  x:Name="textBoxAddress4" Grid.Row="3" Grid.Column="2" Text="{Binding Path=adressDTO.StreetNm, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="87,8,185,0"/>
         <TextBox  x:Name="textBoxAddress3" Grid.Row="3" Grid.Column="2" Text="{Binding Path=adressDTO.City, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="144,8,98,0"/>
         <TextBox  x:Name="textBoxAddress2" Grid.Row="3" Grid.Column="2" Text="{Binding Path=adressDTO.Country, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="232,8,10,0"/>
 
-
-        <Label Grid.Row="4" Grid.Column="1" Margin="1,1,0,0" Content="Phonenumber ( format: 06******** )"/>
+        
+        <Label Grid.Row="4" Grid.Column="1" Margin="1,1,0,0" Content="{ns:Loc Phonenumber ( format: 06******** )}"/>
         <TextBox x:Name ="textBoxPhone" Grid.Row="4" Grid.Column="2" Text="{Binding Path=studentDTO.PhoneNumber, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ValidationTemplate}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-        <Label Grid.Row="5" Grid.Column="1" Margin="10,10,108,4" Content="Email*"/>
+        <Label Grid.Row="5" Grid.Column="1" Margin="10,10,108,4" Content="{ns:Loc Email*}"/>
         <TextBox x:Name ="textBoxEmail" Grid.Row="5" Grid.Column="2" Text="{Binding Path=studentDTO.Email, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
         <Label Grid.Row="6" Grid.Column="1" Margin="10,10,108,4" Content="Index*"/>
@@ -71,25 +76,25 @@
         <TextBox  x:Name ="textBoxIndex2" Grid.Row="6" Grid.Column="2" Text="{Binding Path=indexDTO.Number, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="144,8,129,0"/>
         <TextBox  x:Name ="textBoxIndex3" Grid.Row="6" Grid.Column="2" Text="{Binding Path=indexDTO.Year, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="200,8,71,0"/>
         
-        <Label Grid.Row="7" Grid.Column="1" Margin="10,10,108,4" Content="Year of enrollment*"/>
+        <Label Grid.Row="7" Grid.Column="1" Margin="10,10,108,4" Content="{ns:Loc Year of enrollment*}"/>
         <TextBox x:Name ="textBoxEnrollment" Grid.Row="7" Grid.Column="2" Text="{Binding Path=studentDTO.StYear, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
+        
 
-
-        <Label Grid.Row="8" Grid.Column="1" Margin="10,10,108,4" Content="Current Year*"/>
+        <Label Grid.Row="8" Grid.Column="1" Margin="10,10,108,4" Content="{ns:Loc Current Year*}"/>
         <ComboBox x:Name="BoxYear" Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="2" Height="32" VerticalAlignment="Top" Margin="61,8,59,0">
             <ComboBoxItem x:Name="Item1">I</ComboBoxItem>
             <ComboBoxItem x:Name="Item2">II</ComboBoxItem>
             <ComboBoxItem x:Name="Item3">III</ComboBoxItem>
             <ComboBoxItem x:Name="Item4">IV</ComboBoxItem>
         </ComboBox>
-        <Label Grid.Row="9" Grid.Column="1" Margin="10,10,108,4" Content="Method of financing*"/>
+        <Label Grid.Row="9" Grid.Column="1" Margin="10,10,108,4" Content="{ns:Loc Method of financing*}"/>
         <ComboBox SelectedValuePath="Tag" Grid.Row="9" Grid.Column="2" Text="{Binding studentDTO.StatusS, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" Height="32" VerticalAlignment="Top" Margin="61,8,59,0">
             <ComboBoxItem Content="B" Tag="B"></ComboBoxItem>
             <ComboBoxItem Content="S" Tag="S"></ComboBoxItem>
         </ComboBox>
-        <Button Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63" Click="Button_Click">Save</Button>
-        <Button Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="99,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67" Click="Button_Exit" Content="Exit"></Button>
+        <Button Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63" Click="Button_Click" Content="{ns:Loc Save}"></Button>
+        <Button Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="99,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67" Click="Button_Exit"  Content="{ns:Loc Exit}"></Button>
 
     </Grid>
 </Window>

@@ -3,7 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GUI" xmlns:dto="clr-namespace:GUI.DTO" d:DataContext="{d:DesignInstance Type=dto:SubjectDTO}"
+        xmlns:local="clr-namespace:GUI" 
+        xmlns:dto="clr-namespace:GUI.DTO"
+        d:DataContext="{d:DesignInstance Type=dto:SubjectDTO}"
+        xmlns:ns="clr-namespace:GUI.Localization" 
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="Add Subject" Height="320" Width="600">
@@ -31,30 +34,30 @@
         <!-- Labels and Text Boxes -->
 
 
-        <Label Grid.Row="0" Grid.Column="1" Margin="10,10,108,4" Content="Name*"/>
+        <Label Grid.Row="0" Grid.Column="1" Margin="10,10,108,4" Content="{ns:Loc Name*}"/>
         <TextBox Grid.Row="0" Grid.Column="2" Text="{Binding Path=subjectDTO.Name, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-        <Label Grid.Row="1" Grid.Column="1" Margin="10,10,108,4" Content="ESPB*"/>
+        <Label Grid.Row="1" Grid.Column="1" Margin="10,10,108,4" Content="{ns:Loc ESPB*}"/>
         <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=subjectDTO.Espb, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-        <Label Grid.Row="2" Grid.Column="1" Margin="10,10,108,4" Content="Year*"/>
+        <Label Grid.Row="2" Grid.Column="1" Margin="10,10,108,4" Content="{ns:Loc Year*}"/>
         <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=subjectDTO.Year, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-        <Label Grid.Row="3" Grid.Column="1" Margin="10,10,66,4" Content="Semester(Summer or Winter)*"/>
+        <Label Grid.Row="3" Grid.Column="1" Margin="10,10,66,4" Content="{ns:Loc Semester(Summer or Winter)*}"/>
         <ComboBox x:Name="BoxYear" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Height="32" VerticalAlignment="Top" Margin="61,8,59,0" SelectedValuePath="Tag"
                   SelectedValue="{Binding subjectDTO.SemesterS, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}">
             <ComboBoxItem Content="Summer" Tag="Summer"/>
             <ComboBoxItem  Content="Winter" Tag="Winter"/>
         </ComboBox>
 
-        <Label Grid.Row="4" Grid.Column="1" Margin="10,10,108,4" Content="Code*"/>
+        <Label Grid.Row="4" Grid.Column="1" Margin="10,10,108,4" Content="{ns:Loc Code*}"/>
         <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding Path=subjectDTO.Code, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
 
 
 
-        <Button Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63" Click="Button_Click">Save</Button>
-        <Button Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="99,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67" Click="Button_Exit" Content="Exit"></Button>
+        <Button Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63" Click="Button_Click" Content="{ns:Loc Save}"></Button>
+        <Button Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="99,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67" Click="Button_Exit" Content="{ns:Loc Exit}"></Button>
 
 
     </Grid>

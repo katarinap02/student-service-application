@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI.View.Insert"
+        xmlns:ns="clr-namespace:GUI.Localization" 
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="Insert Subject" Height="320" Width="500">
@@ -31,26 +32,26 @@
 
         <!-- Labels and Text Boxes -->
 
-        <Label Grid.Row="0" Grid.Column="1" Margin="10,10,108,4" Content="Code*"/>
+        <Label Grid.Row="0" Grid.Column="1" Margin="10,10,108,4" Content="{ns:Loc Code*}"/>
         <TextBox Grid.Row="0" Grid.Column="2" Text="{Binding Code, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
 
-        <Label Grid.Row="1" Grid.Column="1" Margin="10,10,108,4" Content="Name*"/>
+        <Label Grid.Row="1" Grid.Column="1" Margin="10,10,108,4" Content="{ns:Loc Name*}"/>
         <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-        <Label Grid.Row="2" Grid.Column="1" Margin="10,10,108,4" Content="ESPB*"/>
+        <Label Grid.Row="2" Grid.Column="1" Margin="10,10,108,4" Content="{ns:Loc ESPB*}"/>
         <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Espb, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-        <Label Grid.Row="3" Grid.Column="1" Margin="10,10,108,4" Content="Year*"/>
+        <Label Grid.Row="3" Grid.Column="1" Margin="10,10,108,4" Content="{ns:Loc Year*}"/>
         <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding Year, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
 
-        <Label Grid.Row="4" Grid.Column="1" Margin="10,10,40,4" Content="Semester(Summer or Winter)*"/>
+        <Label Grid.Row="4" Grid.Column="1" Margin="10,10,40,4" Content="{ns:Loc Semester(Summer or Winter)*}"/>
         <ComboBox x:Name="comboBoxSemester" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Height="32" VerticalAlignment="Top" Margin="61,8,59,0">
             <ComboBoxItem x:Name="SemesterSummer">Summer</ComboBoxItem>
             <ComboBoxItem x:Name="SemesterWinter">Winter</ComboBoxItem>
         </ComboBox>
 
-        <Label Grid.Row="5" Grid.Column="1" Margin="10,10,108,4" Content="Professor*"/>
+        <Label Grid.Row="5" Grid.Column="1" Margin="10,10,108,4" Content="{ns:Loc Professor*}"/>
         <TextBox x:Name="textBoxProfessor" Grid.Row="5" IsReadOnly="True" Grid.Column="2" Height="32" VerticalAlignment="Top" Margin="61,8,59,0"/>
         <StackPanel Grid.Row="5" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,15,10,0">
             <Button x:Name = "buttonAddProfessor" Width="20" Height="20"  Click="Button_AddProfessortoSubject">+</Button>
@@ -58,8 +59,8 @@
         </StackPanel>
 
 
-        <Button Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63" Click="Button_Click">Save</Button>
-        <Button Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="99,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67" Click="Button_Exit" Content="Exit"></Button>
+        <Button Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="94,0,0,0" Grid.Column="1" RenderTransformOrigin="-5.177,2.01" Height="24" Width="63" Click="Button_Click" Content="{ns:Loc Save}"></Button>
+        <Button Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="99,0,0,0" Grid.Column="2" RenderTransformOrigin="-5.177,2.01" Height="24" Width="67" Click="Button_Exit" Content="{ns:Loc Exit}"></Button>
 
     </Grid>
 </Window>

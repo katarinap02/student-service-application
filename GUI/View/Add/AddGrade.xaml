@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
          xmlns:local="clr-namespace:GUI.View.Add" xmlns:dto="clr-namespace:GUI.DTO" d:DataContext="{d:DesignInstance Type=dto:GradeDTO}"
+        xmlns:ns="clr-namespace:GUI.Localization" 
+        
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="AddGrade" Height="300" Width="400">

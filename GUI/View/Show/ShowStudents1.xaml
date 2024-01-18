@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI.View.Show"
+        xmlns:ns="clr-namespace:GUI.Localization" 
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="ShowStudents1" Height="450" Width="800">
@@ -22,11 +23,11 @@
 
         <DataGrid x:Name="dataGridShowStudents1" IsReadOnly="True" AutoGenerateColumns="False" Grid.Row="0">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="NAME" Width="*" Binding="{Binding Name}"/>
-                <DataGridTextColumn Header="SURNAME" Width="*" Binding="{Binding Surname}"/>
-                <DataGridTextColumn Header="YEAR" Width="*" Binding="{Binding StYear}"/>
-                <DataGridTextColumn Header="STATUS" Width="*" Binding="{Binding StudentStatus}"/>
-                <DataGridTextColumn Header="AVERAGE" Width="*" Binding="{Binding Average}"/>
+                <DataGridTextColumn Header="{ns:Loc NAME}" Width="*" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="{ns:Loc SURNAME}" Width="*" Binding="{Binding Surname}"/>
+                <DataGridTextColumn Header="{ns:Loc YEAR}" Width="*" Binding="{Binding StYear}"/>
+                <DataGridTextColumn Header="{ns:Loc STATUS}" Width="*" Binding="{Binding StudentStatus}"/>
+                <DataGridTextColumn Header="{ns:Loc AVERAGE}" Width="*" Binding="{Binding Average}"/>
 
             </DataGrid.Columns>
         </DataGrid>
