@@ -12,17 +12,21 @@
         KeyDown="Window_KeyDown">
 
     <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Help"  Executed="About_Click"/>
+        <CommandBinding Command="ApplicationCommands.Find" Executed="Search_Click"/>
         <CommandBinding Command="ApplicationCommands.Delete" Executed="Delete_Click"/>
-        <CommandBinding Command="ApplicationCommands.New" Executed="Add_Click"/>
-        <CommandBinding Command="ApplicationCommands.Open" Executed="Edit_Click"/>
-        <!--<CommandBinding Command="ApplicationCommands.Save" Executed="Save_Click"/>-->
+        <CommandBinding Command="ApplicationCommands.Open" Executed="Add_Click"/>
+        <CommandBinding Command="ApplicationCommands.New" Executed="Edit_Click"/>
     </Window.CommandBindings>
 
     <Window.InputBindings>
+
+        <KeyBinding Key="H" Modifiers="Control" Command="ApplicationCommands.Help"/>
+        <KeyBinding Key="Q" Modifiers="Control" Command="ApplicationCommands.Find"/>
         <KeyBinding Key="D" Modifiers="Control" Command="ApplicationCommands.Delete"/>
-        <KeyBinding Key="N" Modifiers="Control" Command="ApplicationCommands.New"/>
-        <KeyBinding Key="E" Modifiers="Control" Command="ApplicationCommands.Open"/>
-        <!--<KeyBinding Key="S" Modifiers="Control" Command="ApplicationCommands.Save"/>-->
+        <KeyBinding Key="E" Modifiers="Control" Command="ApplicationCommands.New"/>
+        <KeyBinding Key="N" Modifiers="Control" Command="ApplicationCommands.Open"/>
+        
     </Window.InputBindings>
 
     <Window.Icon >
@@ -142,7 +146,7 @@
 
             </DockPanel>
             <DockPanel LastChildFill="False" Margin="0,0,15,0" Grid.ColumnSpan="3">
-                <Button x:Name="buttonSearch" DockPanel.Dock="Right" Width="50" Click="Search_Click" Content="{ns:Loc Search}"></Button>
+                <Button x:Name="buttonSearch" DockPanel.Dock="Right" Width="50" Click="Search_Click" Background="AntiqueWhite" Content="{ns:Loc Search}"></Button>
                 <TextBox x:Name="textboxSearch" DockPanel.Dock="Right" Width="150"></TextBox>
 
             </DockPanel>
