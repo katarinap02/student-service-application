@@ -794,8 +794,8 @@ public class HeadDao
         }
 
 
-        StudentSubject studentSubject = new StudentSubject(st.Id, sb.Id);
-        _studentsubjectsDao.AddStudentSubjuect(studentSubject); //brisemo i vezu?? ja sam stavila da dodajem vezu
+       // StudentSubject studentSubject = new StudentSubject(st.Id, sb.Id);
+       // _studentsubjectsDao.AddStudentSubjuect(studentSubject); //brisemo i vezu?? ja sam stavila da dodajem vezu
 
 
         _gradesDao.AddGrade(gd);
