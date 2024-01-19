@@ -238,7 +238,7 @@ namespace GUI.DTO
         // string title, int styear)
 
         public string Error => null;
-        private Regex _PhoneNumberRegex = new Regex("^06\\d{8}$");
+        private Regex _PhoneNumberRegex = new Regex("^06\\d{5,}$");
         private Regex _NumberRegex = new Regex("^[0-9]+$");
         public string this[string columnName]
         {

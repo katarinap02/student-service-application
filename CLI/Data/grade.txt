@@ -1,4 +1,6 @@
-7|4|Petar|Petrovic|1|ANALIZA I|BB|9|9|1/1/0001
-8|7|Deenris|Targerian|9|ime|XX|12|10|1/1/0001
-13|4|Petar|Petrovic|3|klfdsj|DD|3|10|1/1/0001
-24|16|1|1|21|11|SS|1|10|1/1/0001
+0|1|Caka|Veselic|5|Tehnologije i sistemi eUprave|E23|4|10|1/20/2021
+2|2|Katarina|Kovrlija|4|Uvod u informacione tehnologije u geomatici|E12|8|9|1/20/2021
+3|2|Katarina|Kovrlija|5|Tehnologije i sistemi eUprave|E23|4|8|1/13/2023
+4|4|Elena|Vilenica|1|Napredni algoritmi i strukture podataka|E79|6|7|1/13/2023
+5|4|Elena|Vilenica|2|Testiranje softvera|E76|9|8|1/18/2022
+6|1|Caka|Veselic|6|Klijentske web tehnologije|E60|5|10|1/13/2023

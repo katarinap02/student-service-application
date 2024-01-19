@@ -1,12 +1,20 @@
-1|Petar|Milenic|12-12-2004|0655675674|mmilenic@gmail.com|2023|B|0|Svetozara Markovica|14|Beograd|Srbija|EE|100|2023
-4|Petar|Petrovic|01-01-2003|66111222|ppetrovic@gmail.com|2023|S|0|Dositeja Obradovica|4|Banja Luka|Republika Srpska|PSI|10|2022
-7|Deenris|Targerian|01-01-0001|0651231231|deneris@gmail.com|2021|B|0||||||0|0
-8|sapso|asdfsf|01-01-0001|0651231231|asdf|0|B|0||||||0|0
-9|deneris|Targerijan|01-01-0001|0641231231|asdf@gmail.com|2021|B|0|qwe|3|qawe|asd|rr|45|2021
-10|DZON SNOV|TARGERIJAN|01-01-0001|0635435432|maskda|2000|B|0||||||0|0
-11|gdfgd|gdfgdf|01-01-0001|0653453452|aSD|2020|B|0||||||0|0
-12|sfasdf|adfsdf|01-01-0001|0642342341|mima@gmail.com|2023|S|0||||||0|0
-13|Zeka|ZEKAPravi|01-01-0001|0656665554|telepnemanja@gmail.com|4|B|0|asd|33|ADRESA|asdasd|INDECf|44|2021
-14|1|1|01-01-0001|1|1|1|S|0|1|1|1|1|1|1|1
-15|aa|aa|11-11-1111|0656788989|ee|1|S|0|a|1|1|1|1|1|1
-16|1|1|11-11-1111|0676767888|1|1|S|0|1|1|1|1|1|1|1
+﻿0|Pantelija|Skrobovic|2001-01-12|061706971|skrobovic.ra.0.2021@uns.ac.rs|4|S|0|1. MAJ|22|BABUŠNICA|Crna Gora|RA|0|2021
+1|Caka|Veselic|2001-01-24|065391091|veselic.ra.1.2021@uns.ac.rs|4|B|1|MIRE ALEČKOVIĆ|67|VELIKA REMETA|Srbija|RA|1|2021
+2|Katarina|Kovrlija|1998-05-01|06749564|kovrlija.ra.2.2021@uns.ac.rs|4|B|2|DARINKE BOROVIĆ|40|LjUBINIĆ|Bosna i Hercegovina|RA|2|2021
+3|Đura|Zarubica|1994-07-21|069584327|zarubica.ra.3.2021@uns.ac.rs|4|S|3|MIJE ALEKSIĆA|30|DONjA VREŽINA|Srbija|RA|3|2021
+4|Elena|Vilenica|2003-10-06|065343994|vilenica.ra.4.2021@uns.ac.rs|4|S|4|SVETOMIRA MARIĆA|59|DONjI LjUBEŠ|Srbija|RA|4|2021
+5|Fotije|Jelesijevic|1994-02-27|065121848|jelesijevic.ra.5.2021@uns.ac.rs|4|S|5|STAROVLASKA|88|CAJETINA|Srbija|RA|5|2021
+6|Strahinja|Otrzan|2004-03-29|065826247|otrzan.ra.6.2021@uns.ac.rs|4|B|6|BOJANSKA|39|SKORICA|Bosna i Hercegovina|RA|6|2021
+7|Ekatarina|Putica|1998-12-20|069233526|putica.ra.7.2021@uns.ac.rs|1|B|7|NjEGOSEVA|20|LEBANE|Srbija|RA|7|2021
+8|Želimirka|Viduljevic|2001-07-19|062535541|viduljevic.ra.8.2021@uns.ac.rs|3|B|8|JORDANA STOJANOVICA|5|CAPLjINAC|Bosna i Hercegovina|RA|8|2021
+9|Violeta|Roljevic|2004-06-24|061267718|roljevic.ra.9.2021@uns.ac.rs|2|S|9|KARADJORDJEVA|1|RAKINAC|Srbija|RA|9|2021
+10|Đura|Jocin|1994-03-09|061156705|jocin.ra.10.2021@uns.ac.rs|3|S|10|ČUČUŠKA|2|KLOKA|Bosna i Hercegovina|RA|10|2021
+11|Srpko|Milenovic|2000-09-24|061553412|milenovic.ra.11.2021@uns.ac.rs|4|S|11|IVE ANDRICA|25|BUNUŠKI CIFLUK|Bosna i Hercegovina|RA|11|2021
+12|Adam|Grncarski|2000-07-25|068476604|grncarski.ra.12.2021@uns.ac.rs|1|B|12|GORANA RAIČEVICA|97|KOVIOCI|Crna Gora|RA|12|2021
+13|Tanasije|Dobras|1995-12-04|069865396|dobras.ra.13.2021@uns.ac.rs|3|S|13|VASE STAJICA|8|ADA|Bosna i Hercegovina|RA|13|2021
+14|Kosara|Milisic|2004-12-05|063078887|milisic.ra.14.2021@uns.ac.rs|4|B|14|PARTIZANSKA|40|PIROT|Bosna i Hercegovina|RA|14|2021
+15|Mirko|Zavisin|1999-07-23|064396128|zavisin.ra.15.2021@uns.ac.rs|4|S|15|FUTOŠKA|49|KOVAČEVAC|Crna Gora|RA|15|2021
+16|Glorija|Popmihajlov|1996-02-17|068674154|popmihajlov.ra.16.2021@uns.ac.rs|1|B|16|BANjALUČKA|57|TEMERIN|Srbija|RA|16|2021
+17|Cviko|Kekic|2004-05-23|069653668|kekic.ra.17.2021@uns.ac.rs|2|S|17|ČESTELINSKA|87|VRANjE|Srbija|RA|17|2021
+18|Dobrašin|Secanski|1998-09-08|069698207|secanski.ra.18.2021@uns.ac.rs|2|B|18|MILENTIJA POPOVIĆA|98|VRBAS|Srbija|RA|18|2021
+19|Pajka|Cicovacki|2004-03-13|064159397|cicovacki.ra.19.2021@uns.ac.rs|1|S|19|VODNIKA IVANA VASOJEVIĆA|57|HUM|Srbija|RA|19|2021

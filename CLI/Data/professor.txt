@@ -1,17 +1,20 @@
-0|RALEVIC DVA|sdfsdsfs|11-11-2001|0655675678|dddd|dr|5|0|asdasda|3|asdasda|asdasdasda
-1|Jana|Jankovic|02-02-2002|614210080|aleksa.lala@gmail.com|dr|10|0|Maksima Gorkog|21|Beograd|Srbija
-2|Srdjan|Popov|02-02-2002|214854573|srdjanpopov@uns.ac.rs|prof.dr|14|0|Bulevar Evrope|2|Novi Sad|Srbija
-3|Janko|Jankovic|02-02-2002|21345890|email|dr|10|0|Ime Ulice|43a|Novi Sad|Srbija
-4|Janko|Jankovic|02-02-2002|0641231109|emaik|vanredni|10|0|Ime Ulice|31a|Novi Sad|Srbija
-8|gdsdsgds|gdsgds|01-01-0001|1242|bfbdf|hfdhd|0|0||||
-9|hdfhfd|hfdhdf|01-01-0001|4345325|trdhfdg|hfdhdf|0|0|hdrth|hfdhdfh|hfdhdfh|dfhdf
-10|Mima|Prof|12-12-2021|0631233452|mima@gmail.com|dr|3|0|Kninska|9|Trebinje|Bih
-11|Profa|profic|12-12-2001|0651232341|mima@gm|dr|3|0|knisnka|3|Trebinje|adf
-12|rers|esrse|12-12-2002|0651231231|mim@w|dr|3|0|km|3|trb|vi
-13|sks|asd|01-01-0001|0651231231|sdc|sd|0|0|xcv|3a|we|wed
-14|wdasd|ASD|01-01-0001|0641231231|mimima@gmail.cmo|redovni|9|0|asd|4|asdas|werwe
-15|ASDasd|ASDa|01-01-0001|06513313341|SMSM@|DR|0|0|adAD|4|ADSas|ASD
-16|edasd|asdasd|01-01-0001|065123123|mima@mmm|dr|0|0|asdas|33|dfadf|dcdf
-19|EDIT1111|EDIT2|11-11-2001|0655675678|EDIT7|EDIT8|96|0|EDIT3|EDIT4|EDIT5|EDIT6
-21|IMEIME|PREZIME|01-01-0001|0672342341|emaill@emailemail|DR|10|0|ADRESA|44|GRAD|DRZAVA
-22|PROFESOR|PROF PREZ|11-11-1980|0654564567|mimim@|DRMR|10|0|ULICA|6|GRAD|DRZAVA
+﻿0|Dragoslava|Raspopovic|1984-04-01|068734572|dragoslava.raspopovic@uns.ac.rs|docent|8|20|NIKOLE TESLE|100|KARADJORDJEVO|Crna Gora
+1|Stojko|Prvanovic|1984-02-14|064533567|stojko.prvanovic@uns.ac.rs|redovni profesor|29|21|VOCARSKA|40|TULEŠ|Bosna i Hercegovina
+2|Budimir|Talovic|1993-11-13|063433336|budimir.talovic@uns.ac.rs|redovni profesor|25|22|BORISLAVA PEKICA|12|VETERNIK|Bosna i Hercegovina
+3|Dobrica|Batrovic|1977-05-31|063651140|dobrica.batrovic@uns.ac.rs|docent|26|23|IVE ANDRICA|15|DOBRA|Crna Gora
+4|Arsenije|Balabanovic|1985-11-04|066421759|arsenije.balabanovic@uns.ac.rs|docent|16|24|RADOMIRA PUTNIKA|66|PRNjAVOR|Bosna i Hercegovina
+5|Rastko|Bucevac|1968-08-31|066705409|rastko.bucevac@uns.ac.rs|vanredni profesor|6|25|CURE JAKŠICA|10|GROCKA|Bosna i Hercegovina
+6|Bogdanka|Ložnjakovic|1971-11-26|063904215|bogdanka.loznjakovic@uns.ac.rs|vanredni profesor|14|26|TALIJINA|62|DOBANOVCI|Bosna i Hercegovina
+7|Veljko|Miocinovic|1970-06-24|069997020|veljko.miocinovic@uns.ac.rs|vanredni profesor|8|27|JABLANICKA|85|STOJNIK|Crna Gora
+8|Igor|Kreckovic|1986-05-17|06101030|igor.kreckovic@uns.ac.rs|redovni profesor|5|28|KRUŽNI PUT KROZ POLjE|95|PRIJEVOR|Srbija
+9|Steva|Iljanovic|1973-07-15|064163699|steva.iljanovic@uns.ac.rs|vanredni profesor|9|29|LIPA|44|BRZA PALANKA|Srbija
+10|Jevrosima|Toskic|1971-10-17|065326720|jevrosima.toskic@uns.ac.rs|redovni profesor|11|30|SVETOLIKA RANKOVICA|39|NOVI SAD|Srbija
+11|Acim|Calukovic|1991-02-25|065602843|acim.calukovic@uns.ac.rs|docent|5|31|MILOŠA OBILICA|65|SRPSKI MILETIĆ|Crna Gora
+12|Gaga|Dabarcic|1965-12-14|063466502|gaga.dabarcic@uns.ac.rs|vanredni profesor|11|32|JASENOVAČKI PUT|91|BLIZNAK|Crna Gora
+13|Stevanija|Graonic|1962-06-06|066834413|stevanija.graonic@uns.ac.rs|docent|5|33|KOVAČEVSKA|73|STREŠAK|Crna Gora
+14|Spomenko|Oblakovi|1980-10-31|06757415|spomenko.oblakovic@uns.ac.rs|redovni profesor|15|34|DRINSKA|39|LEŠTANE|Bosna i Hercegovina
+15|Jakov|Cvorkov|1982-08-08|069416210|jakov.cvorkov@uns.ac.rs|docent|10|35|STEFANA DEČANSKOG|28|NOVI SAD|Crna Gora
+16|Leonora|Curikin|1980-11-17|067769265|leonora.durikin@uns.ac.rs|docent|16|36|SVETOG SAVE|63|DONjI MILANOVAC|Crna Gora
+17|Stojmen|Banjalic|1973-07-29|06103067|stojmen.banjalic@uns.ac.rs|redovni profesor|12|37|4.JULA|96|SRNjE|Srbija
+18|Pauna|Jojcic|1960-11-19|067157490|pauna.jojcic@uns.ac.rs|docent|19|38|BORE VUKMIROVIĆA|97|BEOGRAD (PALILULA)|Srbija
+19|Miloje|Serdarevic|1993-07-16|069893744|miloje.serdarevic@uns.ac.rs|redovni profesor|23|39|VOJVODE STEPE|60|DREŽNIK|Crna Gora

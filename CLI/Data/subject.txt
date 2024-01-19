@@ -1,14 +1,20 @@
-0|PREDMET|Winter|4|10|AA|-1
-1|ANALIZA I|Winter|2022|9|BB|12
-2|baze podataka 1|Winter|3|8|CC|10
-3|klfdsj|Winter|3|3|DD|-1
-5|nans|Winter|2023|7|FF|3
-7|nans|Winter|2023|7|HH|-1
-9|ime|Summer|1212|12|XX|1
-10|oisisi|Summer|2023|8|FF|15
-11|a|Summer|1|1|LL|-1
-14|PREDMET|Summer|4|9|JJ|-1
-16|ime|Summer|1|12|WW|10
-18|ime|Winter|2021|9|RR|13
-21|11|Summer|1|1|SS|15
-25|pred|Summer|2|6|RR|-1
+0|Tehnologije i alati u mašinskom učenju|Summer|4|8|E43|8
+1|Napredni algoritmi i strukture podataka|Winter|4|6|E79|0
+2|Testiranje softvera|Summer|1|9|E76|0
+3|Specifikacija i modeliranje softvera|Summer|3|4|E94|3
+4|Uvod u informacione tehnologije u geomatici|Summer|3|8|E12|0
+5|Tehnologije i sistemi eUprave|Winter|1|4|E23|1
+6|Klijentske web tehnologije|Winter|3|5|E60|5
+7|Internet mreže|Summer|1|7|E75|6
+8|XML i veb servisi|Summer|2|10|E67|1
+9|Metodologije razvoja softvera|Winter|3|4|E51|9
+10|Uvod u informacione tehnologije u geomatici|Winter|3|8|E74|3
+11|Poslovna informatika|Summer|3|10|E17|4
+12|Mašinsko učenje|Winter|3|10|E8|8
+13|Soft kompjuting|Summer|1|10|E19|2
+14|Specifikacija i modeliranje softvera|Winter|2|6|E24|9
+15|Informaciona bezbednost|Winter|3|7|E38|4
+16|Serverske web tehnologije|Winter|4|4|E9|3
+17|Objektno orijentisano programiranje 1|Winter|2|7|E37|8
+18|Servisno orijentisane arhitekture|Summer|2|7|E5|6
+19|Sistemi bazirani na znanju|Summer|3|4|E62|6
