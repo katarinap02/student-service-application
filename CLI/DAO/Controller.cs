@@ -78,7 +78,7 @@ public class HeadDao
                 grades.Add(g);
             }
         }
-        //observerSub.NotifyObservers();
+       
         return grades;
 
 
@@ -119,7 +119,6 @@ public class HeadDao
             }
         }
 
-        //observerSub.NotifyObservers();
         return failedSubjects;
     }
     public List<Subject> getSubjectsForStudent(Student student)  //studentu dodjeljuje predmet koji moze da slusa a koji vec ne slusa
@@ -358,8 +357,6 @@ public class HeadDao
                     }
                 }
 
-
-
             }
         }
 
@@ -459,12 +456,7 @@ public class HeadDao
                 continue;
             }
 
-            /*   
-            /*   StudentSubject? removedStudentSubject = _studentsubjectsDao.RemoveStudentSubject2(StudentId,id); //brisemo i vezu
-               if (removedStudentSubject is null)
-               {
-                   continue;
-               }*/
+           
         }
        
         foreach (Grade g in _gradesDao.GetAllGrades()) //promenimo u oceni studenta
@@ -738,18 +730,7 @@ public class HeadDao
     public List<Subject> anotherSubjects(Subject sub)
     {
 
-        /*List <Subject> anotherSubjects = _subjectsDao.GetAllSubjects().Where(item => !item.Equals(sub)).ToList();
-        observerSub.NotifyObservers();
-        return anotherSubjects;*/
-        /* List<Subject> newList = new List<Subject>(_subjectsDao.GetAllSubjects());
-         newList.Remove(sub);
-         return newList;*/
-        /* List<Subject> list = new List<Subject>();
-         list = _subjectsDao.GetAllSubjects();
-         list.RemoveAll(item => item.Equals(sub));
-         List<Subject> list2 = list.RemoveAll(item => item.Equals(sub));
-         list.RemoveAll(item => item.Equals(sub));
-         return list;*/
+        
         List<Subject> list = new List<Subject>();
         foreach (Subject subject in _subjectsDao.GetAllSubjects())
         {
@@ -792,10 +773,6 @@ public class HeadDao
             st.SubjectsP.Add(sb); //*************************
 
         }
-
-
-       // StudentSubject studentSubject = new StudentSubject(st.Id, sb.Id);
-       // _studentsubjectsDao.AddStudentSubjuect(studentSubject); //brisemo i vezu?? ja sam stavila da dodajem vezu
 
 
         _gradesDao.AddGrade(gd);
@@ -859,7 +836,7 @@ public class HeadDao
 
          StudentSubject studentSubject = new StudentSubject(st.Id, sb.Id);
          _studentsubjectsDao.AddStudentSubjuect(studentSubject);
-       // observerSub.NotifyObservers();
+      
 
 
 
@@ -876,9 +853,7 @@ public class HeadDao
 
         observerSub.NotifyObservers();
     }
-
-    //StudentSubject
-    //treba mi funkcija koja mi vraca da li postoji veza Student Subject 
+ 
 
     public StudentSubject getStudentSubjectByIdHead(int id)
     {
@@ -925,7 +900,6 @@ public class HeadDao
                 }
             }
         }
-        observerSub.NotifyObservers();
         return professor;
 
     }
@@ -971,7 +945,6 @@ public class HeadDao
         return subjects;
 
     }
-
 
     //////////////**********************AVERAGE ++  COUNT ESPB ***************//////////////////////////
 
@@ -1036,7 +1009,6 @@ public class HeadDao
 
 
     }
-
 
     ////////////////***************PROFESOR IMENA I PREZIMENA *********************//////////////
     
