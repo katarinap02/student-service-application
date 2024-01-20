@@ -935,7 +935,7 @@ public class HeadDao
         Chair? ch = _chairsDao.GetChairById(id);
         if (ch != null && p != null && p.YearS > 5)
         {
-            if (p.Title == "redovni" || p.Title == "vanredni")
+            if (p.Title == "redovni profesor" || p.Title == "vanredni profesor")
             {
                 Chair chair = _chairsDao.setProfessor(p, ch);
                 observerSub.NotifyObservers();
